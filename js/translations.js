@@ -125,6 +125,15 @@ const TRANSLATIONS = {
     footer_copy: '© 2026 Secure Tours & Travel. Part of AFS Group. All rights reserved.',
     footer_abn: 'ABN available on request.',
 
+    /* ── Service card blurbs (homepage grid) ── */
+    svc_tours_text: 'Comprehensive travel packages for inbound and domestic clients — chaperoned, secure and tailored to your journey.',
+    svc_egm_text: 'Seamless, hassle-free executive travel for investors, senior leaders and corporate delegations.',
+    svc_eta_text: "Australia's leading secure transfer service — Exclusive and Executive tiers for luxury and corporate clients.",
+    svc_stage_text: 'Specialised event management with safety embedded at every layer — from major sporting events to corporate activations.',
+    svc_pass_athlete_text: 'Elite travel logistics for athletes and sports teams — nutrition, recovery, equipment, security and schedule management.',
+    svc_pass_artist_text: 'Dedicated touring support for musicians, entertainers and performing arts companies — on the road, on time, on budget.',
+    svc_cc_text: 'Personal, attentive care for individuals and groups — from airport arrivals to 24/7 support throughout your stay.',
+
     /* ── Shared ── */
     enquire_now: 'Enquire Now',
     learn_more: 'Learn More',
@@ -132,6 +141,7 @@ const TRANSLATIONS = {
     other_services: 'Other Services',
     svc_overview: 'Service Overview',
     whats_included: "What's Included",
+    footer_contact_heading: 'Contact',
   },
 
   zh: {
@@ -258,6 +268,15 @@ const TRANSLATIONS = {
     footer_copy: '© 2026 安全旅游与旅行。AFS集团旗下品牌。保留所有权利。',
     footer_abn: 'ABN 信息可按需提供。',
 
+    /* ── Service card blurbs (homepage grid) ── */
+    svc_tours_text: '为入境和国内客户提供全面的旅行套餐——全程陪同、安全保障、量身定制。',
+    svc_egm_text: '为投资者、高级领导和企业代表团提供无缝、无忧的商务旅行服务。',
+    svc_eta_text: '澳大利亚领先的安全接送服务——尊享级和行政级两种套餐，满足奢华与商务需求。',
+    svc_stage_text: '将安全融入每个环节的专业活动管理——从大型体育赛事到企业活动均可承接。',
+    svc_pass_athlete_text: '专为运动员和运动队打造的精英旅行后勤服务——涵盖营养、恢复、装备、安保和日程管理。',
+    svc_pass_artist_text: '为音乐人、表演者和表演艺术团体提供的专属巡演支持——准时、省心、不超预算。',
+    svc_cc_text: '为个人及团体提供贴心周到的关怀服务——从机场接机到全程24/7支持。',
+
     /* ── Shared ── */
     enquire_now: '立即询问',
     learn_more: '了解更多',
@@ -265,6 +284,7 @@ const TRANSLATIONS = {
     other_services: '其他服务',
     svc_overview: '服务概览',
     whats_included: '服务内容',
+    footer_contact_heading: '联系方式',
   },
 };
 
