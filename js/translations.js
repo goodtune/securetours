@@ -130,6 +130,8 @@ const TRANSLATIONS = {
     learn_more: 'Learn More',
     back_services: '← Back to Services',
     other_services: 'Other Services',
+    svc_overview: 'Service Overview',
+    whats_included: "What's Included",
   },
 
   zh: {
@@ -261,6 +263,8 @@ const TRANSLATIONS = {
     learn_more: '了解更多',
     back_services: '← 返回服务列表',
     other_services: '其他服务',
+    svc_overview: '服务概览',
+    whats_included: '服务内容',
   },
 };
 
