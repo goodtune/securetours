@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Tours & Travel — Secure Luxury Travel for Discerning Individuals & Groups</title>
+  <meta name="description" content="Australia's premier secure travel and VIP concierge specialists. Combining elite security expertise with luxury service across inbound tourism, executive transfers, athlete support, and event management.">
+  <meta name="keywords" content="secure tours, luxury travel australia, VIP concierge, inbound tourism, executive transfer, athlete travel, event management security">
+  <link rel="canonical" href="https://securetours.com.au/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Secure Tours & Travel">
+  <meta property="og:description" content="Secure Luxury Travel for Discerning Individuals & Groups">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://securetours.com.au">
+
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Reveal animation */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════ -->
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Secure Tours & Travel — Home">
+        <img src="assets/logo.jpg" alt="Secure Tours & Travel">
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
+        <li>
+          <a href="services/index.html" data-i18n="nav_services">Services</a>
+          <ul class="nav-dropdown" role="list">
+            <li><a href="services/tours-travel-solutions.html" data-i18n="svc_tours">Secure Tours & Travel Solutions</a></li>
+            <li><a href="services/executive-guest-management.html" data-i18n="svc_egm">Executive Guest Management</a></li>
+            <li><a href="services/exclusive-transfer-assistance.html" data-i18n="svc_eta">Exclusive Transfer Assistance</a></li>
+            <li><a href="services/stage.html" data-i18n="svc_stage">S.T.A.G.E.</a></li>
+            <li><a href="services/pass-athlete.html" data-i18n="svc_pass_athlete">P.A.S.S. — Athlete</a></li>
+            <li><a href="services/pass-artist.html" data-i18n="svc_pass_artist">P.A.S.S. — Performing Artist</a></li>
+            <li><a href="services/concierge-chaperone.html" data-i18n="svc_cc">Concierge & Chaperone</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html" data-i18n="nav_contact">Contact</a></li>
+        <li>
+          <div class="lang-switcher" role="group" aria-label="Language selection">
+            <button class="lang-btn active" data-lang="en" aria-label="English">EN</button>
+            <button class="lang-btn" data-lang="zh" aria-label="中文">中文</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero" id="home" aria-label="Hero">
+  <div class="container">
+    <div class="hero-content">
+      <span class="hero-tag fade-up-1" data-i18n="hero_tag">Australia's Premium Secure Travel Specialists</span>
+      <h1 class="fade-up-2" data-i18n="hero_title">Secure Luxury Travel for <em>Discerning Individuals</em> & Groups</h1>
+      <p class="hero-sub fade-up-3" data-i18n="hero_sub">Combining elite security expertise with premium concierge service — we protect your journey, from first arrival to final departure.</p>
+      <div class="hero-actions">
+        <a href="services/index.html" class="btn btn--primary" data-i18n="hero_cta1">Explore Our Services</a>
+        <a href="contact.html" class="btn btn--outline" data-i18n="hero_cta2">Enquire Now</a>
+      </div>
+      <img src="assets/tagline.gif" alt="Secure Luxury Travel for discerning individuals & groups" class="hero-tagline-img" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     STATS BAR
+══════════════════════════════════════════ -->
+<div class="stats-bar" aria-label="Key facts">
+  <div class="container">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-item__number" data-i18n="stat_years">35+ Years</div>
+        <div class="stat-item__label" data-i18n="stat_years_label">Industry Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__number" data-i18n="stat_services">7 Specialist</div>
+        <div class="stat-item__label" data-i18n="stat_services_label">Service Streams</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__number" data-i18n="stat_nations">National</div>
+        <div class="stat-item__label" data-i18n="stat_nations_label">Footprint (NSW · QLD · VIC)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__number" data-i18n="stat_languages">24/7</div>
+        <div class="stat-item__label" data-i18n="stat_languages_label">Support Available</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SERVICES GRID
+══════════════════════════════════════════ -->
+<section class="section section--alt" id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <span class="section-label" data-i18n="services_label">Our Services</span>
+    <h2 class="section-title" id="services-heading" data-i18n="services_title">Seven Specialist Services</h2>
+    <div class="gold-rule"></div>
+    <p class="section-intro" data-i18n="services_intro">Every service is designed around one principle: your safety, comfort and peace of mind. From private transfers to full event logistics, we cover every detail.</p>
+
+    <div class="services-grid">
+      <!-- 1 -->
+      <article class="service-card reveal">
+        <div class="service-card__icon" aria-hidden="true">🌏</div>
+        <h3 class="service-card__title" data-i18n="svc_tours">Secure Tours & Travel Solutions</h3>
+        <p class="service-card__text">Comprehensive travel packages for inbound and domestic clients — chaperoned, secure and tailored to your journey.</p>
+        <a href="services/tours-travel-solutions.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
+      </article>
+
+      <!-- 2 -->
+      <article class="service-card reveal">
+        <div class="service-card__icon" aria-hidden="true">💼</div>
+        <h3 class="service-card__title" data-i18n="svc_egm">Executive Guest Management</h3>
+        <p class="service-card__text">Seamless, hassle-free executive travel for investors, senior leaders and corporate delegations.</p>
+        <a href="services/executive-guest-management.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
+      </article>
+
+      <!-- 3 -->
+      <article class="service-card reveal">
+        <div class="service-card__icon" aria-hidden="true">✈️</div>
+        <h3 class="service-card__title" data-i18n="svc_eta">Exclusive Transfer Assistance</h3>
+        <p class="service-card__text">Australia's leading secure transfer service — Exclusive and Executive tiers for luxury and corporate clients.</p>
+        <a href="services/exclusive-transfer-assistance.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
+      </article>
+
+      <!-- 4 -->
+      <article class="service-card reveal">
+        <div class="service-card__icon" aria-hidden="true">🎬</div>
+        <h3 class="service-card__title" data-i18n="svc_stage">S.T.A.G.E.</h3>
+        <p class="service-card__text">Specialised event management with safety embedded at every layer — from major sporting events to corporate activations.</p>
+        <a href="services/stage.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
+      </article>
+
+      <!-- 5 -->
+      <article class="service-card reveal">
+        <div class="service-card__icon" aria-hidden="true">🏆</div>
+        <h3 class="service-card__title" data-i18n="svc_pass_athlete">P.A.S.S. — Professional Athlete Support Specialist</h3>
+        <p class="service-card__text">Elite travel logistics for athletes and sports teams — nutrition, recovery, equipment, security and schedule management.</p>
+        <a href="services/pass-athlete.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
+      </article>
+
+      <!-- 6 -->
+      <article class="service-card reveal">
+        <div class="service-card__icon" aria-hidden="true">🎭</div>
+        <h3 class="service-card__title" data-i18n="svc_pass_artist">P.A.S.S. — Performing Artist Safety Specialist</h3>
+        <p class="service-card__text">Dedicated touring support for musicians, entertainers and performing arts companies — on the road, on time, on budget.</p>
+        <a href="services/pass-artist.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
+      </article>
+
+      <!-- 7 -->
+      <article class="service-card reveal">
+        <div class="service-card__icon" aria-hidden="true">🤝</div>
+        <h3 class="service-card__title" data-i18n="svc_cc">Concierge & Chaperone</h3>
+        <p class="service-card__text">Personal, attentive care for individuals and groups — from airport arrivals to 24/7 support throughout your stay.</p>
+        <a href="services/concierge-chaperone.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     ABOUT STRIP
+══════════════════════════════════════════ -->
+<section class="section" id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-label" data-i18n="about_label">About Secure Tours & Travel</span>
+        <h2 id="about-heading" data-i18n="about_title">Built on Trust. Backed by Experience.</h2>
+        <div class="gold-rule"></div>
+        <p data-i18n="about_text">Secure Tours & Travel is the dedicated tourism and event services division of AFS Group — one of Australia's most trusted names in safety leadership, protective operations and event management.</p>
+        <ul class="about-features">
+          <li data-i18n="about_feat1">Licensed security & WHS operators</li>
+          <li data-i18n="about_feat2">Multilingual concierge teams</li>
+          <li data-i18n="about_feat3">Discreet, professional, reliable</li>
+          <li data-i18n="about_feat4">National coverage — global partnerships</li>
+          <li data-i18n="about_feat5">Sibling brand to Athlete Pathways Australia</li>
+        </ul>
+        <a href="about.html" class="btn btn--navy" style="margin-top:2rem;" data-i18n="about_cta">Our Story</a>
+      </div>
+      <div class="about-visual">
+        <div class="about-badge">
+          <div class="about-badge__number">35+</div>
+          <div class="about-badge__label" data-i18n="about_badge">Years of Excellence</div>
+          <div style="margin-top:1.5rem; border-top: 1px solid rgba(184,149,42,0.3); padding-top:1.5rem;">
+            <p style="font-size:0.875rem; color:rgba(255,255,255,0.7); line-height:1.7;" data-i18n="about_text">Secure Tours & Travel is the dedicated tourism and event services division of AFS Group.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     WHY CHOOSE US
+══════════════════════════════════════════ -->
+<section class="section section--alt" aria-labelledby="why-heading">
+  <div class="container text-center">
+    <span class="section-label" data-i18n="why_label">Why Choose Us</span>
+    <h2 id="why-heading" data-i18n="why_title">What Sets Us Apart</h2>
+    <div class="gold-rule"></div>
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <span class="why-item__icon" aria-hidden="true">🛡️</span>
+        <h3 data-i18n="why1_title">Security-First</h3>
+        <p data-i18n="why1_text">Every journey is underpinned by licensed risk assessment, advance reconnaissance and close protection protocols.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="why-item__icon" aria-hidden="true">👑</span>
+        <h3 data-i18n="why2_title">White-Glove Service</h3>
+        <p data-i18n="why2_text">From airport arrivals to VIP event access — our concierge teams ensure seamless, stress-free experiences.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="why-item__icon" aria-hidden="true">🌐</span>
+        <h3 data-i18n="why3_title">Multilingual</h3>
+        <p data-i18n="why3_text">We speak your language. Mandarin-speaking chaperones and Mandarin-ready documentation available.</p>
+      </div>
+      <div class="why-item reveal">
+        <span class="why-item__icon" aria-hidden="true">📞</span>
+        <h3 data-i18n="why4_title">24/7 Support</h3>
+        <p data-i18n="why4_text">Round-the-clock support for international clients across all time zones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     CTA BAND
+══════════════════════════════════════════ -->
+<section class="cta-band" aria-labelledby="cta-heading">
+  <div class="container">
+    <h2 id="cta-heading" data-i18n="cta_title">Ready to Travel with Confidence?</h2>
+    <p data-i18n="cta_text">Our team is available to tailor a solution for individuals, groups, corporate delegations and touring professionals.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn btn--primary" data-i18n="cta_btn1">Get in Touch</a>
+      <a href="services/index.html" class="btn btn--outline" data-i18n="cta_btn2">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.jpg" alt="Secure Tours & Travel">
+        <p data-i18n="footer_tagline">Secure Luxury Travel for discerning individuals & groups.</p>
+        <p style="margin-top:0.75rem; font-size:0.8rem; color:rgba(255,255,255,0.4);" data-i18n="footer_abn">ABN available on request.</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_services">Services</h4>
+        <ul role="list">
+          <li><a href="services/tours-travel-solutions.html" data-i18n="svc_tours">Secure Tours & Travel Solutions</a></li>
+          <li><a href="services/executive-guest-management.html" data-i18n="svc_egm">Executive Guest Management</a></li>
+          <li><a href="services/exclusive-transfer-assistance.html" data-i18n="svc_eta">Exclusive Transfer Assistance</a></li>
+          <li><a href="services/stage.html" data-i18n="svc_stage">S.T.A.G.E.</a></li>
+          <li><a href="services/pass-athlete.html" data-i18n="svc_pass_athlete">P.A.S.S. — Athlete</a></li>
+          <li><a href="services/pass-artist.html" data-i18n="svc_pass_artist">P.A.S.S. — Artist</a></li>
+          <li><a href="services/concierge-chaperone.html" data-i18n="svc_cc">Concierge & Chaperone</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_company">Company</h4>
+        <ul role="list">
+          <li><a href="about.html" data-i18n="footer_about">About Us</a></li>
+          <li><a href="contact.html" data-i18n="footer_contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul role="list" style="font-style:normal;">
+          <li><a href="tel:+61414499778">+61 414 499 778</a></li>
+          <li><a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a></li>
+          <li style="color:rgba(255,255,255,0.5); font-size:0.875rem; margin-top:0.5rem;">Australia-wide · NSW</li>
+        </ul>
+        <div class="footer-lang" style="margin-top:1.5rem;">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="zh">中文</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer_copy">© 2026 Secure Tours & Travel. Part of AFS Group. All rights reserved.</span>
+      <div>
+        <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="#" data-i18n="footer_terms">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/translations.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
