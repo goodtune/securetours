@@ -211,7 +211,6 @@ p:last-child { margin-bottom: 0; }
 .nav-logo img {
   height: 52px;
   width: auto;
-  filter: brightness(0) invert(1);
 }
 
 .nav-links {
@@ -327,7 +326,7 @@ p:last-child { margin-bottom: 0; }
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #2a3f99 100%);
+  background: url('../assets/hero-bg.jpg') center/cover no-repeat;
   overflow: hidden;
   padding-top: 80px;
 }
@@ -337,6 +336,7 @@ p:last-child { margin-bottom: 0; }
   position: absolute;
   inset: 0;
   background-image:
+    linear-gradient(135deg, rgba(30,46,120,0.85) 0%, rgba(30,46,120,0.65) 60%, rgba(42,63,153,0.6) 100%),
     radial-gradient(ellipse at 70% 50%, rgba(184,149,42,0.08) 0%, transparent 60%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(255,255,255,0.04)'/%3E%3C/svg%3E");
   pointer-events: none;
@@ -792,7 +792,6 @@ p:last-child { margin-bottom: 0; }
 .footer-brand img {
   height: 48px;
   width: auto;
-  filter: brightness(0) invert(1);
   margin-bottom: 1rem;
 }
 
