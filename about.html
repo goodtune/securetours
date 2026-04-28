@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us — Secure Tours & Travel</title>
-  <meta name="description" content="Founded in 2016 by Matt Harrison, Secure Tours & Travel is the dedicated tourism division of AFS Group — 35+ years of security expertise behind every journey.">
+  <meta name="description" content="Founded by Matt Harrison, Secure Tours & Travel is the dedicated tourism division of Australian Frontline Solutions — 37 years of security expertise behind every journey.">
   <link rel="stylesheet" href="css/style.css">
   <style>
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -50,6 +50,34 @@
     @media (max-width: 700px) {
       .parent-brand { grid-template-columns: 1fr; gap: 2rem; }
     }
+    .afs-creds {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .afs-cred-item {
+      background: rgba(184,149,42,0.08);
+      border: 1px solid rgba(184,149,42,0.2);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      text-align: center;
+    }
+    .afs-cred-item__value {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      color: var(--gold);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .afs-cred-item__label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 0.35rem;
+    }
+    @media (max-width: 480px) { .afs-creds { grid-template-columns: 1fr; } }
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="canonical" href="https://securetours.staging-site.au/about.html">
@@ -69,12 +97,11 @@
         <li><a href="index.html" data-i18n="nav_home">Home</a></li>
         <li><a href="about.html" class="active" data-i18n="nav_about">About Us</a></li>
         <li>
-          <a href="services/index.html" data-i18n="nav_services">Services</a>
+          <a href="services/index.html" data-i18n="nav_services">Solutions</a>
           <ul class="nav-dropdown" role="list">
             <li><a href="services/tours-travel-solutions.html" data-i18n="svc_tours">Secure Tours & Travel Solutions</a></li>
             <li><a href="services/executive-guest-management.html" data-i18n="svc_egm">Executive Guest Management</a></li>
             <li><a href="services/exclusive-transfer-assistance.html" data-i18n="svc_eta">Exclusive Transfer Assistance</a></li>
-            <li><a href="services/stage.html" data-i18n="svc_stage">S.T.A.G.E.</a></li>
             <li><a href="services/pass-athlete.html" data-i18n="svc_pass_athlete">P.A.S.S. — Athlete</a></li>
             <li><a href="services/pass-artist.html" data-i18n="svc_pass_artist">P.A.S.S. — Performing Artist</a></li>
             <li><a href="services/concierge-chaperone.html" data-i18n="svc_cc">Concierge & Chaperone</a></li>
@@ -85,6 +112,7 @@
           <div class="lang-switcher">
             <button class="lang-btn active" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="zh">中文</button>
+            <span class="lang-btn lang-btn--more" title="Also available in French, Korean, Italian, German">+4</span>
           </div>
         </li>
       </ul>
@@ -99,9 +127,9 @@
       <li><a href="index.html" data-i18n="nav_home">Home</a></li>
       <li data-i18n="nav_about">About Us</li>
     </ul>
-    <span class="section-label" data-i18n="about_page_hero_tag">Established 2016 · Part of AFS Group</span>
+    <span class="section-label" data-i18n="about_page_hero_tag">Established 1989 · Australian Frontline Solutions</span>
     <h1 data-i18n="about_page_hero_title">About Secure Tours & Travel</h1>
-    <p class="page-hero__sub" data-i18n="about_page_lead">Secure Tours & Travel was founded in 2016 by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable.</p>
+    <p class="page-hero__sub" data-i18n="about_page_lead">Secure Tours & Travel was founded by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable.</p>
   </div>
 </section>
 
@@ -117,10 +145,11 @@
       </div>
       <div class="about-visual">
         <div class="about-badge">
-          <div class="about-badge__number">35+</div>
+          <div class="about-badge__number">37</div>
           <div class="about-badge__label" data-i18n="about_badge">Years of Excellence</div>
           <div style="margin-top:1.5rem; padding-top:1.5rem; border-top: 1px solid rgba(184,149,42,0.3);">
-            <p style="font-size:0.875rem; color:rgba(255,255,255,0.7); line-height:1.7; margin:0;">Founded 2016 · Backed by AFS Group's 35 years of operational expertise in security, safety and event management across Australia.</p>
+            <p style="font-size:0.875rem; color:rgba(255,255,255,0.7); line-height:1.7; margin:0 0 0.75rem;">Founded by Matt Harrison. Backed by Australian Frontline Solutions — est. 1989, Security Master Licence holder.</p>
+            <p style="font-size:0.75rem; color:rgba(184,149,42,0.85); font-weight:600; letter-spacing:0.06em; text-transform:uppercase; margin:0;">Security Master Licence Holder</p>
           </div>
         </div>
       </div>
@@ -163,25 +192,40 @@
   </div>
 </section>
 
-<!-- Parent Brand -->
+<!-- Parent Brand — Australian Frontline Solutions -->
 <section class="section section--navy" aria-labelledby="parent-heading">
   <div class="container">
     <div class="parent-brand">
       <div>
-        <span class="section-label" data-i18n="about_parent_title">Part of AFS Group</span>
-        <h2 id="parent-heading" data-i18n="about_parent_title">Part of AFS Group</h2>
+        <span class="section-label" data-i18n="about_parent_title">Part of Australian Frontline Solutions</span>
+        <h2 id="parent-heading" data-i18n="about_parent_title">Part of Australian Frontline Solutions</h2>
         <div class="gold-rule"></div>
-        <p class="section-intro" data-i18n="about_parent_text">AFS Group has been Australia's trusted partner in safety and security services for over 35 years. Secure Tours & Travel draws on this heritage to deliver outcomes that no standard tour operator can match.</p>
+        <p class="section-intro" data-i18n="about_parent_text">Australian Frontline Solutions (AFS) has been Australia's trusted partner in safety and security services since 1989 — 37 years of operational expertise. Secure Tours & Travel draws on this heritage to deliver outcomes that no standard tour operator can match.</p>
         <a href="contact.html" class="btn btn--primary" style="margin-top:2rem;" data-i18n="enquire_now">Enquire Now</a>
       </div>
-      <div style="background:rgba(255,255,255,0.08); border-radius: 8px; padding:2.5rem; border:1px solid rgba(184,149,42,0.3);">
-        <ul class="about-features" style="color:rgba(255,255,255,0.85);">
-          <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);" data-i18n="about_feat1">Licensed security & WHS operators</li>
-          <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);" data-i18n="about_feat2">Multilingual concierge teams</li>
-          <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);" data-i18n="about_feat3">Discreet, professional, reliable</li>
-          <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);" data-i18n="about_feat4">National coverage — global partnerships</li>
-          <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);" data-i18n="about_feat5">Sibling brand to Athlete Pathways Australia</li>
-        </ul>
+      <div>
+        <div class="afs-creds">
+          <div class="afs-cred-item">
+            <div class="afs-cred-item__value">1989</div>
+            <div class="afs-cred-item__label">Established</div>
+          </div>
+          <div class="afs-cred-item">
+            <div class="afs-cred-item__value">37</div>
+            <div class="afs-cred-item__label">Years Trading</div>
+          </div>
+          <div class="afs-cred-item" style="grid-column: span 2;">
+            <div class="afs-cred-item__value" style="font-size:1rem; letter-spacing:0.03em;">Security Master Licence</div>
+            <div class="afs-cred-item__label">Licensed Operator</div>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06); border-radius: 8px; padding:2rem; border:1px solid rgba(184,149,42,0.25); margin-top:1rem;">
+          <ul class="about-features" style="color:rgba(255,255,255,0.85);">
+            <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);" data-i18n="about_feat1">Security Master Licence holder</li>
+            <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);" data-i18n="about_feat2">Multilingual teams — a range of languages</li>
+            <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);" data-i18n="about_feat3">Discreet, professional, reliable</li>
+            <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);" data-i18n="about_feat4">National coverage — global partnerships</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -194,12 +238,21 @@
     <p data-i18n="cta_text">Our team is available to tailor a solution for individuals, groups, corporate delegations and touring professionals.</p>
     <div class="btn-group">
       <a href="contact.html" class="btn btn--primary" data-i18n="cta_btn1">Get in Touch</a>
-      <a href="services/index.html" class="btn btn--outline" data-i18n="cta_btn2">View All Services</a>
+      <a href="services/index.html" class="btn btn--outline" data-i18n="cta_btn2">View All Solutions</a>
     </div>
   </div>
 </section>
 
 <footer class="site-footer" role="contentinfo">
+  <div class="footer-afs">
+    <div class="container">
+      <div class="footer-afs__inner">
+        <span class="footer-afs__division" data-i18n="footer_afs_division">A division of <strong>Australian Frontline Solutions</strong></span>
+        <span class="footer-afs__sep" aria-hidden="true">·</span>
+        <span class="footer-afs__credentials" data-i18n="footer_afs_credentials">Security Master Licence Holder · Established 1989</span>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -207,12 +260,11 @@
         <p data-i18n="footer_tagline">Secure Luxury Travel for discerning individuals & groups.</p>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer_services">Services</h4>
+        <h4 data-i18n="footer_services">Solutions</h4>
         <ul role="list">
           <li><a href="services/tours-travel-solutions.html" data-i18n="svc_tours">Secure Tours & Travel Solutions</a></li>
           <li><a href="services/executive-guest-management.html" data-i18n="svc_egm">Executive Guest Management</a></li>
           <li><a href="services/exclusive-transfer-assistance.html" data-i18n="svc_eta">Exclusive Transfer Assistance</a></li>
-          <li><a href="services/stage.html" data-i18n="svc_stage">S.T.A.G.E.</a></li>
           <li><a href="services/pass-athlete.html" data-i18n="svc_pass_athlete">P.A.S.S. — Athlete</a></li>
           <li><a href="services/pass-artist.html" data-i18n="svc_pass_artist">P.A.S.S. — Artist</a></li>
           <li><a href="services/concierge-chaperone.html" data-i18n="svc_cc">Concierge & Chaperone</a></li>
@@ -235,10 +287,11 @@
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="zh">中文</button>
         </div>
+        <p style="font-size:0.7rem; color:rgba(255,255,255,0.3); margin-top:0.6rem;">+ FR · KO · IT · DE</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span data-i18n="footer_copy">© 2026 Secure Tours & Travel. Part of AFS Group. All rights reserved.</span>
+      <span data-i18n="footer_copy">© 2026 Secure Tours & Travel. All rights reserved.</span>
     </div>
   </div>
 </footer>
@@ -246,7 +299,6 @@
 <script src="js/translations.js"></script>
 <script src="js/main.js"></script>
 <script>
-  // Render clients list from translations
   function renderClients() {
     const container = document.getElementById('clients-list');
     if (!container) return;

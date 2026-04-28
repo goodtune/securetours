@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — Secure Tours & Travel</title>
-  <meta name="description" content="Browse all seven specialist services from Secure Tours & Travel — inbound tourism, VIP transfers, event management, athlete support, and more.">
+  <title>Solutions — Secure Tours & Travel</title>
+  <meta name="description" content="Explore all specialist solutions from Secure Tours & Travel — inbound tourism, VIP transfers, event management, athlete support, and more.">
   <link rel="stylesheet" href="../css/style.css">
   <style>
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -28,12 +28,11 @@
         <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
         <li><a href="../about.html" data-i18n="nav_about">About Us</a></li>
         <li>
-          <a href="index.html" class="active" data-i18n="nav_services">Services</a>
+          <a href="index.html" class="active" data-i18n="nav_services">Solutions</a>
           <ul class="nav-dropdown" role="list">
             <li><a href="tours-travel-solutions.html" data-i18n="svc_tours">Secure Tours & Travel Solutions</a></li>
             <li><a href="executive-guest-management.html" data-i18n="svc_egm">Executive Guest Management</a></li>
             <li><a href="exclusive-transfer-assistance.html" data-i18n="svc_eta">Exclusive Transfer Assistance</a></li>
-            <li><a href="stage.html" data-i18n="svc_stage">S.T.A.G.E.</a></li>
             <li><a href="pass-athlete.html" data-i18n="svc_pass_athlete">P.A.S.S. — Athlete</a></li>
             <li><a href="pass-artist.html" data-i18n="svc_pass_artist">P.A.S.S. — Performing Artist</a></li>
             <li><a href="concierge-chaperone.html" data-i18n="svc_cc">Concierge & Chaperone</a></li>
@@ -44,6 +43,7 @@
           <div class="lang-switcher">
             <button class="lang-btn active" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="zh">中文</button>
+            <span class="lang-btn lang-btn--more" title="Also available in French, Korean, Italian, German">+4</span>
           </div>
         </li>
       </ul>
@@ -51,27 +51,36 @@
   </div>
 </nav>
 
-<section class="page-hero" aria-label="Services overview hero">
+<section class="page-hero" aria-label="Solutions overview hero">
   <div class="container">
     <ul class="breadcrumb" role="list">
       <li><a href="../index.html" data-i18n="nav_home">Home</a></li>
-      <li data-i18n="nav_services">Services</li>
+      <li data-i18n="nav_services">Solutions</li>
     </ul>
-    <span class="section-label" data-i18n="services_label">Our Services</span>
-    <h1 data-i18n="services_title">Seven Specialist Services</h1>
-    <p class="page-hero__sub" data-i18n="services_intro">Every service is designed around one principle: your safety, comfort and peace of mind.</p>
+    <span class="section-label" data-i18n="services_label">Our Solutions</span>
+    <h1 data-i18n="services_title">Specialist Solutions</h1>
+    <p class="page-hero__sub" data-i18n="services_intro">Every solution is designed around one principle: your safety, comfort and peace of mind.</p>
   </div>
 </section>
 
 <section class="section" aria-labelledby="svc-heading">
   <div class="container">
-    <div class="services-grid">
-      <article class="service-card reveal">
-        <div class="service-card__icon" aria-hidden="true">🌏</div>
-        <h2 class="service-card__title" data-i18n="svc_tours">Secure Tours & Travel Solutions</h2>
-        <p class="service-card__text">Comprehensive, safety-led travel packages for inbound and domestic clients. Chaperoned tours, private transfers and secure ground arrangements across Australia and globally.</p>
-        <a href="tours-travel-solutions.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
-      </article>
+
+    <!-- Featured: Secure Tours & Travel Solutions -->
+    <div class="solutions-featured">
+      <div class="solutions-featured__body">
+        <span class="solutions-featured__tag">Flagship Solution · Inbound & Domestic Tourism</span>
+        <h2 class="solutions-featured__title" data-i18n="svc_tours">Secure Tours & Travel Solutions</h2>
+        <p class="solutions-featured__text">Comprehensive, safety-led travel packages for inbound and domestic clients. Chaperoned tours, private transfers and secure ground arrangements across Australia and globally. The foundation of everything we do.</p>
+        <a href="tours-travel-solutions.html" class="btn btn--primary" data-i18n="learn_more">Learn More</a>
+      </div>
+      <div class="solutions-featured__cta">
+        <div style="font-size:4rem; opacity:0.2;">🌏</div>
+      </div>
+    </div>
+
+    <!-- 3×3 Solutions Grid -->
+    <div class="services-grid" id="svc-heading">
 
       <article class="service-card reveal">
         <div class="service-card__icon" aria-hidden="true">💼</div>
@@ -85,13 +94,6 @@
         <h2 class="service-card__title" data-i18n="svc_eta">Exclusive Transfer Assistance</h2>
         <p class="service-card__text">Australia's leading safety and security transfer service. Two tiers: Exclusive Level for VIP luxury and Executive Level for corporate efficiency. Air and seaport capable.</p>
         <a href="exclusive-transfer-assistance.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
-      </article>
-
-      <article class="service-card reveal">
-        <div class="service-card__icon" aria-hidden="true">🎬</div>
-        <h2 class="service-card__title" data-i18n="svc_stage">S.T.A.G.E.</h2>
-        <p class="service-card__text">Specialised event management with safety at its core. Event command, crowd management, medical coverage, VIP protection and trained workforce — for events of any scale.</p>
-        <a href="stage.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
       </article>
 
       <article class="service-card reveal">
@@ -114,6 +116,37 @@
         <p class="service-card__text">Personal, attentive care for individuals and groups. Airport meet and greet, accompanied transfers, multilingual support, unaccompanied minor chaperoning and 24/7 support.</p>
         <a href="concierge-chaperone.html" class="service-card__link" data-i18n="learn_more">Learn More</a>
       </article>
+
+      <!-- S.T.A.G.E. — content pending from Matt -->
+      <article class="service-card service-card--coming-soon" aria-label="S.T.A.G.E. — coming soon">
+        <div class="service-card__icon" aria-hidden="true">🎬</div>
+        <h2 class="service-card__title">S.T.A.G.E.</h2>
+        <p class="service-card__text">School Tours And Group Excursions — specialist event management with safety embedded at every layer.</p>
+        <span class="service-card__badge">Coming Soon</span>
+      </article>
+
+      <!-- Placeholder slots (awaiting Matt's confirmed additional solutions) -->
+      <article class="service-card service-card--coming-soon" aria-label="New solution coming soon">
+        <div class="service-card__icon" aria-hidden="true">✦</div>
+        <h2 class="service-card__title">New Solution</h2>
+        <p class="service-card__text">Additional specialist solutions are being finalised. Contact us to discuss your specific requirements.</p>
+        <span class="service-card__badge">Coming Soon</span>
+      </article>
+
+      <article class="service-card service-card--coming-soon" aria-label="New solution coming soon">
+        <div class="service-card__icon" aria-hidden="true">✦</div>
+        <h2 class="service-card__title">New Solution</h2>
+        <p class="service-card__text">Additional specialist solutions are being finalised. Contact us to discuss your specific requirements.</p>
+        <span class="service-card__badge">Coming Soon</span>
+      </article>
+
+      <article class="service-card service-card--coming-soon" aria-label="New solution coming soon">
+        <div class="service-card__icon" aria-hidden="true">✦</div>
+        <h2 class="service-card__title">New Solution</h2>
+        <p class="service-card__text">Additional specialist solutions are being finalised. Contact us to discuss your specific requirements.</p>
+        <span class="service-card__badge">Coming Soon</span>
+      </article>
+
     </div>
   </div>
 </section>
@@ -129,6 +162,15 @@
 </section>
 
 <footer class="site-footer" role="contentinfo">
+  <div class="footer-afs">
+    <div class="container">
+      <div class="footer-afs__inner">
+        <span class="footer-afs__division" data-i18n="footer_afs_division">A division of <strong>Australian Frontline Solutions</strong></span>
+        <span class="footer-afs__sep" aria-hidden="true">·</span>
+        <span class="footer-afs__credentials" data-i18n="footer_afs_credentials">Security Master Licence Holder · Established 1989</span>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -136,12 +178,11 @@
         <p data-i18n="footer_tagline">Secure Luxury Travel for discerning individuals & groups.</p>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer_services">Services</h4>
+        <h4 data-i18n="footer_services">Solutions</h4>
         <ul role="list">
           <li><a href="tours-travel-solutions.html" data-i18n="svc_tours">Secure Tours & Travel Solutions</a></li>
           <li><a href="executive-guest-management.html" data-i18n="svc_egm">Executive Guest Management</a></li>
           <li><a href="exclusive-transfer-assistance.html" data-i18n="svc_eta">Exclusive Transfer Assistance</a></li>
-          <li><a href="stage.html" data-i18n="svc_stage">S.T.A.G.E.</a></li>
           <li><a href="pass-athlete.html" data-i18n="svc_pass_athlete">P.A.S.S. — Athlete</a></li>
           <li><a href="pass-artist.html" data-i18n="svc_pass_artist">P.A.S.S. — Artist</a></li>
           <li><a href="concierge-chaperone.html" data-i18n="svc_cc">Concierge & Chaperone</a></li>
@@ -164,10 +205,11 @@
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="zh">中文</button>
         </div>
+        <p style="font-size:0.7rem; color:rgba(255,255,255,0.3); margin-top:0.6rem;">+ FR · KO · IT · DE</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span data-i18n="footer_copy">© 2026 Secure Tours & Travel. Part of AFS Group. All rights reserved.</span>
+      <span data-i18n="footer_copy">© 2026 Secure Tours & Travel. All rights reserved.</span>
     </div>
   </div>
 </footer>

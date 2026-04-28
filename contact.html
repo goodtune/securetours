@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Secure Tours & Travel</title>
-  <meta name="description" content="Get in touch with Secure Tours & Travel. Enquiries welcome in English and Mandarin. Australia-wide operations.">
+  <meta name="description" content="Get in touch with Secure Tours & Travel. Enquiries welcome in multiple languages. Australia-wide operations.">
   <link rel="stylesheet" href="css/style.css">
   <style>
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -38,12 +38,11 @@
         <li><a href="index.html" data-i18n="nav_home">Home</a></li>
         <li><a href="about.html" data-i18n="nav_about">About Us</a></li>
         <li>
-          <a href="services/index.html" data-i18n="nav_services">Services</a>
+          <a href="services/index.html" data-i18n="nav_services">Solutions</a>
           <ul class="nav-dropdown" role="list">
             <li><a href="services/tours-travel-solutions.html" data-i18n="svc_tours">Secure Tours & Travel Solutions</a></li>
             <li><a href="services/executive-guest-management.html" data-i18n="svc_egm">Executive Guest Management</a></li>
             <li><a href="services/exclusive-transfer-assistance.html" data-i18n="svc_eta">Exclusive Transfer Assistance</a></li>
-            <li><a href="services/stage.html" data-i18n="svc_stage">S.T.A.G.E.</a></li>
             <li><a href="services/pass-athlete.html" data-i18n="svc_pass_athlete">P.A.S.S. — Athlete</a></li>
             <li><a href="services/pass-artist.html" data-i18n="svc_pass_artist">P.A.S.S. — Performing Artist</a></li>
             <li><a href="services/concierge-chaperone.html" data-i18n="svc_cc">Concierge & Chaperone</a></li>
@@ -54,6 +53,7 @@
           <div class="lang-switcher">
             <button class="lang-btn active" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="zh">中文</button>
+            <span class="lang-btn lang-btn--more" title="Also available in French, Korean, Italian, German">+4</span>
           </div>
         </li>
       </ul>
@@ -116,7 +116,7 @@
         </div>
 
         <div style="margin-top:2rem; padding:1.25rem; background:var(--gold-pale); border-left:3px solid var(--gold); border-radius:var(--radius);">
-          <p style="font-size:0.875rem; color:var(--navy); margin:0;" data-i18n="contact_languages">Enquiries welcome in English and Mandarin (中文)</p>
+          <p style="font-size:0.875rem; color:var(--navy); margin:0;" data-i18n="contact_languages">Enquiries welcome in multiple languages — including English, Mandarin, French, Korean, Italian and German</p>
         </div>
       </div>
 
@@ -145,13 +145,12 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="service" data-i18n="contact_form_service">Service of Interest</label>
+              <label for="service" data-i18n="contact_form_service">Solution of Interest</label>
               <select id="service" name="service">
-                <option value="" data-i18n="contact_form_service_placeholder">Select a service…</option>
+                <option value="" data-i18n="contact_form_service_placeholder">Select a solution…</option>
                 <option value="tours" data-i18n="svc_tours">Secure Tours & Travel Solutions</option>
                 <option value="egm" data-i18n="svc_egm">Executive Guest Management</option>
                 <option value="eta" data-i18n="svc_eta">Exclusive Transfer Assistance</option>
-                <option value="stage" data-i18n="svc_stage">S.T.A.G.E.</option>
                 <option value="pass_athlete" data-i18n="svc_pass_athlete">P.A.S.S. — Athlete</option>
                 <option value="pass_artist" data-i18n="svc_pass_artist">P.A.S.S. — Performing Artist</option>
                 <option value="cc" data-i18n="svc_cc">Concierge & Chaperone</option>
@@ -167,7 +166,7 @@
 
           <div id="form-success">
             <h3>✓ Enquiry Received</h3>
-            <p>Thank you for getting in touch. Our team will respond within one business day.<br><br>感谢您的联系。我们的团队将在一个工作日内回复。</p>
+            <p>Thank you for getting in touch. Our team will respond within one business day.</p>
           </div>
         </div>
       </div>
@@ -180,13 +179,22 @@
     <h2 data-i18n="cta_title">Ready to Travel with Confidence?</h2>
     <p data-i18n="cta_text">Our team is available to tailor a solution for individuals, groups, corporate delegations and touring professionals.</p>
     <div class="btn-group">
-      <a href="services/index.html" class="btn btn--primary" data-i18n="cta_btn2">View All Services</a>
+      <a href="services/index.html" class="btn btn--primary" data-i18n="cta_btn2">View All Solutions</a>
       <a href="about.html" class="btn btn--outline" data-i18n="footer_about">About Us</a>
     </div>
   </div>
 </section>
 
 <footer class="site-footer" role="contentinfo">
+  <div class="footer-afs">
+    <div class="container">
+      <div class="footer-afs__inner">
+        <span class="footer-afs__division" data-i18n="footer_afs_division">A division of <strong>Australian Frontline Solutions</strong></span>
+        <span class="footer-afs__sep" aria-hidden="true">·</span>
+        <span class="footer-afs__credentials" data-i18n="footer_afs_credentials">Security Master Licence Holder · Established 1989</span>
+      </div>
+    </div>
+  </div>
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -194,12 +202,11 @@
         <p data-i18n="footer_tagline">Secure Luxury Travel for discerning individuals & groups.</p>
       </div>
       <div class="footer-col">
-        <h4 data-i18n="footer_services">Services</h4>
+        <h4 data-i18n="footer_services">Solutions</h4>
         <ul role="list">
           <li><a href="services/tours-travel-solutions.html" data-i18n="svc_tours">Secure Tours & Travel Solutions</a></li>
           <li><a href="services/executive-guest-management.html" data-i18n="svc_egm">Executive Guest Management</a></li>
           <li><a href="services/exclusive-transfer-assistance.html" data-i18n="svc_eta">Exclusive Transfer Assistance</a></li>
-          <li><a href="services/stage.html" data-i18n="svc_stage">S.T.A.G.E.</a></li>
           <li><a href="services/pass-athlete.html" data-i18n="svc_pass_athlete">P.A.S.S. — Athlete</a></li>
           <li><a href="services/pass-artist.html" data-i18n="svc_pass_artist">P.A.S.S. — Artist</a></li>
           <li><a href="services/concierge-chaperone.html" data-i18n="svc_cc">Concierge & Chaperone</a></li>
@@ -222,10 +229,11 @@
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="zh">中文</button>
         </div>
+        <p style="font-size:0.7rem; color:rgba(255,255,255,0.3); margin-top:0.6rem;">+ FR · KO · IT · DE</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <span data-i18n="footer_copy">© 2026 Secure Tours & Travel. Part of AFS Group. All rights reserved.</span>
+      <span data-i18n="footer_copy">© 2026 Secure Tours & Travel. All rights reserved.</span>
     </div>
   </div>
 </footer>

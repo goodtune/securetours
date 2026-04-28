@@ -5,11 +5,11 @@ const TRANSLATIONS = {
     /* ── Navigation ── */
     nav_home: 'Home',
     nav_about: 'About Us',
-    nav_services: 'Services',
+    nav_services: 'Solutions',
     nav_contact: 'Contact',
     nav_enquire: 'Enquire Now',
 
-    /* ── Services menu ── */
+    /* ── Solutions menu ── */
     svc_tours: 'Secure Tours & Travel Solutions',
     svc_egm: 'Executive Guest Management',
     svc_eta: 'Exclusive Transfer Assistance',
@@ -22,19 +22,19 @@ const TRANSLATIONS = {
     hero_tag: 'Australia\'s Premium Secure Travel Specialists',
     hero_title: 'Secure Luxury Travel for <em>Discerning Individuals</em> & Groups',
     hero_sub: 'Combining elite security expertise with premium concierge service — we protect your journey, from first arrival to final departure.',
-    hero_cta1: 'Explore Our Services',
+    hero_cta1: 'Explore Our Solutions',
     hero_cta2: 'Enquire Now',
 
-    /* ── Home Services ── */
-    services_label: 'Our Services',
-    services_title: 'Seven Specialist Services',
-    services_intro: 'Every service is designed around one principle: your safety, comfort and peace of mind. From private transfers to full event logistics, we cover every detail.',
+    /* ── Home Solutions ── */
+    services_label: 'Our Solutions',
+    services_title: 'Specialist Solutions',
+    services_intro: 'Every solution is designed around one principle: your safety, comfort and peace of mind. From private transfers to full event logistics, we cover every detail.',
 
     /* ── Stats ── */
-    stat_years: '35+ Years',
+    stat_years: '37 Years',
     stat_years_label: 'Industry Experience',
-    stat_services: '7 Specialist',
-    stat_services_label: 'Service Streams',
+    stat_services: 'Est. 1989',
+    stat_services_label: 'Australian Frontline Solutions',
     stat_nations: 'National',
     stat_nations_label: 'Footprint (NSW · QLD · VIC)',
     stat_languages: '24/7',
@@ -43,9 +43,9 @@ const TRANSLATIONS = {
     /* ── About strip ── */
     about_label: 'About Secure Tours & Travel',
     about_title: 'Built on Trust. Backed by Experience.',
-    about_text: 'Secure Tours & Travel is the dedicated tourism and event services division of AFS Group — one of Australia\'s most trusted names in safety leadership, protective operations and event management. With over 35 years of operational experience, we bring elite security expertise to luxury travel and VIP logistics.',
-    about_feat1: 'Licensed security & WHS operators',
-    about_feat2: 'Multilingual concierge teams',
+    about_text: 'Secure Tours & Travel is the dedicated tourism and event services division of Australian Frontline Solutions (AFS) — one of Australia\'s most trusted names in safety leadership, protective operations and event management. With 37 years of operational experience, we bring elite security expertise to luxury travel and VIP logistics.',
+    about_feat1: 'Security Master Licence holder',
+    about_feat2: 'Multilingual teams — a range of languages',
     about_feat3: 'Discreet, professional, reliable',
     about_feat4: 'National coverage — global partnerships',
     about_feat5: 'Sibling brand to Athlete Pathways Australia',
@@ -60,7 +60,7 @@ const TRANSLATIONS = {
     why2_title: 'White-Glove Service',
     why2_text: 'From airport arrivals to VIP event access — our concierge teams ensure seamless, stress-free experiences.',
     why3_title: 'Multilingual',
-    why3_text: 'We speak your language. Mandarin-speaking chaperones and Mandarin-ready documentation available.',
+    why3_text: 'We speak your language. Our chaperones and documentation are available across a range of languages including English, Mandarin, French, Korean, Italian and German.',
     why4_title: '24/7 Support',
     why4_text: 'Round-the-clock support for international clients across all time zones.',
 
@@ -68,12 +68,12 @@ const TRANSLATIONS = {
     cta_title: 'Ready to Travel with Confidence?',
     cta_text: 'Our team is available to tailor a solution for individuals, groups, corporate delegations and touring professionals.',
     cta_btn1: 'Get in Touch',
-    cta_btn2: 'View All Services',
+    cta_btn2: 'View All Solutions',
 
     /* ── About Page ── */
-    about_page_hero_tag: 'Established 2016 · Part of AFS Group',
+    about_page_hero_tag: 'Established 1989 · Australian Frontline Solutions',
     about_page_hero_title: 'About Secure Tours & Travel',
-    about_page_lead: 'Secure Tours & Travel was founded in 2016 by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable. As the dedicated tourism division of AFS Group, we bring over 35 years of combined operational expertise to every engagement.',
+    about_page_lead: 'Secure Tours & Travel was founded by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable. As the dedicated tourism division of Australian Frontline Solutions, we bring 37 years of combined operational expertise to every engagement.',
     about_who_title: 'Who We Are',
     about_who_text: 'We are a specialist travel and event services company based in Australia, delivering premium inbound tourism services and secure travel solutions for high-profile individuals, corporate delegations, touring athletes, performing artists and families. Our team includes licensed security advisors, event directors, WHS specialists, medics, multilingual chaperones and concierge professionals — all coordinated to deliver seamless journeys.',
     about_values_title: 'Our Values',
@@ -92,8 +92,8 @@ const TRANSLATIONS = {
       'Government & diplomatic visitors',
       'Families & student groups',
     ],
-    about_parent_title: 'Part of AFS Group',
-    about_parent_text: 'AFS Group has been Australia\'s trusted partner in safety and security services for over 35 years. Secure Tours & Travel draws on this heritage to deliver outcomes that no standard tour operator can match — a full spectrum of licensed security, risk and logistics capability behind every guest experience.',
+    about_parent_title: 'Part of Australian Frontline Solutions',
+    about_parent_text: 'Australian Frontline Solutions (AFS) has been Australia\'s trusted partner in safety and security services since 1989 — 37 years of operational expertise. Secure Tours & Travel draws on this heritage to deliver outcomes that no standard tour operator can match: a full spectrum of licensed security, risk and logistics capability behind every guest experience.',
 
     /* ── Contact Page ── */
     contact_hero_title: 'Get in Touch',
@@ -107,25 +107,27 @@ const TRANSLATIONS = {
     contact_form_name_last: 'Last Name',
     contact_form_email: 'Email Address',
     contact_form_phone: 'Phone Number',
-    contact_form_service: 'Service of Interest',
-    contact_form_service_placeholder: 'Select a service…',
+    contact_form_service: 'Solution of Interest',
+    contact_form_service_placeholder: 'Select a solution…',
     contact_form_msg: 'Your Message',
     contact_form_submit: 'Send Enquiry',
-    contact_languages: 'Enquiries welcome in English and Mandarin (中文)',
+    contact_languages: 'Enquiries welcome in multiple languages — including English, Mandarin, French, Korean, Italian and German',
 
     /* ── Footer ── */
     footer_tagline: 'Secure Luxury Travel for discerning individuals & groups.',
-    footer_services: 'Services',
+    footer_services: 'Solutions',
     footer_company: 'Company',
     footer_legal: 'Legal',
     footer_about: 'About Us',
     footer_contact: 'Contact',
     footer_privacy: 'Privacy Policy',
     footer_terms: 'Terms of Service',
-    footer_copy: '© 2026 Secure Tours & Travel. Part of AFS Group. All rights reserved.',
+    footer_copy: '© 2026 Secure Tours & Travel. All rights reserved.',
     footer_abn: 'ABN available on request.',
+    footer_afs_division: 'A division of Australian Frontline Solutions',
+    footer_afs_credentials: 'Security Master Licence Holder · Established 1989',
 
-    /* ── Service card blurbs (homepage grid) ── */
+    /* ── Solution card blurbs (homepage grid) ── */
     svc_tours_text: 'Comprehensive travel packages for inbound and domestic clients — chaperoned, secure and tailored to your journey.',
     svc_egm_text: 'Seamless, hassle-free executive travel for investors, senior leaders and corporate delegations.',
     svc_eta_text: "Australia's leading secure transfer service — Exclusive and Executive tiers for luxury and corporate clients.",
@@ -137,9 +139,9 @@ const TRANSLATIONS = {
     /* ── Shared ── */
     enquire_now: 'Enquire Now',
     learn_more: 'Learn More',
-    back_services: '← Back to Services',
-    other_services: 'Other Services',
-    svc_overview: 'Service Overview',
+    back_services: '← Back to Solutions',
+    other_services: 'Other Solutions',
+    svc_overview: 'Solution Overview',
     whats_included: "What's Included",
     footer_contact_heading: 'Contact',
   },
@@ -148,11 +150,11 @@ const TRANSLATIONS = {
     /* ── Navigation ── */
     nav_home: '首页',
     nav_about: '关于我们',
-    nav_services: '服务',
+    nav_services: '解决方案',
     nav_contact: '联系我们',
     nav_enquire: '立即询问',
 
-    /* ── Services menu ── */
+    /* ── Solutions menu ── */
     svc_tours: '安全旅游与旅行解决方案',
     svc_egm: '高管宾客管理',
     svc_eta: '专属接送服务',
@@ -165,19 +167,19 @@ const TRANSLATIONS = {
     hero_tag: '澳大利亚顶级安全旅行专家',
     hero_title: '为<em>精英人士</em>提供安全奢华旅行体验',
     hero_sub: '将顶级安保专业知识与高端礼宾服务相结合，我们全程保护您的旅程——从抵达到离境。',
-    hero_cta1: '探索我们的服务',
+    hero_cta1: '探索我们的解决方案',
     hero_cta2: '立即询问',
 
-    /* ── Home Services ── */
-    services_label: '我们的服务',
-    services_title: '七大专项服务',
-    services_intro: '每项服务都围绕一个核心原则设计：您的安全、舒适与安心。从私人接送到完整活动后勤，我们处理每一个细节。',
+    /* ── Home Solutions ── */
+    services_label: '我们的解决方案',
+    services_title: '专项解决方案',
+    services_intro: '每项解决方案都围绕一个核心原则设计：您的安全、舒适与安心。从私人接送到完整活动后勤，我们处理每一个细节。',
 
     /* ── Stats ── */
-    stat_years: '35年以上',
+    stat_years: '37年',
     stat_years_label: '行业经验',
-    stat_services: '7项专业',
-    stat_services_label: '服务领域',
+    stat_services: '创立于1989年',
+    stat_services_label: '澳大利亚前线解决方案',
     stat_nations: '全国覆盖',
     stat_nations_label: '新南威尔士·昆士兰·维多利亚',
     stat_languages: '全天候',
@@ -186,9 +188,9 @@ const TRANSLATIONS = {
     /* ── About strip ── */
     about_label: '关于安全旅游与旅行',
     about_title: '以信任为基础，以经验为支撑',
-    about_text: '安全旅游与旅行是 AFS 集团旗下专业旅游和活动服务部门。AFS 集团是澳大利亚安全管理、保护性运营和活动管理领域最受信赖的品牌之一，拥有超过35年的运营经验。我们将顶级安保专业知识融入奢华旅行和 VIP 后勤服务中。',
-    about_feat1: '持牌安保与职业健康安全运营商',
-    about_feat2: '多语种礼宾团队（含中文服务）',
+    about_text: '安全旅游与旅行是澳大利亚前线解决方案（AFS）旗下专业旅游和活动服务部门。AFS 是澳大利亚安全管理、保护性运营和活动管理领域最受信赖的品牌之一，拥有37年运营经验。我们将顶级安保专业知识融入奢华旅行和 VIP 后勤服务中。',
+    about_feat1: '安全行业执照持有者',
+    about_feat2: '多语种团队 — 涵盖多种语言',
     about_feat3: '低调、专业、可靠',
     about_feat4: '全国覆盖——全球合作伙伴',
     about_feat5: '澳大利亚运动员之路的姊妹品牌',
@@ -203,7 +205,7 @@ const TRANSLATIONS = {
     why2_title: '白手套服务',
     why2_text: '从机场接机到 VIP 活动入场，我们的礼宾团队确保流畅无忧的体验。',
     why3_title: '多语种支持',
-    why3_text: '我们说您的语言。提供普通话陪同及中文文件服务。',
+    why3_text: '我们说您的语言。提供英语、普通话、法语、韩语、意大利语及德语等多语种陪同及文件服务。',
     why4_title: '全天候支持',
     why4_text: '为国际客户提供跨时区24小时全天候支持。',
 
@@ -211,12 +213,12 @@ const TRANSLATIONS = {
     cta_title: '准备好安心出行了吗？',
     cta_text: '我们的团队随时为个人、团体、企业代表团和巡演专业人士量身定制解决方案。',
     cta_btn1: '联系我们',
-    cta_btn2: '查看所有服务',
+    cta_btn2: '查看所有解决方案',
 
     /* ── About Page ── */
-    about_page_hero_tag: '成立于2016年 · AFS集团旗下品牌',
+    about_page_hero_tag: '创立于1989年 · 澳大利亚前线解决方案旗下品牌',
     about_page_hero_title: '关于安全旅游与旅行',
-    about_page_lead: '安全旅游与旅行由 Matt Harrison 于2016年创立，秉持一个核心使命：提供安全与奢华不可分割的旅行体验。作为 AFS 集团的专业旅游部门，我们为每一次委托带来超过35年的综合运营专业知识。',
+    about_page_lead: '安全旅游与旅行由 Matt Harrison 创立，秉持一个核心使命：提供安全与奢华不可分割的旅行体验。作为澳大利亚前线解决方案的专业旅游部门，我们为每一次委托带来37年的综合运营专业知识。',
     about_who_title: '我们是谁',
     about_who_text: '我们是一家总部位于澳大利亚的专业旅行和活动服务公司，为高知名度人士、企业代表团、巡回运动员、表演艺术家和家庭提供顶级入境旅游服务和安全旅行解决方案。我们的团队包括持牌安全顾问、活动总监、职业健康安全专家、医务人员、多语种陪同人员和礼宾专业人员，协同提供无缝旅程。',
     about_values_title: '我们的价值观',
@@ -235,8 +237,8 @@ const TRANSLATIONS = {
       '政府及外交访客',
       '家庭及学生团队',
     ],
-    about_parent_title: 'AFS集团旗下品牌',
-    about_parent_text: 'AFS 集团在过去35年间一直是澳大利亚安全服务领域值得信赖的合作伙伴。安全旅游与旅行借助这一传承，提供任何普通旅行社都无法匹敌的成果——在每次宾客体验背后，拥有全方位持牌安保、风险和后勤能力。',
+    about_parent_title: '澳大利亚前线解决方案旗下品牌',
+    about_parent_text: '澳大利亚前线解决方案（AFS）自1989年起一直是澳大利亚安全服务领域值得信赖的合作伙伴，拥有37年运营专业知识。安全旅游与旅行借助这一传承，提供任何普通旅行社都无法匹敌的成果——在每次宾客体验背后，拥有全方位持牌安保、风险和后勤能力。',
 
     /* ── Contact Page ── */
     contact_hero_title: '联系我们',
@@ -250,25 +252,27 @@ const TRANSLATIONS = {
     contact_form_name_last: '姓氏',
     contact_form_email: '电子邮件',
     contact_form_phone: '电话号码',
-    contact_form_service: '感兴趣的服务',
-    contact_form_service_placeholder: '请选择服务…',
+    contact_form_service: '感兴趣的解决方案',
+    contact_form_service_placeholder: '请选择解决方案…',
     contact_form_msg: '您的留言',
     contact_form_submit: '发送询问',
-    contact_languages: '欢迎以英文或中文提交询问',
+    contact_languages: '欢迎以英文、中文或其他多种语言提交询问',
 
     /* ── Footer ── */
     footer_tagline: '为精英人士及团体提供安全奢华旅行体验',
-    footer_services: '服务',
+    footer_services: '解决方案',
     footer_company: '公司',
     footer_legal: '法律',
     footer_about: '关于我们',
     footer_contact: '联系我们',
     footer_privacy: '隐私政策',
     footer_terms: '服务条款',
-    footer_copy: '© 2026 安全旅游与旅行。AFS集团旗下品牌。保留所有权利。',
+    footer_copy: '© 2026 安全旅游与旅行。保留所有权利。',
     footer_abn: 'ABN 信息可按需提供。',
+    footer_afs_division: '澳大利亚前线解决方案旗下品牌',
+    footer_afs_credentials: '安全行业执照持有者 · 创立于1989年',
 
-    /* ── Service card blurbs (homepage grid) ── */
+    /* ── Solution card blurbs (homepage grid) ── */
     svc_tours_text: '为入境和国内客户提供全面的旅行套餐——全程陪同、安全保障、量身定制。',
     svc_egm_text: '为投资者、高级领导和企业代表团提供无缝、无忧的商务旅行服务。',
     svc_eta_text: '澳大利亚领先的安全接送服务——尊享级和行政级两种套餐，满足奢华与商务需求。',
@@ -280,9 +284,9 @@ const TRANSLATIONS = {
     /* ── Shared ── */
     enquire_now: '立即询问',
     learn_more: '了解更多',
-    back_services: '← 返回服务列表',
-    other_services: '其他服务',
-    svc_overview: '服务概览',
+    back_services: '← 返回解决方案列表',
+    other_services: '其他解决方案',
+    svc_overview: '解决方案概览',
     whats_included: '服务内容',
     footer_contact_heading: '联系方式',
   },
@@ -407,7 +411,7 @@ const SERVICE_TRANSLATIONS = {
         { icon: '🤝', text: 'Meet and greet at airports, hotels and event venues' },
         { icon: '🗓️', text: 'Appointment, schedule and itinerary management' },
         { icon: '🚗', text: 'Accompanied transfers — point-to-point with your dedicated chaperone' },
-        { icon: '🌐', text: 'Translation and interpreter services — including Mandarin' },
+        { icon: '🌐', text: 'Translation and interpreter services across a range of languages' },
         { icon: '🏥', text: 'Medical accompaniment and health coordination' },
         { icon: '🛍️', text: 'Shopping assistance, cultural orientation and local knowledge' },
         { icon: '👶', text: 'Chaperoning of unaccompanied minors with approved, qualified personnel' },
@@ -535,7 +539,7 @@ const SERVICE_TRANSLATIONS = {
         { icon: '🤝', text: '机场、酒店和活动场所的迎接服务' },
         { icon: '🗓️', text: '约会、日程和行程管理' },
         { icon: '🚗', text: '专属陪同接送——全程点对点服务' },
-        { icon: '🌐', text: '翻译和口译服务——包括普通话' },
+        { icon: '🌐', text: '多语种翻译和口译服务' },
         { icon: '🏥', text: '医疗陪同和健康协调' },
         { icon: '🛍️', text: '购物协助、文化导引和本地知识分享' },
         { icon: '👶', text: '由经批准的合格人员陪同无陪伴未成年人' },
