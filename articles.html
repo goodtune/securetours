@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Articles, Testimonials &amp; Case Studies — Secure Tours &amp; Travel</title>
+  <meta name="description" content="Insights, client testimonials and case studies from Secure Tours &amp; Travel — Australia's premier secure luxury travel specialists.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .articles-coming-soon {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .placeholder-card {
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .placeholder-card:hover {
+      box-shadow: var(--shadow);
+      border-color: var(--gold);
+    }
+    .placeholder-card__header {
+      background: var(--navy);
+      padding: 2rem;
+      position: relative;
+    }
+    .placeholder-card__category {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .placeholder-card__title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.4;
+    }
+    .placeholder-card__badge {
+      display: inline-block;
+      background: rgba(184,149,42,0.15);
+      border: 1px solid rgba(184,149,42,0.4);
+      color: var(--gold);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.6rem;
+      border-radius: 2px;
+      margin-top: 1rem;
+    }
+    .placeholder-card__body {
+      padding: 1.5rem;
+    }
+    .placeholder-card__text {
+      font-size: 0.875rem;
+      color: var(--gray-700);
+      margin: 0;
+    }
+    .coming-soon-notice {
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      background: var(--gold-pale);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 1.5rem 2rem;
+    }
+    .coming-soon-notice p {
+      font-size: 0.9375rem;
+      color: var(--navy);
+      margin: 0;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="canonical" href="https://securetours.staging-site.au/articles.html">
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Secure Tours &amp; Travel — Home">
+        <img src="assets/logo-transparent.png" alt="Secure Tours &amp; Travel">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li>
+          <a href="services/index.html">Tourism Solutions</a>
+          <ul class="nav-dropdown" role="list">
+            <li><a href="services/tours-travel-solutions.html">Secure Tours &amp; Travel Solutions</a></li>
+            <li><a href="services/executive-guest-management.html">Executive Guest Management</a></li>
+            <li><a href="services/exclusive-transfer-assistance.html">Exclusive Transfer Assistance</a></li>
+            <li><a href="services/pass-athlete.html">P.A.S.S. — Athlete</a></li>
+            <li><a href="services/pass-artist.html">P.A.S.S. — Performing Artist</a></li>
+            <li><a href="services/concierge-chaperone.html">Concierge &amp; Chaperone</a></li>
+          </ul>
+        </li>
+        <li><a href="event-solutions.html">Event Solutions</a></li>
+        <li><a href="articles.html" class="active">Articles &amp; Case Studies</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero" aria-label="Articles hero">
+  <div class="container">
+    <ul class="breadcrumb" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li>Articles &amp; Case Studies</li>
+    </ul>
+    <span class="section-label">Insights &amp; Client Stories</span>
+    <h1>Articles, Testimonials &amp; Case Studies</h1>
+    <p class="page-hero__sub">Real-world insights into secure travel, event management and VIP logistics — drawn from over three decades of operational experience with AFS Group.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="articles-heading">
+  <div class="container">
+    <h2 id="articles-heading" class="sr-only">Articles</h2>
+
+    <div class="coming-soon-notice">
+      <p>Our editorial team is curating articles, client testimonials and case studies for this section. Content will be published progressively over the coming weeks. In the meantime, <a href="contact.html" style="color:var(--navy); font-weight:600; text-decoration:underline;">contact us directly</a> — we are happy to discuss our experience and share references on request.</p>
+    </div>
+
+    <div class="articles-coming-soon">
+
+      <div class="placeholder-card reveal">
+        <div class="placeholder-card__header">
+          <div class="placeholder-card__category">Case Study</div>
+          <div class="placeholder-card__title">Coordinating Secure Ground Transport for an International Sporting Delegation</div>
+          <span class="placeholder-card__badge">Coming Soon</span>
+        </div>
+        <div class="placeholder-card__body">
+          <p class="placeholder-card__text">How our team managed the secure transfer of a 40-person international sports delegation across three Australian cities during a major tournament — including airport meet and greet, ground transport, venue access and accommodation security.</p>
+        </div>
+      </div>
+
+      <div class="placeholder-card reveal">
+        <div class="placeholder-card__header">
+          <div class="placeholder-card__category">Article</div>
+          <div class="placeholder-card__title">Why Security Should Be Embedded in Event Planning — Not Bolted On</div>
+          <span class="placeholder-card__badge">Coming Soon</span>
+        </div>
+        <div class="placeholder-card__body">
+          <p class="placeholder-card__text">An operational perspective on the difference between event security as an afterthought and security-first event design — and why the former consistently produces worse outcomes for organisers, guests and talent alike.</p>
+        </div>
+      </div>
+
+      <div class="placeholder-card reveal">
+        <div class="placeholder-card__header">
+          <div class="placeholder-card__category">Testimonial</div>
+          <div class="placeholder-card__title">Client Feedback: Executive Guest Management for a Corporate Investment Roadshow</div>
+          <span class="placeholder-card__badge">Coming Soon</span>
+        </div>
+        <div class="placeholder-card__body">
+          <p class="placeholder-card__text">A senior executive shares their experience of travelling through Australia with a Secure Tours &amp; Travel chaperone team — from first contact through to final departure, including multilingual support and discreet security protocols.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="Articles CTA">
+  <div class="container">
+    <h2>Have a Story to Share?</h2>
+    <p>If you are a past client willing to provide a testimonial or case study contribution, we would love to hear from you. We handle all content with confidentiality in mind.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn btn--primary">Get in Touch</a>
+      <a href="services/index.html" class="btn btn--outline">View Tourism Solutions</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-afs">
+    <div class="container">
+      <div class="footer-afs__inner">
+        <span class="footer-afs__division">A division of <strong>Australian Frontline Solutions</strong></span>
+        <span class="footer-afs__sep" aria-hidden="true">·</span>
+        <span class="footer-afs__credentials">Security Master Licence Holder · Established 1989</span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-transparent.png" alt="Secure Tours &amp; Travel">
+        <p>Secure Luxury Travel for discerning individuals &amp; groups.</p>
+        <p style="margin-top:0.75rem; font-size:0.8rem; color:rgba(255,255,255,0.4);">ABN available on request.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tourism Solutions</h4>
+        <ul role="list">
+          <li><a href="services/tours-travel-solutions.html">Secure Tours &amp; Travel Solutions</a></li>
+          <li><a href="services/executive-guest-management.html">Executive Guest Management</a></li>
+          <li><a href="services/exclusive-transfer-assistance.html">Exclusive Transfer Assistance</a></li>
+          <li><a href="services/pass-athlete.html">P.A.S.S. — Athlete</a></li>
+          <li><a href="services/pass-artist.html">P.A.S.S. — Artist</a></li>
+          <li><a href="services/concierge-chaperone.html">Concierge &amp; Chaperone</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul role="list">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="event-solutions.html">Event Solutions</a></li>
+          <li><a href="articles.html">Articles &amp; Case Studies</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul role="list" style="font-style:normal;">
+          <li><a href="tel:+61414499778">+61 414 499 778</a></li>
+          <li><a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a></li>
+          <li style="color:rgba(255,255,255,0.5); font-size:0.875rem; margin-top:0.5rem;">Australia-wide · NSW</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Secure Tours &amp; Travel. All rights reserved.</span>
+      <div>
+        <a href="#">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

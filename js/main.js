@@ -3,51 +3,6 @@
 (function () {
   'use strict';
 
-  /* ── Language Management ── */
-  const DEFAULT_LANG = 'en';
-  let currentLang = localStorage.getItem('st_lang') || DEFAULT_LANG;
-
-  function setLang(lang) {
-    currentLang = lang;
-    localStorage.setItem('st_lang', lang);
-    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-    document.body.classList.toggle('zh-content', lang === 'zh');
-    renderTranslations();
-    updateLangButtons();
-  }
-
-  function t(key) {
-    const d = TRANSLATIONS[currentLang] || TRANSLATIONS[DEFAULT_LANG];
-    return d[key] || TRANSLATIONS[DEFAULT_LANG][key] || key;
-  }
-
-  function renderTranslations() {
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      const val = t(key);
-      if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-        el.placeholder = val;
-      } else {
-        el.innerHTML = val;
-      }
-    });
-
-    document.querySelectorAll('[data-i18n-attr]').forEach(el => {
-      try {
-        const pairs = JSON.parse(el.getAttribute('data-i18n-attr'));
-        Object.entries(pairs).forEach(([attr, key]) => {
-          el.setAttribute(attr, t(key));
-        });
-      } catch (e) {}
-    });
-  }
-
-  function updateLangButtons() {
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.classList.toggle('active', btn.getAttribute('data-lang') === currentLang);
-    });
-  }
-
   /* ── Navigation ── */
   function initNav() {
     const nav = document.querySelector('.site-nav');
@@ -84,20 +39,6 @@
         links?.classList.remove('open');
       }
     });
-
-    // Language buttons
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang')));
-    });
-
-    // Active nav link
-    const path = window.location.pathname;
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      const href = a.getAttribute('href');
-      if (href && path.endsWith(href.replace('../', '').replace('./', ''))) {
-        a.classList.add('active');
-      }
-    });
   }
 
   /* ── Contact Form ── */
@@ -113,12 +54,10 @@
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const originalText = btn.textContent;
-      btn.textContent = currentLang === 'zh' ? '发送中…' : 'Sending…';
+      btn.textContent = 'Sending…';
       btn.disabled = true;
 
       const data = new FormData(form);
-      // Pass language so Formspree notifications include it
-      data.append('_language', currentLang);
 
       try {
         const res = await fetch(FORMSPREE_ENDPOINT, {
@@ -133,7 +72,7 @@
             form.style.display = 'none';
             msg.style.display = 'block';
           } else {
-            btn.textContent = currentLang === 'zh' ? '已发送 ✓' : 'Sent ✓';
+            btn.textContent = 'Sent ✓';
           }
         } else {
           throw new Error('submission failed');
@@ -141,9 +80,7 @@
       } catch {
         btn.textContent = originalText;
         btn.disabled = false;
-        alert(currentLang === 'zh'
-          ? '提交失败，请稍后重试或直接发送电子邮件。'
-          : 'Submission failed — please try again or email us directly.');
+        alert('Submission failed — please try again or email us directly.');
       }
     });
   }
@@ -172,11 +109,6 @@
     initNav();
     initContactForm();
     initScrollAnimations();
-    setLang(currentLang);
   });
-
-  // Expose setLang globally for inline usage
-  window.setLang = setLang;
-  window.t = t;
 
 })();

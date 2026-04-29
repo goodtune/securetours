@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Solutions — Secure Tours &amp; Travel</title>
+  <meta name="description" content="Professional event management with licensed security personnel embedded at every level. Corporate functions, sporting events, concerts, group travel and conference support across Australia.">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .event-card {
+      background: var(--white);
+      border: 1px solid var(--gray-300);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: var(--transition);
+    }
+    .event-card:hover {
+      border-color: var(--gold);
+      box-shadow: var(--shadow);
+    }
+    .event-card__icon {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+    .event-card__title {
+      font-size: 1.1rem;
+      font-family: var(--font-serif);
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+    .event-card__text {
+      font-size: 0.9rem;
+      color: var(--gray-700);
+      margin: 0;
+    }
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .differentiator-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .diff-item {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+    .diff-item__icon {
+      font-size: 1.75rem;
+      flex-shrink: 0;
+      margin-top: 0.2rem;
+    }
+    .diff-item__body h4 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+    .diff-item__body p {
+      font-size: 0.875rem;
+      color: var(--gray-700);
+      margin: 0;
+    }
+    .event-lead-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    @media (max-width: 780px) {
+      .event-lead-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .event-credential {
+      background: var(--navy);
+      color: rgba(255,255,255,0.85);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .event-credential h3 {
+      color: var(--gold);
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    .event-credential ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .event-credential ul li {
+      font-size: 0.875rem;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .event-credential ul li::before {
+      content: '✦';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 0.65rem;
+      top: 0.25rem;
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="canonical" href="https://securetours.staging-site.au/event-solutions.html">
+</head>
+<body>
+
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="Secure Tours &amp; Travel — Home">
+        <img src="assets/logo-transparent.png" alt="Secure Tours &amp; Travel">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li>
+          <a href="services/index.html">Tourism Solutions</a>
+          <ul class="nav-dropdown" role="list">
+            <li><a href="services/tours-travel-solutions.html">Secure Tours &amp; Travel Solutions</a></li>
+            <li><a href="services/executive-guest-management.html">Executive Guest Management</a></li>
+            <li><a href="services/exclusive-transfer-assistance.html">Exclusive Transfer Assistance</a></li>
+            <li><a href="services/pass-athlete.html">P.A.S.S. — Athlete</a></li>
+            <li><a href="services/pass-artist.html">P.A.S.S. — Performing Artist</a></li>
+            <li><a href="services/concierge-chaperone.html">Concierge &amp; Chaperone</a></li>
+          </ul>
+        </li>
+        <li><a href="event-solutions.html" class="active">Event Solutions</a></li>
+        <li><a href="articles.html">Articles &amp; Case Studies</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero" aria-label="Event Solutions hero">
+  <div class="container">
+    <ul class="breadcrumb" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li>Event Solutions</li>
+    </ul>
+    <span class="section-label">Corporate · Sporting · Entertainment · Group</span>
+    <h1>Event Solutions</h1>
+    <p class="page-hero__sub">From intimate corporate functions to large-scale sporting spectacles — AFS Group brings licensed security expertise, crowd management experience and white-glove hospitality to every event we support.</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="event-lead-heading">
+  <div class="container">
+    <div class="event-lead-grid">
+      <div>
+        <span class="section-label">Our Capability</span>
+        <h2 id="event-lead-heading">Security-First Event Management</h2>
+        <div class="gold-rule"></div>
+        <p class="service-lead">Secure Tours &amp; Travel, as part of the Australian Frontline Solutions (AFS) Group, brings over 37 years of operational security and event management experience to every brief we accept. Our teams are not an add-on to your event — they are embedded within it.</p>
+        <p>Whether you are managing a delegation of corporate guests at a major sporting final, protecting a headline act on a national tour, or coordinating the safe movement of hundreds of conference delegates across a city, our licensed personnel provide the operational backbone your event demands.</p>
+        <p>We operate nationally, with established capabilities across NSW, QLD and VIC, and access to partner networks for international assignments.</p>
+        <a href="contact.html" class="btn btn--primary" style="margin-top:1.5rem;">Discuss Your Event</a>
+      </div>
+      <div>
+        <div class="event-credential">
+          <h3>AFS Group Credentials</h3>
+          <ul>
+            <li>Security Master Licence holder — licensed operator</li>
+            <li>Established 1989 — 37 years of operational experience</li>
+            <li>National footprint: NSW · QLD · VIC</li>
+            <li>Licensed crowd controllers and close protection officers</li>
+            <li>Risk assessment and event safety planning</li>
+            <li>Multilingual personnel — English, Mandarin and more</li>
+            <li>24/7 operational support and incident management</li>
+            <li>Integrated transport and logistics coordination</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="event-services-heading">
+  <div class="container">
+    <span class="section-label">What We Deliver</span>
+    <h2 id="event-services-heading">Event Service Offerings</h2>
+    <div class="gold-rule"></div>
+    <p class="section-intro">Our event solutions span the full spectrum — from intimate executive functions requiring discreet protection to mass-attendance public events requiring full crowd and access management.</p>
+
+    <div class="events-grid">
+      <article class="event-card reveal">
+        <div class="event-card__icon">🏢</div>
+        <h3 class="event-card__title">Corporate Events &amp; Functions</h3>
+        <p class="event-card__text">Board meetings, investor presentations, product launches and gala dinners. Discreet security presence, executive guest management, VIP arrival coordination and confidential protocol compliance for high-value corporate gatherings.</p>
+      </article>
+
+      <article class="event-card reveal">
+        <div class="event-card__icon">🏟️</div>
+        <h3 class="event-card__title">Sporting Events</h3>
+        <p class="event-card__text">From national league fixtures to major international sporting tournaments, our teams manage crowd flow, VIP access control, athlete and official escort, and post-event egress. Experienced across football, rugby, cricket, tennis and aquatic events.</p>
+      </article>
+
+      <article class="event-card reveal">
+        <div class="event-card__icon">🎵</div>
+        <h3 class="event-card__title">Concerts &amp; Entertainment</h3>
+        <p class="event-card__text">Venue security, backstage access management, artist transfer coordination and fan safety protocols for live music events, festivals and theatre productions. We work with touring production companies and venue operators to deliver safe, seamless events.</p>
+      </article>
+
+      <article class="event-card reveal">
+        <div class="event-card__icon">✈️</div>
+        <h3 class="event-card__title">Group Travel Management</h3>
+        <p class="event-card__text">Coordinated secure travel for corporate delegations, sporting teams, school groups and tour parties. End-to-end logistics from departure to return — including airport transfers, accommodation liaisons, multilingual chaperones and real-time incident support.</p>
+      </article>
+
+      <article class="event-card reveal">
+        <div class="event-card__icon">🎙️</div>
+        <h3 class="event-card__title">Conference &amp; Exhibition Support</h3>
+        <p class="event-card__text">Badge verification, access control, speaker and delegate protection, sensitive materials handling and emergency response planning for conferences, trade exhibitions and government summits. Scaled to the size and sensitivity of your event.</p>
+      </article>
+
+      <article class="event-card reveal">
+        <div class="event-card__icon">🎓</div>
+        <h3 class="event-card__title">School Tours &amp; Group Excursions</h3>
+        <p class="event-card__text">S.T.A.G.E. — School Tours And Group Excursions. Specialist support for educational institutions managing large student groups, including risk assessment, licensed chaperones, emergency protocols and transport coordination. Safety embedded at every layer.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="why-events-heading">
+  <div class="container">
+    <span class="section-label">Why Choose AFS</span>
+    <h2 id="why-events-heading">What Sets Our Event Teams Apart</h2>
+    <div class="gold-rule"></div>
+
+    <div class="differentiator-grid">
+      <div class="diff-item reveal">
+        <div class="diff-item__icon">🛡️</div>
+        <div class="diff-item__body">
+          <h4>Licensed Security Embedded in Your Team</h4>
+          <p>Unlike event coordinators who contract security separately, our licensed personnel are integrated into the planning and delivery of your event from day one — not added as an afterthought.</p>
+        </div>
+      </div>
+
+      <div class="diff-item reveal">
+        <div class="diff-item__icon">📋</div>
+        <div class="diff-item__body">
+          <h4>Formal Risk Assessment</h4>
+          <p>Every event begins with a written risk assessment covering venue security, crowd density, access points, medical coverage requirements and emergency egress. Documented, signed and rehearsed.</p>
+        </div>
+      </div>
+
+      <div class="diff-item reveal">
+        <div class="diff-item__icon">👥</div>
+        <div class="diff-item__body">
+          <h4>Crowd Management Expertise</h4>
+          <p>Our crowd controllers are trained in behavioural assessment, de-escalation and emergency response. We design crowd flow to prevent bottlenecks and manage incidents before they escalate.</p>
+        </div>
+      </div>
+
+      <div class="diff-item reveal">
+        <div class="diff-item__icon">🔑</div>
+        <div class="diff-item__body">
+          <h4>VIP Access Control</h4>
+          <p>Tiered access management for talent, officials, media and sponsors. Our teams coordinate with venue operators to enforce access protocols while ensuring VIP guests receive seamless, dignified service.</p>
+        </div>
+      </div>
+
+      <div class="diff-item reveal">
+        <div class="diff-item__icon">🌐</div>
+        <div class="diff-item__body">
+          <h4>Multilingual Event Support</h4>
+          <p>For events hosting international guests, delegates or athletes, our multilingual personnel provide direct communication support — reducing misunderstandings and enhancing the experience for non-English speakers.</p>
+        </div>
+      </div>
+
+      <div class="diff-item reveal">
+        <div class="diff-item__icon">🗺️</div>
+        <div class="diff-item__body">
+          <h4>National Footprint</h4>
+          <p>Operational capacity across New South Wales, Queensland and Victoria, with access to affiliate networks for events in other states and territories. One point of contact, national reach.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" aria-label="Event Solutions CTA">
+  <div class="container">
+    <h2>Planning an Event?</h2>
+    <p>Our team can provide a confidential consultation, risk assessment and tailored proposal for your event — from a 20-person boardroom function to a 20,000-person public event.</p>
+    <div class="btn-group">
+      <a href="contact.html" class="btn btn--primary">Request a Consultation</a>
+      <a href="services/index.html" class="btn btn--outline">View Tourism Solutions</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-afs">
+    <div class="container">
+      <div class="footer-afs__inner">
+        <span class="footer-afs__division">A division of <strong>Australian Frontline Solutions</strong></span>
+        <span class="footer-afs__sep" aria-hidden="true">·</span>
+        <span class="footer-afs__credentials">Security Master Licence Holder · Established 1989</span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo-transparent.png" alt="Secure Tours &amp; Travel">
+        <p>Secure Luxury Travel for discerning individuals &amp; groups.</p>
+        <p style="margin-top:0.75rem; font-size:0.8rem; color:rgba(255,255,255,0.4);">ABN available on request.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tourism Solutions</h4>
+        <ul role="list">
+          <li><a href="services/tours-travel-solutions.html">Secure Tours &amp; Travel Solutions</a></li>
+          <li><a href="services/executive-guest-management.html">Executive Guest Management</a></li>
+          <li><a href="services/exclusive-transfer-assistance.html">Exclusive Transfer Assistance</a></li>
+          <li><a href="services/pass-athlete.html">P.A.S.S. — Athlete</a></li>
+          <li><a href="services/pass-artist.html">P.A.S.S. — Artist</a></li>
+          <li><a href="services/concierge-chaperone.html">Concierge &amp; Chaperone</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul role="list">
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="event-solutions.html">Event Solutions</a></li>
+          <li><a href="articles.html">Articles &amp; Case Studies</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul role="list" style="font-style:normal;">
+          <li><a href="tel:+61414499778">+61 414 499 778</a></li>
+          <li><a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a></li>
+          <li style="color:rgba(255,255,255,0.5); font-size:0.875rem; margin-top:0.5rem;">Australia-wide · NSW</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Secure Tours &amp; Travel. All rights reserved.</span>
+      <div>
+        <a href="#">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
