@@ -10,26 +10,6 @@
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* Gate */
-    .gate-section {
-      max-width: 560px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .gate-section .gold-rule { margin: 1.25rem auto; }
-    .gate-form {
-      background: var(--white);
-      border: 1px solid var(--gray-300);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      margin-top: 2rem;
-      text-align: left;
-    }
-    .gate-form h3 { font-size: 1.15rem; margin-bottom: 1.25rem; color: var(--navy); }
-
-    /* Downloads layout */
-    .downloads-section { display: none; }
-    .downloads-section.visible { display: block; }
     .downloads-category {
       margin-bottom: 3rem;
     }
@@ -40,7 +20,6 @@
       border-bottom: 2px solid var(--gold);
       margin-bottom: 1.25rem;
     }
-    .downloads-lang-group { margin-bottom: 1.5rem; }
     .downloads-lang-label {
       font-size: 0.75rem;
       font-weight: 600;
@@ -63,6 +42,8 @@
       border-radius: var(--radius);
       padding: 1rem 1.25rem;
       transition: var(--transition);
+      text-decoration: none;
+      color: inherit;
     }
     .download-card:hover {
       border-color: var(--gold);
@@ -82,56 +63,30 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    .download-card__size {
+    .download-card__meta {
       font-size: 0.75rem;
       color: var(--gray-500);
       margin-top: 0.2rem;
     }
-    .download-card__link {
-      font-size: 0.8rem;
+    .download-card__badge {
+      font-size: 0.72rem;
       font-weight: 600;
-      color: var(--gold);
+      color: rgba(184,149,42,0.85);
+      background: rgba(184,149,42,0.08);
+      border: 1px solid rgba(184,149,42,0.25);
+      border-radius: 3px;
+      padding: 0.2rem 0.5rem;
       white-space: nowrap;
+      flex-shrink: 0;
     }
-    .download-card__link:hover { text-decoration: underline; }
-
-    /* Teaser preview */
-    .teaser-categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      margin: 2rem 0;
-    }
-    .teaser-cat {
-      background: var(--navy);
-      color: rgba(255,255,255,0.85);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      text-align: center;
-    }
-    .teaser-cat__icon { font-size: 2rem; margin-bottom: 0.5rem; }
-    .teaser-cat__name { font-size: 0.875rem; font-weight: 600; }
-    .teaser-cat__count { font-size: 0.75rem; color: rgba(184,149,42,0.9); margin-top: 0.25rem; }
-
-    .gate-success {
-      display: none;
-      background: var(--gold-pale);
-      border: 1px solid var(--gold);
-      border-radius: var(--radius);
-      padding: 1.5rem 2rem;
-      margin-bottom: 2rem;
-      text-align: center;
-    }
-    .gate-success.visible { display: block; }
-
-    .loading-msg { color: var(--gray-500); font-style: italic; padding: 2rem 0; }
-    .no-files-msg {
-      background: var(--gold-pale);
+    .coming-soon-note {
+      background: var(--off-white);
       border-left: 3px solid var(--gold);
       padding: 1.25rem 1.5rem;
       border-radius: var(--radius);
       color: var(--navy);
       font-size: 0.9rem;
+      margin-top: 1.5rem;
     }
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -163,7 +118,7 @@
           </ul>
         </li>
         <li><a href="event-solutions.html">Event Solutions</a></li>
-        <li><a href="articles.html">Articles &amp; Case Studies</a></li>
+        <li><a href="articles.html">Articles, Testimonials &amp; Case Studies</a></li>
         <li><a href="resources.html" class="active">Resources</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -179,81 +134,122 @@
     </ul>
     <span class="section-label">Brochures &amp; Guides</span>
     <h1>Resources &amp; Downloads</h1>
-    <p class="page-hero__sub">Access our service brochures, programme guides and informational materials. Available in English with additional languages being added progressively.</p>
+    <p class="page-hero__sub">Service brochures, programme guides and informational materials. Available in English with additional languages being added progressively as materials are prepared.</p>
   </div>
 </section>
 
 <section class="section" aria-labelledby="resources-heading">
   <div class="container">
-    <h2 id="resources-heading" class="sr-only">Downloads</h2>
+    <h2 id="resources-heading" class="sr-only">Download Library</h2>
 
-    <div id="gate-section">
-      <div class="gate-section">
-        <span class="section-label">Available Downloads</span>
-        <h2>Our Resource Library</h2>
-        <div class="gold-rule"></div>
-        <p>Browse brochures, service guides and programme summaries from Secure Tours &amp; Travel. Enter your details below to access the full download library.</p>
-      </div>
-
-      <div class="teaser-categories">
-        <div class="teaser-cat">
-          <div class="teaser-cat__icon">🌏</div>
-          <div class="teaser-cat__name">Tourism Solutions</div>
-          <div class="teaser-cat__count">Brochures &amp; itineraries</div>
+    <div class="downloads-category reveal">
+      <h3>🌏 Tourism Solutions</h3>
+      <div class="downloads-lang-label">English</div>
+      <div class="downloads-grid">
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Secure Tours &amp; Travel — Service Overview</div>
+            <div class="download-card__meta">Brochure · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
         </div>
-        <div class="teaser-cat">
-          <div class="teaser-cat__icon">🎪</div>
-          <div class="teaser-cat__name">Event Solutions</div>
-          <div class="teaser-cat__count">Event guides &amp; packages</div>
-        </div>
-        <div class="teaser-cat">
-          <div class="teaser-cat__icon">💼</div>
-          <div class="teaser-cat__name">Executive Services</div>
-          <div class="teaser-cat__count">Corporate briefing packs</div>
-        </div>
-        <div class="teaser-cat">
-          <div class="teaser-cat__icon">🏆</div>
-          <div class="teaser-cat__name">Athlete &amp; Artist</div>
-          <div class="teaser-cat__count">P.A.S.S. programme guides</div>
-        </div>
-      </div>
-
-      <div style="max-width: 560px; margin: 0 auto;">
-        <div class="gate-form">
-          <h3>Access the Download Library</h3>
-          <form id="gate-form" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="gate-fname">First Name <span style="color:var(--gold)">*</span></label>
-                <input type="text" id="gate-fname" name="fname" required autocomplete="given-name">
-              </div>
-              <div class="form-group">
-                <label for="gate-lname">Last Name <span style="color:var(--gold)">*</span></label>
-                <input type="text" id="gate-lname" name="lname" required autocomplete="family-name">
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="gate-email">Email Address <span style="color:var(--gold)">*</span></label>
-              <input type="email" id="gate-email" name="email" required autocomplete="email">
-            </div>
-            <div class="form-group">
-              <label for="gate-company">Company / Organisation <span style="color:var(--gray-500); font-weight:400;">(optional)</span></label>
-              <input type="text" id="gate-company" name="company" autocomplete="organization">
-            </div>
-            <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center; margin-top:0.5rem;">Access Downloads</button>
-          </form>
-          <p style="font-size:0.75rem; color:var(--gray-500); margin-top:1rem; text-align:center;">Your details are used only to send relevant updates. We do not share your information.</p>
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Inbound Tourism Programme Guide</div>
+            <div class="download-card__meta">Programme Guide · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
         </div>
       </div>
     </div>
 
-    <div id="downloads-section" class="downloads-section">
-      <div class="gate-success" id="gate-success">
-        <strong>✓ Access Granted</strong> — Welcome. Browse and download our resources below.
+    <div class="downloads-category reveal">
+      <h3>🎪 Event Solutions</h3>
+      <div class="downloads-lang-label">English</div>
+      <div class="downloads-grid">
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Event Management Capabilities</div>
+            <div class="download-card__meta">Capabilities Pack · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
+        </div>
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">S.T.A.G.E. Programme Information</div>
+            <div class="download-card__meta">Programme Guide · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
+        </div>
       </div>
-      <div id="downloads-content">
-        <p class="loading-msg" id="loading-msg">Loading resources…</p>
+    </div>
+
+    <div class="downloads-category reveal">
+      <h3>💼 Executive Services</h3>
+      <div class="downloads-lang-label">English</div>
+      <div class="downloads-grid">
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Executive Guest Management — Corporate Briefing</div>
+            <div class="download-card__meta">Briefing Pack · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
+        </div>
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Exclusive Transfer &amp; Concierge Services</div>
+            <div class="download-card__meta">Service Guide · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
+        </div>
       </div>
+    </div>
+
+    <div class="downloads-category reveal">
+      <h3>🏆 P.A.S.S. — Athlete &amp; Artist</h3>
+      <div class="downloads-lang-label">English</div>
+      <div class="downloads-grid">
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">P.A.S.S. — Professional Athlete Support</div>
+            <div class="download-card__meta">Programme Guide · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
+        </div>
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">P.A.S.S. — Performing Artist Safety Specialist</div>
+            <div class="download-card__meta">Programme Guide · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="downloads-category reveal">
+      <h3>🤝 Concierge &amp; Chaperone</h3>
+      <div class="downloads-lang-label">English</div>
+      <div class="downloads-grid">
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Concierge &amp; Chaperone — Service Guide</div>
+            <div class="download-card__meta">Service Guide · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
+        </div>
+      </div>
+      <p class="coming-soon-note">
+        <strong>Additional languages coming.</strong> Mandarin, French, Korean and other language editions will be added progressively as materials are prepared.
+      </p>
     </div>
 
   </div>
@@ -261,7 +257,7 @@
 
 <section class="cta-band" aria-label="Resources CTA">
   <div class="container">
-    <h2>Can't Find What You're Looking For?</h2>
+    <h2>Need Materials Now?</h2>
     <p>Contact our team directly — we can provide tailored information packs for your specific enquiry.</p>
     <div class="btn-group">
       <a href="contact.html" class="btn btn--primary">Get in Touch</a>
@@ -303,7 +299,7 @@
         <ul role="list">
           <li><a href="about.html">About Us</a></li>
           <li><a href="event-solutions.html">Event Solutions</a></li>
-          <li><a href="articles.html">Articles &amp; Case Studies</a></li>
+          <li><a href="articles.html">Articles, Testimonials &amp; Case Studies</a></li>
           <li><a href="resources.html">Resources</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -329,135 +325,5 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script>
-(function() {
-  'use strict';
-
-  const BUCKET_URL = 'https://securetours-resources.syd1.digitaloceanspaces.com';
-  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/FORMSPREE_FORM_ID';
-
-  const CATEGORIES = [
-    { key: 'tourism-solutions',  label: 'Tourism Solutions',  icon: '🌏' },
-    { key: 'event-solutions',    label: 'Event Solutions',    icon: '🎪' },
-    { key: 'executive-services', label: 'Executive Services', icon: '💼' },
-    { key: 'athlete-artist',     label: 'P.A.S.S. — Athlete & Artist', icon: '🏆' },
-    { key: 'concierge',          label: 'Concierge & Chaperone', icon: '🤝' },
-  ];
-
-  const LANG_LABELS = { en: 'English', zh: '中文 — Mandarin', fr: 'Français', ko: '한국어', it: 'Italiano', de: 'Deutsch' };
-
-  const gateSection    = document.getElementById('gate-section');
-  const dlSection      = document.getElementById('downloads-section');
-  const gateSuccess    = document.getElementById('gate-success');
-
-  function showDownloads(firstTime) {
-    gateSection.style.display = 'none';
-    dlSection.classList.add('visible');
-    if (firstTime) gateSuccess.classList.add('visible');
-    loadDownloads();
-  }
-
-  if (localStorage.getItem('st_access_granted')) {
-    showDownloads(false);
-  }
-
-  const gateForm = document.getElementById('gate-form');
-  gateForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = gateForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Please wait…';
-    btn.disabled = true;
-
-    const data = new FormData(gateForm);
-    data.append('_subject', 'Secure Tours — Resources Access Request');
-
-    try {
-      await fetch(FORMSPREE_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
-    } catch (_) {}
-
-    localStorage.setItem('st_access_granted', '1');
-    localStorage.setItem('st_access_name', data.get('fname') || '');
-    showDownloads(true);
-  });
-
-  async function loadDownloads() {
-    const container = document.getElementById('downloads-content');
-    const loadingMsg = document.getElementById('loading-msg');
-
-    let files = [];
-
-    try {
-      const res = await fetch(`${BUCKET_URL}/?list-type=2&prefix=pdfs/&max-keys=1000`);
-      if (res.ok) {
-        const text = await res.text();
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(text, 'text/xml');
-        const items = Array.from(xml.querySelectorAll('Contents'));
-        files = items
-          .map(item => ({
-            key:  item.querySelector('Key')?.textContent || '',
-            size: parseInt(item.querySelector('Size')?.textContent || '0', 10),
-          }))
-          .filter(f => f.key.endsWith('.pdf'));
-      }
-    } catch (_) {}
-
-    loadingMsg.style.display = 'none';
-
-    if (files.length === 0) {
-      container.innerHTML = `
-        <div class="no-files-msg">
-          <strong>Resources coming soon.</strong><br>
-          Brochures and programme guides are being prepared and will appear here shortly.
-          In the meantime, <a href="contact.html" style="color:var(--navy); font-weight:600;">contact us</a> directly for any materials you need.
-        </div>`;
-      return;
-    }
-
-    const grouped = {};
-    files.forEach(f => {
-      const parts = f.key.replace('pdfs/', '').split('/');
-      if (parts.length < 3) return;
-      const [cat, lang, ...rest] = parts;
-      const name = rest.join('/').replace(/\.pdf$/i, '').replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-      if (!grouped[cat]) grouped[cat] = {};
-      if (!grouped[cat][lang]) grouped[cat][lang] = [];
-      grouped[cat][lang].push({ name, url: `${BUCKET_URL}/${f.key}`, size: f.size });
-    });
-
-    let html = '';
-    CATEGORIES.forEach(cat => {
-      if (!grouped[cat.key]) return;
-      html += `<div class="downloads-category">
-        <h3>${cat.icon} ${cat.label}</h3>`;
-
-      const langs = Object.keys(grouped[cat.key]).sort((a, b) => a === 'en' ? -1 : b === 'en' ? 1 : a.localeCompare(b));
-      langs.forEach(lang => {
-        const label = LANG_LABELS[lang] || lang.toUpperCase();
-        html += `<div class="downloads-lang-group">
-          <div class="downloads-lang-label">${label}</div>
-          <div class="downloads-grid">`;
-        grouped[cat.key][lang].forEach(f => {
-          const sizeMB = f.size > 0 ? (f.size / 1024 / 1024).toFixed(1) + ' MB' : '';
-          html += `<a class="download-card" href="${f.url}" target="_blank" rel="noopener" download>
-            <div class="download-card__icon">📄</div>
-            <div class="download-card__body">
-              <div class="download-card__name">${f.name}</div>
-              ${sizeMB ? `<div class="download-card__size">${sizeMB}</div>` : ''}
-            </div>
-            <div class="download-card__link">↓ Download</div>
-          </a>`;
-        });
-        html += `</div></div>`;
-      });
-
-      html += `</div>`;
-    });
-
-    container.innerHTML = html || `<div class="no-files-msg">No resources available yet. Check back soon.</div>`;
-  }
-
-})();
-</script>
 </body>
 </html>
