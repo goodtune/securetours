@@ -17,6 +17,8 @@ const TRANSLATIONS = {
     svc_pass_athlete: 'P.A.S.S. — Athlete',
     svc_pass_artist: 'P.A.S.S. — Performing Artist',
     svc_cc: 'Concierge & Chaperone',
+    svc_bereavement: 'Bereavement Travel Support',
+    svc_solo: 'Solo Traveller Assist',
 
     /* ── Home Hero ── */
     hero_tag: 'Australia\'s Premium Secure Travel Specialists',
@@ -135,6 +137,8 @@ const TRANSLATIONS = {
     svc_pass_athlete_text: 'Elite travel logistics for athletes and sports teams — nutrition, recovery, equipment, security and schedule management.',
     svc_pass_artist_text: 'Dedicated touring support for musicians, entertainers and performing arts companies — on the road, on time, on budget.',
     svc_cc_text: 'Personal, attentive care for individuals and groups — from airport arrivals to 24/7 support throughout your stay.',
+    svc_bereavement_text: 'Compassionate airport logistics and private transfers for families navigating travel during the most difficult of times.',
+    svc_solo_text: 'Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle.',
 
     /* ── Shared ── */
     enquire_now: 'Enquire Now',
@@ -162,6 +166,8 @@ const TRANSLATIONS = {
     svc_pass_athlete: 'P.A.S.S. — 运动员支持',
     svc_pass_artist: 'P.A.S.S. — 表演艺术家支持',
     svc_cc: '礼宾与陪同服务',
+    svc_bereavement: '丧亲出行支援',
+    svc_solo: '独行旅客协助',
 
     /* ── Home Hero ── */
     hero_tag: '澳大利亚顶级安全旅行专家',
@@ -280,6 +286,8 @@ const TRANSLATIONS = {
     svc_pass_athlete_text: '专为运动员和运动队打造的精英旅行后勤服务——涵盖营养、恢复、装备、安保和日程管理。',
     svc_pass_artist_text: '为音乐人、表演者和表演艺术团体提供的专属巡演支持——准时、省心、不超预算。',
     svc_cc_text: '为个人及团体提供贴心周到的关怀服务——从机场接机到全程24/7支持。',
+    svc_bereavement_text: '为在最艰难时刻出行的家庭提供体贴的机场后勤支援及专车接送服务。',
+    svc_solo_text: '为独行旅客提供专业、经过核查的随行陪同服务——从登机口到等候的专车。',
 
     /* ── Shared ── */
     enquire_now: '立即询问',
@@ -400,6 +408,36 @@ const SERVICE_TRANSLATIONS = {
         { icon: '🌐', text: 'Multilingual support for international touring companies' },
         { icon: '📋', text: 'Immigration and customs facilitation for international artists' },
         { icon: '🚑', text: 'Medical coordination and wellbeing support for touring parties' },
+      ],
+    },
+    bereavement: {
+      hero_tag: 'Compassionate Travel Support · Domestic & International',
+      title: 'Bereavement Travel Support',
+      sub: 'Compassionate, discreet logistics when it matters most.',
+      lead: 'Losing someone is hard enough. Navigating airports, airline protocols and unfamiliar processes on top of grief should not fall on your shoulders alone. Our Bereavement Travel Support service takes care of every logistical step of the journey — whether you are travelling overseas to be with family, bringing a loved one home to Australia, or managing domestic travel during the most difficult of times. We do not manage funeral arrangements or liaise with mortuaries. What we do is handle everything from the moment you arrive at the airport to the moment you reach your destination — smoothly, quietly and with complete discretion.',
+      features: [
+        { icon: '🤝', text: 'Airport meet and greet for arrivals and departures' },
+        { icon: '🚗', text: 'Private chauffeur transfers to and from all airports' },
+        { icon: '🎫', text: 'Assistance with check in, security and boarding' },
+        { icon: '✈️', text: 'Coordination with airline staff on compassionate travel requirements' },
+        { icon: '🛎️', text: 'Concierge support throughout your journey' },
+        { icon: '🇦🇺', text: 'Domestic, inbound and outbound travel covered nationally' },
+        { icon: '📞', text: '24/7 single point of contact for the duration of travel' },
+      ],
+    },
+    solo_traveller: {
+      hero_tag: 'Solo Travel Support · Domestic & International Airports',
+      title: 'Solo Traveller Assist',
+      sub: 'You should not have to navigate airports alone.',
+      lead: 'Airports can be overwhelming — long terminals, tight connections, heavy bags and queues that seem to go nowhere. For solo travellers, particularly women travelling alone or older travellers who want a reliable hand through the process, it should not have to be that stressful. Our Solo Traveller Assist service puts a professional, vetted escort by your side from the moment you step off the plane or approach the departure gate. We meet you where you are, move through the airport with you, collect your bags and get you settled into a waiting private vehicle — so you can focus on where you are going rather than the logistics of getting there. Available at domestic and international airports across Australia.',
+      features: [
+        { icon: '🛬', text: 'Gate meet on arrival or departure escort from check in' },
+        { icon: '🛂', text: 'Assistance through immigration, customs and security' },
+        { icon: '🧳', text: 'Baggage collection and handling' },
+        { icon: '🚗', text: 'Private chauffeur transfer to your onward destination' },
+        { icon: '🇦🇺', text: 'Domestic and international airports covered' },
+        { icon: '🪪', text: 'Licensed, vetted and professionally presented escorts' },
+        { icon: '📋', text: 'Pre-travel coordination so you know exactly who to look for and when' },
       ],
     },
     cc: {
@@ -528,6 +566,36 @@ const SERVICE_TRANSLATIONS = {
         { icon: '🌐', text: '国际巡演团体的多语种支持' },
         { icon: '📋', text: '国际艺术家的入境和海关协助' },
         { icon: '🚑', text: '巡演团体的医疗协调和健康支持' },
+      ],
+    },
+    bereavement: {
+      hero_tag: '贴心支援 · 国内及国际出行',
+      title: '丧亲出行支援',
+      sub: '在最重要的时刻，提供体贴、低调的出行保障。',
+      lead: '失去至亲已是难以承受之痛，若还需在悲痛中独自应对机场手续、航空规程及陌生流程，实属雪上加霜。我们的丧亲出行支援服务承担您旅途中的每一个后勤环节——无论是赴海外与家人相聚、护送至亲回澳大利亚，还是在最艰难时刻安排国内出行。我们不经办殡仪事宜，也不与殡仪机构对接。我们的职责是从您踏入机场的那一刻起，直至您安全抵达目的地，以专业、低调、完全私密的方式全程陪伴。',
+      features: [
+        { icon: '🤝', text: '抵离机场迎送服务' },
+        { icon: '🚗', text: '全程专车接送' },
+        { icon: '🎫', text: '协助办理值机、安检及登机手续' },
+        { icon: '✈️', text: '协调航空公司处理人文关怀出行事宜' },
+        { icon: '🛎️', text: '全程礼宾支持' },
+        { icon: '🇦🇺', text: '覆盖全澳国内、入境及出境出行' },
+        { icon: '📞', text: '出行全程24/7单一联络点' },
+      ],
+    },
+    solo_traveller: {
+      hero_tag: '独行出行支援 · 国内及国际机场',
+      title: '独行旅客协助',
+      sub: '独自出行，无需孤军奋战。',
+      lead: '机场往往令人不知所措——漫长的航站楼、紧张的转机、沉重的行李和似乎永无止境的排队。对于独自出行的旅客，尤其是独行女性或希望获得可靠协助的年长旅客，出行本不必如此辛苦。我们的独行旅客协助服务，在您踏出舱门或走向登机口的那一刻，便为您安排专业、经过核查的随行陪同人员。我们与您同行，协助您穿越机场、提取行李，直至您安然就座于等候的专车中——让您专注于旅程目的地，而非应付途中的繁琐事务。服务覆盖澳大利亚全境国内及国际机场。',
+      features: [
+        { icon: '🛬', text: '抵港登机口迎接或离港值机陪同服务' },
+        { icon: '🛂', text: '协助办理入境、海关及安检手续' },
+        { icon: '🧳', text: '提取行李及行李搬运服务' },
+        { icon: '🚗', text: '专车接送至目的地' },
+        { icon: '🇦🇺', text: '覆盖国内及国际机场' },
+        { icon: '🪪', text: '持牌、经过核查、仪表专业的随行人员' },
+        { icon: '📋', text: '出行前协调安排，让您清楚知道迎接人员的信息及接机时间' },
       ],
     },
     cc: {
