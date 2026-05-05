@@ -1,0 +1,14 @@
+name: secure-tours-zensical
+region: syd
+
+static_sites:
+  - name: site
+    github:
+      repo: goodtune/securetours
+      branch: feature/zensical
+      deploy_on_push: true
+    build_command: pip install -r requirements.txt && zensical build
+    output_dir: site
+    environment_slug: python
+    routes:
+      - path: /
