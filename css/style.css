@@ -1,9 +1,10 @@
 /* ============================================================
    Secure Tours & Travel — Brand Design System
    Colors: Navy #1E2E78 | Gold #B8952A | White #FFFFFF
+   Fonts (Style Guide 2025): Montserrat (headings) + Lato (body)
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Open+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Lato:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
 
 /* ── Reset & Base ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,8 +25,8 @@
   --gray-700:    #4a4845;
   --text:        #1a1917;
 
-  --font-serif:  'Playfair Display', Georgia, serif;
-  --font-sans:   'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-serif:  'Montserrat', sans-serif;
+  --font-sans:   'Lato', system-ui, -apple-system, sans-serif;
 
   --max-w:       1200px;
   --section-pad: clamp(3rem, 6vw, 5rem);
@@ -1066,5 +1067,5 @@ p:last-child { margin-bottom: 0; }
   font-family: 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
 }
 .zh-content h1, .zh-content h2, .zh-content h3, .zh-content h4 {
-  font-family: var(--font-serif), 'PingFang SC', 'Microsoft YaHei', serif;
+  font-family: var(--font-serif), 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
