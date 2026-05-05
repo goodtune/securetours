@@ -98,10 +98,13 @@
       });
     }, { threshold: 0.12 });
 
+    // Add reveal class to standard home-page elements
     document.querySelectorAll('.service-card, .why-item, .stat-item, .feature-list li').forEach(el => {
       el.classList.add('reveal');
-      observer.observe(el);
     });
+
+    // Observe all elements that carry the reveal class (including those set in HTML)
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
 
   /* ── Init ── */
