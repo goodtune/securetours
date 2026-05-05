@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resources &amp; Downloads — Secure Tours &amp; Travel</title>
-  <meta name="description" content="Download brochures, service guides and informational resources from Secure Tours &amp; Travel.">
+  <meta name="description" content="Download brochures, service guides and informational resources from Secure Tours &amp; Travel. Available in English and Mandarin.">
   <link rel="stylesheet" href="css/style.css">
   <style>
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.5s ease, transform 0.5s ease; }
@@ -50,6 +50,12 @@
       background: var(--white);
       box-shadow: var(--shadow);
     }
+    .download-card--live {
+      border-color: rgba(184,149,42,0.3);
+    }
+    .download-card--live:hover {
+      border-color: var(--gold);
+    }
     .download-card__icon {
       font-size: 2rem;
       flex-shrink: 0;
@@ -79,6 +85,11 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
+    .download-card__badge--live {
+      color: #1a6e3c;
+      background: rgba(26,110,60,0.08);
+      border-color: rgba(26,110,60,0.25);
+    }
     .coming-soon-note {
       background: var(--off-white);
       border-left: 3px solid var(--gold);
@@ -88,6 +99,17 @@
       font-size: 0.9rem;
       margin-top: 1.5rem;
     }
+    .section-intro-block {
+      max-width: 720px;
+      margin-bottom: 3rem;
+    }
+    .lang-divider {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .lang-group { flex: 1; min-width: 200px; }
+    .lang-group .downloads-lang-label { margin-bottom: 0.5rem; }
   </style>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="canonical" href="https://securetours.staging-site.au/resources.html">
@@ -136,7 +158,7 @@
     </ul>
     <span class="section-label">Brochures &amp; Guides</span>
     <h1>Resources &amp; Downloads</h1>
-    <p class="page-hero__sub">Service brochures, programme guides and informational materials. Available in English with additional languages being added progressively as materials are prepared.</p>
+    <p class="page-hero__sub">Service brochures, programme guides and informational materials. Available in English with Mandarin editions for key materials. Additional languages being added progressively.</p>
   </div>
 </section>
 
@@ -144,18 +166,34 @@
   <div class="container">
     <h2 id="resources-heading" class="sr-only">Download Library</h2>
 
+    <!-- Tourism Solutions -->
     <div class="downloads-category reveal">
       <h3>🌏 Tourism Solutions</h3>
-      <div class="downloads-lang-label">English</div>
       <div class="downloads-grid">
-        <div class="download-card">
+        <a class="download-card download-card--live" href="assets/downloads/secure-tours-brochure.pdf" target="_blank" rel="noopener" aria-label="Download Secure Tours & Travel Service Brochure (PDF)">
           <div class="download-card__icon">📄</div>
           <div class="download-card__body">
-            <div class="download-card__name">Secure Tours &amp; Travel — Service Overview</div>
-            <div class="download-card__meta">Brochure · English</div>
+            <div class="download-card__name">Secure Tours &amp; Travel — Service Brochure</div>
+            <div class="download-card__meta">Brochure · English · PDF</div>
           </div>
-          <div class="download-card__badge">Coming Soon</div>
-        </div>
+          <div class="download-card__badge download-card__badge--live">Download</div>
+        </a>
+        <a class="download-card download-card--live" href="assets/downloads/secure-tours-brochure-2024.pdf" target="_blank" rel="noopener" aria-label="Download Secure Tours & Travel Comprehensive Guide 2024 (PDF)">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Secure Tours &amp; Travel — 2024 Guide</div>
+            <div class="download-card__meta">Comprehensive Guide · English · PDF</div>
+          </div>
+          <div class="download-card__badge download-card__badge--live">Download</div>
+        </a>
+        <a class="download-card download-card--live" href="assets/downloads/secure-tours-services-mandarin.pdf" target="_blank" rel="noopener" aria-label="Download Secure Tours & Travel Services Guide in Mandarin (PDF)">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Secure Tours &amp; Travel — 服务指南</div>
+            <div class="download-card__meta">Services Guide · 中文 (Mandarin) · PDF</div>
+          </div>
+          <div class="download-card__badge download-card__badge--live">下载</div>
+        </a>
         <div class="download-card">
           <div class="download-card__icon">📄</div>
           <div class="download-card__body">
@@ -167,9 +205,32 @@
       </div>
     </div>
 
+    <!-- Exclusive Transfer Assistance -->
+    <div class="downloads-category reveal">
+      <h3>💎 Exclusive Transfer Assistance</h3>
+      <div class="downloads-grid">
+        <a class="download-card download-card--live" href="assets/downloads/exclusive-transfer-assistance.pdf" target="_blank" rel="noopener" aria-label="Download Exclusive Transfer Assistance Service Guide (PDF)">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Exclusive Transfer Assistance — Service Guide</div>
+            <div class="download-card__meta">Diamond · Sapphire · Ruby Tiers · English · PDF</div>
+          </div>
+          <div class="download-card__badge download-card__badge--live">Download</div>
+        </a>
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Concierge &amp; Chaperone — Service Guide</div>
+            <div class="download-card__meta">Service Guide · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Event Solutions -->
     <div class="downloads-category reveal">
       <h3>🎪 Event Solutions</h3>
-      <div class="downloads-lang-label">English</div>
       <div class="downloads-grid">
         <div class="download-card">
           <div class="download-card__icon">📄</div>
@@ -183,39 +244,48 @@
           <div class="download-card__icon">📄</div>
           <div class="download-card__body">
             <div class="download-card__name">S.T.A.G.E. Programme Information</div>
-            <div class="download-card__meta">Programme Guide · English</div>
+            <div class="download-card__meta">School Tours &amp; Group Excursions · English</div>
+          </div>
+          <div class="download-card__badge">Coming Soon</div>
+        </div>
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Film &amp; TV — Security Capabilities</div>
+            <div class="download-card__meta">Production &amp; Location Security · English</div>
           </div>
           <div class="download-card__badge">Coming Soon</div>
         </div>
       </div>
     </div>
 
+    <!-- STAT Accreditation -->
     <div class="downloads-category reveal">
-      <h3>💼 Executive Services</h3>
-      <div class="downloads-lang-label">English</div>
+      <h3>🏅 STAT Accreditation</h3>
+      <p style="font-size:0.9rem; color:var(--gray-700); margin-bottom:1.25rem;">STAT (Security, Tourism &amp; Accreditation Tool) is AFS Group's independent risk assessment certification for the tourism and hospitality industry — combining security risk assessment with work health and safety evaluation.</p>
       <div class="downloads-grid">
-        <div class="download-card">
+        <a class="download-card download-card--live" href="assets/downloads/stat-accreditation-mandarin.pdf" target="_blank" rel="noopener" aria-label="Download STAT Accreditation Guide in Mandarin (PDF)">
           <div class="download-card__icon">📄</div>
           <div class="download-card__body">
-            <div class="download-card__name">Executive Guest Management — Corporate Briefing</div>
-            <div class="download-card__meta">Briefing Pack · English</div>
+            <div class="download-card__name">STAT认证 — 认证指南</div>
+            <div class="download-card__meta">STAT Accreditation · 中文 (Mandarin) · PDF</div>
           </div>
-          <div class="download-card__badge">Coming Soon</div>
-        </div>
+          <div class="download-card__badge download-card__badge--live">下载</div>
+        </a>
         <div class="download-card">
           <div class="download-card__icon">📄</div>
           <div class="download-card__body">
-            <div class="download-card__name">Exclusive Transfer &amp; Concierge Services</div>
-            <div class="download-card__meta">Service Guide · English</div>
+            <div class="download-card__name">STAT Accreditation — Overview</div>
+            <div class="download-card__meta">Accreditation Guide · English</div>
           </div>
           <div class="download-card__badge">Coming Soon</div>
         </div>
       </div>
     </div>
 
+    <!-- P.A.S.S. Programmes -->
     <div class="downloads-category reveal">
       <h3>🏆 P.A.S.S. — Athlete &amp; Artist</h3>
-      <div class="downloads-lang-label">English</div>
       <div class="downloads-grid">
         <div class="download-card">
           <div class="download-card__icon">📄</div>
@@ -236,21 +306,29 @@
       </div>
     </div>
 
+    <!-- Endorsements & References -->
     <div class="downloads-category reveal">
-      <h3>🤝 Concierge &amp; Chaperone</h3>
-      <div class="downloads-lang-label">English</div>
+      <h3>📋 Endorsements &amp; References</h3>
       <div class="downloads-grid">
+        <a class="download-card download-card--live" href="assets/downloads/endorsement-gary-oriordan-2018.pdf" target="_blank" rel="noopener" aria-label="Download Industry Endorsement Letter from Gary O'Riordan 2018 (PDF)">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Industry Endorsement — Gary O'Riordan</div>
+            <div class="download-card__meta">Tourism Consultant · Letter · 2018 · PDF</div>
+          </div>
+          <div class="download-card__badge download-card__badge--live">Download</div>
+        </a>
         <div class="download-card">
           <div class="download-card__icon">📄</div>
           <div class="download-card__body">
-            <div class="download-card__name">Concierge &amp; Chaperone — Service Guide</div>
-            <div class="download-card__meta">Service Guide · English</div>
+            <div class="download-card__name">Client References — On Request</div>
+            <div class="download-card__meta">Available confidentially · Contact us</div>
           </div>
-          <div class="download-card__badge">Coming Soon</div>
+          <div class="download-card__badge">On Request</div>
         </div>
       </div>
       <p class="coming-soon-note">
-        <strong>Additional languages coming.</strong> Mandarin, French, Korean and other language editions will be added progressively as materials are prepared.
+        <strong>Additional materials.</strong> Mandarin, French, Korean and other language editions will be added progressively. <a href="contact.html" style="color:var(--navy); font-weight:600; text-decoration:underline;">Contact us</a> if you need materials in a specific language.
       </p>
     </div>
 
@@ -260,7 +338,7 @@
 <section class="cta-band" aria-label="Resources CTA">
   <div class="container">
     <h2>Need Materials Now?</h2>
-    <p>Contact our team directly — we can provide tailored information packs for your specific enquiry.</p>
+    <p>Contact our team directly — we can provide tailored information packs for your specific enquiry, in your preferred language.</p>
     <div class="btn-group">
       <a href="contact.html" class="btn btn--primary">Get in Touch</a>
       <a href="services/index.html" class="btn btn--outline">View Tourism Solutions</a>
@@ -295,8 +373,8 @@
           <li><a href="services/pass-athlete.html">P.A.S.S. — Athlete</a></li>
           <li><a href="services/pass-artist.html">P.A.S.S. — Artist</a></li>
           <li><a href="services/concierge-chaperone.html">Concierge &amp; Chaperone</a></li>
-            <li><a href="services/bereavement-travel-support.html">Bereavement Travel Support</a></li>
-            <li><a href="services/solo-traveller-assist.html">Solo Traveller Assist</a></li>
+          <li><a href="services/bereavement-travel-support.html">Bereavement Travel Support</a></li>
+          <li><a href="services/solo-traveller-assist.html">Solo Traveller Assist</a></li>
         </ul>
       </div>
       <div class="footer-col">

@@ -70,4 +70,29 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://securetours.staging-site.au/services/bereavement-travel-support.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://securetours.staging-site.au/services/solo-traveller-assist.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://securetours.staging-site.au/articles/vivid-sydney.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://securetours.staging-site.au/articles/carriageworks.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://securetours.staging-site.au/articles/gary-oriordan-endorsement.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
