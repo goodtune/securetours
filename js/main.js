@@ -107,8 +107,19 @@
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   }
 
+  /* ── i18n ── */
+  function applyTranslations(lang) {
+    if (typeof TRANSLATIONS === 'undefined') return;
+    const t = TRANSLATIONS[lang] || TRANSLATIONS.en;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.innerHTML = t[key];
+    });
+  }
+
   /* ── Init ── */
   document.addEventListener('DOMContentLoaded', () => {
+    applyTranslations('en');
     initNav();
     initContactForm();
     initScrollAnimations();
