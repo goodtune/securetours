@@ -72,7 +72,7 @@ For events requiring discreet security — gallery openings, fashion shows and c
 
 ## Outcomes
 
-<div class="st-stats" markdown>
+<div class="st-stats st-stats-compact" markdown>
 
 <div>
 <span class="st-stat-value">Multi</span>

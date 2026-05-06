@@ -67,7 +67,7 @@ For corporate and VIP clients attending Vivid Sydney events, dedicated chaperone
 
 ## Outcomes
 
-<div class="st-stats" markdown>
+<div class="st-stats st-stats-compact" markdown>
 
 <div>
 <span class="st-stat-value">23</span>

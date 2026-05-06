@@ -8,6 +8,8 @@ site_dir = "site"
 
 [theme]
 name = "modern"
+logo = "assets/logo-transparent.png"
+favicon = "assets/favicon.svg"
 
 [theme.palette.light]
 scheme = "default"
