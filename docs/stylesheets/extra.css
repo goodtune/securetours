@@ -183,6 +183,9 @@ h1, h2, h3, h4, h5, h6,
 .md-main    { background-color: var(--st-off-white); padding-top: 80px; }
 .md-content { background-color: #ffffff; }
 
+/* -- Remove Material's default 30px top margin so page-hero is flush with nav */
+.md-main__inner { margin-top: 0 !important; }
+
 /* -- Content inner: remove padding at top for hero --------- */
 .md-content__inner {
   padding-top: 0;
@@ -192,11 +195,12 @@ h1, h2, h3, h4, h5, h6,
 /* -- Page hero (inner pages) ------------------------------- */
 .st-page-hero {
   background: linear-gradient(135deg, var(--st-navy-dark) 0%, var(--st-navy) 100%);
-  padding: clamp(4rem, 8vw, 7rem) 0 clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(5rem, 9vw, 7rem) 0 clamp(2.5rem, 5vw, 4rem);
   position: relative;
   overflow: hidden;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  margin-top: 0;
   margin-bottom: 0;
 }
 .st-page-hero::after {
