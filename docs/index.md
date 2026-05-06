@@ -104,6 +104,9 @@ Professional, vetted escorts for solo travellers — from the departure gate to 
 
 <div class="st-home-section st-home-section--alt" markdown>
 
+<div class="st-about-grid" markdown>
+<div class="st-about-text" markdown>
+
 ## Built on Trust. Backed by Experience.
 
 Secure Tours & Travel is the dedicated tourism and event services division of Australian Frontline Solutions (AFS) — one of Australia's most trusted names in safety leadership, protective operations and event management. With 37 years of operational experience, we bring elite security expertise to luxury travel and VIP logistics.
@@ -114,6 +117,14 @@ Secure Tours & Travel is the dedicated tourism and event services division of Au
 - National coverage — global partnerships
 
 [Our Story](about.md){ .st-btn .st-btn-navy }
+
+</div>
+<div class="st-about-badge" markdown>
+<span class="st-badge-number">37</span>
+<span class="st-badge-label">Years of Excellence</span>
+<span class="st-badge-sub">Australian Frontline Solutions · Est. 1989</span>
+</div>
+</div>
 
 </div>
 
