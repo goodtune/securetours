@@ -144,7 +144,7 @@ Secure Tours & Travel is the dedicated tourism and event services division of Au
 
 <div class="st-gold-rule"></div>
 
-<div class="st-cards st-cards-2" markdown>
+<div class="st-cards st-cards-4" markdown>
 
 <div class="st-card" markdown>
 ### Security-First
