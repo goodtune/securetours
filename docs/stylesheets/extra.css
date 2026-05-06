@@ -563,6 +563,20 @@ a.st-btn-navy:hover {
   padding-bottom: 3rem;
 }
 
+/* -- Home page section spacing (matches Astro --section-pad) */
+.st-home-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+.st-home-section--alt {
+  background: var(--st-off-white);
+  /* Break to full width */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-left: clamp(1.5rem, 6vw, 5rem);
+  padding-right: clamp(1.5rem, 6vw, 5rem);
+}
+
 /* -- Responsive ------------------------------------------- */
 @media (max-width: 639px) {
   .st-hero {

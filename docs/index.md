@@ -45,6 +45,8 @@ Combining elite security expertise with premium concierge service — we protect
 
 </div>
 
+<div class="st-home-section" markdown>
+
 ## Specialist Solutions
 
 Every solution is designed around one principle: your safety, comfort and peace of mind. From private transfers to full event logistics, we cover every detail.
@@ -98,7 +100,9 @@ Professional, vetted escorts for solo travellers — from the departure gate to 
 
 </div>
 
----
+</div>
+
+<div class="st-home-section st-home-section--alt" markdown>
 
 ## Built on Trust. Backed by Experience.
 
@@ -111,7 +115,9 @@ Secure Tours & Travel is the dedicated tourism and event services division of Au
 
 [Our Story](about.md){ .st-btn .st-btn-navy }
 
----
+</div>
+
+<div class="st-home-section" markdown>
 
 ## What Sets Us Apart
 
@@ -139,7 +145,7 @@ Round-the-clock support for international clients across all time zones.
 
 </div>
 
----
+</div>
 
 <div class="st-band-navy" markdown>
 
