@@ -10,11 +10,9 @@ hero_sub: "Every solution is designed around one principle: your safety, comfort
 
 # Tourism Solutions
 
-Every solution is designed around one principle: your safety, comfort and peace of mind.
+<div class="st-featured-solution" markdown>
 
----
-
-## Featured Solution
+<span class="st-featured-tag">Flagship Solution · Inbound &amp; Domestic Tourism</span>
 
 ### [Secure Tours & Travel Solutions](tours-travel-solutions.md)
 
@@ -22,9 +20,7 @@ Comprehensive, safety-led travel packages for inbound and domestic clients. Chap
 
 [Learn More](tours-travel-solutions.md){ .st-btn .st-btn-primary }
 
----
-
-## All Solutions
+</div>
 
 <div class="st-cards st-cards-3" markdown>
 
