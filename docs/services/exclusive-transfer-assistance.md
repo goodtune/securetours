@@ -22,7 +22,11 @@ Our Exclusive Transfer Assistance offers two premium service tiers: the Exclusiv
 
 ---
 
+<span class="st-section-label">Service Overview</span>
+
 ## What's Included
+
+<div class="st-gold-rule"></div>
 
 - **Exclusive Level:** dedicated chaperone with seamless point-to-point transition
 - Luggage collection and delivery including to and from arrival or departure

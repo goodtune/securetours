@@ -24,7 +24,11 @@ Our Solo Traveller Assist service puts a professional, vetted escort by your sid
 
 ---
 
+<span class="st-section-label">Service Overview</span>
+
 ## What's Included
+
+<div class="st-gold-rule"></div>
 
 - Gate meet on arrival or departure escort from check in
 - Assistance through immigration, customs and security

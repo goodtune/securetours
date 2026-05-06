@@ -24,7 +24,11 @@ We do not manage funeral arrangements or liaise with mortuaries. What we do is h
 
 ---
 
+<span class="st-section-label">Service Overview</span>
+
 ## What's Included
+
+<div class="st-gold-rule"></div>
 
 - Airport meet and greet for arrivals and departures
 - Private chauffeur transfers to and from all airports

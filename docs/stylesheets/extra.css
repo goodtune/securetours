@@ -186,6 +186,9 @@ h1, h2, h3, h4, h5, h6,
 /* -- Remove Material's default 30px top margin so page-hero is flush with nav */
 .md-main__inner { margin-top: 0 !important; }
 
+/* Ensure first child of content area has no leading margin */
+.md-content > *:first-child { margin-top: 0 !important; }
+
 /* -- Content inner: remove padding at top for hero --------- */
 .md-content__inner {
   padding-top: 0;
@@ -257,6 +260,55 @@ h1, h2, h3, h4, h5, h6,
   text-transform: uppercase;
   color: var(--st-gold);
   margin-bottom: 0.5rem;
+}
+
+/* -- Feature list (service pages What's Included) ---------- */
+/* Matches Astro .feature-list: grid of gold-border items */
+.st-content-no-first-h1 .md-typeset ul:not([class]),
+.st-content-no-first-h1 .md-typeset ol:not([class]) {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.875rem;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+}
+
+.st-content-no-first-h1 .md-typeset ul:not([class]) li,
+.st-content-no-first-h1 .md-typeset ol:not([class]) li {
+  background: var(--st-off-white);
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--st-radius);
+  border-left: 3px solid var(--st-gold);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--st-gray-700);
+}
+
+/* Plain lists inside cards or band-navy should stay as-is */
+.st-card ul,
+.st-card ol,
+.st-band-navy ul,
+.st-band-navy ol,
+.st-about-text ul,
+.st-about-text ol {
+  list-style: disc !important;
+  display: block !important;
+  grid-template-columns: none !important;
+  padding-left: 1.5rem !important;
+  margin: 0.5rem 0 !important;
+}
+.st-card ul li,
+.st-card ol li,
+.st-band-navy ul li,
+.st-band-navy ol li,
+.st-about-text ul li,
+.st-about-text ol li {
+  background: none !important;
+  padding: 0.25rem 0 !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  color: inherit !important;
 }
 
 /* -- Gold dividers ----------------------------------------- */

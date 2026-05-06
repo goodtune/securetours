@@ -20,7 +20,11 @@ S.T.A.G.E. — Secure Tours & Travel's dedicated event management stream — emb
 
 ---
 
+<span class="st-section-label">Service Overview</span>
+
 ## What's Included
+
+<div class="st-gold-rule"></div>
 
 - Event command & control — dedicated Event Directors, Safety Officers and Operations Teams
 - Crowd & traffic planning — site layouts, risk assessments, ingress/egress flow management

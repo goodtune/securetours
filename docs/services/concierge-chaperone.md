@@ -22,7 +22,11 @@ Our Concierge & Chaperone service provides a dedicated personal support speciali
 
 ---
 
+<span class="st-section-label">Service Overview</span>
+
 ## What's Included
+
+<div class="st-gold-rule"></div>
 
 - Meet and greet at airports, hotels and event venues
 - Appointment, schedule and itinerary management

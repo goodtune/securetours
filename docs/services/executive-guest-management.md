@@ -22,7 +22,11 @@ Our Executive Guest Management service is built specifically for investors, seni
 
 ---
 
+<span class="st-section-label">Service Overview</span>
+
 ## What's Included
+
+<div class="st-gold-rule"></div>
 
 - Executive chauffeur-driven vehicle transfer to and from departure or arrival point
 - Luggage collection and delivery at both ends of the journey

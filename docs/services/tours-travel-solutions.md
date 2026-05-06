@@ -22,7 +22,11 @@ Our Secure Tours & Travel Solutions are designed to support both travel partners
 
 ---
 
+<span class="st-section-label">Service Overview</span>
+
 ## What's Included
+
+<div class="st-gold-rule"></div>
 
 - Luxury chauffeur-driven vehicle transfers to and from arrivals and departures
 - Luggage collection and delivery door-to-door

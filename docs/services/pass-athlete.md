@@ -20,7 +20,11 @@ P.A.S.S. (Professional Athlete Support Specialist) is our dedicated stream for e
 
 ---
 
+<span class="st-section-label">Service Overview</span>
+
 ## What's Included
+
+<div class="st-gold-rule"></div>
 
 - High-performance travel planning tailored to training and competition schedules
 - Nutrition-compatible stopover and accommodation planning

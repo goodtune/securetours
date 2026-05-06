@@ -20,7 +20,11 @@ P.A.S.S. (Performing Artist Safety Specialist) is our specialist stream for tour
 
 ---
 
+<span class="st-section-label">Service Overview</span>
+
 ## What's Included
+
+<div class="st-gold-rule"></div>
 
 - End-to-end touring logistics for musicians, bands and performing arts companies
 - Venue liaison — load-in/load-out, backstage access and technical coordination
