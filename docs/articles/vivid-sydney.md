@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Vivid Sydney — Festival Security & Crowd Management
 description: "Festival security, crowd management and VIP guest services across Sydney's largest annual public event — 3 million+ visitors, 23 nights."
 ---

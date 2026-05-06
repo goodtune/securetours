@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Carriageworks — Multi-Event Venue Security
 description: "An ongoing event security partnership with one of Sydney's premier arts and cultural venues across a diverse calendar of productions."
 ---

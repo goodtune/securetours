@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: "Industry Endorsement — Janene Rees, REES INTERNATIONAL"
 description: "Endorsement of Secure Tours & Travel and AFS Group by Janene Rees, Founder & Director of REES INTERNATIONAL — 2018."
 ---

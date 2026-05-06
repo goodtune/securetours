@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: "Industry Endorsement — Gary O'Riordan"
 description: "Endorsement of Secure Tours & Travel by senior tourism industry professional Gary O'Riordan — 2018."
 ---

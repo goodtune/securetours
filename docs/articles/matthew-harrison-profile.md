@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Matthew Harrison — AFS Solutions
 description: "From working on the door at a local pub to building one of Australia's most respected secure travel and event security operations."
 ---
