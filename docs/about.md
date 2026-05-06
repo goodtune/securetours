@@ -56,12 +56,16 @@ Every client — from solo traveller to touring sports team — receives the sam
 
 <div class="st-gold-rule"></div>
 
+<div class="st-about-text" markdown>
+
 - International tourists & inbound groups
 - Corporate executives & delegations
 - Elite athletes & sports teams
 - Touring musicians & performing artists
 - Government & diplomatic visitors
 - Families & student groups
+
+</div>
 
 ---
 
