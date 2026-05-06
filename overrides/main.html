@@ -133,16 +133,6 @@
       var nav = document.querySelector('.site-nav');
       if (nav) nav.classList.toggle('scrolled', window.scrollY > 10);
     });
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) { e.target.classList.add('st-revealed'); io.unobserve(e.target); }
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.st-card, .st-stats > div, .st-about-badge').forEach(function(el) {
-        el.classList.add('st-reveal'); io.observe(el);
-      });
-    }
   })();
 </script>
 {% endblock %}

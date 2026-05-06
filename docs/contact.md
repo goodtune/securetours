@@ -15,8 +15,8 @@ Our team is ready to assist with enquiries, bookings and custom itinerary planni
 
 ---
 
-<div class="st-contact-grid">
-<div>
+<div class="st-contact-grid" markdown>
+<div markdown>
 
 <span class="st-section-label">Contact</span>
 
@@ -60,7 +60,7 @@ Secure Tours &amp; Travel operates nationally across Australia. Reach us directl
 Enquiries welcome in multiple languages — including English, Mandarin, French, Korean, Italian and German.
 
 </div>
-<div>
+<div markdown>
 
 ## Enquiry Form
 
