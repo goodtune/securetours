@@ -50,7 +50,11 @@ Every client — from solo traveller to touring sports team — receives the sam
 
 ---
 
+<span class="st-section-label">Clients</span>
+
 ## Who We Serve
+
+<div class="st-gold-rule"></div>
 
 - International tourists & inbound groups
 - Corporate executives & delegations
@@ -61,7 +65,11 @@ Every client — from solo traveller to touring sports team — receives the sam
 
 ---
 
+<span class="st-section-label">Part of Australian Frontline Solutions</span>
+
 ## Part of Australian Frontline Solutions
+
+<div class="st-gold-rule"></div>
 
 Australian Frontline Solutions (AFS) has been Australia's trusted partner in safety and security services since 1989 — 37 years of operational expertise. Secure Tours & Travel draws on this heritage to deliver outcomes that no standard tour operator can match: a full spectrum of licensed security, risk and logistics capability behind every guest experience.
 

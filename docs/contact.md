@@ -15,7 +15,11 @@ Our team is ready to assist with enquiries, bookings and custom itinerary planni
 
 ---
 
+<span class="st-section-label">Contact</span>
+
 ## Contact Information
+
+<div class="st-gold-rule"></div>
 
 Secure Tours & Travel operates nationally across Australia. Reach us directly — we respond to all enquiries within one business day.
 

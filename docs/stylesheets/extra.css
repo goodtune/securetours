@@ -245,6 +245,23 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.8;
 }
 
+/* -- Breadcrumb (inside page hero) ------------------------- */
+.st-breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  list-style: none;
+  margin: 0 0 1rem !important;
+  padding: 0 !important;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+.st-breadcrumb li { display: flex; align-items: center; gap: 0.5rem; }
+.st-breadcrumb li::before { content: none; }
+.st-breadcrumb li + li::before { content: '/'; color: rgba(255,255,255,0.35); }
+.st-breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; }
+.st-breadcrumb a:hover { color: var(--st-gold); }
+
 /* Hide the markdown h1 that duplicates the hero title */
 .st-content-no-first-h1 h1 {
   display: none !important;
