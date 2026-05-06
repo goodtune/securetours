@@ -592,16 +592,25 @@ a.st-btn-navy:hover {
 
 /* -- Navy CTA band ----------------------------------------- */
 .st-band-navy {
-  background: var(--st-navy);
-  border-radius: var(--st-radius);
-  padding: 4rem 2rem;
+  background: linear-gradient(135deg, var(--st-navy-dark), var(--st-navy));
+  padding: 5rem 2rem;
   text-align: center;
   margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
 
   /* Full width */
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: 0;
+}
+
+.st-band-navy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(184,149,42,0.1) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .st-band-navy > * { max-width: 640px; margin-left: auto; margin-right: auto; }

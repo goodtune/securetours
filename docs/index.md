@@ -47,7 +47,11 @@ Combining elite security expertise with premium concierge service — we protect
 
 <div class="st-home-section" markdown>
 
+<span class="st-section-label">Our Solutions</span>
+
 ## Specialist Solutions
+
+<div class="st-gold-rule"></div>
 
 Every solution is designed around one principle: your safety, comfort and peace of mind. From private transfers to full event logistics, we cover every detail.
 
@@ -107,7 +111,11 @@ Professional, vetted escorts for solo travellers — from the departure gate to 
 <div class="st-about-grid" markdown>
 <div class="st-about-text" markdown>
 
+<span class="st-section-label">About Secure Tours & Travel</span>
+
 ## Built on Trust. Backed by Experience.
+
+<div class="st-gold-rule"></div>
 
 Secure Tours & Travel is the dedicated tourism and event services division of Australian Frontline Solutions (AFS) — one of Australia's most trusted names in safety leadership, protective operations and event management. With 37 years of operational experience, we bring elite security expertise to luxury travel and VIP logistics.
 
@@ -130,7 +138,11 @@ Secure Tours & Travel is the dedicated tourism and event services division of Au
 
 <div class="st-home-section" markdown>
 
+<span class="st-section-label">Why Choose Us</span>
+
 ## What Sets Us Apart
+
+<div class="st-gold-rule"></div>
 
 <div class="st-cards st-cards-2" markdown>
 
