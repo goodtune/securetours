@@ -666,18 +666,9 @@ a.st-btn-navy:hover {
   font-size: 0.9rem;
 }
 
-/* -- Meta strip (case studies) ----------------------------- */
+/* -- Meta strip (hidden — hero_sub carries this info) ------ */
 .st-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1.5rem;
-  font-size: 0.8rem;
-  color: var(--st-gray-500);
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-  margin-bottom: 1.75rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--st-gray-200);
+  display: none;
 }
 
 /* -- Outcome stats (case studies) -------------------------- */
