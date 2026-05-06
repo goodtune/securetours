@@ -353,7 +353,8 @@ h1, h2, h3, h4, h5, h6,
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: calc(80px + 5rem) clamp(1.5rem, 6vw, 5rem) 5rem;
+  /* Wide-viewport: align left edge with the content column via max() */
+  padding: calc(80px + 5rem) max(clamp(1.5rem, 6vw, 5rem), calc((100vw - var(--st-max-w)) / 2)) 5rem;
   box-sizing: border-box;
 
   /* Background */
@@ -637,7 +638,7 @@ a.st-btn-navy:hover {
   pointer-events: none;
 }
 
-.st-band-navy > * { max-width: 640px; margin-left: auto; margin-right: auto; }
+.st-band-navy > * { max-width: 640px; margin-left: auto !important; margin-right: auto !important; }
 
 .st-band-navy h2,
 .md-typeset .st-band-navy h2 {
