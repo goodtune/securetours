@@ -11,7 +11,7 @@ Real-world insights into secure travel, event management and VIP logistics — d
 
 ## Testimonials & Endorsements
 
-<div class="st-cards st-cards-2" markdown>
+<div class="st-cards st-cards-3" markdown>
 
 <div class="st-card" markdown>
 ### [Gary O'Riordan](gary-oriordan-endorsement.md)
@@ -31,13 +31,22 @@ Real-world insights into secure travel, event management and VIP logistics — d
 [Read full endorsement](janene-rees-endorsement.md){ .st-btn .st-btn-navy }
 </div>
 
+<div class="st-card" markdown>
+### Event Producer, Sydney
+*Available on request*
+
+"The AFS Group team adapted to our client's requirements each night — their familiarity with the venue and their rapid communication between teams made crowd management seamless across the full season."
+
+*Reference available on request.*
+</div>
+
 </div>
 
 ---
 
 ## Case Studies
 
-<div class="st-cards st-cards-2" markdown>
+<div class="st-cards st-cards-3" markdown>
 
 <div class="st-card" markdown>
 ### [Vivid Sydney — Festival Security & Crowd Management](vivid-sydney.md)
@@ -57,13 +66,31 @@ An ongoing event security partnership with one of Sydney's premier arts and cult
 [Read case study](carriageworks.md){ .st-btn .st-btn-navy }
 </div>
 
+<div class="st-card" markdown>
+### International Sporting Delegation — Multi-City Ground Transport
+*Case Study · Carriagework Travel · International Sporting Event*
+
+Secure ground transport for a 40-person international sports delegation across Sydney, Melbourne and Brisbane during a major tournament — property, venues, accommodation and team movements coordinated end-to-end.
+
+*Coming Soon*
+</div>
+
+<div class="st-card" markdown>
+### Major Feature Production — On-Set Security & Talent Protection
+*Case Study · On-Set Security · Film & Television*
+
+Providing on-set security, talent protection and location access management for a major Australian feature production — covering principal cast, location shoots and media management over an extended production schedule.
+
+*Coming Soon*
+</div>
+
 </div>
 
 ---
 
 ## Articles & Features
 
-<div class="st-cards st-cards-2" markdown>
+<div class="st-cards st-cards-3" markdown>
 
 <div class="st-card" markdown>
 ### [Matthew Harrison — AFS Solutions](matthew-harrison-profile.md)
@@ -72,6 +99,33 @@ An ongoing event security partnership with one of Sydney's premier arts and cult
 From working on the door at a local pub to advising and protecting high-profile clients nationally — the story of how Matthew Harrison built one of Australia's most respected secure travel and event security operations.
 
 [Read](matthew-harrison-profile.md){ .st-btn .st-btn-navy }
+</div>
+
+<div class="st-card" markdown>
+### Why Security Should Be Embedded in Event Planning — Not Bolted On
+*Industry Perspective*
+
+An operational perspective on the difference between event security as an afterthought and security-first design — and why the former consistently produces worse outcomes for organisers, guests and talent alike.
+
+*Coming Soon*
+</div>
+
+<div class="st-card" markdown>
+### The Growing Demand for Secure Inbound Tourism in Australia
+*Market Insight*
+
+High-end international travellers are increasingly seeking operators who can guarantee both luxury and safety. How does that translate into an opportunity for the Australian market — and what is Secure Tours & Travel doing differently.
+
+*Coming Soon*
+</div>
+
+<div class="st-card" markdown>
+### STAR Accreditation: Raising the Safety Bar for Australian Tourism Operators
+*Industry Update*
+
+Why STAR accreditation means, why it matters to international tourism wholesalers, and how it is changing the way Australian operators communicate their safety and security standards to the global market.
+
+*Coming Soon*
 </div>
 
 </div>
