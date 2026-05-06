@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Secure Tours & Travel Solutions
 description: "Comprehensive, safety-led travel packages for inbound and domestic clients seeking the highest standard of secure, luxurious touring."
 ---

@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Solo Traveller Assist
 description: "Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle."
 ---

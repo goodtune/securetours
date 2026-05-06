@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Bereavement Travel Support
 description: "Compassionate, discreet logistics when it matters most — airport assistance for families navigating travel during the most difficult of times."
 ---

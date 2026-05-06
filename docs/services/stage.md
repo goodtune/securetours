@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: "S.T.A.G.E."
 description: "Specialised event management with safety at its core — from major sporting events to cultural festivals and corporate activations."
 ---

@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: "P.A.S.S. — Professional Athlete Support Specialist"
 description: "Elite travel logistics for athletes and sports teams — nutrition, recovery, equipment, security and schedule management."
 ---

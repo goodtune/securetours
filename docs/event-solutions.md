@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Event Solutions
 description: "AFS Group brings licensed security expertise, crowd management and white-glove hospitality to every event — corporate, sporting, entertainment, film & TV."
 ---

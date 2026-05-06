@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: About Us
 description: "Secure Tours & Travel — established 1989, a division of Australian Frontline Solutions."
 ---

@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Resources & Downloads
 description: "Service brochures, programme guides and informational materials from Secure Tours & Travel — available in English and Mandarin."
 ---

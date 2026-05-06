@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Exclusive Transfer Assistance
 description: "Australia's leading safety and security transfer service — Exclusive and Executive tiers."
 ---

@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Concierge & Chaperone
 description: "Personal, attentive care for individuals and groups — from airport arrivals to 24/7 support throughout your stay."
 ---

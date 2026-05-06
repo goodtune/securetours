@@ -1,6 +1,8 @@
 ---
 title: Articles, Testimonials & Case Studies
 description: "Real-world insights into secure travel, event management and VIP logistics — drawn from over three decades of AFS Group operational experience."
+hide:
+  - toc
 ---
 
 # Articles, Testimonials & Case Studies

@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: "P.A.S.S. — Performing Artist Safety Specialist"
 description: "Dedicated travel, security and logistics support for touring musicians, entertainers and performing arts companies."
 ---

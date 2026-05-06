@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Contact
 description: "Get in touch with Secure Tours & Travel. We respond to all enquiries within one business day."
 ---

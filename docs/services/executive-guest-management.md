@@ -1,4 +1,7 @@
 ---
+hide:
+  - navigation
+  - toc
 title: Executive Guest Management
 description: "Seamless, hassle-free executive travel for investors, senior leaders and corporate delegations."
 ---
