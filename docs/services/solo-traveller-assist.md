@@ -3,6 +3,8 @@ hide:
   - navigation
   - toc
 title: Solo Traveller Assist
+hero_label: "Solo Traveller Assist"
+hero_sub: "Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle."
 description: "Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle."
 ---
 

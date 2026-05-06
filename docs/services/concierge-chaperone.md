@@ -3,6 +3,8 @@ hide:
   - navigation
   - toc
 title: Concierge & Chaperone
+hero_label: "Concierge & Chaperone"
+hero_sub: "Personal, attentive care for individuals and groups — from airport arrivals to 24/7 support throughout your stay."
 description: "Personal, attentive care for individuals and groups — from airport arrivals to 24/7 support throughout your stay."
 ---
 

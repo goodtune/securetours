@@ -4,6 +4,8 @@ description: "Real-world insights into secure travel, event management and VIP l
 hide:
   - navigation
   - toc
+hero_label: "Articles, Testimonials & Case Studies"
+hero_sub: "Real-world insights into secure travel, event management and VIP logistics — drawn from over three decades of operational experience with AFS Group."
 ---
 
 # Articles, Testimonials & Case Studies

@@ -4,6 +4,8 @@ hide:
   - toc
 title: Tourism Solutions
 description: "All Secure Tours & Travel tourism solutions — from executive guest management to solo traveller assist."
+hero_label: "Tourism Solutions"
+hero_sub: "Comprehensive, bespoke solutions for individuals, groups, corporate delegations and touring professionals — designed around your safety, comfort and peace of mind."
 ---
 
 # Tourism Solutions

@@ -4,6 +4,8 @@ hide:
   - toc
 title: Resources & Downloads
 description: "Service brochures, programme guides and informational materials from Secure Tours & Travel — available in English and Mandarin."
+hero_label: "Client Resources"
+hero_sub: "Service brochures, programme guides and informational materials — available for download in English and Mandarin."
 ---
 
 # Resources & Downloads

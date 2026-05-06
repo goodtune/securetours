@@ -189,6 +189,83 @@ h1, h2, h3, h4, h5, h6,
   margin-top: 0;
 }
 
+/* -- Page hero (inner pages) ------------------------------- */
+.st-page-hero {
+  background: linear-gradient(135deg, var(--st-navy-dark) 0%, var(--st-navy) 100%);
+  padding: clamp(4rem, 8vw, 7rem) 0 clamp(2.5rem, 5vw, 4rem);
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: 0;
+}
+.st-page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(184,149,42,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.st-page-hero .st-container { position: relative; z-index: 1; }
+
+.st-page-hero__label {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--st-gold-light);
+  margin-bottom: 1rem;
+}
+
+.st-page-hero__title,
+.st-page-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #ffffff !important;
+  font-size: clamp(2rem, 4.5vw, 3rem) !important;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 1rem !important;
+}
+
+.st-page-hero__sub {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.78);
+  max-width: 620px;
+  margin: 0;
+  line-height: 1.8;
+}
+
+/* Hide the markdown h1 that duplicates the hero title */
+.st-content-no-first-h1 .md-typeset h1:first-child,
+.st-content-no-first-h1 .md-content__inner > .md-typeset > h1:first-child {
+  display: none;
+}
+
+/* -- Section labels (gold uppercase, above h2) ------------- */
+.st-section-label {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--st-gold);
+  margin-bottom: 0.5rem;
+}
+
+/* -- Gold dividers ----------------------------------------- */
+.st-gold-rule {
+  width: 60px;
+  height: 3px;
+  background: var(--st-gold);
+  margin: 1rem 0 1.5rem;
+  border: none;
+  display: block;
+}
+
 /* ============================================================
    HERO — full-viewport-width, full-height
    ============================================================ */
