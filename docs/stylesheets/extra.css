@@ -328,21 +328,22 @@ h1, h2, h3, h4, h5, h6,
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: 0;
-  margin-top: 0;
+  /* Pull up behind the fixed nav (80px) so hero starts at top=0 like Site A */
+  margin-top: -80px;
   margin-bottom: 3.5rem;
 
-  /* Sizing */
-  min-height: calc(100vh - 80px); /* 80px = fixed site-nav */
+  /* Sizing — full 100vh from top=0, padding-top pushes text below nav */
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 5rem clamp(1.5rem, 6vw, 5rem);
+  padding: calc(80px + 5rem) clamp(1.5rem, 6vw, 5rem) 5rem;
   box-sizing: border-box;
 
   /* Background */
   background:
-    linear-gradient(135deg, rgba(30,46,120,0.88) 0%, rgba(30,46,120,0.70) 60%, rgba(42,63,153,0.62) 100%),
+    linear-gradient(135deg, rgba(30,46,120,0.85) 0%, rgba(30,46,120,0.65) 60%, rgba(42,63,153,0.60) 100%),
     url('/assets/hero-bg.jpg') center / cover no-repeat;
   background-color: var(--st-navy);
 
@@ -356,28 +357,31 @@ h1, h2, h3, h4, h5, h6,
   width: 100%;
 }
 
-/* Fix MkDocs wrapping span.st-tag in a <p> */
+/* MkDocs wraps span.st-tag in a <p> — spacing belongs on the <p> */
 .st-hero > p:first-child {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .st-hero .st-tag {
   display: inline-block;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.75rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  color: var(--st-gold-light);
+  letter-spacing: 0.2em;
+  color: var(--st-gold);
+  border: 1px solid rgba(184,149,42,0.4);
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
 }
 
 .st-hero h1,
 .md-typeset .st-hero h1 {
   color: #ffffff !important;
-  font-size: clamp(2rem, 5vw, 3.5rem) !important;
+  font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
   font-weight: 700;
   line-height: 1.15;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
 }
 
@@ -385,11 +389,11 @@ h1, h2, h3, h4, h5, h6,
 .st-hero h1 .headerlink { display: none !important; }
 
 .st-hero > p:not(:first-child) {
-  color: rgba(255,255,255,0.85);
-  font-size: 1.125rem;
-  max-width: 560px;
-  line-height: 1.75;
-  margin-bottom: 2.25rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 1.15rem;
+  max-width: 540px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
 }
 
 /* -- Buttons ----------------------------------------------- */
@@ -464,45 +468,40 @@ a.st-btn-navy:hover {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
-  background: var(--st-gold-pale);
-  border-top: 3px solid var(--st-gold);
-  border-bottom: 3px solid rgba(184,149,42,0.3);
+  background: var(--st-gold);
   margin: 0 0 3rem;
   text-align: center;
+  /* Full viewport width breakout */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 @media (min-width: 640px) {
   .st-stats { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* Stats bar also breaks to full width */
-.st-stats {
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-}
-
 .st-stats > div {
-  padding: 1.75rem 1rem;
-  border-right: 1px solid rgba(184,149,42,0.25);
+  padding: 2.5rem 1rem;
+  border-right: 1px solid rgba(255,255,255,0.2);
 }
 .st-stats > div:last-child { border-right: none; }
 
 .st-stat-value {
   display: block;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: var(--st-navy);
+  color: var(--st-navy-dark);
   line-height: 1;
 }
 
 .st-stat-label {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--st-gray-500);
+  letter-spacing: 0.1em;
+  color: var(--st-navy);
   margin-top: 0.5rem;
 }
 
