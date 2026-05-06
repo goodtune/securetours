@@ -308,8 +308,7 @@ h1, h2, h3, h4, h5, h6,
 /* Plain lists inside cards, band-navy, or about-text should stay as bullets */
 .st-card ul, .st-card ol,
 .st-band-navy ul, .st-band-navy ol,
-.st-about-text ul, .st-about-text ol,
-.footer-col ul, .footer-col ol {
+.st-about-text ul, .st-about-text ol {
   list-style: disc !important;
   display: block !important;
   padding-left: 1.5rem !important;
@@ -317,8 +316,7 @@ h1, h2, h3, h4, h5, h6,
 }
 .st-card ul li, .st-card ol li,
 .st-band-navy ul li, .st-band-navy ol li,
-.st-about-text ul li, .st-about-text ol li,
-.footer-col ul li, .footer-col ol li {
+.st-about-text ul li, .st-about-text ol li {
   background: none !important;
   padding: 0.25rem 0 !important;
   border-left: none !important;
@@ -411,6 +409,14 @@ h1, h2, h3, h4, h5, h6,
   max-width: 540px;
   line-height: 1.8;
   margin-bottom: 2.5rem;
+}
+
+.st-hero .st-tagline-img {
+  display: block;
+  max-width: 420px;
+  width: 100%;
+  margin-top: 2rem;
+  opacity: 0.9;
 }
 
 /* -- Buttons ----------------------------------------------- */

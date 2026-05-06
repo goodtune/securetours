@@ -19,6 +19,8 @@ Combining elite security expertise with premium concierge service — we protect
 [Enquire Now](contact.md){ .st-btn .st-btn-outline }
 </div>
 
+![Secure Luxury Travel for discerning individuals & groups](/assets/tagline.gif){ .st-tagline-img loading="lazy" }
+
 </div>
 
 <div class="st-stats" markdown>
