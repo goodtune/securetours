@@ -19,11 +19,7 @@ logo       = "assets/logo-transparent.png"
 favicon    = "assets/favicon.svg"
 custom_dir = "overrides"
 
-features = [
-  "navigation.tabs",
-  "navigation.tabs.sticky",
-  "navigation.top",
-]
+features = []
 
 [project.theme.palette]
 scheme  = "default"

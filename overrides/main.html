@@ -7,3 +7,130 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ 'stylesheets/extra.css' | url }}">
 {% endblock %}
+
+{% block header %}
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="st-container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Secure Tours &amp; Travel — Home">
+        <img src="/assets/logo-transparent.png" alt="Secure Tours &amp; Travel">
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li>
+          <a href="/services/">Tourism Solutions</a>
+          <ul class="nav-dropdown" role="list">
+            <li><a href="/services/tours-travel-solutions/">Secure Tours &amp; Travel Solutions</a></li>
+            <li><a href="/services/executive-guest-management/">Executive Guest Management</a></li>
+            <li><a href="/services/exclusive-transfer-assistance/">Exclusive Transfer Assistance</a></li>
+            <li><a href="/services/pass-athlete/">P.A.S.S. — Athlete</a></li>
+            <li><a href="/services/pass-artist/">P.A.S.S. — Performing Artist</a></li>
+            <li><a href="/services/concierge-chaperone/">Concierge &amp; Chaperone</a></li>
+            <li><a href="/services/bereavement-travel-support/">Bereavement Travel Support</a></li>
+            <li><a href="/services/solo-traveller-assist/">Solo Traveller Assist</a></li>
+          </ul>
+        </li>
+        <li><a href="/event-solutions/">Event Solutions</a></li>
+        <li><a href="/articles/">Articles, Testimonials &amp; Case Studies</a></li>
+        <li><a href="/resources/">Resources</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+
+{% block tabs %}{% endblock %}
+
+{% block footer %}
+<div class="footer-afs">
+  <div class="st-container">
+    <div class="footer-afs__inner">
+      <span class="footer-afs__division">A division of <strong>Australian Frontline Solutions</strong></span>
+      <span class="footer-afs__sep" aria-hidden="true">·</span>
+      <span class="footer-afs__credentials">Security Master Licence Holder · Established 1989</span>
+    </div>
+  </div>
+</div>
+<footer class="site-footer" role="contentinfo">
+  <div class="st-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/logo-transparent.png" alt="Secure Tours &amp; Travel">
+        <p>Secure Luxury Travel for discerning individuals &amp; groups.</p>
+        <p style="margin-top:0.75rem; font-size:0.8rem; color:rgba(255,255,255,0.4);">ABN available on request.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tourism Solutions</h4>
+        <ul role="list">
+          <li><a href="/services/tours-travel-solutions/">Secure Tours &amp; Travel Solutions</a></li>
+          <li><a href="/services/executive-guest-management/">Executive Guest Management</a></li>
+          <li><a href="/services/exclusive-transfer-assistance/">Exclusive Transfer Assistance</a></li>
+          <li><a href="/services/pass-athlete/">P.A.S.S. — Athlete</a></li>
+          <li><a href="/services/pass-artist/">P.A.S.S. — Artist</a></li>
+          <li><a href="/services/concierge-chaperone/">Concierge &amp; Chaperone</a></li>
+          <li><a href="/services/bereavement-travel-support/">Bereavement Travel Support</a></li>
+          <li><a href="/services/solo-traveller-assist/">Solo Traveller Assist</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul role="list">
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/event-solutions/">Event Solutions</a></li>
+          <li><a href="/articles/">Articles, Testimonials &amp; Case Studies</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul role="list">
+          <li><a href="tel:+61414499778">+61 414 499 778</a></li>
+          <li><a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a></li>
+          <li style="color:rgba(255,255,255,0.5); font-size:0.875rem; margin-top:0.5rem;">Australia-wide · NSW</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Secure Tours &amp; Travel. All rights reserved.</span>
+      <div>
+        <a href="#">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var links  = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        links.classList.toggle('open');
+      });
+      links.querySelectorAll('li > a').forEach(function(a) {
+        if (a.nextElementSibling) {
+          a.addEventListener('click', function(e) {
+            if (links.classList.contains('open')) {
+              e.preventDefault();
+              a.parentElement.classList.toggle('open');
+            }
+          });
+        }
+      });
+    }
+    window.addEventListener('scroll', function() {
+      var nav = document.querySelector('.site-nav');
+      if (nav) nav.classList.toggle('scrolled', window.scrollY > 10);
+    });
+  })();
+</script>
+{% endblock %}
