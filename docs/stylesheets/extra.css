@@ -230,10 +230,10 @@ h1, h2, h3, h4, h5, h6,
 .st-page-hero h1 {
   font-family: 'Playfair Display', Georgia, serif;
   color: #ffffff !important;
-  font-size: clamp(2rem, 4.5vw, 3rem) !important;
+  font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
   font-weight: 700;
   line-height: 1.15;
-  margin: 0 0 1rem !important;
+  margin: 0 0 1.5rem !important;
 }
 
 .st-page-hero__sub {
@@ -268,7 +268,7 @@ h1, h2, h3, h4, h5, h6,
 .st-content-no-first-h1 ol:not([class]) {
   list-style: none !important;
   display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 0.875rem;
   padding: 0 !important;
   margin: 1.5rem 0 2rem !important;
@@ -277,7 +277,7 @@ h1, h2, h3, h4, h5, h6,
 .st-content-no-first-h1 ul:not([class]) li,
 .st-content-no-first-h1 ol:not([class]) li {
   background: var(--st-off-white);
-  padding: 0.9rem 1.25rem !important;
+  padding: 1.25rem 1.5rem !important;
   border-radius: var(--st-radius);
   border-left: 3px solid var(--st-gold);
   font-size: 0.9375rem;
@@ -523,7 +523,7 @@ a.st-btn-navy:hover {
   border: 1px solid var(--st-gray-200);
   border-top: 3px solid var(--st-navy);
   border-radius: 0 0 var(--st-radius) var(--st-radius);
-  padding: 1.5rem;
+  padding: 2rem;
   box-shadow: var(--st-shadow);
   transition: box-shadow 0.25s, transform 0.25s;
 }
@@ -536,10 +536,10 @@ a.st-btn-navy:hover {
 .st-card h3,
 .md-typeset .st-card h3 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 1.0625rem;
+  font-size: 1.15rem;
   color: var(--st-navy);
   margin-top: 0;
-  margin-bottom: 0.625rem;
+  margin-bottom: 0.75rem;
 }
 
 .st-card h3 a,
@@ -839,32 +839,26 @@ a.st-btn-navy:hover {
 /* -- About grid (home page trust section) ----------------- */
 .st-about-grid {
   display: grid;
-  grid-template-columns: 1fr 340px;
-  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
   align-items: center;
 }
 
 .st-about-text { min-width: 0; }
 
 .st-about-badge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background: var(--st-navy);
-  border-radius: 50%;
-  width: 280px;
-  height: 280px;
+  color: #ffffff;
   padding: 2rem;
-  text-align: center;
-  margin: 0 auto;
+  border-radius: var(--st-radius);
   box-shadow: var(--st-shadow-lg);
+  text-align: center;
 }
 
 .st-badge-number {
   display: block;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: 700;
   color: var(--st-gold);
   line-height: 1;
@@ -873,31 +867,26 @@ a.st-btn-navy:hover {
 .st-badge-label {
   display: block;
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #ffffff;
-  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 0.25rem;
 }
 
 .st-badge-sub {
   display: block;
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   color: rgba(255,255,255,0.6);
-  margin-top: 0.4rem;
-  line-height: 1.4;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(184,149,42,0.3);
+  line-height: 1.5;
 }
 
 @media (max-width: 860px) {
   .st-about-grid {
     grid-template-columns: 1fr;
   }
-  .st-about-badge {
-    width: 220px;
-    height: 220px;
-  }
-  .st-badge-number { font-size: 3.5rem; }
+  .st-badge-number { font-size: 2.5rem; }
 }
 
 /* -- Responsive ------------------------------------------- */
