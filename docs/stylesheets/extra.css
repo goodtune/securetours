@@ -805,8 +805,14 @@ a.st-btn-navy:hover {
   color: var(--st-gold);
   margin-bottom: 1.25rem;
 }
-.footer-col ul { list-style: none; padding: 0; margin: 0; }
-.footer-col ul li { margin-bottom: 0.6rem; }
+.footer-col ul,
+.site-footer .footer-col ul,
+.md-typeset .footer-col ul { list-style: none !important; padding: 0 !important; margin: 0 !important; }
+.footer-col ul li,
+.site-footer .footer-col ul li,
+.md-typeset .footer-col ul li { margin-bottom: 0.6rem !important; padding: 0 !important; background: none !important; border: none !important; }
+.footer-col ul li::before,
+.site-footer .footer-col ul li::before { display: none !important; }
 .footer-col ul a { font-size: 0.875rem; color: rgba(255,255,255,0.65); transition: color 0.2s; text-decoration: none; }
 .footer-col ul a:hover { color: var(--st-gold); }
 .footer-bottom {

@@ -19,10 +19,10 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" role="list">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/">About Us</a></li>
+        <li><a href="/" {% if page.url == '' or page.url == '.' or page.url == 'index.html' %}class="active"{% endif %}>Home</a></li>
+        <li><a href="/about/" {% if 'about' in page.url %}class="active"{% endif %}>About Us</a></li>
         <li>
-          <a href="/services/">Tourism Solutions</a>
+          <a href="/services/" {% if 'services' in page.url %}class="active"{% endif %}>Tourism Solutions</a>
           <ul class="nav-dropdown" role="list">
             <li><a href="/services/tours-travel-solutions/">Secure Tours &amp; Travel Solutions</a></li>
             <li><a href="/services/executive-guest-management/">Executive Guest Management</a></li>
@@ -34,10 +34,10 @@
             <li><a href="/services/solo-traveller-assist/">Solo Traveller Assist</a></li>
           </ul>
         </li>
-        <li><a href="/event-solutions/">Event Solutions</a></li>
-        <li><a href="/articles/">Articles, Testimonials &amp; Case Studies</a></li>
-        <li><a href="/resources/">Resources</a></li>
-        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/event-solutions/" {% if 'event-solutions' in page.url %}class="active"{% endif %}>Event Solutions</a></li>
+        <li><a href="/articles/" {% if 'articles' in page.url %}class="active"{% endif %}>Articles, Testimonials &amp; Case Studies</a></li>
+        <li><a href="/resources/" {% if 'resources' in page.url %}class="active"{% endif %}>Resources</a></li>
+        <li><a href="/contact/" {% if 'contact' in page.url %}class="active"{% endif %}>Contact</a></li>
       </ul>
     </div>
   </div>
