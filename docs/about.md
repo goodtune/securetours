@@ -54,15 +54,13 @@ Every client — from solo traveller to touring sports team — receives the sam
 
 <div class="st-gold-rule"></div>
 
-<div class="st-about-text" markdown>
-
-- International tourists & inbound groups
-- Corporate executives & delegations
-- Elite athletes & sports teams
-- Touring musicians & performing artists
-- Government & diplomatic visitors
-- Families & student groups
-
+<div class="st-clients-grid">
+<div class="st-client-chip">International tourists &amp; inbound groups</div>
+<div class="st-client-chip">Corporate executives &amp; delegations</div>
+<div class="st-client-chip">Elite athletes &amp; sports teams</div>
+<div class="st-client-chip">Touring musicians &amp; performing artists</div>
+<div class="st-client-chip">Government &amp; diplomatic visitors</div>
+<div class="st-client-chip">Families &amp; student groups</div>
 </div>
 
 <div><span class="st-section-label">Part of Australian Frontline Solutions</span></div>
@@ -71,30 +69,30 @@ Every client — from solo traveller to touring sports team — receives the sam
 
 <div class="st-gold-rule"></div>
 
-Australian Frontline Solutions (AFS) has been Australia's trusted partner in safety and security services since 1989 — 37 years of operational expertise. Secure Tours & Travel draws on this heritage to deliver outcomes that no standard tour operator can match: a full spectrum of licensed security, risk and logistics capability behind every guest experience.
-
-<div class="st-stats" markdown>
-
+<div class="st-section-navy">
+<div class="st-about-afs-grid">
 <div>
-<span class="st-stat-value">1989</span>
-<span class="st-stat-label">Established</span>
-</div>
 
-<div>
-<span class="st-stat-value">37 Years</span>
-<span class="st-stat-label">Trading</span>
-</div>
+Australian Frontline Solutions (AFS) has been Australia's trusted partner in safety and security services since 1989 — 37 years of operational expertise. Secure Tours &amp; Travel draws on this heritage to deliver outcomes that no standard tour operator can match: a full spectrum of licensed security, risk and logistics capability behind every guest experience.
 
-<div>
-<span class="st-stat-value">Licensed</span>
-<span class="st-stat-label">Security Master Licence</span>
-</div>
+<a href="contact/" class="st-btn st-btn-primary" style="margin-top:1.5rem;display:inline-flex;">Enquire Now</a>
 
-<div>
-<span class="st-stat-value">National</span>
-<span class="st-stat-label">NSW · QLD · VIC</span>
 </div>
-
+<div class="st-afs-creds">
+  <div class="st-afs-cred">
+    <div class="st-afs-cred__value">1989</div>
+    <div class="st-afs-cred__label">Established</div>
+  </div>
+  <div class="st-afs-cred">
+    <div class="st-afs-cred__value">37</div>
+    <div class="st-afs-cred__label">Years Trading</div>
+  </div>
+  <div class="st-afs-cred st-afs-cred--wide">
+    <div class="st-afs-cred__value" style="font-size:1rem;">Security Master Licence</div>
+    <div class="st-afs-cred__label">Licensed Operator</div>
+  </div>
+</div>
+</div>
 </div>
 
 ---

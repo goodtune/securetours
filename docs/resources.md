@@ -4,7 +4,7 @@ hide:
   - toc
 title: Resources & Downloads
 description: "Service brochures, programme guides and informational materials from Secure Tours & Travel — available in English and Mandarin."
-hero_label: "Client Resources"
+hero_label: "Brochures &amp; Guides"
 hero_sub: "Service brochures, programme guides and informational materials — available for download in English and Mandarin."
 ---
 
@@ -18,9 +18,9 @@ Service brochures, programme guides and informational materials. Available in En
 
 | Document | Language | Format |
 |----------|----------|--------|
-| Secure Tours & Travel — Service Brochure | English | PDF |
-| Secure Tours & Travel — 2024 Comprehensive Guide | English | PDF |
-| Secure Tours & Travel — 服务指南 (Services Guide) | Mandarin (中文) | PDF |
+| [Secure Tours & Travel — Service Brochure](/assets/downloads/secure-tours-brochure.pdf) | English | PDF |
+| [Secure Tours & Travel — 2024 Comprehensive Guide](/assets/downloads/secure-tours-brochure-2024.pdf) | English | PDF |
+| [Secure Tours & Travel — 服务指南 (Services Guide)](/assets/downloads/secure-tours-services-mandarin.pdf) | Mandarin (中文) | PDF |
 
 ---
 
@@ -28,7 +28,7 @@ Service brochures, programme guides and informational materials. Available in En
 
 | Document | Language | Format |
 |----------|----------|--------|
-| Exclusive Transfer Assistance — Service Guide (Diamond · Sapphire · Ruby Tiers) | English | PDF |
+| [Exclusive Transfer Assistance — Service Guide (Diamond · Sapphire · Ruby Tiers)](/assets/downloads/exclusive-transfer-assistance.pdf) | English | PDF |
 
 ---
 
@@ -38,7 +38,7 @@ STAT (Security, Tourism & Accreditation Tool) is AFS Group's independent risk as
 
 | Document | Language | Format |
 |----------|----------|--------|
-| STAT认证 — 认证指南 (STAT Accreditation Guide) | Mandarin (中文) | PDF |
+| [STAT认证 — 认证指南 (STAT Accreditation Guide)](/assets/downloads/stat-accreditation-mandarin.pdf) | Mandarin (中文) | PDF |
 
 ---
 

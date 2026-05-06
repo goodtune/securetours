@@ -15,24 +15,52 @@ Our team is ready to assist with enquiries, bookings and custom itinerary planni
 
 ---
 
+<div class="st-contact-grid">
+<div>
+
 <span class="st-section-label">Contact</span>
 
 ## Contact Information
 
 <div class="st-gold-rule"></div>
 
-Secure Tours & Travel operates nationally across Australia. Reach us directly — we respond to all enquiries within one business day.
+Secure Tours &amp; Travel operates nationally across Australia. Reach us directly — we respond to all enquiries within one business day.
 
-| | |
-|---|---|
-| **Phone** | [+61 414 499 778](tel:+61414499778) |
-| **Email** | [enquiries@securetours.com.au](mailto:enquiries@securetours.com.au) |
-| **Location** | Australia-wide · Based in NSW |
-| **Response time** | Within 1 business day |
+<div class="st-contact-detail">
+  <div class="st-contact-item">
+    <span class="st-contact-icon" aria-hidden="true">📞</span>
+    <div>
+      <strong>Phone</strong><br>
+      <a href="tel:+61414499778">+61 414 499 778</a>
+    </div>
+  </div>
+  <div class="st-contact-item">
+    <span class="st-contact-icon" aria-hidden="true">✉️</span>
+    <div>
+      <strong>Email</strong><br>
+      <a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a>
+    </div>
+  </div>
+  <div class="st-contact-item">
+    <span class="st-contact-icon" aria-hidden="true">📍</span>
+    <div>
+      <strong>Location</strong><br>
+      Australia-wide · Based in NSW
+    </div>
+  </div>
+  <div class="st-contact-item">
+    <span class="st-contact-icon" aria-hidden="true">⏱</span>
+    <div>
+      <strong>Response time</strong><br>
+      Within 1 business day
+    </div>
+  </div>
+</div>
 
 Enquiries welcome in multiple languages — including English, Mandarin, French, Korean, Italian and German.
 
----
+</div>
+<div>
 
 ## Enquiry Form
 
@@ -92,3 +120,15 @@ Enquiries welcome in multiple languages — including English, Mandarin, French,
     Send Enquiry →
   </button>
 </form>
+
+</div>
+</div>
+
+<div class="st-band-navy" markdown>
+
+## Ready to Explore Our Solutions?
+
+[View All Solutions](services/index.md){ .st-btn .st-btn-primary }
+[About Us](about.md){ .st-btn .st-btn-outline }
+
+</div>

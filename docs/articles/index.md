@@ -4,7 +4,7 @@ description: "Real-world insights into secure travel, event management and VIP l
 hide:
   - navigation
   - toc
-hero_label: "Articles, Testimonials & Case Studies"
+hero_label: "Case Studies &amp; Features"
 hero_sub: "Real-world insights into secure travel, event management and VIP logistics — drawn from over three decades of operational experience with AFS Group."
 ---
 
@@ -16,33 +16,53 @@ Real-world insights into secure travel, event management and VIP logistics — d
 
 ## Testimonials & Endorsements
 
-<div class="st-cards st-cards-3" markdown>
+<div class="st-cards st-cards-3">
 
-<div class="st-card" markdown>
-### [Gary O'Riordan](gary-oriordan-endorsement.md)
-*Tourism Industry Consultant & Business Advisor · 14 August 2018*
-
-"Secure Tours & Travel is a niche tour operator offering travel packages and itineraries, planning, coordination and booking services… with an overarching focus on luxury, high end experiences and a clear differentiation on safety and security."
-
-[Read full endorsement](gary-oriordan-endorsement.md){ .st-btn .st-btn-navy }
+<div class="st-testimonial-card">
+<div class="st-testimonial-card__header">
+  <div class="st-testimonial-card__avatar">G</div>
+  <div class="st-testimonial-card__author">
+    <div class="st-testimonial-card__name">Gary O'Riordan</div>
+    <div class="st-testimonial-card__title">Tourism Industry Consultant &amp; Business Advisor</div>
+  </div>
+  <div class="st-testimonial-card__badge">Endorsement</div>
+</div>
+<div class="st-testimonial-card__body">
+<p><em>14 August 2018</em></p>
+<p>"Secure Tours &amp; Travel is a niche tour operator offering travel packages and itineraries, planning, coordination and booking services… with an overarching focus on luxury, high end experiences and a clear differentiation on safety and security."</p>
+<a href="gary-oriordan-endorsement/" class="st-btn st-btn-navy">Read full endorsement</a>
+</div>
 </div>
 
-<div class="st-card" markdown>
-### [Janene Rees — REES INTERNATIONAL](janene-rees-endorsement.md)
-*Founder & Director · 23 August 2018*
-
-"It gives me great pleasure to endorse Secure Tours and Travel and sister company AFS for its outstanding work practices and I believe them to be one of the best in their field."
-
-[Read full endorsement](janene-rees-endorsement.md){ .st-btn .st-btn-navy }
+<div class="st-testimonial-card">
+<div class="st-testimonial-card__header">
+  <div class="st-testimonial-card__avatar">J</div>
+  <div class="st-testimonial-card__author">
+    <div class="st-testimonial-card__name">Janene Rees</div>
+    <div class="st-testimonial-card__title">Founder &amp; Director · REES INTERNATIONAL</div>
+  </div>
+  <div class="st-testimonial-card__badge">Endorsement</div>
+</div>
+<div class="st-testimonial-card__body">
+<p><em>23 August 2018</em></p>
+<p>"It gives me great pleasure to endorse Secure Tours and Travel and sister company AFS for its outstanding work practices and I believe them to be one of the best in their field."</p>
+<a href="janene-rees-endorsement/" class="st-btn st-btn-navy">Read full endorsement</a>
+</div>
 </div>
 
-<div class="st-card" markdown>
-### Event Producer, Sydney
-*Available on request*
-
-"The AFS Group team adapted to our client's requirements each night — their familiarity with the venue and their rapid communication between teams made crowd management seamless across the full season."
-
-*Reference available on request.*
+<div class="st-testimonial-card">
+<div class="st-testimonial-card__header">
+  <div class="st-testimonial-card__avatar">★</div>
+  <div class="st-testimonial-card__author">
+    <div class="st-testimonial-card__name">Event Producer, Sydney</div>
+    <div class="st-testimonial-card__title">Available on request</div>
+  </div>
+  <div class="st-testimonial-card__badge">Endorsement</div>
+</div>
+<div class="st-testimonial-card__body">
+<p>"The AFS Group team adapted to our client's requirements each night — their familiarity with the venue and their rapid communication between teams made crowd management seamless across the full season."</p>
+<p><em>Reference available on request.</em></p>
+</div>
 </div>
 
 </div>

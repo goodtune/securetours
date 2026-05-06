@@ -978,3 +978,213 @@ a.st-btn-navy:hover {
   /* Ensure full-width elements don't cause overflow on mobile */
   body { overflow-x: hidden; }
 }
+
+/* -- About page: client chips ------------------------------- */
+.st-clients-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.st-client-chip {
+  background: var(--st-navy);
+  color: rgba(255,255,255,0.85);
+  padding: 1rem 1.25rem;
+  border-radius: var(--st-radius);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.st-client-chip::before {
+  content: '✦';
+  color: var(--st-gold);
+  flex-shrink: 0;
+}
+
+/* -- About page: AFS section (navy background) -------------- */
+.st-section-navy {
+  background: var(--st-navy);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 6vw, 5rem);
+  color: rgba(255,255,255,0.85);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.st-section-navy h2,
+.md-typeset .st-section-navy h2 {
+  color: #ffffff !important;
+}
+
+.st-section-navy p,
+.md-typeset .st-section-navy p {
+  color: rgba(255,255,255,0.75);
+}
+
+.st-about-afs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: var(--st-max-w);
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .st-about-afs-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.st-afs-creds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.st-afs-cred {
+  background: rgba(184,149,42,0.08);
+  border: 1px solid rgba(184,149,42,0.2);
+  border-radius: var(--st-radius);
+  padding: 1rem 1.25rem;
+  text-align: center;
+}
+
+.st-afs-cred--wide {
+  grid-column: span 2;
+}
+
+.st-afs-cred__value {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--st-gold);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.st-afs-cred__label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-top: 0.35rem;
+}
+
+/* -- Articles: testimonial cards ---------------------------- */
+.st-testimonial-card {
+  background: var(--st-off-white);
+  border: 1px solid var(--st-gray-200);
+  border-radius: var(--st-radius);
+  overflow: hidden;
+}
+
+.st-testimonial-card__header {
+  background: var(--st-navy);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.st-testimonial-card__avatar {
+  width: 48px;
+  height: 48px;
+  background: var(--st-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--st-navy);
+  flex-shrink: 0;
+}
+
+.st-testimonial-card__author { flex: 1; }
+
+.st-testimonial-card__name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.st-testimonial-card__title {
+  font-size: 0.775rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.15rem;
+}
+
+.st-testimonial-card__badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--st-gold);
+  background: rgba(184,149,42,0.12);
+  border: 1px solid rgba(184,149,42,0.3);
+  border-radius: 2px;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+}
+
+.st-testimonial-card__body {
+  padding: 1.75rem 2rem;
+}
+
+.md-typeset .st-testimonial-card__body p {
+  font-size: 0.9375rem;
+  color: var(--st-dark);
+}
+
+/* -- Contact page ------------------------------------------- */
+.st-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .st-contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+.st-contact-detail {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.st-contact-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.st-contact-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: var(--st-gold-pale);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* -- Scroll reveal ------------------------------------------ */
+.st-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.st-reveal.st-revealed {
+  opacity: 1;
+  transform: none;
+}
