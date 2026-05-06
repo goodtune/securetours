@@ -1,67 +1,37 @@
-[project]
-site_name = "Secure Tours & Travel"
-site_description = "Secure Luxury Travel for Discerning Individuals & Groups — the dedicated tourism and event services division of Australian Frontline Solutions."
-site_url = "https://securetours.com.au"
-copyright = "© 2026 Secure Tours & Travel. All rights reserved."
-docs_dir = "docs"
-site_dir = "site"
+# Secure Tours & Travel — Zensical configuration
+# All settings live under [project] — Zensical strips the outer key on load.
 
-[theme]
-name = "modern"
-logo = "assets/logo-transparent.png"
-favicon = "assets/favicon.svg"
+[project]
+site_name    = "Secure Tours & Travel"
+site_description = "Secure Luxury Travel for Discerning Individuals & Groups — the dedicated tourism and event services division of Australian Frontline Solutions."
+site_url     = "https://securetours.com.au"
+copyright    = "© 2026 Secure Tours & Travel. All rights reserved."
+docs_dir     = "docs"
+site_dir     = "site"
+extra_css    = ["stylesheets/extra.css"]
+
+# ---------------------------------------------------------------------------
+# Theme
+# ---------------------------------------------------------------------------
+
+[project.theme]
+logo       = "assets/logo-transparent.png"
+favicon    = "assets/favicon.svg"
 custom_dir = "overrides"
 
-[theme.palette.light]
-scheme = "default"
+[project.theme.palette]
+scheme  = "default"
 primary = "custom"
-accent = "custom"
+accent  = "custom"
 
-[[nav]]
-"Home" = "index.md"
+# ---------------------------------------------------------------------------
+# Markdown extensions
+# ---------------------------------------------------------------------------
 
-[[nav]]
-"About Us" = "about.md"
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.tables]
 
-[[nav]]
-"Tourism Solutions" = [
-    { "Overview" = "services/index.md" },
-    { "Tours & Travel Solutions" = "services/tours-travel-solutions.md" },
-    { "Executive Guest Management" = "services/executive-guest-management.md" },
-    { "Exclusive Transfer Assistance" = "services/exclusive-transfer-assistance.md" },
-    { "P.A.S.S. — Athlete" = "services/pass-athlete.md" },
-    { "P.A.S.S. — Performing Artist" = "services/pass-artist.md" },
-    { "Concierge & Chaperone" = "services/concierge-chaperone.md" },
-    { "S.T.A.G.E." = "services/stage.md" },
-    { "Bereavement Travel Support" = "services/bereavement-travel-support.md" },
-    { "Solo Traveller Assist" = "services/solo-traveller-assist.md" },
-]
-
-[[nav]]
-"Event Solutions" = "event-solutions.md"
-
-[[nav]]
-"Articles & Case Studies" = [
-    { "Overview" = "articles/index.md" },
-    { "Matthew Harrison Profile" = "articles/matthew-harrison-profile.md" },
-    { "Vivid Sydney Case Study" = "articles/vivid-sydney.md" },
-    { "Carriageworks Case Study" = "articles/carriageworks.md" },
-    { "Gary O'Riordan Endorsement" = "articles/gary-oriordan-endorsement.md" },
-    { "Janene Rees Endorsement" = "articles/janene-rees-endorsement.md" },
-]
-
-[[nav]]
-"Resources" = "resources.md"
-
-[[nav]]
-"Contact" = "contact.md"
-
-[markdown.extensions]
-extra = {}
-toc = {}
-admonition = {}
-attr_list = {}
-md_in_html = {}
-tables = {}
-
-extra_css = ["stylesheets/extra.css"]
+[project.markdown_extensions.toc]
+permalink = false
