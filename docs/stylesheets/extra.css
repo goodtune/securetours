@@ -263,52 +263,51 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* -- Feature list (service pages What's Included) ---------- */
-/* Matches Astro .feature-list: grid of gold-border items */
-.st-content-no-first-h1 .md-typeset ul:not([class]),
-.st-content-no-first-h1 .md-typeset ol:not([class]) {
-  list-style: none;
-  display: grid;
+/* ul.parentElement is .st-content-no-first-h1 directly (md-typeset is an outer ancestor) */
+.st-content-no-first-h1 ul:not([class]),
+.st-content-no-first-h1 ol:not([class]) {
+  list-style: none !important;
+  display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 0.875rem;
-  padding: 0;
-  margin: 1.5rem 0 2rem;
+  padding: 0 !important;
+  margin: 1.5rem 0 2rem !important;
 }
 
-.st-content-no-first-h1 .md-typeset ul:not([class]) li,
-.st-content-no-first-h1 .md-typeset ol:not([class]) li {
+.st-content-no-first-h1 ul:not([class]) li,
+.st-content-no-first-h1 ol:not([class]) li {
   background: var(--st-off-white);
-  padding: 0.9rem 1.25rem;
+  padding: 0.9rem 1.25rem !important;
   border-radius: var(--st-radius);
   border-left: 3px solid var(--st-gold);
   font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--st-gray-700);
+  margin: 0 !important;
 }
+.st-content-no-first-h1 ul:not([class]) li::before,
+.st-content-no-first-h1 ol:not([class]) li::before { display: none; }
 
-/* Plain lists inside cards or band-navy should stay as-is */
-.st-card ul,
-.st-card ol,
-.st-band-navy ul,
-.st-band-navy ol,
-.st-about-text ul,
-.st-about-text ol {
+/* Plain lists inside cards, band-navy, or about-text should stay as bullets */
+.st-card ul, .st-card ol,
+.st-band-navy ul, .st-band-navy ol,
+.st-about-text ul, .st-about-text ol,
+.footer-col ul, .footer-col ol {
   list-style: disc !important;
   display: block !important;
-  grid-template-columns: none !important;
   padding-left: 1.5rem !important;
   margin: 0.5rem 0 !important;
 }
-.st-card ul li,
-.st-card ol li,
-.st-band-navy ul li,
-.st-band-navy ol li,
-.st-about-text ul li,
-.st-about-text ol li {
+.st-card ul li, .st-card ol li,
+.st-band-navy ul li, .st-band-navy ol li,
+.st-about-text ul li, .st-about-text ol li,
+.footer-col ul li, .footer-col ol li {
   background: none !important;
   padding: 0.25rem 0 !important;
   border-left: none !important;
   border-radius: 0 !important;
   color: inherit !important;
+  margin: 0 !important;
 }
 
 /* -- Gold dividers ----------------------------------------- */
