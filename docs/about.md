@@ -48,9 +48,7 @@ Every client — from solo traveller to touring sports team — receives the sam
 
 </div>
 
----
-
-<span class="st-section-label">Clients</span>
+<div><span class="st-section-label">Clients</span></div>
 
 ## Who We Serve
 
@@ -67,9 +65,7 @@ Every client — from solo traveller to touring sports team — receives the sam
 
 </div>
 
----
-
-<span class="st-section-label">Part of Australian Frontline Solutions</span>
+<div><span class="st-section-label">Part of Australian Frontline Solutions</span></div>
 
 ## Part of Australian Frontline Solutions
 
