@@ -10,6 +10,7 @@ site_dir = "site"
 name = "modern"
 logo = "assets/logo-transparent.png"
 favicon = "assets/favicon.svg"
+custom_dir = "overrides"
 
 [theme.palette.light]
 scheme = "default"
@@ -63,5 +64,4 @@ attr_list = {}
 md_in_html = {}
 tables = {}
 
-[extra_css]
-stylesheets = ["stylesheets/extra.css"]
+extra_css = ["stylesheets/extra.css"]
