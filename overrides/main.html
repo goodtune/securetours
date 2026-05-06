@@ -51,7 +51,7 @@
 <div class="st-page-hero">
   <div class="st-container">
     <span class="st-page-hero__label">{{ page.meta.hero_label }}</span>
-    <h1 class="st-page-hero__title">{{ page.title }}</h1>
+    <h1 class="st-page-hero__title">{{ page.meta.hero_title if page.meta.hero_title else page.title }}</h1>
     {% if page.meta.hero_sub %}
     <p class="st-page-hero__sub">{{ page.meta.hero_sub }}</p>
     {% endif %}

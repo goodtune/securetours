@@ -239,9 +239,8 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Hide the markdown h1 that duplicates the hero title */
-.st-content-no-first-h1 .md-typeset h1:first-child,
-.st-content-no-first-h1 .md-content__inner > .md-typeset > h1:first-child {
-  display: none;
+.st-content-no-first-h1 h1 {
+  display: none !important;
 }
 
 /* -- Section labels (gold uppercase, above h2) ------------- */

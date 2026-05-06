@@ -4,7 +4,8 @@ hide:
   - toc
 title: Contact
 description: "Get in touch with Secure Tours & Travel. We respond to all enquiries within one business day."
-hero_label: "Get in Touch"
+hero_label: "Contact"
+hero_title: "Get in Touch"
 hero_sub: "Our team is available to discuss your requirements — whether you need a quick transfer, a full touring package, or ongoing corporate logistics support. We respond within one business day."
 ---
 
