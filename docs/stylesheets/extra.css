@@ -286,9 +286,9 @@ h1, h2, h3, h4, h5, h6,
   list-style: none !important;
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 0.875rem;
+  gap: 1.25rem;
   padding: 0 !important;
-  margin: 1.5rem 0 2rem !important;
+  margin: 2rem 0 2.5rem !important;
 }
 
 .st-content-no-first-h1 ul:not([class]) li,
@@ -659,13 +659,13 @@ a.st-btn-navy:hover {
 
 /* -- Service page lead text -------------------------------- */
 .st-service-lead {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
   color: var(--st-gray-700);
   line-height: 1.85;
-  border-left: 4px solid var(--st-gold);
-  padding: 0.5rem 0 0.5rem 1.25rem;
-  margin: 1.5rem 0 2.5rem;
-  background: linear-gradient(to right, var(--st-gold-pale), transparent);
+  max-width: 800px;
+  border-left: 3px solid var(--st-gold);
+  padding-left: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 /* -- Pull quote / endorsement ------------------------------ */

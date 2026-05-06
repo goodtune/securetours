@@ -45,7 +45,7 @@ P.A.S.S. (Professional Athlete Support Specialist) is our dedicated stream for e
 
 ---
 
-## Other Solutions
+<span class="st-section-label">Other Solutions</span>
 
 <div class="st-cards st-cards-3" markdown>
 

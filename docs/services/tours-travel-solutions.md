@@ -48,7 +48,7 @@ Our Secure Tours & Travel Solutions are designed to support both travel partners
 
 ---
 
-## Other Solutions
+<span class="st-section-label">Other Solutions</span>
 
 <div class="st-cards st-cards-3" markdown>
 

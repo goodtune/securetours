@@ -45,7 +45,7 @@ P.A.S.S. (Performing Artist Safety Specialist) is our specialist stream for tour
 
 ---
 
-## Other Solutions
+<span class="st-section-label">Other Solutions</span>
 
 <div class="st-cards st-cards-3" markdown>
 

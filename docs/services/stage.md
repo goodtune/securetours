@@ -53,7 +53,7 @@ S.T.A.G.E. — Secure Tours & Travel's dedicated event management stream — emb
 
 ---
 
-## Other Solutions
+<span class="st-section-label">Other Solutions</span>
 
 <div class="st-cards st-cards-3" markdown>
 

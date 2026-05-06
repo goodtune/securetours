@@ -47,7 +47,7 @@ Our Concierge & Chaperone service provides a dedicated personal support speciali
 
 ---
 
-## Other Solutions
+<span class="st-section-label">Other Solutions</span>
 
 <div class="st-cards st-cards-3" markdown>
 

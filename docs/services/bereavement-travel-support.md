@@ -46,7 +46,7 @@ We do not manage funeral arrangements or liaise with mortuaries. What we do is h
 
 ---
 
-## Other Solutions
+<span class="st-section-label">Other Solutions</span>
 
 <div class="st-cards st-cards-3" markdown>
 

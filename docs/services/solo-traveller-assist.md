@@ -46,7 +46,7 @@ Our Solo Traveller Assist service puts a professional, vetted escort by your sid
 
 ---
 
-## Other Solutions
+<span class="st-section-label">Other Solutions</span>
 
 <div class="st-cards st-cards-3" markdown>
 
