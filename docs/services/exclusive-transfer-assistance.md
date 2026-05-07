@@ -24,7 +24,7 @@ Our Exclusive Transfer Assistance offers two premium service tiers: the Exclusiv
 
 <div class="st-gold-rule"></div>
 
-- **Exclusive Level:** dedicated chaperone with seamless point-to-point transition
+- Exclusive Level: dedicated chaperone with seamless point-to-point transition
 - Luggage collection and delivery including to and from arrival or departure
 - Premium host/hostess for the duration of your transfer
 - Exclusive luxury transit lounge with private bathroom and catering
