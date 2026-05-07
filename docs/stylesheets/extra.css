@@ -674,17 +674,36 @@ a.st-btn-navy:hover {
 
 .st-card {
   background: #ffffff;
-  border: 1px solid var(--st-gray-200);
-  border-top: 3px solid var(--st-navy);
-  border-radius: 0 0 var(--st-radius) var(--st-radius);
+  border: 1px solid var(--st-gray-300);
+  border-radius: var(--st-radius);
   padding: 2rem;
-  box-shadow: var(--st-shadow);
-  transition: box-shadow 0.25s, transform 0.25s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--st-transition);
+}
+
+.st-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--st-gold);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .st-card:hover {
+  border-color: var(--st-gold);
   box-shadow: var(--st-shadow-lg);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+}
+
+.st-card:hover::before {
+  transform: scaleX(1);
 }
 
 .st-card h3,
@@ -740,9 +759,20 @@ a.st-btn-navy:hover {
   color: var(--st-gray-500);
 }
 
-/* "What Sets Us Apart" card variant — text-centered with large icon */
+/* "What Sets Us Apart" — text-centered, no card box (matches static .why-item) */
 .st-card--why {
   text-align: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  display: block;
+}
+.st-card--why::before { display: none; }
+.st-card--why:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: transparent;
 }
 .st-why-icon {
   display: block;
@@ -1504,39 +1534,6 @@ a.st-btn-navy:hover {
   margin-bottom: 0;
 }
 
-/* -- Service card variant (services index grid) ------------ */
-/* Overrides the navy top-border of st-card with the gold hover-bar
-   treatment used on the static site's .service-card */
-.st-card--service {
-  border-top: 1px solid var(--st-gray-200);
-  border-radius: var(--st-radius);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-
-.st-card--service::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--st-gold);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-  border-radius: var(--st-radius) var(--st-radius) 0 0;
-}
-
-.st-card--service:hover::before {
-  transform: scaleX(1);
-}
-
-.st-card--service:hover {
-  border-color: var(--st-gold);
-}
-
 /* "Learn More →" link at foot of each service card */
 .st-card__link,
 .md-typeset .st-card__link {
@@ -1578,8 +1575,8 @@ a.st-btn-navy:hover {
 }
 
 /* Suppress coming-soon hover bar */
-.st-card--coming-soon.st-card--service::before { display: none; }
-.st-card--coming-soon.st-card--service:hover { border-color: var(--st-gray-200); }
+.st-card--coming-soon::before { display: none; }
+.st-card--coming-soon:hover { border-color: var(--st-gray-200); }
 
 /* -- Featured solution block (services index) -------------- */
 .st-featured-solution {

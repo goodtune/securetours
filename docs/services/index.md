@@ -22,7 +22,7 @@ hero_sub: "Every solution is designed around one principle: your safety, comfort
 
 <div class="st-cards st-cards-3" markdown>
 
-<div class="st-card st-card--service" markdown>
+<div class="st-card" markdown>
 <div class="st-card__icon" aria-hidden="true">💼</div>
 ### [Executive Guest Management](executive-guest-management.md)
 Designed for professional and corporate clients. Executive concierge, schedule management, chauffeur transfers and discreet, high-confidentiality service protocols.
@@ -30,7 +30,7 @@ Designed for professional and corporate clients. Executive concierge, schedule m
 [Learn More](executive-guest-management.md){ .st-card__link }
 </div>
 
-<div class="st-card st-card--service" markdown>
+<div class="st-card" markdown>
 <div class="st-card__icon" aria-hidden="true">✈️</div>
 ### [Exclusive Transfer Assistance](exclusive-transfer-assistance.md)
 Australia's leading safety and security transfer service. Two tiers: Exclusive Level for VIP luxury and Executive Level for corporate efficiency. Air and seaport capable.
@@ -38,7 +38,7 @@ Australia's leading safety and security transfer service. Two tiers: Exclusive L
 [Learn More](exclusive-transfer-assistance.md){ .st-card__link }
 </div>
 
-<div class="st-card st-card--service" markdown>
+<div class="st-card" markdown>
 <div class="st-card__icon" aria-hidden="true">🏆</div>
 ### [P.A.S.S. — Athlete](pass-athlete.md)
 Elite travel logistics purpose-built for athletes and sports teams. Nutrition, recovery, equipment transport, venue liaison, close protection and full schedule management.
@@ -46,7 +46,7 @@ Elite travel logistics purpose-built for athletes and sports teams. Nutrition, r
 [Learn More](pass-athlete.md){ .st-card__link }
 </div>
 
-<div class="st-card st-card--service" markdown>
+<div class="st-card" markdown>
 <div class="st-card__icon" aria-hidden="true">🎭</div>
 ### [P.A.S.S. — Performing Artist](pass-artist.md)
 Dedicated touring support for musicians, entertainers and performing arts companies. End-to-end logistics, venue liaison, equipment transport, media management and artist protection.
@@ -54,7 +54,7 @@ Dedicated touring support for musicians, entertainers and performing arts compan
 [Learn More](pass-artist.md){ .st-card__link }
 </div>
 
-<div class="st-card st-card--service" markdown>
+<div class="st-card" markdown>
 <div class="st-card__icon" aria-hidden="true">🤝</div>
 ### [Concierge & Chaperone](concierge-chaperone.md)
 Personal, attentive care for individuals and groups. Airport meet and greet, accompanied transfers, multilingual support, unaccompanied minor chaperoning and 24/7 support.
@@ -62,7 +62,7 @@ Personal, attentive care for individuals and groups. Airport meet and greet, acc
 [Learn More](concierge-chaperone.md){ .st-card__link }
 </div>
 
-<div class="st-card st-card--service st-card--coming-soon" aria-label="S.T.A.G.E. — coming soon" markdown>
+<div class="st-card st-card--coming-soon" aria-label="S.T.A.G.E. — coming soon" markdown>
 <div class="st-card__icon" aria-hidden="true">🎬</div>
 ### S.T.A.G.E.
 School Tours And Group Excursions — specialist event management with safety embedded at every layer.
@@ -70,7 +70,7 @@ School Tours And Group Excursions — specialist event management with safety em
 <span class="st-card__badge">Coming Soon</span>
 </div>
 
-<div class="st-card st-card--service" markdown>
+<div class="st-card" markdown>
 <div class="st-card__icon" aria-hidden="true">🕊️</div>
 ### [Bereavement Travel Support](bereavement-travel-support.md)
 Compassionate airport logistics and private transfers for families navigating travel during the most difficult of times.
@@ -78,7 +78,7 @@ Compassionate airport logistics and private transfers for families navigating tr
 [Learn More](bereavement-travel-support.md){ .st-card__link }
 </div>
 
-<div class="st-card st-card--service" markdown>
+<div class="st-card" markdown>
 <div class="st-card__icon" aria-hidden="true">🧳</div>
 ### [Solo Traveller Assist](solo-traveller-assist.md)
 Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle.
@@ -86,7 +86,7 @@ Professional, vetted escorts for solo travellers — from the departure gate to 
 [Learn More](solo-traveller-assist.md){ .st-card__link }
 </div>
 
-<div class="st-card st-card--service st-card--coming-soon" aria-label="New solution coming soon" markdown>
+<div class="st-card st-card--coming-soon" aria-label="New solution coming soon" markdown>
 <div class="st-card__icon" aria-hidden="true">✦</div>
 ### New Solution
 Additional specialist solutions are being finalised. Contact us to discuss your specific requirements.
