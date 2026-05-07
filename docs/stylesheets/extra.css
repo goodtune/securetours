@@ -1539,6 +1539,90 @@ a.st-testimonial-card__cta,
   justify-content: center;
 }
 
+.st-languages-note {
+  margin-top: 2rem;
+  padding: 1.25rem;
+  background: var(--st-gold-pale);
+  border-left: 3px solid var(--st-gold);
+  border-radius: var(--st-radius);
+  font-size: 0.875rem;
+  color: var(--st-navy);
+  line-height: 1.6;
+}
+
+.st-contact-form {
+  background: var(--st-white);
+  border: 1px solid var(--st-gray-200);
+  border-radius: var(--st-radius);
+  padding: 2.5rem;
+  box-shadow: var(--st-shadow);
+}
+
+.st-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 480px) {
+  .st-form-row { grid-template-columns: 1fr; }
+}
+
+.st-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.st-form-row .st-form-group {
+  margin-bottom: 0;
+}
+
+.st-form-group label,
+.st-contact-form label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--st-gray-700);
+  margin-bottom: 0.4rem;
+}
+
+.st-form-group input,
+.st-form-group select,
+.st-form-group textarea,
+.st-contact-form input,
+.st-contact-form select,
+.st-contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--st-gray-200);
+  border-radius: var(--st-radius);
+  font-family: var(--st-font-sans);
+  font-size: 0.95rem;
+  color: var(--st-text);
+  background: var(--st-white);
+  transition: border-color 0.2s;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.st-form-group input:focus,
+.st-form-group select:focus,
+.st-form-group textarea:focus,
+.st-contact-form input:focus,
+.st-contact-form select:focus,
+.st-contact-form textarea:focus {
+  border-color: var(--st-navy);
+  box-shadow: 0 0 0 3px rgba(30,46,120,0.08);
+}
+
+.st-form-group textarea,
+.st-contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
 /* -- Scroll reveal ------------------------------------------ */
 .st-reveal {
   opacity: 0;
