@@ -1,14 +1,6 @@
 {% extends "base.html" %}
 
-{% block extrahead %}
-  {{ super() }}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ 'stylesheets/extra.css' | url }}">
-{% endblock %}
-
-{% block header %}
+{%- block header %}
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
   <div class="st-container">
     <div class="nav-inner">
@@ -42,13 +34,34 @@
     </div>
   </div>
 </nav>
-{% endblock %}
+{%- endblock %}
 
-{% block tabs %}{% endblock %}
+{%- block hero %}
+{%- if page.meta and page.meta.hero_label %}
+<div class="page-hero">
+  <div class="st-container">
+    <ul class="st-breadcrumb" role="list">
+      <li><a href="/">Home</a></li>
+      {%- if 'services/' in page.url and page.url != 'services/' %}<li><a href="/services/">Tourism Solutions</a></li>
+      {%- elif 'articles/' in page.url and page.url != 'articles/' %}<li><a href="/articles/">Articles</a></li>
+      {%- endif %}
+      <li>{{ page.title }}</li>
+    </ul>
+    <span class="page-hero__label">{{ page.meta.hero_label }}</span>
+    <h1 class="page-hero__title">{{ page.meta.hero_title if 'hero_title' in page.meta else page.title }}</h1>
+    {%- if 'hero_sub' in page.meta %}<p class="page-hero__sub">{{ page.meta.hero_sub }}</p>{%- endif %}
+  </div>
+</div>
+{%- endif %}
+{%- endblock %}
 
-{% block content %}{%- if page.meta and page.meta.hero_label %}<div class="st-page-hero"><div class="st-container"><ul class="st-breadcrumb" role="list"><li><a href="/">Home</a></li>{%- if 'services/' in page.url and page.url != 'services/' %}<li><a href="/services/">Tourism Solutions</a></li>{%- elif 'articles/' in page.url and page.url != 'articles/' %}<li><a href="/articles/">Articles</a></li>{%- endif %}<li>{{ page.title }}</li></ul><span class="st-page-hero__label">{{ page.meta.hero_label }}</span><h1 class="st-page-hero__title">{{ page.meta.hero_title if 'hero_title' in page.meta else page.title }}</h1>{%- if 'hero_sub' in page.meta %}<p class="st-page-hero__sub">{{ page.meta.hero_sub }}</p>{%- endif %}</div></div><div class="st-content-no-first-h1">{{ super() }}</div>{%- else %}{{ super() }}{%- endif %}{% endblock %}
+{%- block content %}
+<div class="st-container st-page-content">
+  {{ page.content }}
+</div>
+{%- endblock %}
 
-{% block footer %}
+{%- block footer %}
 <div class="footer-afs">
   <div class="st-container">
     <div class="footer-afs__inner">
@@ -64,7 +77,7 @@
       <div class="footer-brand">
         <img src="/assets/logo-transparent.png" alt="Secure Tours &amp; Travel">
         <p>Secure Luxury Travel for discerning individuals &amp; groups.</p>
-        <p style="margin-top:0.75rem; font-size:0.8rem; color:rgba(255,255,255,0.4);">ABN available on request.</p>
+        <p class="footer-brand__abn">ABN available on request.</p>
       </div>
       <div class="footer-col">
         <h4>Tourism Solutions</h4>
@@ -94,7 +107,7 @@
         <ul role="list">
           <li><a href="tel:+61414499778">+61 414 499 778</a></li>
           <li><a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a></li>
-          <li style="color:rgba(255,255,255,0.5); font-size:0.875rem; margin-top:0.5rem;">Australia-wide · NSW</li>
+          <li class="footer-col__location">Australia-wide · NSW</li>
         </ul>
       </div>
     </div>
@@ -108,6 +121,9 @@
     </div>
   </div>
 </footer>
+{%- endblock %}
+
+{%- block scripts %}
 <script>
   (function() {
     var toggle = document.querySelector('.nav-toggle');
@@ -136,46 +152,27 @@
   })();
 </script>
 <script>
-  /* Scroll reveal — safe: hidden state applied only at runtime via JS */
+  /* Scroll reveal — runtime-gated hidden state with 3s failsafe */
   (function() {
     if (!window.IntersectionObserver) return;
-
-    var SELECTORS = [
-      '.st-card',
-      '.st-stats > div',
-      '.st-about-badge',
-      '.st-testimonial-card',
-      '.st-case-study-card',
-      '.st-article-card'
-    ].join(', ');
-
-    function revealEl(el) {
-      el.classList.add('st-revealed');
-    }
-
+    var SELECTORS = '.service-card, .stats-bar > div, .about-badge, .testimonial-card, .case-study-card, .article-card';
+    function revealEl(el) { el.classList.add('revealed'); }
     document.addEventListener('DOMContentLoaded', function() {
       var elements = document.querySelectorAll(SELECTORS);
       if (!elements.length) return;
-
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            revealEl(entry.target);
-            observer.unobserve(entry.target);
-          }
+          if (entry.isIntersecting) { revealEl(entry.target); observer.unobserve(entry.target); }
         });
       }, { threshold: 0.1 });
-
       elements.forEach(function(el) {
-        el.classList.add('st-reveal');
+        el.classList.add('reveal');
         observer.observe(el);
       });
-
-      /* Failsafe: force-reveal anything still hidden after 3 seconds */
       setTimeout(function() {
-        document.querySelectorAll('.st-reveal:not(.st-revealed)').forEach(revealEl);
+        document.querySelectorAll('.reveal:not(.revealed)').forEach(revealEl);
       }, 3000);
     });
   })();
 </script>
-{% endblock %}
+{%- endblock %}
