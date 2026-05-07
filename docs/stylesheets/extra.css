@@ -1500,7 +1500,12 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
 @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } }
 @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
-.footer-brand img { height: 56px; margin-bottom: 1rem; }
+.footer-brand img {
+  height: 48px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: 1rem;
+}
 .footer-brand p { font-size: 0.875rem; }
 .footer-brand__abn { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-top: 0.75rem; }
 
