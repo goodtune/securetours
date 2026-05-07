@@ -8,22 +8,28 @@
 
 /* -- Brand tokens ------------------------------------------ */
 :root {
-  --st-navy:       #1E2E78;
-  --st-navy-dark:  #131d4f;
-  --st-navy-light: #2a3f99;
-  --st-gold:       #B8952A;
-  --st-gold-light: #d4af44;
-  --st-gold-pale:  #f5eed8;
-  --st-off-white:  #f8f7f4;
-  --st-gray-100:   #f3f3f0;
-  --st-gray-200:   #e0deda;
-  --st-gray-500:   #8a8880;
-  --st-gray-700:   #4a4845;
-  --st-text:       #1a1917;
-  --st-radius:     4px;
-  --st-shadow:     0 2px 20px rgba(30,46,120,0.10);
-  --st-shadow-lg:  0 8px 40px rgba(30,46,120,0.18);
-  --st-max-w:      1200px;
+  --st-navy:        #1E2E78;
+  --st-navy-dark:   #131d4f;
+  --st-navy-light:  #2a3f99;
+  --st-gold:        #B8952A;
+  --st-gold-light:  #d4af44;
+  --st-gold-pale:   #f5eed8;
+  --st-white:       #ffffff;
+  --st-off-white:   #f8f7f4;
+  --st-gray-100:    #f3f3f0;
+  --st-gray-200:    #e0deda;
+  --st-gray-300:    #d0cfc9;
+  --st-gray-500:    #8a8880;
+  --st-gray-700:    #4a4845;
+  --st-text:        #1a1917;
+  --st-font-serif:  'Playfair Display', Georgia, serif;
+  --st-font-sans:   'Open Sans', system-ui, -apple-system, sans-serif;
+  --st-section-pad: clamp(3rem, 6vw, 5rem);
+  --st-radius:      4px;
+  --st-shadow:      0 2px 20px rgba(30,46,120,0.10);
+  --st-shadow-lg:   0 8px 40px rgba(30,46,120,0.18);
+  --st-max-w:       1200px;
+  --st-transition:  all 0.25s ease;
 }
 
 /* -- MkDocs Material colour overrides --------------------- */
@@ -44,9 +50,9 @@
 /* -- Base typography --------------------------------------- */
 body,
 .md-typeset {
-  font-family: 'Open Sans', system-ui, sans-serif;
+  font-family: 'Open Sans', system-ui, -apple-system, sans-serif;
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: 1.7;
   color: var(--st-text);
   -webkit-font-smoothing: antialiased;
 }
@@ -65,6 +71,7 @@ h1, h2, h3, h4, h5, h6,
 .md-typeset h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; }
 .md-typeset h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; }
 .md-typeset h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; }
+.md-typeset h4 { font-size: 1.1rem; font-weight: 600; }
 
 /* Hide the § headerlink anchors on all headings */
 .md-typeset .headerlink {
@@ -85,7 +92,7 @@ h1, h2, h3, h4, h5, h6,
   right: 0;
   z-index: 1000;
   background: var(--st-gray-200);
-  border-bottom: 1px solid #d0cfc9;
+  border-bottom: 1px solid var(--st-gray-300);
   transition: box-shadow 0.3s ease;
 }
 .site-nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.1); }
@@ -709,7 +716,7 @@ a.st-btn-navy:hover {
 /* Coming-soon card variant */
 .st-card--coming-soon {
   background: var(--st-gray-100);
-  border-color: #d0cfc9;
+  border-color: var(--st-gray-300);
   cursor: default;
   opacity: 0.7;
 }
@@ -718,7 +725,7 @@ a.st-btn-navy:hover {
   box-shadow: var(--st-shadow);
 }
 .st-card--coming-soon .st-card__icon {
-  background: #d0cfc9;
+  background: var(--st-gray-300);
   color: var(--st-gray-500);
 }
 
@@ -915,8 +922,8 @@ a.st-btn-navy:hover {
 /* -- AFS credibility bar ----------------------------------- */
 .footer-afs {
   background: var(--st-gray-200);
-  border-top: 1px solid #d0cfc9;
-  border-bottom: 1px solid #d0cfc9;
+  border-top: 1px solid var(--st-gray-300);
+  border-bottom: 1px solid var(--st-gray-300);
   padding: 1.25rem 0;
   text-align: center;
 }
@@ -931,7 +938,7 @@ a.st-btn-navy:hover {
 }
 .footer-afs__division { color: var(--st-gray-700); font-weight: 500; }
 .footer-afs__division strong { color: var(--st-navy); }
-.footer-afs__sep { color: #d0cfc9; }
+.footer-afs__sep { color: var(--st-gray-300); }
 .footer-afs__credentials { color: var(--st-gray-500); font-size: 0.775rem; letter-spacing: 0.04em; }
 
 /* -- Site footer ------------------------------------------- */
@@ -986,9 +993,7 @@ a.st-btn-navy:hover {
 .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
 .footer-bottom a:hover { color: var(--st-gold); }
 
-@media (max-width: 1023px) {
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-}
+/* footer 2-col breakpoint is handled in the 900px block above, matching static site */
 
 /* -- Back link on article pages --------------------------- */
 .md-typeset a[href*="index.md"] {
@@ -1084,6 +1089,42 @@ a.st-btn-navy:hover {
 }
 
 /* -- Responsive ------------------------------------------- */
+
+/* Mobile nav — matches static site breakpoint (900px) */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: var(--st-gray-200);
+    padding: 1rem 0;
+    border-top: 1px solid var(--st-gray-300);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    z-index: 999;
+    align-items: stretch;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links > li > a { padding: 0.65rem 1.5rem; }
+  .nav-dropdown {
+    display: none;
+    position: static;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    border-top: none;
+    background: var(--st-gray-200);
+    padding-left: 1rem;
+    min-width: auto;
+  }
+  .nav-links > li.open > .nav-dropdown { display: block; }
+  .nav-toggle { display: flex; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+
 @media (max-width: 639px) {
   .st-hero {
     min-height: 85vh;
@@ -1108,34 +1149,6 @@ a.st-btn-navy:hover {
     flex-direction: column;
   }
 
-  /* Mobile nav */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background: var(--st-gray-200);
-    border-bottom: 2px solid #d0cfc9;
-    padding: 0.5rem 0;
-    z-index: 999;
-    align-items: stretch;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links > li > a { padding: 0.75rem 1.5rem; }
-  .nav-dropdown {
-    display: none;
-    position: static;
-    box-shadow: none;
-    opacity: 1;
-    pointer-events: auto;
-    transform: none;
-    border-top: none;
-    background: var(--st-off-white);
-  }
-  .nav-links > li.open > .nav-dropdown { display: block; }
-  .nav-toggle { display: flex; }
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
 
