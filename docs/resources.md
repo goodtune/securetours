@@ -2,14 +2,12 @@
 hide:
   - navigation
   - toc
-title: Resources
-description: "Service brochures, programme guides and informational materials from Secure Tours & Travel — available for download in English and Mandarin."
+title: Resources & Downloads
+description: "Download brochures, service guides and informational resources from Secure Tours & Travel."
 hero_label: "Brochures & Guides"
 hero_title: "Resources & Downloads"
 hero_sub: "Service brochures, programme guides and informational materials. Available in English and Mandarin."
 ---
-
-# Resources & Downloads
 
 <div class="st-downloads-section" markdown>
 

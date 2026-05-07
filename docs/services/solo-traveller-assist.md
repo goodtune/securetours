@@ -4,11 +4,10 @@ hide:
   - toc
 title: Solo Traveller Assist
 hero_label: "Solo Travel Support · Domestic & International Airports"
+hero_title: "Solo Traveller Assist"
 hero_sub: "You should not have to navigate airports alone."
-description: "Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle."
+description: "Professional, vetted escorts for solo travellers at domestic and international airports across Australia. Gate meet, baggage handling and private transfer included."
 ---
-
-# Solo Traveller Assist
 
 You should not have to navigate airports alone.
 

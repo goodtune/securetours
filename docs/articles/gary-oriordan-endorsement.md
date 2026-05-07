@@ -3,8 +3,10 @@ hide:
   - navigation
   - toc
 title: "Industry Endorsement — Gary O'Riordan"
-description: "Endorsement of Secure Tours & Travel by senior tourism industry professional Gary O'Riordan — 2018."
+title_separator: " | "
+description: "Industry endorsement of Secure Tours & Travel by Gary O'Riordan, senior tourism industry professional and business consultancy principal."
 hero_label: "Industry Endorsement · 2018"
+hero_title: "Gary O'Riordan"
 hero_sub: "Senior tourism industry professional and business consultancy principal — endorsing Secure Tours & Travel and the unique service proposition it brings to the Australian and inbound tourism market."
 ---
 

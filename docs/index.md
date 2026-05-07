@@ -1,6 +1,7 @@
 ---
 title: Home
-description: "Secure Luxury Travel for Discerning Individuals & Groups — Australia's premium secure travel specialists."
+tagline: "Secure Luxury Travel for Discerning Individuals & Groups"
+description: "Australia's premier secure travel and VIP concierge specialists. Combining elite security expertise with luxury service across inbound tourism, executive transfers, athlete support, and event management."
 hide:
   - navigation
   - toc
@@ -37,7 +38,7 @@ Combining elite security expertise with premium concierge service — we protect
 
 <div>
 <span class="st-stat-value">National</span>
-<span class="st-stat-label">Footprint — NSW · QLD · VIC</span>
+<span class="st-stat-label">Footprint (NSW · QLD · VIC)</span>
 </div>
 
 <div>
@@ -83,13 +84,13 @@ Australia's leading secure transfer service — Exclusive and Executive tiers fo
 
 <div class="st-card" markdown>
 <div class="st-card__icon" aria-hidden="true">🏆</div>
-### [P.A.S.S. — Athlete](services/pass-athlete.md)
+### [P.A.S.S. — Professional Athlete Support Specialist](services/pass-athlete.md)
 Elite travel logistics for athletes and sports teams — nutrition, recovery, equipment, security and schedule management.
 </div>
 
 <div class="st-card" markdown>
 <div class="st-card__icon" aria-hidden="true">🎭</div>
-### [P.A.S.S. — Performing Artist](services/pass-artist.md)
+### [P.A.S.S. — Performing Artist Safety Specialist](services/pass-artist.md)
 Dedicated touring support for musicians, entertainers and performing arts companies — on the road, on time, on budget.
 </div>
 
@@ -102,7 +103,7 @@ Personal, attentive care for individuals and groups — from airport arrivals to
 <div class="st-card" markdown>
 <div class="st-card__icon" aria-hidden="true">🎬</div>
 ### [S.T.A.G.E.](services/stage.md)
-Specialised event management with safety embedded at every layer — from major sporting events to corporate activations.
+School Tours And Group Excursions — specialist event management with safety at its core.
 </div>
 
 <div class="st-card" markdown>

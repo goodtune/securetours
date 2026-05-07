@@ -7,8 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {%- block htmltitle %}
-    {%- if page.title and page.url != '' and page.url != '.' %}
-      <title>{{ page.title | striptags }} | {{ config.site_name }}</title>
+    {%- set sep = (page.meta.title_separator if page.meta and page.meta.title_separator) or ' — ' %}
+    {%- if page.meta and page.meta.title_full %}
+      <title>{{ page.meta.title_full }}</title>
+    {%- elif page.url == '' or page.url == '.' %}
+      {%- if page.meta and page.meta.tagline %}
+        <title>{{ config.site_name }} — {{ page.meta.tagline }}</title>
+      {%- else %}
+        <title>{{ config.site_name }}</title>
+      {%- endif %}
+    {%- elif page.title %}
+      <title>{{ page.title | striptags }}{{ sep }}{{ config.site_name }}</title>
     {%- else %}
       <title>{{ config.site_name }}</title>
     {%- endif %}

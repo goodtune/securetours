@@ -3,8 +3,10 @@ hide:
   - navigation
   - toc
 title: Matthew Harrison — AFS Solutions
-description: "From working on the door at a local pub to building one of Australia's most respected secure travel and event security operations."
+title_separator: " | "
+description: "The story of Matthew Harrison — from working on the door at a local pub to building one of Australia's most respected secure travel and event security operations."
 hero_label: "Feature Profile · AFS Solutions"
+hero_title: "Matthew Harrison — AFS Solutions"
 hero_sub: "From working on the door at a local pub to building one of Australia's most respected secure travel and event security operations — the story of how Matthew Harrison turned entrepreneurial instinct and operational excellence into a national capability."
 ---
 

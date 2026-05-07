@@ -4,11 +4,10 @@ hide:
   - toc
 title: Executive Guest Management
 hero_label: "VIP & Corporate"
+hero_title: "Executive Guest Management"
 hero_sub: "Designed for professional and corporate clients who require a seamless, hassle-free travel experience that lets them focus on their business."
-description: "Seamless, hassle-free executive travel for investors, senior leaders and corporate delegations."
+description: "Seamless executive travel for investors, senior leaders and corporate delegations. Chauffeur transfers, corporate concierge, schedule management and 24/7 support."
 ---
-
-# Executive Guest Management
 
 Designed for professional and corporate clients who require a seamless, hassle-free travel experience that lets them focus on their business.
 

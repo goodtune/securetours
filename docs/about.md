@@ -3,13 +3,12 @@ hide:
   - navigation
   - toc
 title: About Us
-description: "Secure Tours & Travel — established 1989, a division of Australian Frontline Solutions."
+description: "Founded by Matt Harrison, Secure Tours & Travel is the dedicated tourism division of Australian Frontline Solutions — 37 years of security expertise behind every journey."
 hero_label: "Established 1989 · Australian Frontline Solutions"
 hero_title: "About Secure Tours & Travel"
-hero_sub: "Secure Tours & Travel was founded by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable. As the dedicated tourism division of Australian Frontline Solutions, we bring 37 years of combined operational expertise to every engagement."
+hero_sub: "Secure Tours & Travel was founded by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable."
 ---
 
-# About Secure Tours & Travel
 
 <div class="st-about-section" markdown>
 
@@ -77,14 +76,12 @@ Every client — from solo traveller to touring sports team — receives the sam
 <div class="st-gold-rule"></div>
 
 <div class="st-clients-grid">
-<div class="st-client-chip">High-Profile Individuals</div>
-<div class="st-client-chip">Corporate Delegations</div>
-<div class="st-client-chip">Inbound Tourists</div>
-<div class="st-client-chip">Sports Teams &amp; Athletes</div>
-<div class="st-client-chip">Performing Artists</div>
-<div class="st-client-chip">Families &amp; Groups</div>
-<div class="st-client-chip">Government &amp; Diplomatic Visitors</div>
-<div class="st-client-chip">Conference Delegates</div>
+<div class="st-client-chip">International tourists &amp; inbound groups</div>
+<div class="st-client-chip">Corporate executives &amp; delegations</div>
+<div class="st-client-chip">Elite athletes &amp; sports teams</div>
+<div class="st-client-chip">Touring musicians &amp; performing artists</div>
+<div class="st-client-chip">Government &amp; diplomatic visitors</div>
+<div class="st-client-chip">Families &amp; student groups</div>
 </div>
 
 </div>

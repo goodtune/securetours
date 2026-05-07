@@ -3,8 +3,10 @@ hide:
   - navigation
   - toc
 title: Carriageworks — Multi-Event Venue Security
-description: "An ongoing event security partnership with one of Sydney's premier arts and cultural venues across a diverse calendar of productions."
+title_separator: " | "
+description: "Case study: AFS Group delivered ongoing event security across multiple productions at Carriageworks, Sydney's premier arts and cultural venue in Eveleigh."
 hero_label: "Case Study · Multi-Event Venue Security"
+hero_title: "Carriageworks"
 hero_sub: "An ongoing event security partnership with one of Sydney's premier arts and cultural venues — delivering consistent, professional security across a diverse calendar of productions and events."
 ---
 

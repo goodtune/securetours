@@ -3,12 +3,11 @@ hide:
   - navigation
   - toc
 title: Tourism Solutions
-description: "All Secure Tours & Travel tourism solutions — from executive guest management to solo traveller assist."
+description: "Explore all specialist solutions from Secure Tours & Travel — inbound tourism, VIP transfers, event management, athlete support, and more."
 hero_label: "Our Tourism Solutions"
+hero_title: "Tourism Solutions"
 hero_sub: "Every solution is designed around one principle: your safety, comfort and peace of mind."
 ---
-
-# Tourism Solutions
 
 <div class="st-solutions-featured">
 <div class="st-solutions-featured__body">

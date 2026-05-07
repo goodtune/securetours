@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{%- block htmltitle %}
+<title>Page Not Found — {{ config.site_name }}</title>
+{%- endblock %}
+
 {%- block header %}
 {# Reuse the nav from main.html via a direct include of the markup we want #}
 <nav class="site-nav" role="navigation" aria-label="Main navigation">

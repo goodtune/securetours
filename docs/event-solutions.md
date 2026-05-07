@@ -3,12 +3,11 @@ hide:
   - navigation
   - toc
 title: Event Solutions
-description: "AFS Group brings licensed security expertise, crowd management and white-glove hospitality to every event — corporate, sporting, entertainment, film & TV."
+description: "Professional event management with licensed security personnel embedded at every level. Corporate functions, sporting events, concerts, film & TV production, group travel and conference support across Australia."
 hero_label: "Corporate · Sporting · Entertainment · Film & TV · Group"
+hero_title: "Event Solutions"
 hero_sub: "From intimate corporate functions to large-scale sporting spectacles and major film productions — AFS Group brings licensed security expertise, crowd management experience and white-glove hospitality to every event we support."
 ---
-
-# Event Solutions
 
 <span class="st-section-label">Our Capability</span>
 

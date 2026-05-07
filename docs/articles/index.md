@@ -5,11 +5,8 @@ hide:
   - navigation
   - toc
 hero_label: "Insights & Client Stories"
+hero_title: "Articles, Testimonials & Case Studies"
 hero_sub: "Real-world insights into secure travel, event management and VIP logistics — drawn from over three decades of operational experience with AFS Group."
----
-
-# Articles, Testimonials & Case Studies
-
 ---
 
 <span class="st-section-label">What Our Clients Say</span>

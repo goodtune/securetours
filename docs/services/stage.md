@@ -6,10 +6,8 @@ title: "S.T.A.G.E."
 hero_label: "Events · Activations · Operations"
 hero_title: "S.T.A.G.E."
 hero_sub: "Specialised event management with safety at its core — from major sporting tournaments to cultural festivals and corporate activations."
-description: "Specialised event management with safety at its core — from major sporting events to cultural festivals and corporate activations."
+description: "S.T.A.G.E. — specialised event management with safety at its core. Event command, crowd management, VIP protection, medical coverage and trained event workforce."
 ---
-
-# S.T.A.G.E.
 
 Specialised event management with safety at its core — from major sporting tournaments to cultural festivals and corporate activations.
 

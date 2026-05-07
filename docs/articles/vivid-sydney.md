@@ -3,8 +3,10 @@ hide:
   - navigation
   - toc
 title: Vivid Sydney — Festival Security & Crowd Management
-description: "Festival security, crowd management and VIP guest services across Sydney's largest annual public event — 3 million+ visitors, 23 nights."
+title_separator: " | "
+description: "Case study: AFS Group delivered crowd management, access control and VIP guest services across Vivid Sydney precincts — one of Australia's largest public events."
 hero_label: "Case Study · Public Festival Security"
+hero_title: "Vivid Sydney"
 hero_sub: "Festival security, crowd management and VIP guest services across Sydney's largest annual public event — attracting over three million visitors across 23 nights."
 ---
 
