@@ -196,6 +196,9 @@ li:last-child { margin-bottom: 0; }
 }
 
 main#main-content { padding-top: 80px; min-height: 100vh; }
+/* Home page: hero is first child — remove main top-pad and page-content top-pad */
+main#main-content:has(> .st-page-content > .st-hero:first-child) { padding-top: 0; }
+.st-page-content:has(> .st-hero:first-child) { padding-top: 0; }
 .st-page-content { padding: 3rem 0; }
 
 /* -- Page hero (inner pages) ------------------------------- */
@@ -245,6 +248,9 @@ main#main-content { padding-top: 80px; min-height: 100vh; }
   line-height: 1.8;
 }
 
+/* Suppress the markdown h1 that duplicates the page-hero title */
+body.has-page-hero .st-page-content > h1:first-child { display: none !important; }
+
 .st-breadcrumb {
   display: flex;
   gap: 0.5rem;
@@ -271,15 +277,19 @@ main#main-content { padding-top: 80px; min-height: 100vh; }
   position: relative;
   min-height: calc(100vh - 80px);
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   background:
     linear-gradient(135deg, rgba(19,29,79,0.85) 0%, rgba(30,46,120,0.78) 100%),
-    url('/assets/sydney-harbour.jpg') center/cover no-repeat;
+    url('/assets/hero-bg.jpg') center/cover no-repeat;
   color: #ffffff;
-  padding: 4rem 0;
+  padding: 4rem clamp(1.25rem, 4vw, 2.5rem);
+  text-align: center;
 }
-.home-hero .st-container,
-.st-hero { max-width: 720px; text-align: center; margin: 0 auto; padding: 4rem clamp(1.25rem, 4vw, 2.5rem); }
+.home-hero .st-container { max-width: 720px; margin: 0 auto; }
+/* .st-hero content is direct children — constrain via max-width on the div itself */
+.st-hero > * { max-width: 720px; width: 100%; }
 .home-hero__tag,
 .st-hero-tag {
   display: inline-block;

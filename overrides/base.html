@@ -37,7 +37,7 @@
 
   {%- block extrahead %}{%- endblock %}
 </head>
-<body>
+<body{% if page.meta and page.meta.hero_label %} class="has-page-hero"{% endif %}>
   {%- block header %}{%- endblock %}
   {%- block hero %}{%- endblock %}
   <main id="main-content">
