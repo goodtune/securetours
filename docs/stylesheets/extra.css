@@ -1,0 +1,77 @@
+/* ============================================================
+   Secure Tours & Travel — Project Stylesheet
+   Ported from /Users/gary/Projects/securetours/css/style.css
+   No MkDocs Material — clean Zensical theme.
+   ============================================================ */
+
+:root {
+  --navy:        #1E2E78;
+  --navy-dark:   #131d4f;
+  --navy-light:  #2a3f99;
+  --gold:        #B8952A;
+  --gold-light:  #d4af44;
+  --gold-pale:   #f5eed8;
+  --white:       #ffffff;
+  --off-white:   #f8f7f4;
+  --gray-100:    #f3f3f0;
+  --gray-200:    #e0deda;
+  --gray-300:    #d0cfc9;
+  --gray-500:    #8a8880;
+  --gray-700:    #4a4845;
+  --text:        #1a1917;
+  --font-serif:  'Playfair Display', Georgia, serif;
+  --font-sans:   'Open Sans', system-ui, -apple-system, sans-serif;
+  --section-pad: clamp(3rem, 6vw, 5rem);
+  --radius:      4px;
+  --shadow:      0 2px 20px rgba(30,46,120,0.10);
+  --shadow-lg:   0 8px 40px rgba(30,46,120,0.18);
+  --max-w:       1200px;
+  --transition:  all 0.25s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--off-white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--navy);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 1rem;
+}
+
+h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 700; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; margin-top: 2.5rem; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; }
+h4 { font-size: 1.1rem; font-weight: 600; }
+
+p { margin: 0 0 1rem; }
+a { color: var(--navy); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--gold); }
+
+img { max-width: 100%; height: auto; }
+hr { border: 0; border-top: 1px solid var(--gray-200); margin: 2rem 0; }
+
+ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+li { margin-bottom: 0.5rem; }
+li:last-child { margin-bottom: 0; }
+
+.st-container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+}
