@@ -742,15 +742,6 @@ a.st-btn-navy:hover {
   color: var(--st-gray-700);
 }
 
-/* -- Gold divider rule ------------------------------------- */
-.gold-rule {
-  width: 60px;
-  height: 2px;
-  background: var(--st-gold);
-  margin: 1.25rem 0;
-  border: none;
-}
-
 /* -- Feature list ------------------------------------------ */
 .st-feature-list {
   list-style: none;
@@ -1310,7 +1301,7 @@ a.st-btn-navy:hover {
 
 .md-typeset .st-testimonial-card__body p {
   font-size: 0.9375rem;
-  color: var(--st-dark);
+  color: var(--st-text);
 }
 
 /* -- Contact page ------------------------------------------- */
