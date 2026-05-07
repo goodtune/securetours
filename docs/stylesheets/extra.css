@@ -200,6 +200,10 @@ main#main-content { padding-top: 80px; min-height: 100vh; }
 main#main-content:has(> .st-page-content > .st-hero:first-child) { padding-top: 0; }
 .st-page-content:has(> .st-hero:first-child) { padding-top: 0; }
 .st-page-content { padding: 3rem 0; }
+/* When the page ends with a full-bleed band, drop page-content's bottom
+   padding so the band runs straight into the footer-afs strip. */
+.st-page-content:has(> .st-band-navy:last-child),
+.st-page-content:has(> .st-home-section--alt:last-child) { padding-bottom: 0; }
 
 /* -- Page hero (inner pages) ------------------------------- */
 .page-hero {
@@ -368,10 +372,10 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
   font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  border-radius: 2px;
-  border: 1px solid transparent;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
   cursor: pointer;
   transition: var(--transition);
   text-decoration: none;
@@ -929,15 +933,25 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
 /* -- CTA band (navy full-bleed) ---------------------------- */
 .cta-band,
 .st-band-navy {
-  background:
-    linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%),
-    radial-gradient(ellipse at top right, rgba(184,149,42,0.15) 0%, transparent 60%);
+  position: relative;
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
   color: #ffffff;
   text-align: center;
-  padding: var(--section-pad) clamp(1.5rem, 4vw, 2.5rem);
-  border-radius: var(--radius);
-  margin: 3rem 0;
+  padding: 5rem clamp(1.5rem, 4vw, 2.5rem);
+  /* Full-bleed escape from .st-page-content max-width (1200px) */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  overflow: hidden;
 }
+.st-band-navy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(184,149,42,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.st-band-navy > * { position: relative; z-index: 1; }
 .cta-band h2,
 .st-band-navy h2 {
   color: #ffffff;
