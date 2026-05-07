@@ -3,16 +3,12 @@ hide:
   - navigation
   - toc
 title: Bereavement Travel Support
-hero_label: "Bereavement Travel Support"
-hero_sub: "Compassionate airport logistics and private transfers for families navigating travel during the most difficult of times."
+hero_label: "Compassionate Travel Support · Domestic & International"
+hero_sub: "Compassionate, discreet logistics when it matters most."
 description: "Compassionate, discreet logistics when it matters most — airport assistance for families navigating travel during the most difficult of times."
 ---
 
 # Bereavement Travel Support
-
-<div class="st-meta" markdown>
-Compassionate Travel Support · Domestic & International
-</div>
 
 Compassionate, discreet logistics when it matters most.
 

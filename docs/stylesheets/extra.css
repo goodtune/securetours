@@ -1202,6 +1202,41 @@ a.st-btn-navy:hover {
   body { overflow-x: hidden; }
 }
 
+/* -- Service page: clients-mentioned block (e.g. S.T.A.G.E.) - */
+.st-clients-mentioned {
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  background: var(--st-gold-pale);
+  border-left: 4px solid var(--st-gold);
+  border-radius: var(--st-radius);
+}
+
+.st-clients-mentioned h4 {
+  margin-bottom: 0.75rem;
+  color: var(--st-navy);
+  font-family: 'Playfair Display', serif;
+}
+
+.st-clients-mentioned ul {
+  list-style: none !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.st-clients-mentioned ul li {
+  background: var(--st-navy) !important;
+  color: rgba(255,255,255,0.85) !important;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.75rem !important;
+  border-radius: 2px;
+  border-left: none !important;
+}
+
+.st-clients-mentioned ul li::before { display: none !important; }
+
 /* -- About page: client chips ------------------------------- */
 .st-clients-grid {
   display: grid;

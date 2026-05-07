@@ -3,14 +3,13 @@ hide:
   - navigation
   - toc
 title: "P.A.S.S. — Performing Artist Safety Specialist"
+hero_label: "Performing Artist Support Services"
+hero_title: "P.A.S.S. — Performing Artist Safety Specialist"
+hero_sub: "Dedicated travel, security and logistics support for touring musicians, entertainers and performing arts companies."
 description: "Dedicated travel, security and logistics support for touring musicians, entertainers and performing arts companies."
 ---
 
 # P.A.S.S. — Performing Artist Safety Specialist
-
-<div class="st-meta" markdown>
-Performing Artist Support Services
-</div>
 
 Dedicated travel, security and logistics support for touring musicians, entertainers and performing arts companies.
 

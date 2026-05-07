@@ -3,16 +3,12 @@ hide:
   - navigation
   - toc
 title: Exclusive Transfer Assistance
-hero_label: "Exclusive Transfer Assistance"
-hero_sub: "Australia's leading secure transfer service — Exclusive and Executive tiers for luxury and corporate clients."
+hero_label: "Premium Transfer Services"
+hero_sub: "Australia's leading safety and security transfer service for events, travel and tourism — combining comfort, confidence and close protection."
 description: "Australia's leading safety and security transfer service — Exclusive and Executive tiers."
 ---
 
 # Exclusive Transfer Assistance
-
-<div class="st-meta" markdown>
-Premium Transfer Services
-</div>
 
 Australia's leading safety and security transfer service for events, travel and tourism — combining comfort, confidence and close protection.
 

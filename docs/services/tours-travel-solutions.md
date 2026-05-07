@@ -3,16 +3,12 @@ hide:
   - navigation
   - toc
 title: Secure Tours & Travel Solutions
-hero_label: "Inbound Tourism · Domestic &amp; International"
-hero_sub: "Comprehensive travel packages for inbound and domestic clients — chaperoned, secure and tailored to your journey."
+hero_label: "Inbound Tourism · Domestic & International"
+hero_sub: "Comprehensive, safety-led travel packages for inbound and domestic clients seeking the highest standard of secure, luxurious touring across Australia."
 description: "Comprehensive, safety-led travel packages for inbound and domestic clients seeking the highest standard of secure, luxurious touring."
 ---
 
 # Secure Tours & Travel Solutions
-
-<div class="st-meta" markdown>
-Inbound Tourism · Domestic & International
-</div>
 
 Comprehensive, safety-led travel packages for inbound and domestic clients seeking the highest standard of secure, luxurious touring across Australia.
 

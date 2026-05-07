@@ -3,16 +3,12 @@ hide:
   - navigation
   - toc
 title: Solo Traveller Assist
-hero_label: "Solo Traveller Assist"
-hero_sub: "Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle."
+hero_label: "Solo Travel Support · Domestic & International Airports"
+hero_sub: "You should not have to navigate airports alone."
 description: "Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle."
 ---
 
 # Solo Traveller Assist
-
-<div class="st-meta" markdown>
-Solo Travel Support · Domestic & International Airports
-</div>
 
 You should not have to navigate airports alone.
 

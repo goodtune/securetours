@@ -3,16 +3,12 @@ hide:
   - navigation
   - toc
 title: Executive Guest Management
-hero_label: "Executive Guest Management"
-hero_sub: "Seamless, hassle-free executive travel for investors, senior leaders and corporate delegations visiting Australia."
+hero_label: "VIP & Corporate"
+hero_sub: "Designed for professional and corporate clients who require a seamless, hassle-free travel experience that lets them focus on their business."
 description: "Seamless, hassle-free executive travel for investors, senior leaders and corporate delegations."
 ---
 
 # Executive Guest Management
-
-<div class="st-meta" markdown>
-VIP & Corporate
-</div>
 
 Designed for professional and corporate clients who require a seamless, hassle-free travel experience that lets them focus on their business.
 

@@ -3,16 +3,12 @@ hide:
   - navigation
   - toc
 title: Concierge & Chaperone
-hero_label: "Concierge & Chaperone"
-hero_sub: "Personal, attentive care for individuals and groups — from airport arrivals to 24/7 support throughout your stay."
+hero_label: "Concierge · Chaperone · Care"
+hero_sub: "Personal, attentive care for individuals and groups who require dedicated support throughout their Australian experience."
 description: "Personal, attentive care for individuals and groups — from airport arrivals to 24/7 support throughout your stay."
 ---
 
 # Concierge & Chaperone
-
-<div class="st-meta" markdown>
-Concierge · Chaperone · Care
-</div>
 
 Personal, attentive care for individuals and groups who require dedicated support throughout their Australian experience.
 

@@ -3,14 +3,13 @@ hide:
   - navigation
   - toc
 title: "S.T.A.G.E."
+hero_label: "Events · Activations · Operations"
+hero_title: "S.T.A.G.E."
+hero_sub: "Specialised event management with safety at its core — from major sporting tournaments to cultural festivals and corporate activations."
 description: "Specialised event management with safety at its core — from major sporting events to cultural festivals and corporate activations."
 ---
 
 # S.T.A.G.E.
-
-<div class="st-meta" markdown>
-Events · Activations · Operations
-</div>
 
 Specialised event management with safety at its core — from major sporting tournaments to cultural festivals and corporate activations.
 
@@ -37,13 +36,17 @@ S.T.A.G.E. — Secure Tours & Travel's dedicated event management stream — emb
 
 ---
 
-## Events We've Supported
+<div class="st-clients-mentioned" markdown>
+
+#### Clients we serve include
 
 - Vivid Sydney
 - Carriageworks Events
 - Major Sports Events (NRL, Mountain Biking, Football)
 - University & Government Programs
 - Private Corporate Activations
+
+</div>
 
 ---
 

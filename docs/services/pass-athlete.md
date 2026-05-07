@@ -3,14 +3,13 @@ hide:
   - navigation
   - toc
 title: "P.A.S.S. — Professional Athlete Support Specialist"
+hero_label: "Elite Athlete Support Services"
+hero_title: "P.A.S.S. — Professional Athlete Support Specialist"
+hero_sub: "Tailored travel and logistics solutions for elite athletes and sports teams — enabling peak performance on the road."
 description: "Elite travel logistics for athletes and sports teams — nutrition, recovery, equipment, security and schedule management."
 ---
 
 # P.A.S.S. — Professional Athlete Support Specialist
-
-<div class="st-meta" markdown>
-Elite Athlete Support Services
-</div>
 
 Tailored travel and logistics solutions for elite athletes and sports teams — enabling peak performance on the road.
 
