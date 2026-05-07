@@ -1478,19 +1478,21 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
 
 /* -- Footer ------------------------------------------------ */
 .footer-afs {
-  background: var(--navy-dark);
-  color: rgba(255,255,255,0.65);
-  padding: 0.85rem 0;
+  background: var(--gray-200);
+  border-top: 1px solid var(--gray-300);
+  border-bottom: 1px solid var(--gray-300);
+  color: var(--text);
+  padding: 1.25rem 0;
   font-size: 0.825rem;
   text-align: center;
 }
-.footer-afs strong { color: var(--gold); }
-.footer-afs__sep { margin: 0 0.5rem; color: rgba(255,255,255,0.3); }
+.footer-afs strong { color: var(--navy); }
+.footer-afs__sep { margin: 0 0.5rem; color: var(--gray-500); }
 
 .site-footer {
-  background: var(--navy);
+  background: var(--navy-dark);
   color: rgba(255,255,255,0.7);
-  padding: 4rem 0 2rem;
+  padding: 3rem 0 2rem;
 }
 .footer-grid {
   display: grid;
