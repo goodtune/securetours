@@ -2,9 +2,8 @@
    Secure Tours & Travel — Zensical Custom Stylesheet
    Colours: Navy #1E2E78 · Gold #B8952A
    Fonts: Playfair Display (headings) · Open Sans (body)
+   Google Fonts loaded via <link rel="stylesheet"> in overrides/main.html
    ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
 
 /* -- Brand tokens ------------------------------------------ */
 :root {
@@ -1624,18 +1623,6 @@ a.st-testimonial-card__cta,
 .st-contact-form textarea {
   resize: vertical;
   min-height: 120px;
-}
-
-/* -- Scroll reveal ------------------------------------------ */
-.st-reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.st-reveal.st-revealed {
-  opacity: 1;
-  transform: none;
 }
 
 /* -- About page: section wrappers (match static .section padding) ---------- */
