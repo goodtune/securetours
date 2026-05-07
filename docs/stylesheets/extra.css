@@ -2434,3 +2434,16 @@ a.st-case-study-card {
   }
 }
 
+/* -- Scroll reveal animations -------------------------------- */
+/* The hidden state is only applied via JS (el.classList.add('st-reveal')),
+   so non-JS users and any observer misfire never hide content permanently. */
+.st-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.st-reveal.st-revealed {
+  opacity: 1;
+  transform: none;
+}
+
