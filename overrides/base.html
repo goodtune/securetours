@@ -1,0 +1,49 @@
+{#- Custom base template — replaces Zensical/MkDocs-Material's base.html.
+    No Material CSS, no md-* chrome. -#}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {%- block htmltitle %}
+    {%- if page.title and not page.is_homepage %}
+      <title>{{ page.title | striptags }} | {{ config.site_name }}</title>
+    {%- else %}
+      <title>{{ config.site_name }}</title>
+    {%- endif %}
+  {%- endblock %}
+
+  {%- if page.meta and page.meta.description %}
+    <meta name="description" content="{{ page.meta.description }}">
+  {%- elif config.site_description %}
+    <meta name="description" content="{{ config.site_description }}">
+  {%- endif %}
+
+  {%- if page.canonical_url %}
+    <link rel="canonical" href="{{ page.canonical_url }}">
+  {%- endif %}
+
+  {%- set favicon = config.theme.favicon | d("assets/favicon.svg") %}
+  <link rel="icon" type="image/svg+xml" href="{{ favicon | url }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  {%- for path in config.extra_css %}
+    <link rel="stylesheet" href="{{ path | url }}">
+  {%- endfor %}
+
+  {%- block extrahead %}{%- endblock %}
+</head>
+<body>
+  {%- block header %}{%- endblock %}
+  {%- block hero %}{%- endblock %}
+  <main id="main-content">
+    {%- block content %}{%- endblock %}
+  </main>
+  {%- block footer %}{%- endblock %}
+  {%- block scripts %}{%- endblock %}
+</body>
+</html>
