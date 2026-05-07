@@ -1,0 +1,205 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import FooterAfs from '../components/FooterAfs.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CtaBand from '../components/CtaBand.astro';
+import PageHero from '../components/PageHero.astro';
+---
+<BaseLayout
+  title="Resources & Downloads — Secure Tours & Travel"
+  description="Download brochures, service guides and informational resources from Secure Tours & Travel."
+  canonical="https://securetours.com.au/resources/"
+>
+
+<SiteNav active="resources" />
+
+<PageHero
+  ariaLabel="Resources hero"
+  crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Resources' },
+  ]}
+  label="Brochures & Guides"
+  title="Resources & Downloads"
+  sub="Service brochures, programme guides and informational materials. Available in English and Mandarin."
+/>
+
+<section class="section" aria-labelledby="resources-heading">
+  <div class="container">
+    <h2 id="resources-heading" class="sr-only">Download Library</h2>
+
+    <div class="downloads-category">
+      <h3>🌏 Tourism Solutions</h3>
+      <div class="downloads-grid">
+        <a class="download-card download-card--live" href="/assets/downloads/secure-tours-brochure.pdf" target="_blank" rel="noopener" aria-label="Download Secure Tours & Travel Service Brochure (PDF)">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Secure Tours &amp; Travel — Service Brochure</div>
+            <div class="download-card__meta">Brochure · English · PDF</div>
+          </div>
+          <div class="download-card__badge download-card__badge--live">Download</div>
+        </a>
+        <a class="download-card download-card--live" href="/assets/downloads/secure-tours-brochure-2024.pdf" target="_blank" rel="noopener" aria-label="Download Secure Tours & Travel Comprehensive Guide 2024 (PDF)">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Secure Tours &amp; Travel — 2024 Guide</div>
+            <div class="download-card__meta">Comprehensive Guide · English · PDF</div>
+          </div>
+          <div class="download-card__badge download-card__badge--live">Download</div>
+        </a>
+        <a class="download-card download-card--live" href="/assets/downloads/secure-tours-services-mandarin.pdf" target="_blank" rel="noopener" aria-label="Download Secure Tours & Travel Services Guide in Mandarin (PDF)">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Secure Tours &amp; Travel — 服务指南</div>
+            <div class="download-card__meta">Services Guide · 中文 (Mandarin) · PDF</div>
+          </div>
+          <div class="download-card__badge download-card__badge--live">下载</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="downloads-category">
+      <h3>💎 Exclusive Transfer Assistance</h3>
+      <div class="downloads-grid">
+        <a class="download-card download-card--live" href="/assets/downloads/exclusive-transfer-assistance.pdf" target="_blank" rel="noopener" aria-label="Download Exclusive Transfer Assistance Service Guide (PDF)">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Exclusive Transfer Assistance — Service Guide</div>
+            <div class="download-card__meta">Diamond · Sapphire · Ruby Tiers · English · PDF</div>
+          </div>
+          <div class="download-card__badge download-card__badge--live">Download</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="downloads-category">
+      <h3>🏅 STAT Accreditation</h3>
+      <p style="font-size:0.9rem; color:var(--gray-700); margin-bottom:1.25rem;">STAT (Security, Tourism &amp; Accreditation Tool) is AFS Group's independent risk assessment certification for the tourism and hospitality industry — combining security risk assessment with work health and safety evaluation.</p>
+      <div class="downloads-grid">
+        <a class="download-card download-card--live" href="/assets/downloads/stat-accreditation-mandarin.pdf" target="_blank" rel="noopener" aria-label="Download STAT Accreditation Guide in Mandarin (PDF)">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">STAT认证 — 认证指南</div>
+            <div class="download-card__meta">STAT Accreditation · 中文 (Mandarin) · PDF</div>
+          </div>
+          <div class="download-card__badge download-card__badge--live">下载</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="downloads-category">
+      <h3>📋 Endorsements &amp; References</h3>
+      <div class="downloads-grid">
+        <a class="download-card download-card--live" href="/assets/downloads/endorsement-gary-oriordan-2018.pdf" target="_blank" rel="noopener" aria-label="Download Industry Endorsement Letter from Gary O'Riordan 2018 (PDF)">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Industry Endorsement — Gary O'Riordan</div>
+            <div class="download-card__meta">Tourism Consultant · Letter · 2018 · PDF</div>
+          </div>
+          <div class="download-card__badge download-card__badge--live">Download</div>
+        </a>
+        <div class="download-card">
+          <div class="download-card__icon">📄</div>
+          <div class="download-card__body">
+            <div class="download-card__name">Client References — On Request</div>
+            <div class="download-card__meta">Available confidentially · Contact us</div>
+          </div>
+          <div class="download-card__badge">On Request</div>
+        </div>
+      </div>
+      <p class="coming-soon-note">
+        <a href="/contact/" style="color:var(--navy); font-weight:600; text-decoration:underline;">Contact us</a> if you need materials in a specific language.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<CtaBand
+  ariaLabel="Resources CTA"
+  title="Need Materials Now?"
+  body="Contact our team directly — we can provide tailored information packs for your specific enquiry, in your preferred language."
+  primary={{ label: 'Get in Touch', href: '/contact/' }}
+  outline={{ label: 'View Tourism Solutions', href: '/services/' }}
+/>
+
+<FooterAfs />
+<SiteFooter />
+
+<style is:global>
+  .downloads-category {
+    margin-bottom: 3rem;
+  }
+  .downloads-category h3 {
+    font-size: 1.1rem;
+    color: var(--navy);
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .downloads-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+    gap: 1rem;
+  }
+  .download-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--off-white);
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.5rem;
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+  }
+  .download-card:hover {
+    border-color: var(--gold);
+    background: var(--white);
+    box-shadow: var(--shadow);
+  }
+  .download-card--live { border-color: rgba(184,149,42,0.3); }
+  .download-card--live:hover { border-color: var(--gold); }
+  .download-card__icon { font-size: 2rem; flex-shrink: 0; }
+  .download-card__body { flex: 1; min-width: 0; }
+  .download-card__name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--navy);
+    line-height: 1.4;
+  }
+  .download-card__meta {
+    font-size: 0.75rem;
+    color: var(--gray-500);
+    margin-top: 0.2rem;
+  }
+  .download-card__badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgba(184,149,42,0.85);
+    background: rgba(184,149,42,0.08);
+    border: 1px solid rgba(184,149,42,0.25);
+    border-radius: 3px;
+    padding: 0.2rem 0.5rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .download-card__badge--live {
+    color: #1a6e3c;
+    background: rgba(26,110,60,0.08);
+    border-color: rgba(26,110,60,0.25);
+  }
+  .coming-soon-note {
+    background: var(--off-white);
+    border-left: 3px solid var(--gold);
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius);
+    color: var(--navy);
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+  }
+</style>
+
+</BaseLayout>
