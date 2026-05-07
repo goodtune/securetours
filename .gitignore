@@ -1,0 +1,25 @@
+# Build output
+site/
+
+# Marked scratch dir — anything written here is throwaway
+# (screenshots, generated reports, ad-hoc captures from playwright, etc.).
+# README.md is kept so the folder shows up in checkout with its purpose.
+tmp/*
+!tmp/README.md
+
+# Python / venv
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Node (no JS scripts in repo currently; gitignore in case they return)
+node_modules/
+
+# Editor / OS noise
+.DS_Store
+.idea/
+.vscode/
+
+# Playwright MCP scratch dump (created by interactive playwright sessions)
+.playwright-mcp/
