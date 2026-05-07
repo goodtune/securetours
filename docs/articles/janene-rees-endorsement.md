@@ -4,25 +4,17 @@ hide:
   - toc
 title: "Industry Endorsement — Janene Rees, REES INTERNATIONAL"
 description: "Endorsement of Secure Tours & Travel and AFS Group by Janene Rees, Founder & Director of REES INTERNATIONAL — 2018."
+hero_label: "Industry Endorsement · 2018"
+hero_sub: "Founder &amp; Director of REES INTERNATIONAL — endorsing Secure Tours &amp; Travel and AFS Group for outstanding work practices and industry leadership at the Australian Tourism Exchange and beyond."
 ---
 
-# Janene Rees
+<div class="st-context-block" markdown>
 
-<div class="st-meta" markdown>
-Industry Endorsement · 23 August 2018
-</div>
-
-Founder & Director of REES INTERNATIONAL — endorsing Secure Tours & Travel and AFS Group for outstanding work practices and industry leadership at the Australian Tourism Exchange and beyond.
-
----
-
-## About This Endorsement
+**About this endorsement**
 
 Janene Rees is the Founder & Director of REES INTERNATIONAL, an international tourism industry firm. Janene has witnessed Secure Tours & Travel and AFS Group operate firsthand at major industry events including the Australian Tourism Exchange (ATE), where the business has showcased its services to international tourism agents. She has also engaged AFS Group for professional Security Risk Assessments on behalf of a major entertainment and sporting facility client.
 
----
-
-## Endorsement Letter
+</div>
 
 <div class="st-quote" markdown>
 
@@ -36,10 +28,15 @@ Secure Tours and Travel have also provided one of my clients, which is a very la
 
 I wish Secure Tours and Travel much success in gaining international recognition for all the services that they provide and believe that as they are a very well established business they are very equipped to grow their business into these new emerging International Markets.
 
-<footer><strong>Janene Rees</strong><br>Founder & Director, REES INTERNATIONAL</footer>
+<footer><strong>Janene Rees</strong><br>Founder &amp; Director<br>REES INTERNATIONAL</footer>
 
+</div>
+
+<div class="st-article-nav" markdown>
+<a href="/articles/gary-oriordan-endorsement/">← Gary O'Riordan Endorsement</a>
+<a href="/articles/">Back to Articles &amp; Testimonials →</a>
 </div>
 
 ---
 
-[← Back to Articles & Case Studies](index.md) | [Contact Us](../contact.md){ .st-btn .st-btn-primary }
+[Contact Us](../contact.md){ .st-btn .st-btn-primary }

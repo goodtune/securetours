@@ -4,25 +4,17 @@ hide:
   - toc
 title: "Industry Endorsement — Gary O'Riordan"
 description: "Endorsement of Secure Tours & Travel by senior tourism industry professional Gary O'Riordan — 2018."
+hero_label: "Industry Endorsement · 2018"
+hero_sub: "Senior tourism industry professional and business consultancy principal — endorsing Secure Tours & Travel and the unique service proposition it brings to the Australian and inbound tourism market."
 ---
 
-# Gary O'Riordan
+<div class="st-context-block" markdown>
 
-<div class="st-meta" markdown>
-Industry Endorsement · 14 August 2018
-</div>
-
-Senior tourism industry professional and business consultancy principal — endorsing Secure Tours & Travel and the unique service proposition it brings to the Australian and inbound tourism market.
-
----
-
-## About This Endorsement
+**About this endorsement**
 
 Gary O'Riordan is a senior tourism industry professional with extensive experience in senior roles across the Travel & Tourism industry, and the principal of his own tourism business consultancy. Gary assisted Matthew Harrison in the development of the Secure Tours & Travel concept and business plan, and introduced the business to key tourism organisations including Tourism Australia and the Australian Tourism Export Council (ATEC).
 
----
-
-## Endorsement Letter
+</div>
 
 <div class="st-quote" markdown>
 
@@ -46,6 +38,11 @@ I wish Matthew the very best with his business into the future.
 
 </div>
 
+<div class="st-article-nav" markdown>
+<a href="/articles/">← Back to Articles &amp; Testimonials</a>
+<a href="/articles/vivid-sydney/">Vivid Sydney Case Study →</a>
+</div>
+
 ---
 
-[← Back to Articles & Case Studies](index.md) | [Contact Us](../contact.md){ .st-btn .st-btn-primary }
+[Contact Us](../contact.md){ .st-btn .st-btn-primary }

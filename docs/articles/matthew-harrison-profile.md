@@ -4,15 +4,13 @@ hide:
   - toc
 title: Matthew Harrison — AFS Solutions
 description: "From working on the door at a local pub to building one of Australia's most respected secure travel and event security operations."
+hero_label: "Feature Profile · AFS Solutions"
+hero_sub: "From working on the door at a local pub to building one of Australia's most respected secure travel and event security operations — the story of how Matthew Harrison turned entrepreneurial instinct and operational excellence into a national capability."
 ---
 
-# Matthew Harrison — AFS Solutions
-
-<div class="st-meta" markdown>
-Feature Profile · AFS Solutions
+<div class="st-article-meta" markdown>
+**Subject:** Matthew Harrison · **Company:** Secure Tours &amp; Travel / AFS Solutions · **Type:** Feature Profile
 </div>
-
-From working on the door at a local pub to building one of Australia's most respected secure travel and event security operations — the story of how Matthew Harrison turned entrepreneurial instinct and operational excellence into a national capability.
 
 ---
 
@@ -54,7 +52,7 @@ Secure Tours & Travel represents the travel and tourism arm of the AFS Group ope
 
 ## Australian Tourism Exchange
 
-Secure Tours & Travel has participated in key trade expos to promote its unique services and product offering — including the Australian Tourism Exchange (ATE), one of the industry's premier events for connecting inbound tourism operators with international wholesale buyers. The company's presence at ATE has been consistently noted for its professionalism.
+Secure Tours & Travel has participated in key trade expos to promote its unique services and product offering — including the Australian Tourism Exchange (ATE), one of the industry's premier events for connecting inbound tourism operators with international wholesale buyers. The company's presence at ATE has been consistently noted for its professionalism, with industry peers including Janene Rees of REES INTERNATIONAL citing the quality of the company's presentation to international agents.
 
 The business has also been introduced to key tourism organisations including Tourism Australia and the Australian Tourism Export Council — establishing Secure Tours & Travel as a recognised player in the Australian inbound tourism market at a national level.
 
@@ -68,4 +66,11 @@ Matt's journey from pub door to the world stage is, in many ways, the story of t
 
 ---
 
-[← Back to Articles & Case Studies](index.md) | [Contact Us](../contact.md){ .st-btn .st-btn-primary }
+<div class="st-article-nav" markdown>
+<a href="/articles/">← Back to Articles &amp; Testimonials</a>
+<a href="/articles/gary-oriordan-endorsement/">Gary O'Riordan Endorsement →</a>
+</div>
+
+---
+
+[Contact Us](../contact.md){ .st-btn .st-btn-primary }

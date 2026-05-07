@@ -906,6 +906,70 @@ a.st-btn-navy:hover {
   display: none;
 }
 
+/* -- Context / "about this endorsement" block -------------- */
+.st-context-block {
+  background: var(--st-off-white);
+  border-left: 4px solid var(--st-gold);
+  border-radius: var(--st-radius);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.st-context-block strong,
+.md-typeset .st-context-block strong {
+  color: var(--st-navy);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.st-context-block p,
+.md-typeset .st-context-block p {
+  font-size: 0.875rem;
+  color: var(--st-gray-700);
+  margin: 0;
+}
+
+/* -- Article meta strip (feature profiles) ----------------- */
+.st-article-meta,
+.md-typeset .st-article-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 0 0 2.5rem;
+  padding: 1.25rem 1.75rem;
+  background: var(--st-off-white);
+  border-left: 4px solid var(--st-gold);
+  border-radius: var(--st-radius);
+  font-size: 0.875rem;
+  color: var(--st-gray-700);
+}
+
+.st-article-meta strong,
+.md-typeset .st-article-meta strong {
+  color: var(--st-navy);
+}
+
+/* -- Article prev/next navigation -------------------------- */
+.st-article-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--st-gray-300);
+}
+
+.st-article-nav a,
+.md-typeset .st-article-nav a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--st-navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 /* -- Outcome stats (case studies) -------------------------- */
 .st-stats.st-stats-compact {
   width: auto;

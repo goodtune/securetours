@@ -4,15 +4,9 @@ hide:
   - toc
 title: Vivid Sydney — Festival Security & Crowd Management
 description: "Festival security, crowd management and VIP guest services across Sydney's largest annual public event — 3 million+ visitors, 23 nights."
+hero_label: "Case Study · Public Festival Security"
+hero_sub: "Festival security, crowd management and VIP guest services across Sydney's largest annual public event — attracting over three million visitors across 23 nights."
 ---
-
-# Vivid Sydney
-
-<div class="st-meta" markdown>
-Case Study · Public Festival Security
-</div>
-
-Festival security, crowd management and VIP guest services across Sydney's largest annual public event — attracting over three million visitors across 23 nights.
 
 | | |
 |---|---|
@@ -49,7 +43,7 @@ Vivid Sydney presents a unique security challenge: an open-access public festiva
 
 AFS Group deployed licensed crowd controllers and close protection personnel across the key Vivid Sydney precincts, with a dedicated command and communication structure enabling real-time coordination across teams.
 
-A detailed event risk assessment was completed prior to the festival opening, identifying crowd density thresholds, access point priorities, emergency egress requirements and contingency protocols.
+A detailed event risk assessment was completed prior to the festival opening, identifying crowd density thresholds, access point priorities, emergency egress requirements and contingency protocols. This assessment informed staffing allocation and team placement for each night of the festival.
 
 For corporate and VIP clients attending Vivid Sydney events, dedicated chaperone and concierge teams provided door-to-door guest management — from arrival at Sydney hotels through to venue access and return transport.
 
@@ -101,4 +95,11 @@ AFS Group delivered the engagement without major security incidents across all o
 
 ---
 
-[← Back to Articles & Case Studies](index.md) | [Contact Us](../contact.md){ .st-btn .st-btn-primary }
+<div class="st-article-nav" markdown>
+<a href="/articles/">← Back to Articles &amp; Case Studies</a>
+<a href="/articles/carriageworks/">Carriageworks Case Study →</a>
+</div>
+
+---
+
+[Contact Us](../contact.md){ .st-btn .st-btn-primary }
