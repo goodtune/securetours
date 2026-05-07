@@ -4,7 +4,7 @@ description: "Client testimonials, case studies and insights from Secure Tours &
 hide:
   - navigation
   - toc
-hero_label: "Insights &amp; Client Stories"
+hero_label: "Insights & Client Stories"
 hero_sub: "Real-world insights into secure travel, event management and VIP logistics — drawn from over three decades of operational experience with AFS Group."
 ---
 
