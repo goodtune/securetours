@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{%- block header %}
+{# Reuse the nav from main.html via a direct include of the markup we want #}
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="st-container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Secure Tours &amp; Travel — Home">
+        <img src="/assets/logo-transparent.png" alt="Secure Tours &amp; Travel">
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/services/">Tourism Solutions</a></li>
+        <li><a href="/event-solutions/">Event Solutions</a></li>
+        <li><a href="/articles/">Articles, Testimonials &amp; Case Studies</a></li>
+        <li><a href="/resources/">Resources</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+{%- endblock %}
+
+{%- block hero %}
+<div class="page-hero">
+  <div class="st-container">
+    <span class="page-hero__label">Error 404</span>
+    <h1 class="page-hero__title">Page Not Found</h1>
+    <p class="page-hero__sub">The page you're looking for doesn't exist or may have moved.</p>
+  </div>
+</div>
+{%- endblock %}
+
+{%- block content %}
+<div class="st-container st-page-content">
+  <h2>Try one of these instead</h2>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/services/">Tourism Solutions</a></li>
+    <li><a href="/event-solutions/">Event Solutions</a></li>
+    <li><a href="/articles/">Articles, Testimonials &amp; Case Studies</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</div>
+{%- endblock %}
+
+{%- block footer %}
+<footer class="site-footer" role="contentinfo">
+  <div class="st-container">
+    <div class="footer-bottom">
+      <span>© 2026 Secure Tours &amp; Travel. All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+{%- endblock %}
