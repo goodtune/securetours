@@ -2215,3 +2215,138 @@ a.st-case-study-card {
   color: var(--st-gold) !important;
 }
 
+/* ============================================================
+   Resources page — Download cards (Task 10)
+   ============================================================ */
+
+.st-downloads-section {
+  margin-bottom: 3rem;
+}
+
+.st-downloads-category {
+  margin-bottom: 3rem;
+}
+
+.st-downloads-category h3,
+.md-typeset .st-downloads-category h3 {
+  font-size: 1.1rem;
+  font-family: 'Open Sans', system-ui, sans-serif;
+  color: var(--st-navy);
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--st-gold);
+  margin-bottom: 1.25rem;
+  margin-top: 0;
+}
+
+.st-downloads-category__desc {
+  font-size: 0.9rem;
+  color: var(--st-gray-700);
+  margin-bottom: 1.25rem;
+}
+
+.st-downloads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1rem;
+}
+
+/* Download card — base */
+.st-download-card,
+.md-typeset .st-download-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--st-off-white);
+  border: 1px solid var(--st-gray-300);
+  border-radius: var(--st-radius);
+  padding: 1.1rem 1.5rem;
+  transition: var(--st-transition);
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.st-download-card:hover {
+  border-color: var(--st-gold);
+  background: var(--st-white);
+  box-shadow: var(--st-shadow);
+}
+
+/* Live variant — slightly warmer border at rest */
+.st-download-card--live {
+  border-color: rgba(184,149,42,0.3);
+}
+
+.st-download-card--live:hover {
+  border-color: var(--st-gold);
+}
+
+.st-download-card__icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.st-download-card__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.st-download-card__name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--st-navy);
+  line-height: 1.4;
+}
+
+.st-download-card__meta {
+  font-size: 0.75rem;
+  color: var(--st-gray-500);
+  margin-top: 0.2rem;
+}
+
+/* Badge (default — gold-tinted "On Request") */
+.st-download-card__badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(184,149,42,0.85);
+  background: rgba(184,149,42,0.08);
+  border: 1px solid rgba(184,149,42,0.25);
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Live badge — green tint */
+.st-download-card__badge--live {
+  color: #1a6e3c;
+  background: rgba(26,110,60,0.08);
+  border-color: rgba(26,110,60,0.25);
+}
+
+/* Coming-soon note */
+.st-coming-soon-note,
+.md-typeset .st-coming-soon-note {
+  background: var(--st-off-white);
+  border-left: 3px solid var(--st-gold);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--st-radius);
+  color: var(--st-navy);
+  font-size: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.st-coming-soon-note a,
+.md-typeset .st-coming-soon-note a {
+  color: var(--st-navy);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Responsive — collapse to single column on narrow viewports */
+@media (max-width: 600px) {
+  .st-downloads-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
