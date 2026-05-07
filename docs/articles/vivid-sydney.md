@@ -10,13 +10,13 @@ hero_title: "Vivid Sydney"
 hero_sub: "Festival security, crowd management and VIP guest services across Sydney's largest annual public event — attracting over three million visitors across 23 nights."
 ---
 
-| | |
-|---|---|
-| **Event** | Vivid Sydney |
-| **Type** | Public Festival — Lights, Music & Ideas |
-| **Location** | Sydney Harbour & CBD Precincts, NSW |
-| **Duration** | 23 nights (annual) |
-| **Services** | Crowd Management · Access Control · VIP Services |
+<div class="st-case-study-meta">
+<div class="st-meta-item"><div class="st-meta-item__label">Event</div><div class="st-meta-item__value">Vivid Sydney</div></div>
+<div class="st-meta-item"><div class="st-meta-item__label">Type</div><div class="st-meta-item__value">Public Festival — Lights, Music & Ideas</div></div>
+<div class="st-meta-item"><div class="st-meta-item__label">Location</div><div class="st-meta-item__value">Sydney Harbour & CBD Precincts, NSW</div></div>
+<div class="st-meta-item"><div class="st-meta-item__label">Duration</div><div class="st-meta-item__value">23 nights (annual)</div></div>
+<div class="st-meta-item"><div class="st-meta-item__label">Services</div><div class="st-meta-item__value">Crowd Management · Access Control · VIP Services</div></div>
+</div>
 
 ---
 
@@ -66,26 +66,26 @@ For corporate and VIP clients attending Vivid Sydney events, dedicated chaperone
 
 ## Outcomes
 
-<div class="st-stats st-stats-compact" markdown>
+<div class="st-outcomes-grid" markdown>
 
-<div>
-<span class="st-stat-value">23</span>
-<span class="st-stat-label">Nights of Operation</span>
+<div class="st-outcome-item">
+<div class="st-outcome-item__num">23</div>
+<div class="st-outcome-item__label">Nights of Operation</div>
 </div>
 
-<div>
-<span class="st-stat-value">3M+</span>
-<span class="st-stat-label">Event Visitors (annual)</span>
+<div class="st-outcome-item">
+<div class="st-outcome-item__num">3M+</div>
+<div class="st-outcome-item__label">Event Visitors (annual)</div>
 </div>
 
-<div>
-<span class="st-stat-value">Multi</span>
-<span class="st-stat-label">Precincts Covered</span>
+<div class="st-outcome-item">
+<div class="st-outcome-item__num">Multi</div>
+<div class="st-outcome-item__label">Precincts Covered</div>
 </div>
 
-<div>
-<span class="st-stat-value">Zero</span>
-<span class="st-stat-label">Major Security Incidents</span>
+<div class="st-outcome-item">
+<div class="st-outcome-item__num">Zero</div>
+<div class="st-outcome-item__label">Major Security Incidents</div>
 </div>
 
 </div>

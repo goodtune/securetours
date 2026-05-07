@@ -10,13 +10,13 @@ hero_title: "Carriageworks"
 hero_sub: "An ongoing event security partnership with one of Sydney's premier arts and cultural venues — delivering consistent, professional security across a diverse calendar of productions and events."
 ---
 
-| | |
-|---|---|
-| **Venue** | Carriageworks |
-| **Location** | Eveleigh, Sydney NSW |
-| **Engagement** | Multi-event venue security program |
-| **Events** | Arts · Cultural · Fashion · Commercial |
-| **Services** | Event Security · Access Control · VIP Services · Crowd Management |
+<div class="st-case-study-meta">
+<div class="st-meta-item"><div class="st-meta-item__label">Venue</div><div class="st-meta-item__value">Carriageworks</div></div>
+<div class="st-meta-item"><div class="st-meta-item__label">Location</div><div class="st-meta-item__value">Eveleigh, Sydney NSW</div></div>
+<div class="st-meta-item"><div class="st-meta-item__label">Engagement</div><div class="st-meta-item__value">Multi-event venue security program</div></div>
+<div class="st-meta-item"><div class="st-meta-item__label">Events</div><div class="st-meta-item__value">Arts · Cultural · Fashion · Commercial</div></div>
+<div class="st-meta-item"><div class="st-meta-item__label">Services</div><div class="st-meta-item__value">Event Security · Access Control · VIP Services · Crowd Management</div></div>
+</div>
 
 ---
 
@@ -71,26 +71,26 @@ For events requiring discreet security — gallery openings, fashion shows and c
 
 ## Outcomes
 
-<div class="st-stats st-stats-compact" markdown>
+<div class="st-outcomes-grid" markdown>
 
-<div>
-<span class="st-stat-value">Multi</span>
-<span class="st-stat-label">Events per Year</span>
+<div class="st-outcome-item">
+<div class="st-outcome-item__num">Multi</div>
+<div class="st-outcome-item__label">Events per Year</div>
 </div>
 
-<div>
-<span class="st-stat-value">6+</span>
-<span class="st-stat-label">Event Categories</span>
+<div class="st-outcome-item">
+<div class="st-outcome-item__num">6+</div>
+<div class="st-outcome-item__label">Event Categories</div>
 </div>
 
-<div>
-<span class="st-stat-value">Ongoing</span>
-<span class="st-stat-label">Venue Partnership</span>
+<div class="st-outcome-item">
+<div class="st-outcome-item__num">Ongoing</div>
+<div class="st-outcome-item__label">Venue Partnership</div>
 </div>
 
-<div>
-<span class="st-stat-value">Zero</span>
-<span class="st-stat-label">Major Incidents</span>
+<div class="st-outcome-item">
+<div class="st-outcome-item__num">Zero</div>
+<div class="st-outcome-item__label">Major Incidents</div>
 </div>
 
 </div>
