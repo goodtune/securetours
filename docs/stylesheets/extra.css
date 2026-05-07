@@ -197,3 +197,137 @@ li:last-child { margin-bottom: 0; }
 
 main#main-content { padding-top: 80px; min-height: 100vh; }
 .st-page-content { padding: 3rem 0; }
+
+/* -- Page hero (inner pages) ------------------------------- */
+.page-hero {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+  color: #ffffff;
+  padding: clamp(5rem, 9vw, 7rem) 0 clamp(2.5rem, 5vw, 4rem);
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(184,149,42,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+.page-hero .st-container { position: relative; z-index: 1; }
+
+.page-hero__label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 1rem;
+}
+
+.page-hero__title,
+.page-hero h1 {
+  font-family: var(--font-serif);
+  color: #ffffff;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 1.5rem;
+}
+
+.page-hero__sub {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.78);
+  max-width: 620px;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.st-breadcrumb {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  list-style: none;
+  margin: 0 0 1rem;
+  padding: 0;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+}
+.st-breadcrumb li { margin-bottom: 0; }
+.st-breadcrumb li + li::before {
+  content: '›';
+  margin-right: 0.5rem;
+}
+.st-breadcrumb a {
+  color: rgba(255,255,255,0.6);
+}
+.st-breadcrumb a:hover { color: rgba(255,255,255,0.9); }
+
+/* -- Home hero (full-bleed background image) --------------- */
+.home-hero,
+.st-hero {
+  position: relative;
+  min-height: calc(100vh - 80px);
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(19,29,79,0.85) 0%, rgba(30,46,120,0.78) 100%),
+    url('/assets/sydney-harbour.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 4rem 0;
+}
+.home-hero .st-container,
+.st-hero { max-width: 720px; text-align: center; margin: 0 auto; padding: 4rem clamp(1.25rem, 4vw, 2.5rem); }
+.home-hero__tag,
+.st-hero-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  border: 1px solid rgba(212,175,68,0.5);
+  border-radius: 2px;
+  padding: 0.4rem 1rem;
+  margin-bottom: 2rem;
+}
+.home-hero h1,
+.st-hero h1 {
+  font-family: var(--font-serif);
+  color: #ffffff;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+}
+.home-hero h1 em,
+.st-hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.home-hero p,
+.st-hero > p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.8;
+  margin: 0 auto 2rem;
+  max-width: 580px;
+}
+.home-hero .cta-group,
+.st-hero .st-cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.home-hero img.tagline,
+.st-hero img,
+.st-tagline-img {
+  display: block;
+  max-width: 280px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
