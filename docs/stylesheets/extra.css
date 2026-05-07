@@ -330,6 +330,17 @@ h1, h2, h3, h4, h5, h6,
   margin: 0 !important;
 }
 
+/* About page: "Who We Are" lead paragraph — gold left border matching .service-lead */
+.st-about-text > p:first-of-type {
+  font-size: 1.15rem;
+  color: var(--st-gray-700);
+  line-height: 1.85;
+  max-width: 800px;
+  border-left: 3px solid var(--st-gold);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
 /* About-text feature list — gold ✦ bullets matching static site */
 .st-about-text ul, .st-about-text ol {
   list-style: none !important;
@@ -1367,6 +1378,139 @@ a.st-btn-navy:hover {
 .st-reveal.st-revealed {
   opacity: 1;
   transform: none;
+}
+
+/* -- About page: section wrappers (match static .section padding) ---------- */
+.st-about-section {
+  padding: clamp(3rem, 6vw, 5rem) 0;
+}
+
+.st-about-section--alt {
+  background: var(--st-off-white);
+  /* Full viewport width — matches static .section--alt background coverage */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  /* Re-centre content within max-width container */
+  padding-left: max(clamp(1.25rem, 4vw, 2.5rem), calc(50% - var(--st-max-w) / 2));
+  padding-right: max(clamp(1.25rem, 4vw, 2.5rem), calc(50% - var(--st-max-w) / 2));
+}
+
+/* -- About page: value cards (gold left-border, matching static .value-card) */
+.st-value-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.st-value-card {
+  background: var(--st-off-white);
+  border-left: 4px solid var(--st-gold);
+  padding: 1.75rem;
+  border-radius: var(--st-radius);
+}
+
+.st-value-card h3,
+.md-typeset .st-value-card h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  margin-top: 0;
+  color: var(--st-navy);
+}
+
+.st-value-card p,
+.md-typeset .st-value-card p {
+  font-size: 0.9rem;
+  color: var(--st-gray-700);
+  margin: 0;
+}
+
+/* -- About page: AFS section left column heading/text color overrides ------- */
+.st-section-navy h2 {
+  color: #ffffff !important;
+  margin-top: 0.75rem;
+}
+
+.st-section-navy__intro {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8) !important;
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0;
+}
+
+/* -- About page: AFS features box (inside navy band right column) ----------- */
+.st-afs-features {
+  background: rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid rgba(184,149,42,0.25);
+  margin-top: 1rem;
+}
+
+.st-content-no-first-h1 .st-afs-features ul,
+.st-afs-features ul {
+  list-style: none !important;
+  display: block !important;
+  grid-template-columns: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.st-content-no-first-h1 .st-afs-features ul li,
+.st-afs-features ul li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+  padding: 0.6rem 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  background: none !important;
+  font-size: 0.95rem !important;
+  color: rgba(255,255,255,0.85) !important;
+  margin: 0 !important;
+}
+
+.st-content-no-first-h1 .st-afs-features ul li:last-child,
+.st-afs-features ul li:last-child {
+  border-bottom: none !important;
+}
+
+.st-content-no-first-h1 .st-afs-features ul li::before,
+.st-afs-features ul li::before {
+  content: '✦' !important;
+  display: block !important;
+  color: var(--st-gold) !important;
+  font-size: 0.7rem !important;
+  margin-top: 0.35rem !important;
+  flex-shrink: 0 !important;
+}
+
+/* -- About page: CTA band button group ------------------------------------ */
+.st-band-navy .st-btn,
+.st-band-navy a.st-btn-primary,
+.st-band-navy a.st-btn-outline {
+  margin: 0.5rem;
+}
+
+/* Suppress bottom margin on last st-band-navy (CTA at page end) */
+.st-content-no-first-h1 > .st-band-navy:last-child,
+.md-content__inner .st-band-navy:last-child {
+  margin-bottom: 0;
+}
+
+/* Suppress padding-bottom on content inner when last child is a full-bleed band */
+.md-content__inner:has(.st-band-navy:last-child) {
+  padding-bottom: 0;
+}
+
+/* Remove spacing between navy AFS section and CTA band that follows */
+.st-section-navy + .st-band-navy {
+  margin-top: 0;
+}
+.st-section-navy:has(+ .st-band-navy) {
+  margin-bottom: 0;
 }
 
 /* -- Featured solution block (services index) -------------- */
