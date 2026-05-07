@@ -1606,3 +1606,14 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
 
 /* "View all" centered wrapper */
 .st-view-all-wrap { text-align: center; margin: 2rem 0; }
+
+/* -- Footer AFS strip (one-liner above main footer) -------- */
+.footer-afs__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.footer-afs__division { font-size: 0.825rem; }
+.footer-afs__credentials { font-size: 0.825rem; color: rgba(255,255,255,0.55); }

@@ -8,6 +8,9 @@
       <a href="/" class="nav-logo" aria-label="Secure Tours &amp; Travel — Home">
         <img src="/assets/logo-transparent.png" alt="Secure Tours &amp; Travel">
       </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
       <ul class="nav-links" role="list">
         <li><a href="/">Home</a></li>
         <li><a href="/about/">About Us</a></li>
@@ -20,6 +23,22 @@
     </div>
   </div>
 </nav>
+{%- endblock %}
+
+{%- block scripts %}
+<script>
+  (function() {
+    var toggle = document.querySelector('.nav-toggle');
+    var links  = document.querySelector('.nav-links');
+    if (toggle && links) {
+      toggle.addEventListener('click', function() {
+        var expanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!expanded));
+        links.classList.toggle('open');
+      });
+    }
+  })();
+</script>
 {%- endblock %}
 
 {%- block hero %}
