@@ -1148,7 +1148,9 @@ a.st-btn-navy:hover {
   .st-cta-group {
     flex-direction: column;
   }
+}
 
+@media (max-width: 600px) {
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
 }
 
