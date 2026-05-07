@@ -275,73 +275,87 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
 .home-hero,
 .st-hero {
   position: relative;
-  min-height: calc(100vh - 80px);
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
   background:
-    linear-gradient(135deg, rgba(19,29,79,0.85) 0%, rgba(30,46,120,0.78) 100%),
+    linear-gradient(135deg, rgba(30,46,120,0.85) 0%, rgba(30,46,120,0.65) 60%, rgba(42,63,153,0.6) 100%),
     url('/assets/hero-bg.jpg') center/cover no-repeat;
   color: #ffffff;
-  padding: 4rem clamp(1.25rem, 4vw, 2.5rem);
-  text-align: center;
+  padding-top: 80px;
+  overflow: hidden;
   /* Full-bleed escape from .st-container max-width */
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
-.home-hero .st-container { max-width: 720px; margin: 0 auto; }
-/* .st-hero content is direct children — constrain via max-width on the div itself */
-.st-hero > * { max-width: 720px; width: 100%; }
+/* Inside a flex .st-hero, .st-container shrinks to fit its content
+   then centers via its own `margin: 0 auto`. Mirrors static `.hero
+   > .container > .hero-content` layout. */
+.st-hero > .st-container {
+  width: auto;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+.st-hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+/* Markdown sometimes wraps an inline span in its own <p> — strip the wrapper styling */
+.st-hero__content > p:has(> .st-tag:only-child) { margin: 0; }
+
 .home-hero__tag,
+.st-tag,
 .st-hero-tag {
   display: inline-block;
   font-family: var(--font-sans);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold-light);
-  border: 1px solid rgba(212,175,68,0.5);
+  color: var(--gold);
+  border: 1px solid rgba(184,149,42,0.4);
   border-radius: 2px;
   padding: 0.4rem 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .home-hero h1,
 .st-hero h1 {
   font-family: var(--font-serif);
   color: #ffffff;
-  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   margin: 0 0 1.5rem;
+  max-width: none;
 }
 .home-hero h1 em,
 .st-hero h1 em {
   font-style: italic;
-  color: var(--gold-light);
+  color: var(--gold);
 }
 .home-hero p,
-.st-hero > p {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.85);
+.st-hero__content > p {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.8);
   line-height: 1.8;
-  margin: 0 auto 2rem;
-  max-width: 580px;
+  margin: 0 0 2.5rem;
+  max-width: 540px;
 }
 .home-hero .cta-group,
 .st-hero .st-cta-group {
   display: flex;
   gap: 1rem;
-  justify-content: center;
-  margin-bottom: 2rem;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 0;
 }
 .home-hero img.tagline,
 .st-hero img,
 .st-tagline-img {
   display: block;
   max-width: 280px;
-  margin: 0 auto;
+  margin: 3rem 0 0;
   opacity: 0.9;
 }
 
@@ -596,10 +610,21 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
   background: var(--navy);
   color: #ffffff;
   border-radius: var(--radius);
-  padding: 2.5rem;
-  margin: 2rem 0;
+  padding: 2.5rem 3rem;
+  margin: 3rem 0 2.5rem;
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+}
+.st-solutions-featured__cta {
+  font-size: 3.5rem;
+  line-height: 1;
+  opacity: 0.25;
+  text-align: right;
+  flex-shrink: 0;
 }
 .solutions-featured__tag,
 .st-solutions-featured__tag {
@@ -1490,6 +1515,22 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
 
 /* Home page: section wrappers */
 .st-home-section { padding: var(--section-pad) 0; }
+/* Constrain section intro paragraph (the lead text under the eyebrow + h2) */
+.st-home-section > p,
+.st-home-section .st-container > p {
+  max-width: 700px;
+  font-size: 1.1rem;
+  color: var(--gray-700);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+/* Centered modifier — used for the Why-Choose-Us section, mirroring static
+   `.section.section--alt > .container.text-center`. Centers eyebrow, h2,
+   gold-rule, and intro under it. */
+.st-home-section--center { text-align: center; }
+.st-home-section--center .st-gold-rule { margin-left: auto; margin-right: auto; }
+.st-home-section--center > p,
+.st-home-section--center .st-container > p { margin-left: auto; margin-right: auto; }
 .st-home-section--alt { background: var(--off-white); padding: var(--section-pad) 0; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); }
 .st-home-section--alt > .st-container { padding-left: clamp(1.25rem, 4vw, 2.5rem); padding-right: clamp(1.25rem, 4vw, 2.5rem); }
 /* Constrain direct children of full-bleed alt sections (no .st-container wrapper in markup) */

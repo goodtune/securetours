@@ -8,6 +8,8 @@ hide:
 ---
 
 <div class="st-hero" markdown>
+<div class="st-container" markdown>
+<div class="st-hero__content" markdown>
 
 <span class="st-tag">Australia's Premium Secure Travel Specialists</span>
 
@@ -22,6 +24,8 @@ Combining elite security expertise with premium concierge service — we protect
 
 ![Secure Luxury Travel for discerning individuals & groups](/assets/tagline.gif){ .st-tagline-img loading="lazy" }
 
+</div>
+</div>
 </div>
 
 <div class="st-stats" markdown>
@@ -48,7 +52,7 @@ Combining elite security expertise with premium concierge service — we protect
 
 </div>
 
-<div class="st-home-section" markdown>
+<div class="st-home-section st-home-section--alt" markdown>
 
 <span class="st-section-label">Our Solutions</span>
 
@@ -128,7 +132,7 @@ Additional specialist solutions are being finalised. Contact us to discuss your 
 
 </div>
 
-<div class="st-home-section st-home-section--alt" markdown>
+<div class="st-home-section" markdown>
 
 <div class="st-about-grid" markdown>
 <div class="st-about-text" markdown>
@@ -160,7 +164,7 @@ Secure Tours & Travel is the dedicated tourism and event services division of Au
 
 </div>
 
-<div class="st-home-section" markdown>
+<div class="st-home-section st-home-section--alt st-home-section--center" markdown>
 
 <span class="st-section-label">Why Choose Us</span>
 
