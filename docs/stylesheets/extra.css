@@ -1373,7 +1373,13 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
 }
 .st-download-card__badge--live { color: #1a6e3c; }
 .st-downloads-section { margin: 2rem 0; }
-.st-downloads-category h3 { margin-top: 1.5rem; }
+.st-downloads-category { margin-bottom: 2.5rem; }
+.st-downloads-category h3 {
+  margin-top: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--gold);
+  margin-bottom: 1.25rem;
+}
 .st-coming-soon-note { font-size: 0.875rem; color: var(--gray-500); font-style: italic; margin: 1rem 0; }
 
 /* -- Footer ------------------------------------------------ */
@@ -1501,7 +1507,7 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
 .st-solutions-featured__cta { margin-top: 1rem; }
 
 /* Articles: testimonial grid wrapper */
-.st-testimonial-grid { display: grid; gap: 1.5rem; margin: 2rem 0; }
+.st-testimonial-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
 
 /* Articles: article-card sub-elements */
 .st-article-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin: 2rem 0; }
