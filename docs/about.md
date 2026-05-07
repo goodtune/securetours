@@ -6,7 +6,7 @@ title: About Us
 description: "Secure Tours & Travel — established 1989, a division of Australian Frontline Solutions."
 hero_label: "Established 1989 · Australian Frontline Solutions"
 hero_title: "About Secure Tours & Travel"
-hero_sub: "Secure Tours & Travel was founded by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable."
+hero_sub: "Secure Tours & Travel was founded by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable. As the dedicated tourism division of Australian Frontline Solutions, we bring 37 years of combined operational expertise to every engagement."
 ---
 
 # About Secure Tours & Travel
