@@ -305,24 +305,52 @@ h1, h2, h3, h4, h5, h6,
 .st-content-no-first-h1 ul:not([class]) li::before,
 .st-content-no-first-h1 ol:not([class]) li::before { display: none; }
 
-/* Plain lists inside cards, band-navy, or about-text should stay as bullets */
+/* Plain lists inside cards or band-navy should stay as bullets */
 .st-card ul, .st-card ol,
-.st-band-navy ul, .st-band-navy ol,
-.st-about-text ul, .st-about-text ol {
+.st-band-navy ul, .st-band-navy ol {
   list-style: disc !important;
   display: block !important;
   padding-left: 1.5rem !important;
   margin: 0.5rem 0 !important;
 }
 .st-card ul li, .st-card ol li,
-.st-band-navy ul li, .st-band-navy ol li,
-.st-about-text ul li, .st-about-text ol li {
+.st-band-navy ul li, .st-band-navy ol li {
   background: none !important;
   padding: 0.25rem 0 !important;
   border-left: none !important;
   border-radius: 0 !important;
   color: inherit !important;
   margin: 0 !important;
+}
+
+/* About-text feature list — gold ✦ bullets matching static site */
+.st-about-text ul, .st-about-text ol {
+  list-style: none !important;
+  display: block !important;
+  padding-left: 0 !important;
+  margin: 1.5rem 0 !important;
+}
+.st-about-text ul li, .st-about-text ol li {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.75rem !important;
+  padding: 0.6rem 0 !important;
+  border-bottom: 1px solid var(--st-gray-100) !important;
+  border-left: none !important;
+  border-radius: 0 !important;
+  background: none !important;
+  font-size: 0.95rem !important;
+  color: var(--st-text) !important;
+  margin: 0 !important;
+}
+.st-about-text ul li::before,
+.st-about-text ol li::before {
+  content: '✦' !important;
+  display: block !important;
+  color: var(--st-gold) !important;
+  font-size: 0.7rem !important;
+  margin-top: 0.35rem !important;
+  flex-shrink: 0 !important;
 }
 
 /* -- Gold dividers ----------------------------------------- */
@@ -345,16 +373,21 @@ h1, h2, h3, h4, h5, h6,
   margin-right: 0;
   /* Pull up behind the fixed nav (80px) so hero starts at top=0 like Site A */
   margin-top: -80px;
-  margin-bottom: 3.5rem;
+  /* No gap between hero and stats bar — flush contact */
+  margin-bottom: 0;
 
   /* Sizing — full 100vh from top=0, padding-top pushes text below nav */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  /* Wide-viewport: align left edge with the content column via max() */
-  padding: calc(80px + 5rem) max(clamp(1.5rem, 6vw, 5rem), calc((100vw - var(--st-max-w)) / 2)) 5rem;
+  /*
+   * Centre children horizontally so the 700px content block sits centred in
+   * the viewport — matching the static .hero .container (flex row) + .hero-content
+   * pattern where the 700px block naturally centres inside the full-width hero.
+   */
+  align-items: center;
+  padding: calc(80px + 5rem) clamp(1.25rem, 4vw, 2.5rem) 5rem;
   box-sizing: border-box;
 
   /* Background */
@@ -363,11 +396,14 @@ h1, h2, h3, h4, h5, h6,
     url('/assets/hero-bg.jpg') center / cover no-repeat;
   background-color: var(--st-navy);
 
-  /* Text */
+  /* Text — left-aligned within the centred column (not centred text) */
   text-align: left;
 }
 
-/* Constrain hero text to readable width */
+/*
+ * Constrain each direct child to 700px — matches static .hero-content max-width.
+ * width: 100% ensures they fill the column at narrower viewports.
+ */
 .st-hero > * {
   max-width: 700px;
   width: 100%;
@@ -404,19 +440,27 @@ h1, h2, h3, h4, h5, h6,
 /* Remove headerlink from hero h1 */
 .st-hero h1 .headerlink { display: none !important; }
 
+/* Gold italic emphasis in hero h1 — matches static .hero h1 em */
+.st-hero h1 em,
+.md-typeset .st-hero h1 em {
+  font-style: italic;
+  color: var(--st-gold) !important;
+}
+
 .st-hero > p:not(:first-child) {
   color: rgba(255,255,255,0.8);
   font-size: 1.15rem;
-  max-width: 540px;
+  /* Inherit max-width: 700px from .st-hero > * — do not shrink independently
+     so the paragraph left edge aligns with the h1 (both centred at 700px) */
   line-height: 1.8;
   margin-bottom: 2.5rem;
 }
 
 .st-hero .st-tagline-img {
   display: block;
-  max-width: 420px;
+  max-width: 280px;
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 3rem;
   opacity: 0.9;
 }
 
@@ -493,6 +537,7 @@ a.st-btn-navy:hover {
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
   background: var(--st-gold);
+  /* Flush against hero — no margin-top; bottom margin separates from next section */
   margin: 0 0 3rem;
   text-align: center;
   /* Full viewport width breakout */
@@ -504,9 +549,11 @@ a.st-btn-navy:hover {
   .st-stats { grid-template-columns: repeat(4, 1fr); }
 }
 
+/* No vertical dividers — static site uses typography only to separate columns */
 .st-stats > div {
   padding: 2.5rem 1rem;
-  border-right: 1px solid rgba(255,255,255,0.2);
+  border-right: none;
+  box-shadow: none;
 }
 .st-stats > div:last-child { border-right: none; }
 
@@ -529,6 +576,67 @@ a.st-btn-navy:hover {
   margin-top: 0.5rem;
 }
 
+/* -- Flagship / featured solution panel -------------------- */
+.st-solutions-featured {
+  background: var(--st-navy);
+  border-radius: var(--st-radius);
+  padding: 2.5rem 3rem;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.st-solutions-featured::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 90% 50%, rgba(184,149,42,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.st-solutions-featured__body { position: relative; z-index: 1; }
+.st-solutions-featured__tag {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--st-gold);
+  margin-bottom: 0.75rem;
+}
+.st-solutions-featured__title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem) !important;
+  color: #ffffff !important;
+  margin: 0 0 0.875rem !important;
+}
+.st-solutions-featured__text {
+  font-size: 0.975rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+.st-solutions-featured__cta {
+  position: relative;
+  z-index: 1;
+  font-size: 3.5rem;
+  opacity: 0.25;
+  flex-shrink: 0;
+  line-height: 1;
+}
+@media (max-width: 700px) {
+  .st-solutions-featured {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+  .st-solutions-featured__cta { display: none; }
+}
+
 /* -- Service & content cards ------------------------------- */
 .st-cards {
   display: grid;
@@ -539,7 +647,11 @@ a.st-btn-navy:hover {
 @media (min-width: 640px) {
   .st-cards-2 { grid-template-columns: repeat(2, 1fr); }
   .st-cards-3 { grid-template-columns: repeat(3, 1fr); }
-  .st-cards-4 { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+  /* 4-up grid: tighter cards like static site (4 across at 1280px) */
+  .st-cards-4 { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+}
+@media (min-width: 1024px) {
+  .st-cards-4 { grid-template-columns: repeat(4, 1fr); }
 }
 
 .st-card {
@@ -579,6 +691,55 @@ a.st-btn-navy:hover {
   color: var(--st-gray-700);
   margin: 0;
   line-height: 1.65;
+}
+
+/* Gold-circle icon at top of service cards */
+.st-card__icon {
+  width: 48px;
+  height: 48px;
+  background: var(--st-gold-pale);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Coming-soon card variant */
+.st-card--coming-soon {
+  background: var(--st-gray-100);
+  border-color: #d0cfc9;
+  cursor: default;
+  opacity: 0.7;
+}
+.st-card--coming-soon:hover {
+  transform: none;
+  box-shadow: var(--st-shadow);
+}
+.st-card--coming-soon .st-card__icon {
+  background: #d0cfc9;
+  color: var(--st-gray-500);
+}
+
+/* "What Sets Us Apart" card variant — text-centered with large icon */
+.st-card--why {
+  text-align: center;
+}
+.st-why-icon {
+  display: block;
+  font-size: 2rem;
+  margin: 0 auto 1rem;
+}
+.st-card--why h3,
+.md-typeset .st-card--why h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+.st-card--why p,
+.md-typeset .st-card--why p {
+  font-size: 0.875rem;
+  color: var(--st-gray-700);
 }
 
 /* -- Gold divider rule ------------------------------------- */
@@ -882,7 +1043,7 @@ a.st-btn-navy:hover {
   padding: 2rem;
   border-radius: var(--st-radius);
   box-shadow: var(--st-shadow-lg);
-  text-align: center;
+  text-align: left;
 }
 
 .st-badge-number {
@@ -904,12 +1065,24 @@ a.st-btn-navy:hover {
 
 .st-badge-sub {
   display: block;
-  font-size: 0.8rem;
-  color: rgba(255,255,255,0.6);
-  margin-top: 1.5rem;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin: 1.5rem 0 0.75rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(184,149,42,0.3);
-  line-height: 1.5;
+}
+
+/* Gold uppercase pill — "Security Master Licence Holder" */
+.st-badge-licence {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.775rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(184,149,42,0.8);
+  margin-top: 0;
 }
 
 @media (max-width: 860px) {
