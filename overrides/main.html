@@ -37,7 +37,7 @@
 {%- endblock %}
 
 {%- block hero %}
-{%- if page.meta and page.meta.hero_label %}
+{%- if page.meta and page.meta.hero_title %}
 <div class="page-hero">
   <div class="st-container">
     <ul class="st-breadcrumb" role="list">
@@ -47,8 +47,8 @@
       {%- endif %}
       <li>{{ page.title }}</li>
     </ul>
-    <span class="page-hero__label">{{ page.meta.hero_label }}</span>
-    <h1 class="page-hero__title">{{ page.meta.hero_title if 'hero_title' in page.meta else page.title }}</h1>
+    {%- if 'hero_label' in page.meta and page.meta.hero_label %}<span class="page-hero__label">{{ page.meta.hero_label }}</span>{%- endif %}
+    <h1 class="page-hero__title">{{ page.meta.hero_title }}</h1>
     {%- if 'hero_sub' in page.meta %}<p class="page-hero__sub">{{ page.meta.hero_sub }}</p>{%- endif %}
   </div>
 </div>
@@ -155,7 +155,7 @@
   /* Scroll reveal — runtime-gated hidden state with 3s failsafe */
   (function() {
     if (!window.IntersectionObserver) return;
-    var SELECTORS = '.service-card, .stats-bar > div, .about-badge, .testimonial-card, .case-study-card, .article-card';
+    var SELECTORS = '.st-card, .st-stats > div, .st-about-badge, .st-testimonial-card, .st-case-study-card, .st-article-card';
     function revealEl(el) { el.classList.add('revealed'); }
     document.addEventListener('DOMContentLoaded', function() {
       var elements = document.querySelectorAll(SELECTORS);

@@ -1,8 +1,6 @@
 # BUGS.md — Zensical Parity: Outstanding Divergences
 
-Issues where the Zensical implementation intentionally diverges from the static site, or could not be fully resolved within the parity pass.
-
-Items resolved in earlier rounds (footer bullets, nav active state, hero alignment, stats bar dividers, flagship card, Built on Trust pill, What Sets Us Apart icons, and scroll reveal) have been removed from this list.
+**Post-rebuild note:** The Zensical theme was fully rebuilt from scratch in Task 1 of the clean-theme plan — all Material for MkDocs dependencies were removed and replaced with a hand-crafted custom theme (`overrides/main.html` + `docs/stylesheets/extra.css`). Many prior divergences tracked during the Material-based pass became moot as a result (footer bullets, nav active state, hero alignment, stats bar dividers, flagship card, Built on Trust pill, What Sets Us Apart icons, scroll reveal selectors). Those items have been removed from this list.
 
 ---
 
@@ -14,7 +12,7 @@ Items resolved in earlier rounds (footer bullets, nav active state, hero alignme
 
 **Zensical behaviour:** All four sections render simultaneously as scrollable blocks with H2 dividers (`Insights & Endorsements`, `Operational Case Studies`, `Audio Interviews`, etc.).
 
-**Reason retained:** MkDocs Material's `content.tabs` feature is incompatible with the inline-HTML testimonial card structure. Implementing custom JS tabs would require a parallel rendering layer; the sectioned layout preserves all content, is more accessible, and behaves better for direct deep-linking.
+**Reason retained:** The tab UI was generated client-side from `js/translations.js`. Replicating it in MkDocs would require a custom JS overlay. The sectioned layout preserves all content, is more accessible, and supports direct deep-linking.
 
 **Recommendation:** If tab UI is required for production, add a small custom JS toggle in `overrides/main.html` that hides/shows sections by data attribute.
 
@@ -24,11 +22,11 @@ Items resolved in earlier rounds (footer bullets, nav active state, hero alignme
 
 **Status:** Intentional divergence — full cards instead of compact chips
 
-**Static behaviour:** Service detail pages render the "Other Solutions" sibling-nav block as a row of compact navy chips (service name only).
+**Static behaviour:** Service detail pages render the "Other Solutions" sibling-nav block as a row of compact navy chips (service name only), generated dynamically by JS.
 
 **Zensical behaviour:** Full `.st-card` 3-column grid with descriptions on each sibling card.
 
-**Reason retained:** The card layout reuses the existing `.st-card` component and provides more context to users. The static's chip layout was generated dynamically from JS at runtime.
+**Reason retained:** The card layout reuses the existing `.st-card` component and provides more context. Service markdown files use `.st-cards.st-cards-3` with `.st-card` elements (full card layout); no `.sibling-cards` or `.st-sibling-cards` chip markup is present.
 
 **Recommendation:** If the chip layout is required, add a `.st-card--chip` modifier that strips padding/border and renders a compact label-only variant.
 
@@ -38,27 +36,13 @@ Items resolved in earlier rounds (footer bullets, nav active state, hero alignme
 
 **Status:** Intentional divergence — clean tile grid without per-item icons
 
-**Static behaviour:** "What's Included" feature lists on service pages render as `<li><span class="icon">{emoji}</span><span>{text}</span></li>`, where each item carries an emoji from `js/translations.js` (✈️ 🛡️ 🚗 etc.).
+**Static behaviour:** "What's Included" feature lists on service pages render as `<li><span class="icon">{emoji}</span><span>{text}</span></li>`, where each item carries an emoji injected from `js/translations.js` (✈️ 🛡️ 🚗 etc.).
 
 **Zensical behaviour:** Plain markdown list rendered via `.st-content-no-first-h1 ul:not([class])` as a gold-bordered tile grid; no per-item emoji.
 
 **Reason retained:** The static feature emojis are inconsistent across services and rely on JS injection. The Zensical tile grid is visually cleaner and matches the gold-rule design language used across the site.
 
 **Recommendation:** If icons are required, port the `f.icon` attribute from `translations.js` into each markdown bullet (e.g. `- ✈️ Private terminal solutions`).
-
----
-
-## Contact Page — Hero Label Strip
-
-**Status:** Minor visible difference
-
-**Static behaviour:** Contact page renders just breadcrumb + H1 ("Get in Touch") in the hero — no small uppercase label strip above the H1.
-
-**Zensical behaviour:** Contact page hero shows the label "Contact" in gold uppercase above the H1.
-
-**Reason retained:** The Zensical hero template (`overrides/main.html`) gates the entire hero block on `page.meta.hero_label` — removing the label would also remove the breadcrumb and styled hero, falling through to a plain content block. A targeted fix would either (a) split the template trigger from the label content, or (b) gate label rendering on a separate `hero_no_label: true` flag.
-
-**Recommendation:** Update the template to `{% if page.meta.hero_label and page.meta.hero_label != "" %}` for the label `<span>` only, while keeping the hero block triggered by some other condition (e.g. `hero_title` presence). Then set `hero_label: ""` on contact.md.
 
 ---
 
