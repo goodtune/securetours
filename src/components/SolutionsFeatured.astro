@@ -1,0 +1,22 @@
+---
+export interface Props {
+  tag: string;
+  title: string;
+  body: string;
+  cta: { label: string; href: string };
+  icon: string;
+}
+
+const { tag, title, body, cta, icon } = Astro.props;
+---
+<div class="solutions-featured">
+  <div class="solutions-featured__body">
+    <span class="solutions-featured__tag">{tag}</span>
+    <h3 class="solutions-featured__title">{title}</h3>
+    <p class="solutions-featured__text">{body}</p>
+    <a href={cta.href} class="btn btn--primary">{cta.label}</a>
+  </div>
+  <div class="solutions-featured__cta" style="text-align:right; flex-shrink:0;">
+    <div style="font-size:3.5rem; opacity:0.25;">{icon}</div>
+  </div>
+</div>

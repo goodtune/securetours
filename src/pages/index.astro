@@ -1,5 +1,21 @@
 ---
+import { getCollection, getEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import FooterAfs from '../components/FooterAfs.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CtaBand from '../components/CtaBand.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import SolutionsFeatured from '../components/SolutionsFeatured.astro';
+
+const services = await getCollection('services');
+const tours = await getEntry('services', 'tours-travel-solutions');
+
+const gridServices = services
+  .filter((s) => s.id !== 'tours-travel-solutions')
+  .sort((a, b) => a.data.order - b.data.order);
+
+if (!tours) throw new Error('Featured service "tours-travel-solutions" missing from collection');
 ---
 <BaseLayout
   title="Secure Tours & Travel — Secure Luxury Travel for Discerning Individuals & Groups"
@@ -7,48 +23,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   canonical="https://securetours.com.au/"
 >
 
-<!-- ══════════════════════════════════════════
-     NAVIGATION
-══════════════════════════════════════════ -->
-<nav class="site-nav" role="navigation" aria-label="Main navigation">
-  <div class="container">
-    <div class="nav-inner">
-      <a href="/" class="nav-logo" aria-label="Secure Tours & Travel — Home">
-        <img src="/assets/logo-transparent.png" alt="Secure Tours & Travel" />
-      </a>
+<SiteNav active="home" />
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav-links" role="list">
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="/about/">About Us</a></li>
-        <li>
-          <a href="/services/">Tourism Solutions</a>
-          <ul class="nav-dropdown" role="list">
-            <li><a href="/services/tours-travel-solutions/">Secure Tours &amp; Travel Solutions</a></li>
-            <li><a href="/services/executive-guest-management/">Executive Guest Management</a></li>
-            <li><a href="/services/exclusive-transfer-assistance/">Exclusive Transfer Assistance</a></li>
-            <li><a href="/services/pass-athlete/">P.A.S.S. — Athlete</a></li>
-            <li><a href="/services/pass-artist/">P.A.S.S. — Performing Artist</a></li>
-            <li><a href="/services/concierge-chaperone/">Concierge &amp; Chaperone</a></li>
-            <li><a href="/services/bereavement-travel-support/">Bereavement Travel Support</a></li>
-            <li><a href="/services/solo-traveller-assist/">Solo Traveller Assist</a></li>
-          </ul>
-        </li>
-        <li><a href="/event-solutions/">Event Solutions</a></li>
-        <li><a href="/articles/">Articles, Testimonials &amp; Case Studies</a></li>
-        <li><a href="/resources/">Resources</a></li>
-        <li><a href="/contact/">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- ══════════════════════════════════════════
-     HERO
-══════════════════════════════════════════ -->
 <section class="hero" id="home" aria-label="Hero">
   <div class="container">
     <div class="hero-content">
@@ -64,9 +40,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     STATS BAR
-══════════════════════════════════════════ -->
 <div class="stats-bar" aria-label="Key facts">
   <div class="container">
     <div class="stats-inner">
@@ -90,9 +63,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     SOLUTIONS GRID
-══════════════════════════════════════════ -->
 <section class="section section--alt" id="services" aria-labelledby="services-heading">
   <div class="container">
     <span class="section-label">Our Solutions</span>
@@ -100,88 +70,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <div class="gold-rule"></div>
     <p class="section-intro">Every solution is designed around one principle: your safety, comfort and peace of mind. From private transfers to full event logistics, we cover every detail.</p>
 
-    <div class="solutions-featured">
-      <div class="solutions-featured__body">
-        <span class="solutions-featured__tag">Flagship Solution · Inbound & Domestic</span>
-        <h3 class="solutions-featured__title">Secure Tours & Travel Solutions</h3>
-        <p class="solutions-featured__text">Comprehensive travel packages for inbound and domestic clients — chaperoned, secure and tailored to your journey.</p>
-        <a href="/services/tours-travel-solutions/" class="btn btn--primary">Learn More</a>
-      </div>
-      <div class="solutions-featured__cta" style="text-align:right; flex-shrink:0;">
-        <div style="font-size:3.5rem; opacity:0.25;">🌏</div>
-      </div>
-    </div>
+    <SolutionsFeatured
+      tag="Flagship Solution · Inbound & Domestic"
+      title={tours.data.title}
+      body={tours.data.home_card.body}
+      cta={{ label: 'Learn More', href: '/services/tours-travel-solutions/' }}
+      icon={tours.data.home_card.icon}
+    />
 
     <div class="services-grid">
-      <article class="service-card">
-        <div class="service-card__icon" aria-hidden="true">💼</div>
-        <h3 class="service-card__title">Executive Guest Management</h3>
-        <p class="service-card__text">Seamless, hassle-free executive travel for investors, senior leaders and corporate delegations.</p>
-        <a href="/services/executive-guest-management/" class="service-card__link">Learn More</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-card__icon" aria-hidden="true">✈️</div>
-        <h3 class="service-card__title">Exclusive Transfer Assistance</h3>
-        <p class="service-card__text">Australia's leading secure transfer service — Exclusive and Executive tiers for luxury and corporate clients.</p>
-        <a href="/services/exclusive-transfer-assistance/" class="service-card__link">Learn More</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-card__icon" aria-hidden="true">🏆</div>
-        <h3 class="service-card__title">P.A.S.S. — Professional Athlete Support Specialist</h3>
-        <p class="service-card__text">Elite travel logistics for athletes and sports teams — nutrition, recovery, equipment, security and schedule management.</p>
-        <a href="/services/pass-athlete/" class="service-card__link">Learn More</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-card__icon" aria-hidden="true">🎭</div>
-        <h3 class="service-card__title">P.A.S.S. — Performing Artist Safety Specialist</h3>
-        <p class="service-card__text">Dedicated touring support for musicians, entertainers and performing arts companies — on the road, on time, on budget.</p>
-        <a href="/services/pass-artist/" class="service-card__link">Learn More</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-card__icon" aria-hidden="true">🤝</div>
-        <h3 class="service-card__title">Concierge & Chaperone</h3>
-        <p class="service-card__text">Personal, attentive care for individuals and groups — from airport arrivals to 24/7 support throughout your stay.</p>
-        <a href="/services/concierge-chaperone/" class="service-card__link">Learn More</a>
-      </article>
-
-      <article class="service-card service-card--coming-soon" aria-label="S.T.A.G.E. — coming soon">
-        <div class="service-card__icon" aria-hidden="true">🎬</div>
-        <h3 class="service-card__title">S.T.A.G.E.</h3>
-        <p class="service-card__text">School Tours And Group Excursions — specialist event management with safety at its core.</p>
-        <span class="service-card__badge">Coming Soon</span>
-      </article>
-
-      <article class="service-card">
-        <div class="service-card__icon" aria-hidden="true">🕊️</div>
-        <h3 class="service-card__title">Bereavement Travel Support</h3>
-        <p class="service-card__text">Compassionate airport logistics and private transfers for families navigating travel during the most difficult of times.</p>
-        <a href="/services/bereavement-travel-support/" class="service-card__link">Learn More</a>
-      </article>
-
-      <article class="service-card">
-        <div class="service-card__icon" aria-hidden="true">🧳</div>
-        <h3 class="service-card__title">Solo Traveller Assist</h3>
-        <p class="service-card__text">Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle.</p>
-        <a href="/services/solo-traveller-assist/" class="service-card__link">Learn More</a>
-      </article>
-
-      <article class="service-card service-card--coming-soon" aria-label="New solution coming soon">
-        <div class="service-card__icon" aria-hidden="true">✦</div>
-        <h3 class="service-card__title">New Solution</h3>
-        <p class="service-card__text">Additional specialist solutions are being finalised. Contact us to discuss your specific requirements.</p>
-        <span class="service-card__badge">Coming Soon</span>
-      </article>
+      {gridServices.map((s) => (
+        <ServiceCard
+          icon={s.data.home_card.icon}
+          title={s.data.home_card.title ?? s.data.title}
+          body={s.data.home_card.body}
+          href={s.data.coming_soon ? undefined : `/services/${s.id}/`}
+          badge={s.data.coming_soon ? 'Coming Soon' : undefined}
+          ariaLabel={s.data.coming_soon ? `${s.data.title} — coming soon` : undefined}
+        />
+      ))}
+      <ServiceCard
+        icon="✦"
+        title="New Solution"
+        body="Additional specialist solutions are being finalised. Contact us to discuss your specific requirements."
+        badge="Coming Soon"
+        ariaLabel="New solution coming soon"
+      />
     </div>
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     ABOUT STRIP
-══════════════════════════════════════════ -->
 <section class="section" id="about" aria-labelledby="about-heading">
   <div class="container">
     <div class="about-grid">
@@ -213,9 +131,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     WHY CHOOSE US
-══════════════════════════════════════════ -->
 <section class="section section--alt" aria-labelledby="why-heading">
   <div class="container text-center">
     <span class="section-label">Why Choose Us</span>
@@ -246,82 +161,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 </section>
 
-<!-- ══════════════════════════════════════════
-     CTA BAND
-══════════════════════════════════════════ -->
-<section class="cta-band" aria-labelledby="cta-heading">
-  <div class="container">
-    <h2 id="cta-heading">Ready to Travel with Confidence?</h2>
-    <p>Our team is available to tailor a solution for individuals, groups, corporate delegations and touring professionals.</p>
-    <div class="btn-group">
-      <a href="/contact/" class="btn btn--primary">Get in Touch</a>
-      <a href="/services/" class="btn btn--outline">View All Solutions</a>
-    </div>
-  </div>
-</section>
+<CtaBand headingId="cta-heading" />
 
-<!-- ══════════════════════════════════════════
-     FOOTER
-══════════════════════════════════════════ -->
-<div class="footer-afs">
-  <div class="container">
-    <div class="footer-afs__inner">
-      <span class="footer-afs__division">A division of <strong>Australian Frontline Solutions</strong></span>
-      <span class="footer-afs__sep" aria-hidden="true">·</span>
-      <span class="footer-afs__credentials">Security Master Licence Holder · Established 1989</span>
-    </div>
-  </div>
-</div>
-
-<footer class="site-footer" role="contentinfo">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="/assets/logo-transparent.png" alt="Secure Tours & Travel" />
-        <p>Secure Luxury Travel for discerning individuals & groups.</p>
-        <p style="margin-top:0.75rem; font-size:0.8rem; color:rgba(255,255,255,0.4);">ABN available on request.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Tourism Solutions</h4>
-        <ul role="list">
-          <li><a href="/services/tours-travel-solutions/">Secure Tours &amp; Travel Solutions</a></li>
-          <li><a href="/services/executive-guest-management/">Executive Guest Management</a></li>
-          <li><a href="/services/exclusive-transfer-assistance/">Exclusive Transfer Assistance</a></li>
-          <li><a href="/services/pass-athlete/">P.A.S.S. — Athlete</a></li>
-          <li><a href="/services/pass-artist/">P.A.S.S. — Artist</a></li>
-          <li><a href="/services/concierge-chaperone/">Concierge &amp; Chaperone</a></li>
-          <li><a href="/services/bereavement-travel-support/">Bereavement Travel Support</a></li>
-          <li><a href="/services/solo-traveller-assist/">Solo Traveller Assist</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul role="list">
-          <li><a href="/about/">About Us</a></li>
-          <li><a href="/event-solutions/">Event Solutions</a></li>
-          <li><a href="/articles/">Articles, Testimonials &amp; Case Studies</a></li>
-          <li><a href="/resources/">Resources</a></li>
-          <li><a href="/contact/">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul role="list" style="font-style:normal;">
-          <li><a href="tel:+61414499778">+61 414 499 778</a></li>
-          <li><a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a></li>
-          <li style="color:rgba(255,255,255,0.5); font-size:0.875rem; margin-top:0.5rem;">Australia-wide · NSW</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Secure Tours & Travel. All rights reserved.</span>
-      <div>
-        <a href="#">Privacy Policy</a>
-        &nbsp;·&nbsp;
-        <a href="#">Terms of Service</a>
-      </div>
-    </div>
-  </div>
-</footer>
+<FooterAfs />
+<SiteFooter />
 
 </BaseLayout>

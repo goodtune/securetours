@@ -1,0 +1,43 @@
+---
+export interface Props {
+  active?: 'home' | 'about' | 'services' | 'event-solutions' | 'articles' | 'resources' | 'contact';
+}
+
+const { active } = Astro.props;
+const cls = (key: NonNullable<Props['active']>) => (active === key ? 'active' : undefined);
+---
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Secure Tours & Travel — Home">
+        <img src="/assets/logo-transparent.png" alt="Secure Tours & Travel" />
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links" role="list">
+        <li><a href="/" class={cls('home')}>Home</a></li>
+        <li><a href="/about/" class={cls('about')}>About Us</a></li>
+        <li>
+          <a href="/services/" class={cls('services')}>Tourism Solutions</a>
+          <ul class="nav-dropdown" role="list">
+            <li><a href="/services/tours-travel-solutions/">Secure Tours &amp; Travel Solutions</a></li>
+            <li><a href="/services/executive-guest-management/">Executive Guest Management</a></li>
+            <li><a href="/services/exclusive-transfer-assistance/">Exclusive Transfer Assistance</a></li>
+            <li><a href="/services/pass-athlete/">P.A.S.S. — Athlete</a></li>
+            <li><a href="/services/pass-artist/">P.A.S.S. — Performing Artist</a></li>
+            <li><a href="/services/concierge-chaperone/">Concierge &amp; Chaperone</a></li>
+            <li><a href="/services/bereavement-travel-support/">Bereavement Travel Support</a></li>
+            <li><a href="/services/solo-traveller-assist/">Solo Traveller Assist</a></li>
+          </ul>
+        </li>
+        <li><a href="/event-solutions/" class={cls('event-solutions')}>Event Solutions</a></li>
+        <li><a href="/articles/" class={cls('articles')}>Articles, Testimonials &amp; Case Studies</a></li>
+        <li><a href="/resources/" class={cls('resources')}>Resources</a></li>
+        <li><a href="/contact/" class={cls('contact')}>Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
