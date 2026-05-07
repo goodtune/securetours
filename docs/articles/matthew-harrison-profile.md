@@ -60,7 +60,7 @@ The business has also been introduced to key tourism organisations including Tou
 
 ## What's Next
 
-With the ATE deadline of May 2026 approaching, Secure Tours & Travel is relaunching its digital presence — bringing together the full breadth of the company's capabilities, from exclusive transfer assistance and P.A.S.S. programmes through to STAT Accreditation and event security. The site is designed to serve international wholesale partners, corporate travel managers and high-net-worth individuals looking for an operator that takes both luxury and safety seriously.
+With the ATE deadline of May 2026 approaching, Secure Tours & Travel is relaunching its digital presence through this standalone website — bringing together the full breadth of the company's capabilities, from exclusive transfer assistance and P.A.S.S. programmes through to STAT Accreditation and event security. The site is designed to serve international wholesale partners, corporate travel managers and high-net-worth individuals looking for an operator that takes both luxury and safety seriously.
 
 Matt's journey from pub door to the world stage is, in many ways, the story of the business itself — built on relationships, operational reliability, and a willingness to take on the security work that others don't.
 
