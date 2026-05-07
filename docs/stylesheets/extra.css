@@ -975,7 +975,6 @@ a.st-btn-navy:hover {
   width: auto;
   margin-left: 0;
   background: var(--st-off-white);
-  border-top-color: var(--st-navy);
 }
 
 /* -- Tables ----------------------------------------------- */

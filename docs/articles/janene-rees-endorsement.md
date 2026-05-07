@@ -5,7 +5,7 @@ hide:
 title: "Industry Endorsement — Janene Rees, REES INTERNATIONAL"
 description: "Endorsement of Secure Tours & Travel and AFS Group by Janene Rees, Founder & Director of REES INTERNATIONAL — 2018."
 hero_label: "Industry Endorsement · 2018"
-hero_sub: "Founder &amp; Director of REES INTERNATIONAL — endorsing Secure Tours &amp; Travel and AFS Group for outstanding work practices and industry leadership at the Australian Tourism Exchange and beyond."
+hero_sub: "Founder & Director of REES INTERNATIONAL — endorsing Secure Tours & Travel and AFS Group for outstanding work practices and industry leadership at the Australian Tourism Exchange and beyond."
 ---
 
 <div class="st-context-block" markdown>
