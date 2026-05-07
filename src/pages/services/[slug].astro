@@ -1,0 +1,65 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import FooterAfs from '../../components/FooterAfs.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import PageHero from '../../components/PageHero.astro';
+import ServiceBody from '../../components/ServiceBody.astro';
+import ServiceSiblings from '../../components/ServiceSiblings.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((service) => ({
+    params: { slug: service.id },
+    props: { service },
+  }));
+}
+
+interface Props {
+  service: CollectionEntry<'services'>;
+}
+
+const { service } = Astro.props;
+const { data } = service;
+
+const canonical = `https://securetours.com.au/services/${service.id}/`;
+const pageTitle = `${data.title} — Secure Tours & Travel`;
+---
+<BaseLayout
+  title={pageTitle}
+  description={data.meta_description}
+  canonical={canonical}
+>
+
+<SiteNav active="services" />
+
+<PageHero
+  ariaLabel="Service hero"
+  crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Tourism Solutions', href: '/services/' },
+    { label: data.title },
+  ]}
+  label={data.hero_tag}
+  title={data.title}
+  sub={data.hero_sub}
+/>
+
+<ServiceBody
+  lead={data.lead}
+  features={data.features}
+  clients={data.clients}
+/>
+
+<ServiceSiblings currentSlug={service.id} />
+
+<CtaBand
+  outline={{ label: 'View All Services', href: '/services/' }}
+/>
+
+<FooterAfs />
+<SiteFooter showAbn={false} showLocation={false} showLegal={false} />
+
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+import ClientsMentioned from './ClientsMentioned.astro';
+
+export interface Props {
+  lead: string;
+  features: { icon: string; text: string }[];
+  clients?: string[];
+}
+
+const { lead, features, clients } = Astro.props;
+---
+<section class="service-body" aria-labelledby="svc-body-heading">
+  <div class="container">
+    <h2 id="svc-body-heading" style="margin-bottom:1.5rem;">Service Overview</h2>
+    <p class="service-lead">{lead}</p>
+    <h3 style="margin-bottom:1rem;">What's Included</h3>
+    <ul class="feature-list">
+      {features.map((f) => (
+        <li>
+          <span class="icon" aria-hidden="true">{f.icon}</span>
+          <span>{f.text}</span>
+        </li>
+      ))}
+    </ul>
+    {clients && clients.length > 0 && <ClientsMentioned clients={clients} />}
+    <div style="margin-top:3rem;">
+      <a href="/contact/" class="btn btn--primary">Enquire Now</a>
+    </div>
+  </div>
+</section>

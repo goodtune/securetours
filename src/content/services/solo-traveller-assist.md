@@ -1,5 +1,6 @@
 ---
 title: Solo Traveller Assist
+meta_description: Professional, vetted escorts for solo travellers at domestic and international airports across Australia. Gate meet, baggage handling and private transfer included.
 hero_tag: Solo Travel Support · Domestic & International Airports
 hero_sub: You should not have to navigate airports alone.
 lead: 'Airports can be overwhelming — long terminals, tight connections, heavy bags and queues that seem to go nowhere. For solo travellers, particularly women travelling alone or older travellers who want a reliable hand through the process, it should not have to be that stressful. Our Solo Traveller Assist service puts a professional, vetted escort by your side from the moment you step off the plane or approach the departure gate. We meet you where you are, move through the airport with you, collect your bags and get you settled into a waiting private vehicle — so you can focus on where you are going rather than the logistics of getting there. Available at domestic and international airports across Australia.'

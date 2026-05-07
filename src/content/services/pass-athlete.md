@@ -1,5 +1,6 @@
 ---
 title: P.A.S.S. — Professional Athlete Support Specialist
+meta_description: "P.A.S.S. — Professional Athlete Support Specialist. Elite travel logistics for athletes and sports teams: nutrition planning, equipment transport, venue liaison and close protection."
 hero_tag: Elite Athlete Support Services
 hero_sub: Tailored travel and logistics solutions for elite athletes and sports teams — enabling peak performance on the road.
 lead: P.A.S.S. (Professional Athlete Support Specialist) is our dedicated stream for elite athletes and sports teams. We understand the unique demands of high-performance travel — nutrition, recovery, equipment, schedules and security — and we build every itinerary around these needs.

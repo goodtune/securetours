@@ -1,5 +1,6 @@
 ---
 title: Executive Guest Management
+meta_description: Seamless executive travel for investors, senior leaders and corporate delegations. Chauffeur transfers, corporate concierge, schedule management and 24/7 support.
 hero_tag: VIP & Corporate
 hero_sub: Designed for professional and corporate clients who require a seamless, hassle-free travel experience that lets them focus on their business.
 lead: Our Executive Guest Management service is built specifically for investors, senior executives and corporate delegations. We eliminate the friction of travel so you arrive prepared, composed and on schedule.

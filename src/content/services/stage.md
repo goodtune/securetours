@@ -1,5 +1,6 @@
 ---
 title: S.T.A.G.E.
+meta_description: S.T.A.G.E. — specialised event management with safety at its core. Event command, crowd management, VIP protection, medical coverage and trained event workforce.
 hero_tag: Events · Activations · Operations
 hero_sub: Specialised event management with safety at its core — from major sporting tournaments to cultural festivals and corporate activations.
 lead: S.T.A.G.E. — Secure Tours & Travel's dedicated event management stream — embeds licensed, qualified personnel into every layer of event delivery. Whether you're running a one-day celebration or a multi-week international tournament, we scale with you.

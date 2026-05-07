@@ -1,5 +1,6 @@
 ---
 title: Exclusive Transfer Assistance
+meta_description: "Australia's leading secure transfer service — Exclusive Level for VIP luxury and Executive Level for corporate clients. Air and seaport arrivals and departures."
 hero_tag: Premium Transfer Services
 hero_sub: Australia's leading safety and security transfer service for events, travel and tourism — combining comfort, confidence and close protection.
 lead: 'Our Exclusive Transfer Assistance offers two premium service tiers: the Exclusive Level for individuals seeking anonymity and luxury, and the Executive Level for corporate clients requiring efficiency and professionalism.'

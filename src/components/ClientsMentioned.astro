@@ -1,0 +1,14 @@
+---
+export interface Props {
+  clients: string[];
+  label?: string;
+}
+
+const { clients, label = 'Clients we serve include' } = Astro.props;
+---
+<div class="clients-mentioned">
+  <h4>{label}</h4>
+  <ul>
+    {clients.map((c) => <li>{c}</li>)}
+  </ul>
+</div>

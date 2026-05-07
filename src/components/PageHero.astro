@@ -1,0 +1,22 @@
+---
+import Breadcrumb from './Breadcrumb.astro';
+import type { Crumb } from './Breadcrumb.astro';
+
+export interface Props {
+  crumbs: Crumb[];
+  label: string;
+  title: string;
+  sub?: string;
+  ariaLabel?: string;
+}
+
+const { crumbs, label, title, sub, ariaLabel } = Astro.props;
+---
+<section class="page-hero" aria-label={ariaLabel}>
+  <div class="container">
+    <Breadcrumb items={crumbs} />
+    <span class="section-label">{label}</span>
+    <h1>{title}</h1>
+    {sub && <p class="page-hero__sub">{sub}</p>}
+  </div>
+</section>

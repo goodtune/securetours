@@ -1,5 +1,6 @@
 ---
 title: Concierge & Chaperone
+meta_description: Personal concierge and chaperone service for individuals and groups. Airport meet and greet, accompanied transfers, multilingual support and 24/7 emergency contact.
 hero_tag: Concierge · Chaperone · Care
 hero_sub: Personal, attentive care for individuals and groups who require dedicated support throughout their Australian experience.
 lead: Our Concierge & Chaperone service provides a dedicated personal support specialist for the duration of your stay. Whether navigating arrivals, coordinating business meetings, or ensuring your travel companions are always in safe hands, our chaperones are trained professionals committed to your experience.
