@@ -1,0 +1,17 @@
+name: secure-tours-astro
+region: syd
+
+features:
+  - buildpack-stack=ubuntu-22
+
+static_sites:
+  - name: site
+    github:
+      repo: goodtune/securetours
+      branch: feature/astro
+      deploy_on_push: true
+    build_command: npm ci && npm run build
+    output_dir: dist
+    environment_slug: node-js
+    routes:
+      - path: /
