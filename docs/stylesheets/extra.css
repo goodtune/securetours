@@ -785,3 +785,125 @@ main#main-content { padding-top: 80px; min-height: 100vh; }
   padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 @media (max-width: 768px) { .st-about-afs-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+/* -- Service detail: lead block + feature list ------------- */
+.service-lead,
+.st-service-lead {
+  background: var(--off-white);
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--gray-700);
+}
+
+.feature-list,
+.st-feature-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 2rem 0;
+}
+.feature-list li,
+.st-feature-list li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  background: var(--off-white);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+.feature-list li::before,
+.st-feature-list li::before { content: ''; }
+.feature-list .icon,
+.st-feature-list .icon { font-size: 1.1rem; flex-shrink: 0; }
+
+/* Plain unordered lists in main content render as feature-list tiles
+   when wrapped under .st-page-content — matches old st-content-no-first-h1 */
+.st-page-content > ul:not([class]),
+.st-page-content > p + ul:not([class]) {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin: 2rem 0;
+}
+.st-page-content > ul:not([class]) > li {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  background: var(--off-white);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* -- Service sibling-cards (compact navy chips) ------------ */
+.sibling-cards,
+.st-sibling-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2rem 0;
+}
+.sibling-card,
+.st-sibling-card {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.25rem;
+  background: var(--navy);
+  color: rgba(255,255,255,0.9);
+  border-radius: 2px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.sibling-card:hover,
+.st-sibling-card:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+.sibling-card.current,
+.st-sibling-card.current {
+  background: var(--gold);
+  color: var(--navy);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* -- CTA band (navy full-bleed) ---------------------------- */
+.cta-band,
+.st-band-navy {
+  background:
+    linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%),
+    radial-gradient(ellipse at top right, rgba(184,149,42,0.15) 0%, transparent 60%);
+  color: #ffffff;
+  text-align: center;
+  padding: var(--section-pad) clamp(1.5rem, 4vw, 2.5rem);
+  border-radius: var(--radius);
+  margin: 3rem 0;
+}
+.cta-band h2,
+.st-band-navy h2 {
+  color: #ffffff;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin: 0 0 1rem;
+}
+.cta-band p,
+.st-band-navy p {
+  color: rgba(255,255,255,0.85);
+  margin: 0 auto 1.5rem;
+  max-width: 580px;
+}
+.cta-band .cta-group, .st-band-navy .cta-group,
+.cta-band .st-cta-group, .st-band-navy .st-cta-group { justify-content: center; }
