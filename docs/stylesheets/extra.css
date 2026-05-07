@@ -1209,11 +1209,7 @@ a.st-btn-navy:hover {
 .st-section-navy h2,
 .md-typeset .st-section-navy h2 {
   color: #ffffff !important;
-}
-
-.st-section-navy p,
-.md-typeset .st-section-navy p {
-  color: rgba(255,255,255,0.75);
+  margin-top: 0.75rem;
 }
 
 .st-about-afs-grid {
@@ -1425,12 +1421,7 @@ a.st-btn-navy:hover {
   margin: 0;
 }
 
-/* -- About page: AFS section left column heading/text color overrides ------- */
-.st-section-navy h2 {
-  color: #ffffff !important;
-  margin-top: 0.75rem;
-}
-
+/* -- About page: AFS section intro paragraph ------- */
 .st-section-navy__intro {
   font-size: 1.1rem;
   color: rgba(255,255,255,0.8) !important;

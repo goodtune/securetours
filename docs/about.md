@@ -25,7 +25,7 @@ hero_sub: "Secure Tours & Travel was founded by Matt Harrison with a singular mi
 We are a specialist travel and event services company based in Australia, delivering premium inbound tourism services and secure travel solutions for high-profile individuals, corporate delegations, touring athletes, performing artists and families.
 
 </div>
-<div class="st-about-visual"><div class="st-about-badge"><div class="st-badge-number">37</div><div class="st-badge-label">Years of Excellence</div><div class="st-badge-sub">Founded by Matt Harrison. Backed by Australian Frontline Solutions — est. 1989, Security Master Licence holder.</div></div></div>
+<div class="st-about-badge"><div class="st-badge-number">37</div><div class="st-badge-label">Years of Excellence</div><div class="st-badge-sub">Founded by Matt Harrison. Backed by Australian Frontline Solutions — est. 1989, Security Master Licence holder.</div></div>
 </div>
 
 </div>
