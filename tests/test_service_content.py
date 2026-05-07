@@ -95,3 +95,25 @@ def test_service_feature_count(built_pages, key, spec):
     assert not duplicated, (
         f"features duplicated on {key}: {duplicated}"
     )
+
+
+@pytest.mark.parametrize("key,spec", SERVICE_PAGES.items())
+def test_service_has_whats_included_section(built_pages, key, spec):
+    """Each service page should expose a 'What's Included' (or equivalent) section."""
+    soup = built_pages[key]
+    h2_texts = [text_of(h) for h in soup.find_all("h2")]
+    expected_terms = ("what's included", "what we deliver", "service offerings", "what we offer")
+    found = any(any(term in h.lower() for term in expected_terms) for h in h2_texts)
+    assert found, f"{key} missing a 'what's included'-style H2; got {h2_texts}"
+
+
+@pytest.mark.parametrize("key,spec", SERVICE_PAGES.items())
+def test_service_has_cta_band(built_pages, key, spec):
+    """Each service page should end with a CTA band linking to contact."""
+    soup = built_pages[key]
+    band = soup.select_one(".st-band-navy, .cta-band")
+    assert band is not None, f"{key} missing trailing CTA band"
+    hrefs = [a.get("href", "") for a in band.find_all("a")]
+    assert any("contact" in h for h in hrefs), (
+        f"{key} CTA band missing link to contact; hrefs={hrefs}"
+    )

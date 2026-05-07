@@ -256,6 +256,23 @@ def test_home_about_strip(all_pages):
     assert ba.cta_text == sa.cta_text
 
 
+def test_home_about_strip_body_includes_static(all_pages):
+    """Built body paragraph must include all of static's body text.
+
+    Static HTML has only the first sentence (rest is JS-injected from
+    `about_text` translation). Built bakes the canonical full text.
+    Verify built is a superset.
+    """
+    s, b = all_pages["home"]
+    sa, ba = X.home_about_strip(s), X.home_about_strip(b)
+    assert sa.body, "static has no about-strip body text"
+    assert sa.body in ba.body, (
+        f"built about-strip body missing static text\n"
+        f"  static: {sa.body!r}\n"
+        f"  built : {ba.body!r}"
+    )
+
+
 def test_home_why_grid(all_pages):
     s, b = all_pages["home"]
     s_items = X.why_grid(s)

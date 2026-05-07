@@ -297,7 +297,14 @@ def home_about_strip(soup: BeautifulSoup) -> AboutStripInfo:
         return AboutStripInfo("", "", "", [], "", "", "")
     label = first(region, ".section-label", ".st-section-label")
     title = first(region, "h2")
-    body = first(region, ".about-text > p", ".st-about-text p")
+    text_region = first(region, ".about-text", ".st-about-text") or region
+    # Find the longest <p> text in the text region — skips <p>s that wrap a
+    # single section-label span.
+    body_text = ""
+    for p in text_region.find_all("p"):
+        txt = text_of(p)
+        if len(txt) > len(body_text):
+            body_text = txt
     features = [text_of(li) for li in all_(region, ".about-features li", ".st-about-text ul li")]
     badge_num = first(region, ".about-badge__number", ".st-badge-number")
     badge_lab = first(region, ".about-badge__label", ".st-badge-label")
@@ -305,7 +312,7 @@ def home_about_strip(soup: BeautifulSoup) -> AboutStripInfo:
     return AboutStripInfo(
         label=text_of(label),
         title=text_of(title),
-        body=text_of(body),
+        body=body_text,
         features=features,
         badge_number=text_of(badge_num),
         badge_label=text_of(badge_lab),
