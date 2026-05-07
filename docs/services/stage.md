@@ -9,19 +9,14 @@ hero_sub: "Specialised event management with safety at its core — from major s
 description: "S.T.A.G.E. — specialised event management with safety at its core. Event command, crowd management, VIP protection, medical coverage and trained event workforce."
 ---
 
-Specialised event management with safety at its core — from major sporting tournaments to cultural festivals and corporate activations.
+## Solution Overview
 
 <div class="st-service-lead" markdown>
 S.T.A.G.E. — Secure Tours & Travel's dedicated event management stream — embeds licensed, qualified personnel into every layer of event delivery. Whether you're running a one-day celebration or a multi-week international tournament, we scale with you.
 </div>
 
----
 
-<span class="st-section-label">Service Overview</span>
-
-## What's Included
-
-<div class="st-gold-rule"></div>
+### What's Included
 
 - Event command & control — dedicated Event Directors, Safety Officers and Operations Teams
 - Crowd & traffic planning — site layouts, risk assessments, ingress/egress flow management

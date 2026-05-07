@@ -9,7 +9,7 @@ hero_sub: "Compassionate, discreet logistics when it matters most."
 description: "Compassionate, discreet airport logistics and private transfers for families navigating travel during the most difficult of times."
 ---
 
-Compassionate, discreet logistics when it matters most.
+## Solution Overview
 
 <div class="st-service-lead" markdown>
 Losing someone is hard enough. Navigating airports, airline protocols and unfamiliar processes on top of grief should not fall on your shoulders alone. Our Bereavement Travel Support service takes care of every logistical step of the journey — whether you are travelling overseas to be with family, bringing a loved one home to Australia, or managing domestic travel during the most difficult of times.
@@ -17,13 +17,8 @@ Losing someone is hard enough. Navigating airports, airline protocols and unfami
 We do not manage funeral arrangements or liaise with mortuaries. What we do is handle everything from the moment you arrive at the airport to the moment you reach your destination — smoothly, quietly and with complete discretion.
 </div>
 
----
 
-<span class="st-section-label">Service Overview</span>
-
-## What's Included
-
-<div class="st-gold-rule"></div>
+### What's Included
 
 - Airport meet and greet for arrivals and departures
 - Private chauffeur transfers to and from all airports

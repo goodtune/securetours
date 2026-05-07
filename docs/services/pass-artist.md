@@ -9,19 +9,14 @@ hero_sub: "Dedicated travel, security and logistics support for touring musician
 description: "P.A.S.S. — Performing Artist Safety Specialist. End-to-end touring support for musicians and entertainers: logistics, venue liaison, equipment transport and artist protection."
 ---
 
-Dedicated travel, security and logistics support for touring musicians, entertainers and performing arts companies.
+## Solution Overview
 
 <div class="st-service-lead" markdown>
 P.A.S.S. (Performing Artist Safety Specialist) is our specialist stream for touring performers. We handle the complex, time-sensitive logistics of artistic touring — so your artists can focus on the performance, not the process.
 </div>
 
----
 
-<span class="st-section-label">Service Overview</span>
-
-## What's Included
-
-<div class="st-gold-rule"></div>
+### What's Included
 
 - End-to-end touring logistics for musicians, bands and performing arts companies
 - Venue liaison — load-in/load-out, backstage access and technical coordination

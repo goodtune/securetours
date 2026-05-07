@@ -9,19 +9,14 @@ hero_sub: "Australia's leading safety and security transfer service for events, 
 description: "Australia's leading secure transfer service — Exclusive Level for VIP luxury and Executive Level for corporate clients. Air and seaport arrivals and departures."
 ---
 
-Australia's leading safety and security transfer service for events, travel and tourism — combining comfort, confidence and close protection.
+## Solution Overview
 
 <div class="st-service-lead" markdown>
 Our Exclusive Transfer Assistance offers two premium service tiers: the Exclusive Level for individuals seeking anonymity and luxury, and the Executive Level for corporate clients requiring efficiency and professionalism.
 </div>
 
----
 
-<span class="st-section-label">Service Overview</span>
-
-## What's Included
-
-<div class="st-gold-rule"></div>
+### What's Included
 
 - Exclusive Level: dedicated chaperone with seamless point-to-point transition
 - Luggage collection and delivery including to and from arrival or departure

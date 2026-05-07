@@ -101,10 +101,10 @@ def test_service_feature_count(built_pages, key, spec):
 def test_service_has_whats_included_section(built_pages, key, spec):
     """Each service page should expose a 'What's Included' (or equivalent) section."""
     soup = built_pages[key]
-    h2_texts = [text_of(h) for h in soup.find_all("h2")]
+    heading_texts = [text_of(h) for h in soup.find_all(["h2", "h3"])]
     expected_terms = ("what's included", "what we deliver", "service offerings", "what we offer")
-    found = any(any(term in h.lower() for term in expected_terms) for h in h2_texts)
-    assert found, f"{key} missing a 'what's included'-style H2; got {h2_texts}"
+    found = any(any(term in h.lower() for term in expected_terms) for h in heading_texts)
+    assert found, f"{key} missing a 'what's included'-style heading; got {heading_texts}"
 
 
 @pytest.mark.parametrize("key,spec", SERVICE_PAGES.items())

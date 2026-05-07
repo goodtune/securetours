@@ -9,19 +9,13 @@ hero_sub: "Comprehensive, safety-led travel packages for inbound and domestic cl
 description: "Comprehensive secure travel packages for inbound and domestic clients across Australia. Chaperoned tours, private transfers, luxury transit lounges and risk management."
 ---
 
-Comprehensive, safety-led travel packages for inbound and domestic clients seeking the highest standard of secure, luxurious touring across Australia.
+## Solution Overview
 
 <div class="st-service-lead" markdown>
 Our Secure Tours & Travel Solutions are designed to support both travel partners and their guests — expanding the ability to cater to clients who require reliable, discreet and superior-quality secure travel options.
 </div>
 
----
-
-<span class="st-section-label">Service Overview</span>
-
-## What's Included
-
-<div class="st-gold-rule"></div>
+### What's Included
 
 - Luxury chauffeur-driven vehicle transfers to and from arrivals and departures
 - Luggage collection and delivery door-to-door

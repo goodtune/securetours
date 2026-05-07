@@ -9,19 +9,14 @@ hero_sub: "Personal, attentive care for individuals and groups who require dedic
 description: "Personal concierge and chaperone service for individuals and groups. Airport meet and greet, accompanied transfers, multilingual support and 24/7 emergency contact."
 ---
 
-Personal, attentive care for individuals and groups who require dedicated support throughout their Australian experience.
+## Solution Overview
 
 <div class="st-service-lead" markdown>
 Our Concierge & Chaperone service provides a dedicated personal support specialist for the duration of your stay. Whether navigating arrivals, coordinating business meetings, or ensuring your travel companions are always in safe hands, our chaperones are trained professionals committed to your experience.
 </div>
 
----
 
-<span class="st-section-label">Service Overview</span>
-
-## What's Included
-
-<div class="st-gold-rule"></div>
+### What's Included
 
 - Meet and greet at airports, hotels and event venues
 - Appointment, schedule and itinerary management

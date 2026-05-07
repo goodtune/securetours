@@ -9,19 +9,14 @@ hero_sub: "Designed for professional and corporate clients who require a seamles
 description: "Seamless executive travel for investors, senior leaders and corporate delegations. Chauffeur transfers, corporate concierge, schedule management and 24/7 support."
 ---
 
-Designed for professional and corporate clients who require a seamless, hassle-free travel experience that lets them focus on their business.
+## Solution Overview
 
 <div class="st-service-lead" markdown>
 Our Executive Guest Management service is built specifically for investors, senior executives and corporate delegations. We eliminate the friction of travel so you arrive prepared, composed and on schedule.
 </div>
 
----
 
-<span class="st-section-label">Service Overview</span>
-
-## What's Included
-
-<div class="st-gold-rule"></div>
+### What's Included
 
 - Executive chauffeur-driven vehicle transfer to and from departure or arrival point
 - Luggage collection and delivery at both ends of the journey

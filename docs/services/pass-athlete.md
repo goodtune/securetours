@@ -9,19 +9,14 @@ hero_sub: "Tailored travel and logistics solutions for elite athletes and sports
 description: "P.A.S.S. — Professional Athlete Support Specialist. Elite travel logistics for athletes and sports teams: nutrition planning, equipment transport, venue liaison and close protection."
 ---
 
-Tailored travel and logistics solutions for elite athletes and sports teams — enabling peak performance on the road.
+## Solution Overview
 
 <div class="st-service-lead" markdown>
 P.A.S.S. (Professional Athlete Support Specialist) is our dedicated stream for elite athletes and sports teams. We understand the unique demands of high-performance travel — nutrition, recovery, equipment, schedules and security — and we build every itinerary around these needs.
 </div>
 
----
 
-<span class="st-section-label">Service Overview</span>
-
-## What's Included
-
-<div class="st-gold-rule"></div>
+### What's Included
 
 - High-performance travel planning tailored to training and competition schedules
 - Nutrition-compatible stopover and accommodation planning
