@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   {%- block htmltitle %}
-    {%- if page.title and not page.is_homepage %}
+    {%- if page.title and page.url != '' and page.url != '.' %}
       <title>{{ page.title | striptags }} | {{ config.site_name }}</title>
     {%- else %}
       <title>{{ config.site_name }}</title>
