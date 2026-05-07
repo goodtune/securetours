@@ -1,9 +1,22 @@
-"""Shared fixtures for HTML-alignment tests."""
+"""Shared fixtures for HTML-alignment tests.
+
+The static reference site is JS-driven for several pages (service detail,
+articles index sections, home about_text). Comparing raw static HTML to
+built unfairly fails because static literally has empty placeholders that
+JS fills at runtime. To compare apples to apples we pre-render the static
+pages with a real headless browser (Playwright/Chromium), dump the post-JS
+HTML to a session-scoped tmp dir, and use those rendered files as the
+static side of the alignment harness.
+"""
 from __future__ import annotations
 
 import os
 import re
+import socket
 import subprocess
+import threading
+import time
+from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 
 import pytest
@@ -11,7 +24,7 @@ from bs4 import BeautifulSoup
 
 
 REPO = Path(__file__).resolve().parent.parent
-STATIC_ROOT = (REPO.parent / "securetours").resolve()
+STATIC_SOURCE = (REPO.parent / "securetours").resolve()
 BUILT_ROOT = (REPO / "site").resolve()
 
 
@@ -38,15 +51,92 @@ def build_once():
     _build_zensical()
 
 
-def _read_soup(path: Path) -> BeautifulSoup:
-    return BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
+# --- Static pre-render via Playwright -------------------------------------
+# The static site needs JS to fill its placeholders. We serve the source
+# tree over HTTP, drive Chromium through every page, capture the post-JS
+# DOM, and write each page to a session-scoped tmp dir. The rest of the
+# harness then reads from this rendered tree as if it were the static src.
+
+class _QuietHandler(SimpleHTTPRequestHandler):
+    def log_message(self, format, *args):
+        pass  # silence
+
+
+def _free_port() -> int:
+    with socket.socket() as s:
+        s.bind(("127.0.0.1", 0))
+        return s.getsockname()[1]
+
+
+def _serve(directory: Path, port: int) -> HTTPServer:
+    handler = type(
+        "Handler",
+        (_QuietHandler,),
+        {"directory": str(directory)},
+    )
+    # Stamp the directory onto the handler subclass so SimpleHTTPRequestHandler
+    # serves from there (Python 3.7+ accepts directory= kwarg, but constructing
+    # via type() avoids the per-request kwarg dance).
+    server = HTTPServer(("127.0.0.1", port), handler)
+    server.allow_reuse_address = True
+    return server
+
+
+def _render_static_with_js(source: Path, out: Path) -> None:
+    """Walk every .html under `source`, render it with JS in Chromium, and
+    write the post-JS DOM to the matching path under `out`."""
+    from functools import partial
+
+    from playwright.sync_api import sync_playwright
+
+    SimpleHTTPRequestHandler.log_message = lambda self, *a, **kw: None  # type: ignore
+    port = _free_port()
+    server = HTTPServer(
+        ("127.0.0.1", port),
+        partial(SimpleHTTPRequestHandler, directory=str(source)),
+    )
+    t = threading.Thread(target=server.serve_forever, daemon=True)
+    t.start()
+    try:
+        out.mkdir(parents=True, exist_ok=True)
+        with sync_playwright() as p:
+            browser = p.chromium.launch()
+            ctx = browser.new_context(viewport={"width": 1280, "height": 900})
+            page = ctx.new_page()
+            for html_path in sorted(source.rglob("*.html")):
+                rel = html_path.relative_to(source)
+                url = f"http://127.0.0.1:{port}/{rel.as_posix()}"
+                page.goto(url, wait_until="networkidle", timeout=15000)
+                # Give scroll-reveal IntersectionObserver / i18n a moment
+                page.wait_for_timeout(150)
+                target = out / rel
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_text(page.content(), encoding="utf-8")
+            browser.close()
+    finally:
+        server.shutdown()
 
 
 @pytest.fixture(scope="session")
-def static_root() -> Path:
-    if not STATIC_ROOT.exists():
-        pytest.skip(f"Static site root not found at {STATIC_ROOT}")
-    return STATIC_ROOT
+def static_root(tmp_path_factory) -> Path:
+    """Return path to a tmp dir containing the static site rendered with JS.
+
+    Set ALIGN_USE_RAW_STATIC=1 to skip the playwright pre-render and
+    point at the raw source tree (faster, but JS-driven content will be
+    empty — useful only for debugging extraction logic).
+    """
+    if not STATIC_SOURCE.exists():
+        pytest.skip(f"Static source not found at {STATIC_SOURCE}")
+    if os.environ.get("ALIGN_USE_RAW_STATIC") == "1":
+        return STATIC_SOURCE
+    rendered = tmp_path_factory.mktemp("static_rendered")
+    _render_static_with_js(STATIC_SOURCE, rendered)
+    # Also copy assets so any relative refs the harness might follow still resolve
+    return rendered
+
+
+def _read_soup(path: Path) -> BeautifulSoup:
+    return BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
 
 
 @pytest.fixture(scope="session")

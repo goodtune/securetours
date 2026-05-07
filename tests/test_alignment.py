@@ -15,19 +15,8 @@ from conftest import PAGE_MAP
 import extract as X
 
 
-# Service-detail body content is JS-driven on the static site
-# (filled at runtime from `js/translations.js`). The static HTML for service
-# detail pages has empty hero label/title/sub and zero rendered cards. We
-# bake the same content into Markdown front-matter — equal-or-better content
-# availability — so we skip body comparisons but keep head/title/desc tests.
-# Article detail pages have static HTML content, so they are NOT in this set.
-JS_DRIVEN = {
-    "svc_tours", "svc_egm", "svc_eta", "svc_pass_athlete", "svc_pass_artist",
-    "svc_cc", "svc_bereavement", "svc_solo", "svc_stage",
-}
-
-# Static 404.html is bare — no nav, no footer, no description. Skip those
-# tests for that page; we ship a properly chrome'd 404.
+# Static 404.html is genuinely bare — no nav, no footer, no description.
+# We ship a properly chrome'd 404; nothing to compare for that page.
 BARE_PAGES = {"notfound"}
 
 
@@ -134,8 +123,6 @@ def test_single_h1(all_pages, page_key):
 def test_h1_text(all_pages, page_key):
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
-    if page_key in JS_DRIVEN:
-        pytest.skip("static h1 is JS-injected; built has baked content")
     s, b = all_pages[page_key]
     assert X.h1s(b) == X.h1s(s)
 
@@ -180,8 +167,6 @@ def test_title_text(all_pages, page_key):
 def test_section_labels_match(all_pages, page_key):
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
-    if page_key in JS_DRIVEN:
-        pytest.skip("static section labels are JS-injected; built has baked content")
     s, b = all_pages[page_key]
     s_labels = X.section_labels(s)
     b_labels = X.section_labels(b)
@@ -194,8 +179,6 @@ def test_section_labels_match(all_pages, page_key):
 def test_gold_rule_count(all_pages, page_key):
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
-    if page_key in JS_DRIVEN:
-        pytest.skip("static gold-rules are JS-injected; built has baked content")
     s, b = all_pages[page_key]
     s_n = X.gold_rules(s)
     b_n = X.gold_rules(b)
@@ -322,8 +305,6 @@ PAGES_WITH_PAGE_HERO = [
 def test_page_hero_label(all_pages, page_key):
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
-    if page_key in JS_DRIVEN:
-        pytest.skip("static hero label is JS-injected; built has baked content")
     s, b = all_pages[page_key]
     sp, bp = X.page_hero(s), X.page_hero(b)
     assert bp.label == sp.label, (
@@ -335,8 +316,6 @@ def test_page_hero_label(all_pages, page_key):
 def test_page_hero_title(all_pages, page_key):
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
-    if page_key in JS_DRIVEN:
-        pytest.skip("static hero title is JS-injected; built has baked content")
     s, b = all_pages[page_key]
     sp, bp = X.page_hero(s), X.page_hero(b)
     assert bp.title == sp.title, (
@@ -348,8 +327,6 @@ def test_page_hero_title(all_pages, page_key):
 def test_page_hero_sub(all_pages, page_key):
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
-    if page_key in JS_DRIVEN:
-        pytest.skip("static hero sub is JS-injected; built has baked content")
     s, b = all_pages[page_key]
     sp, bp = X.page_hero(s), X.page_hero(b)
     assert bp.sub == sp.sub, (
