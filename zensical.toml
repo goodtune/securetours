@@ -21,11 +21,6 @@ custom_dir = "overrides"
 
 features = []
 
-[project.theme.palette]
-scheme  = "default"
-primary = "custom"
-accent  = "custom"
-
 # ---------------------------------------------------------------------------
 # Markdown extensions
 # ---------------------------------------------------------------------------
