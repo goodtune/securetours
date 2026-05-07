@@ -68,10 +68,10 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: -0.01em;
 }
 
-.md-typeset h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; }
-.md-typeset h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; }
-.md-typeset h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; }
-.md-typeset h4 { font-size: 1.1rem; font-weight: 600; }
+.md-typeset h1 { font-size: clamp(32px, 4.5vw, 56px); font-weight: 700; margin-bottom: 1rem; }
+.md-typeset h2 { font-size: clamp(26px, 3vw, 38px); font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; }
+.md-typeset h3 { font-size: clamp(20px, 2vw, 24px); font-weight: 600; }
+.md-typeset h4 { font-size: 18px; font-weight: 600; }
 
 /* Hide the § headerlink anchors on all headings */
 .md-typeset .headerlink {
@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6,
 .st-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+  padding: 0 clamp(20px, 4vw, 40px);
 }
 
 .site-nav {
@@ -102,7 +102,7 @@ h1, h2, h3, h4, h5, h6,
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  gap: 1.5rem;
+  gap: 16px;
 }
 
 .nav-logo { flex-shrink: 0; }
@@ -118,9 +118,9 @@ h1, h2, h3, h4, h5, h6,
 .nav-links > li { position: relative; }
 .nav-links > li > a {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 8px 12px;
   font-family: 'Open Sans', sans-serif;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--st-navy);
@@ -237,7 +237,7 @@ h1, h2, h3, h4, h5, h6,
 .st-page-hero h1 {
   font-family: 'Playfair Display', Georgia, serif;
   color: #ffffff !important;
-  font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
+  font-size: clamp(36px, 5vw, 62px) !important;
   font-weight: 700;
   line-height: 1.15;
   margin: 0 0 1.5rem !important;
@@ -448,7 +448,7 @@ h1, h2, h3, h4, h5, h6,
 .st-hero h1,
 .md-typeset .st-hero h1 {
   color: #ffffff !important;
-  font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
+  font-size: clamp(36px, 5vw, 62px) !important;
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: 1.5rem;
@@ -552,7 +552,7 @@ a.st-btn-navy:hover {
 /* -- Stats bar --------------------------------------------- */
 .st-stats {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0;
   background: var(--st-gold);
   /* Flush against hero — no margin-top; bottom margin separates from next section */
@@ -564,34 +564,37 @@ a.st-btn-navy:hover {
 }
 
 @media (min-width: 640px) {
-  .st-stats { grid-template-columns: repeat(4, 1fr); }
+  .st-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
 
 /* No vertical dividers — static site uses typography only to separate columns */
 .st-stats > div {
-  padding: 2.5rem 1rem;
+  padding: 40px 16px;
   border-right: none;
   box-shadow: none;
+  min-width: 0;
 }
 .st-stats > div:last-child { border-right: none; }
 
 .st-stat-value {
   display: block;
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.5rem;
+  font-size: 36px;
   font-weight: 700;
   color: var(--st-navy-dark);
   line-height: 1;
+  word-break: break-word;
 }
 
 .st-stat-label {
   display: block;
-  font-size: 0.8rem;
+  font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--st-navy);
-  margin-top: 0.5rem;
+  margin-top: 8px;
+  word-break: break-word;
 }
 
 /* -- Flagship / featured solution panel -------------------- */
@@ -628,7 +631,7 @@ a.st-btn-navy:hover {
 }
 .st-solutions-featured__title {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem) !important;
+  font-size: clamp(21px, 2.5vw, 29px) !important;
   color: #ffffff !important;
   margin: 0 0 0.875rem !important;
 }
@@ -845,7 +848,7 @@ a.st-btn-navy:hover {
 .st-band-navy h2,
 .md-typeset .st-band-navy h2 {
   color: #ffffff !important;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: clamp(28px, 4vw, 40px);
   margin-bottom: 1rem;
 }
 
@@ -1213,7 +1216,7 @@ a.st-btn-navy:hover {
     align-items: stretch;
   }
   .nav-links.open { display: flex; }
-  .nav-links > li > a { padding: 0.65rem 1.5rem; }
+  .nav-links > li > a { padding: 10px 24px; }
   .nav-dropdown {
     display: none;
     position: static;
@@ -1234,12 +1237,12 @@ a.st-btn-navy:hover {
 @media (max-width: 639px) {
   .st-hero {
     min-height: 85vh;
-    padding: 3.5rem 1.25rem;
+    padding: 6rem 20px 56px;
   }
 
   .st-hero h1,
   .md-typeset .st-hero h1 {
-    font-size: 1.875rem !important;
+    font-size: 30px !important;
   }
 
   .st-cards-2,
@@ -1248,7 +1251,7 @@ a.st-btn-navy:hover {
   }
 
   .st-band-navy {
-    padding: 3rem 1.25rem;
+    padding: 48px 20px;
   }
 
   .st-cta-group {
