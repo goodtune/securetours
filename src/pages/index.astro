@@ -7,6 +7,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import CtaBand from '../components/CtaBand.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import SolutionsFeatured from '../components/SolutionsFeatured.astro';
+import AboutBadge from '../components/AboutBadge.astro';
 
 const services = await getCollection('services');
 const tours = await getEntry('services', 'tours-travel-solutions');
@@ -118,14 +119,12 @@ if (!tours) throw new Error('Featured service "tours-travel-solutions" missing f
         <a href="/about/" class="btn btn--navy" style="margin-top:2rem;">Our Story</a>
       </div>
       <div class="about-visual">
-        <div class="about-badge">
-          <div class="about-badge__number">37</div>
-          <div class="about-badge__label">Years of Excellence</div>
-          <div style="margin-top:1.5rem; border-top: 1px solid rgba(184,149,42,0.3); padding-top:1.5rem;">
-            <p style="font-size:0.875rem; color:rgba(255,255,255,0.7); line-height:1.7; margin:0 0 0.75rem;">Australian Frontline Solutions — established 1989.</p>
-            <p style="font-size:0.775rem; color:rgba(184,149,42,0.8); font-weight:600; letter-spacing:0.04em; text-transform:uppercase; margin:0;">Security Master Licence Holder</p>
-          </div>
-        </div>
+        <AboutBadge
+          number="37"
+          label="Years of Excellence"
+          footnote="Australian Frontline Solutions — established 1989."
+          footnoteTag="Security Master Licence Holder"
+        />
       </div>
     </div>
   </div>

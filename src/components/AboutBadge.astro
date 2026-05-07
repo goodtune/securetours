@@ -1,0 +1,28 @@
+---
+export interface Props {
+  number: string | number;
+  label: string;
+  footnote?: string;
+  footnoteTag?: string;
+  borderTop?: boolean;
+}
+
+const { number, label, footnote, footnoteTag, borderTop = true } = Astro.props;
+const dividerStyle = borderTop
+  ? 'margin-top:1.5rem; border-top: 1px solid rgba(184,149,42,0.3); padding-top:1.5rem;'
+  : 'margin-top:1.5rem; padding-top:1.5rem;';
+---
+<div class="about-badge">
+  <div class="about-badge__number">{number}</div>
+  <div class="about-badge__label">{label}</div>
+  {(footnote || footnoteTag) && (
+    <div style={dividerStyle}>
+      {footnote && (
+        <p style="font-size:0.875rem; color:rgba(255,255,255,0.7); line-height:1.7; margin:0 0 0.75rem;">{footnote}</p>
+      )}
+      {footnoteTag && (
+        <p style="font-size:0.775rem; color:rgba(184,149,42,0.8); font-weight:600; letter-spacing:0.04em; text-transform:uppercase; margin:0;">{footnoteTag}</p>
+      )}
+    </div>
+  )}
+</div>
