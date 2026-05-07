@@ -1733,8 +1733,18 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
+  font-size: 0.825rem;
 }
-.footer-afs__division { font-size: 0.825rem; }
-.footer-afs__credentials { font-size: 0.825rem; color: rgba(255,255,255,0.55); }
+.footer-afs__division {
+  color: var(--gray-700);
+  font-weight: 500;
+}
+.footer-afs__division strong { color: var(--navy); }
+.footer-afs__sep { color: var(--gray-300); }
+.footer-afs__credentials {
+  color: var(--gray-500);
+  font-size: 0.775rem;
+  letter-spacing: 0.04em;
+}
