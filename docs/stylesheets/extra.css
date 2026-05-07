@@ -286,6 +286,9 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
   color: #ffffff;
   padding: 4rem clamp(1.25rem, 4vw, 2.5rem);
   text-align: center;
+  /* Full-bleed escape from .st-container max-width */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 .home-hero .st-container { max-width: 720px; margin: 0 auto; }
 /* .st-hero content is direct children — constrain via max-width on the div itself */
@@ -431,14 +434,21 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
-.stats-bar__inner,
-.st-stats {
+.stats-bar__inner {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   text-align: center;
   max-width: var(--max-w);
   margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
+}
+/* .st-stats is both the full-bleed band AND the grid — constrain via padding, not max-width */
+.st-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  text-align: center;
   padding: 0 clamp(1.25rem, 4vw, 2.5rem);
 }
 .st-stats > div { min-width: 0; }
@@ -1468,11 +1478,29 @@ body.has-page-hero .st-page-content > h1:first-child { display: none !important;
 .st-about-section { padding: 2rem 0; }
 .st-about-section--alt { background: var(--off-white); padding: var(--section-pad) 0; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); }
 .st-about-section--alt > .st-container { padding-left: clamp(1.25rem, 4vw, 2.5rem); padding-right: clamp(1.25rem, 4vw, 2.5rem); }
+/* Constrain direct children of full-bleed alt sections (no .st-container wrapper in markup) */
+.st-about-section--alt > :not(.st-container) {
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+  box-sizing: border-box;
+}
 
 /* Home page: section wrappers */
 .st-home-section { padding: var(--section-pad) 0; }
 .st-home-section--alt { background: var(--off-white); padding: var(--section-pad) 0; width: 100vw; margin-left: calc(-50vw + 50%); margin-right: calc(-50vw + 50%); }
 .st-home-section--alt > .st-container { padding-left: clamp(1.25rem, 4vw, 2.5rem); padding-right: clamp(1.25rem, 4vw, 2.5rem); }
+/* Constrain direct children of full-bleed alt sections (no .st-container wrapper in markup) */
+.st-home-section--alt > :not(.st-container) {
+  max-width: var(--max-w);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+  box-sizing: border-box;
+}
 
 /* About: value cards (3-up grid with gold left border) */
 .st-value-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 2rem 0; }
