@@ -1069,3 +1069,283 @@ p:last-child { margin-bottom: 0; }
 .zh-content h1, .zh-content h2, .zh-content h3, .zh-content h4 {
   font-family: var(--font-serif), 'PingFang SC', 'Microsoft YaHei', sans-serif;
 }
+
+/* ── Case study / article detail pages ───────────────────────────────── */
+
+.case-study-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  background: var(--off-white);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+}
+.meta-item__label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.2rem;
+}
+.meta-item__value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.case-study-body { max-width: 760px; }
+.case-study-body h2 {
+  font-size: 1.4rem;
+  margin: 2.5rem 0 1rem;
+  color: var(--navy);
+}
+.case-study-body h2:first-child { margin-top: 0; }
+.case-study-body p { color: var(--gray-700); margin-bottom: 1.25rem; }
+.case-study-body ul {
+  list-style: none;
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.case-study-body ul li {
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  padding-left: 1.5rem;
+  position: relative;
+}
+.case-study-body ul li::before {
+  content: '✦';
+  color: var(--gold);
+  font-size: 0.6rem;
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+}
+
+.event-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.event-type-item {
+  background: var(--off-white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  text-align: center;
+}
+.event-type-item__icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.event-type-item__label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+}
+.outcome-item {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+}
+.outcome-item__num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.outcome-item__label {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 0.4rem;
+}
+
+.confidentiality-note {
+  background: var(--gold-pale);
+  border: 1px solid rgba(184,149,42,0.25);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  font-size: 0.875rem;
+  color: var(--navy);
+  margin: 2rem 0;
+}
+
+.article-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--gray-300);
+}
+.article-nav a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── Endorsement card ────────────────────────────────────────────────── */
+
+.testimonial-body { max-width: 760px; }
+
+.endorsement-card {
+  background: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 3rem;
+}
+.endorsement-card__header {
+  background: var(--navy);
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.endorsement-card__avatar {
+  width: 56px;
+  height: 56px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--navy);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.endorsement-card__author-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--white);
+  line-height: 1.3;
+}
+.endorsement-card__author-title {
+  font-size: 0.825rem;
+  color: rgba(255,255,255,0.6);
+  margin-top: 0.2rem;
+}
+.endorsement-card__body { padding: 2rem 2.5rem; }
+.endorsement-card__date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+.endorsement-card__letter {
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  line-height: 1.8;
+}
+.endorsement-card__letter p { margin-bottom: 1.25rem; }
+.endorsement-card__letter p:last-child { margin-bottom: 0; }
+.endorsement-card__salutation {
+  font-style: italic;
+  color: var(--navy);
+  font-weight: 600;
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+}
+.endorsement-card__download {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.endorsement-card__download a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.endorsement-card__download span {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+.context-block {
+  background: var(--off-white);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2.5rem;
+}
+.context-block h3 {
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+.context-block p {
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  margin: 0;
+}
+
+/* ── Profile / article body ──────────────────────────────────────────── */
+
+.article-body { max-width: 760px; }
+.article-body h2 {
+  font-size: 1.4rem;
+  margin: 2.5rem 0 1rem;
+  color: var(--navy);
+}
+.article-body h2:first-child { margin-top: 0; }
+.article-body p {
+  font-size: 1rem;
+  color: var(--gray-700);
+  line-height: 1.85;
+  margin-bottom: 1.4rem;
+}
+.article-body p:last-child { margin-bottom: 0; }
+
+.article-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0 2.5rem;
+  padding: 1.25rem 1.75rem;
+  background: var(--off-white);
+  border-left: 4px solid var(--gold);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  color: var(--gray-700);
+}
+.article-meta strong { color: var(--navy); }
+
+.pull-quote {
+  border-left: 4px solid var(--gold);
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  background: var(--gold-pale);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.pull-quote p {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--navy);
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.65;
+}
