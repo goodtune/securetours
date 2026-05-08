@@ -26,6 +26,8 @@ app.get('/health', (_req, res) => res.json({ ok: true }));
 app.get('/api/health', (_req, res) => res.json({ ok: true }));
 
 app.post('/api/contact', async (req, res) => {
+  const t0 = Date.now();
+  console.log('[contact-api] /api/contact received');
   const body = req.body ?? {};
 
   // Honeypot — silently accept and drop. Bots fill all fields; humans don't
@@ -70,6 +72,7 @@ app.post('/api/contact', async (req, res) => {
     `<div style="font-family:Arial,sans-serif;font-size:14px;line-height:1.6;white-space:pre-wrap;">${escapeHtml(message)}</div>`,
   ].filter(Boolean).join('\n');
 
+  console.log(`[contact-api] calling resend.emails.send t+${Date.now() - t0}ms`);
   try {
     const result = await resend.emails.send({
       to: TO,
@@ -79,19 +82,27 @@ app.post('/api/contact', async (req, res) => {
       html: lines,
     });
 
+    console.log(`[contact-api] resend returned t+${Date.now() - t0}ms`);
+
     if (result.error) {
       console.error('[contact-api] resend error:', result.error);
-      return res
+      res
         .status(502)
         .json({ error: 'We could not deliver your enquiry. Please call us on +61 414 499 778.' });
+      console.log(`[contact-api] sent 502 t+${Date.now() - t0}ms`);
+      return;
     }
 
-    return res.json({ ok: true });
+    res.json({ ok: true });
+    console.log(`[contact-api] sent 200 t+${Date.now() - t0}ms`);
+    return;
   } catch (err) {
     console.error('[contact-api] resend exception:', err);
-    return res
+    res
       .status(502)
       .json({ error: 'We could not deliver your enquiry. Please call us on +61 414 499 778.' });
+    console.log(`[contact-api] sent 502 (catch) t+${Date.now() - t0}ms`);
+    return;
   }
 });
 
