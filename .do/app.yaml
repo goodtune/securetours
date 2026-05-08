@@ -31,6 +31,7 @@ services:
     http_port: 3000
     routes:
       - path: /api
+        preserve_path_prefix: true
     health_check:
       http_path: /health
       initial_delay_seconds: 5
