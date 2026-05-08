@@ -1,5 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteNav from '../../components/SiteNav.astro';
 import FooterAfs from '../../components/FooterAfs.astro';
@@ -24,6 +24,7 @@ interface Props {
 
 const { service } = Astro.props;
 const { data } = service;
+const { Content } = await render(service);
 
 const canonical = `https://securetours.com.au/services/${service.id}/`;
 const pageTitle = `${data.title} — Secure Tours & Travel`;
@@ -52,8 +53,11 @@ const pageTitle = `${data.title} — Secure Tours & Travel`;
   lead={data.lead}
   features={data.features}
   clients={data.clients}
+  clientsLabel={data.clients_label}
   tcsNote={data.tcs_note}
-/>
+>
+  <Content />
+</ServiceBody>
 
 {data.faqs && data.faqs.length > 0 && (
   <Faq
@@ -67,6 +71,8 @@ const pageTitle = `${data.title} — Secure Tours & Travel`;
 <ServiceSiblings currentSlug={service.id} />
 
 <CtaBand
+  title={data.cta?.title}
+  body={data.cta?.body}
   outline={{ label: 'View All Services', href: '/services/' }}
 />
 

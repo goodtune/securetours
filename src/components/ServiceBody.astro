@@ -5,15 +5,17 @@ export interface Props {
   lead: string;
   features: { icon: string; text: string }[];
   clients?: string[];
+  clientsLabel?: string;
   tcsNote?: string;
 }
 
-const { lead, features, clients, tcsNote } = Astro.props;
+const { lead, features, clients, clientsLabel, tcsNote } = Astro.props;
+const leadParas = lead.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
 ---
 <section class="service-body" aria-labelledby="svc-body-heading">
   <div class="container">
     <h2 id="svc-body-heading" style="margin-bottom:1.5rem;">Service Overview</h2>
-    <p class="service-lead">{lead}</p>
+    {leadParas.map((p) => <p class="service-lead">{p}</p>)}
     <h3 style="margin-bottom:1rem;">What's Included</h3>
     <ul class="feature-list">
       {features.map((f) => (
@@ -26,7 +28,8 @@ const { lead, features, clients, tcsNote } = Astro.props;
     {tcsNote && (
       <p class="service-tcs-note">{tcsNote}</p>
     )}
-    {clients && clients.length > 0 && <ClientsMentioned clients={clients} />}
+    <div class="service-prose"><slot /></div>
+    {clients && clients.length > 0 && <ClientsMentioned clients={clients} label={clientsLabel} />}
     <div style="margin-top:3rem;">
       <a href="/contact/" class="btn btn--primary">Enquire Now</a>
     </div>

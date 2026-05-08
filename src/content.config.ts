@@ -11,9 +11,16 @@ const services = defineCollection({
     lead: z.string(),
     features: z.array(z.object({ icon: z.string(), text: z.string() })),
     clients: z.array(z.string()).optional(),
+    clients_label: z.string().optional(),
     tcs_note: z.string().optional(),
     faqs: z
       .array(z.object({ question: z.string(), answer: z.string() }))
+      .optional(),
+    cta: z
+      .object({
+        title: z.string().optional(),
+        body: z.string().optional(),
+      })
       .optional(),
     order: z.number(),
     coming_soon: z.boolean().default(false),

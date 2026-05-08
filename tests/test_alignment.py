@@ -54,8 +54,16 @@ def test_nav_dropdown_matches(all_pages, page_key):
         pytest.skip("page missing in one tree")
     s, b = all_pages[page_key]
     sn, bn = X.nav(s), X.nav(b)
-    assert bn.services_dropdown == sn.services_dropdown, (
-        f"services dropdown differs\n  static: {sn.services_dropdown}\n  built : {bn.services_dropdown}"
+    # Built can add new services to the dropdown that weren't in the
+    # prototype (e.g. S.C.O.U.T. added post-launch). Require every
+    # static dropdown item to appear in built; allow extras.
+    s_set, b_set = set(sn.services_dropdown), set(bn.services_dropdown)
+    missing = s_set - b_set
+    assert not missing, (
+        f"services dropdown missing items from static on {page_key}\n"
+        f"  static: {sn.services_dropdown}\n"
+        f"  built : {bn.services_dropdown}\n"
+        f"  missing: {sorted(missing)}"
     )
 
 
@@ -237,14 +245,23 @@ def test_home_solutions_cards(all_pages):
     s, b = all_pages["home"]
     s_cards = X.home_solutions_cards(s)
     b_cards = X.home_solutions_cards(b)
+    # Built can add new service cards (e.g. SCOUT) to the home grid.
+    # Require every static card title to appear in built; allow extras.
     s_titles = [c.title for c in s_cards]
     b_titles = [c.title for c in b_cards]
-    assert b_titles == s_titles, (
-        f"home solutions card titles differ\n  static: {s_titles}\n  built : {b_titles}"
+    missing_titles = [t for t in s_titles if t not in b_titles]
+    assert not missing_titles, (
+        f"home solutions card titles missing from built\n"
+        f"  static: {s_titles}\n"
+        f"  built : {b_titles}\n"
+        f"  missing: {missing_titles}"
     )
     s_texts = [c.text for c in s_cards]
     b_texts = [c.text for c in b_cards]
-    assert b_texts == s_texts, "home solutions card body text differs"
+    missing_texts = [t for t in s_texts if t not in b_texts]
+    assert not missing_texts, (
+        f"home solutions card body text missing from built: {missing_texts}"
+    )
 
 
 def test_home_about_strip(all_pages):
