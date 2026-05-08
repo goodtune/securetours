@@ -4,6 +4,14 @@ region: syd
 features:
   - buildpack-stack=ubuntu-22
 
+domains:
+  - domain: securetours.com.au
+    type: PRIMARY
+    zone: securetours.com.au
+  - domain: www.securetours.com.au
+    type: ALIAS
+    zone: securetours.com.au
+
 static_sites:
   - name: site
     github:
