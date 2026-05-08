@@ -127,7 +127,7 @@ SERVICE_PAGES = {
         "lead": "Losing someone is hard enough.",
         "features": [
             "Airport meet and greet for arrivals and departures",
-            "Private chauffeur transfers to and from all airports",
+            "Private chauffeur transfers to and from major Australian airports*",
             "Assistance with check in, security and boarding",
             "Coordination with airline staff on compassionate travel requirements",
             "Concierge support throughout your journey",

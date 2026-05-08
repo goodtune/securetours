@@ -10,12 +10,13 @@ features:
   - { icon: '🛡️', text: 'Dedicated chaperone providing seamless point-to-point transitions' }
   - { icon: '🎩', text: 'Premium concierge host/hostess for the duration of travel' }
   - { icon: '📋', text: 'Assistance with immigration forms and local customs' }
-  - { icon: '✈️', text: 'Exclusive luxury transit lounge with private bathroom and catering' }
-  - { icon: '🏠', text: 'Private terminal solutions at major airports' }
+  - { icon: '✈️', text: 'Exclusive luxury transit lounge with private bathroom and catering*' }
+  - { icon: '🏠', text: 'Private terminal solutions at major airports*' }
   - { icon: '🗺️', text: 'Private chaperone tours — inbound across Australia and outbound globally' }
   - { icon: '🔍', text: 'Complete and itemised risk assessment and advance reconnaissance' }
   - { icon: '🛍️', text: 'Assistance with duty-free shopping' }
   - { icon: '👶', text: 'Chaperoning of unaccompanied minors and student groups' }
+tcs_note: '*Airside services (transit lounge, private terminals) are subject to availability at each airport. Terms & conditions apply.'
 order: 1
 home_card:
   icon: '🌏'

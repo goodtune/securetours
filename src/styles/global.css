@@ -1488,3 +1488,89 @@ p:last-child { margin-bottom: 0; }
   gap: 1.5rem;
   margin-top: 2.5rem;
 }
+
+/* ── Contact form success ─────────────────────────────────────────────── */
+
+#form-success {
+  background: var(--gold-pale);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  text-align: center;
+}
+#form-success h3 { color: var(--navy); margin-bottom: 0.5rem; }
+#form-success p { color: var(--gray-700); margin: 0; }
+
+/* ── Service body T&Cs footnote ───────────────────────────────────────── */
+
+.service-tcs-note {
+  margin-top: 1.5rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--gold-pale);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius);
+  font-size: 0.825rem;
+  color: var(--navy);
+  font-style: italic;
+}
+
+/* ── FAQ accordion ────────────────────────────────────────────────────── */
+
+.faq-section { padding: 4rem 0; }
+.faq-section--plain { padding: 0; }
+.faq-section--plain > .container { padding-left: 0; padding-right: 0; }
+.faq-heading {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  max-width: 800px;
+}
+.faq-item {
+  background: var(--off-white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.faq-item[open] {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  padding: 1.1rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 3rem;
+  line-height: 1.45;
+}
+.faq-question::-webkit-details-marker { display: none; }
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+  color: var(--gold);
+  font-weight: 400;
+  transition: transform 0.2s ease;
+}
+.faq-item[open] .faq-question::after {
+  content: '−';
+}
+.faq-answer {
+  padding: 0 1.5rem 1.25rem;
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  line-height: 1.7;
+}

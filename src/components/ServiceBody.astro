@@ -5,9 +5,10 @@ export interface Props {
   lead: string;
   features: { icon: string; text: string }[];
   clients?: string[];
+  tcsNote?: string;
 }
 
-const { lead, features, clients } = Astro.props;
+const { lead, features, clients, tcsNote } = Astro.props;
 ---
 <section class="service-body" aria-labelledby="svc-body-heading">
   <div class="container">
@@ -22,6 +23,9 @@ const { lead, features, clients } = Astro.props;
         </li>
       ))}
     </ul>
+    {tcsNote && (
+      <p class="service-tcs-note">{tcsNote}</p>
+    )}
     {clients && clients.length > 0 && <ClientsMentioned clients={clients} />}
     <div style="margin-top:3rem;">
       <a href="/contact/" class="btn btn--primary">Enquire Now</a>

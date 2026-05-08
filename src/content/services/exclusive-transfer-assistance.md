@@ -8,14 +8,22 @@ features:
   - { icon: '🌟', text: 'Exclusive Level: dedicated chaperone with seamless point-to-point transition' }
   - { icon: '🛄', text: 'Luggage collection and delivery including to and from arrival or departure' }
   - { icon: '👑', text: 'Premium host/hostess for the duration of your transfer' }
-  - { icon: '✈️', text: 'Exclusive luxury transit lounge with private bathroom and catering' }
-  - { icon: '🔐', text: 'Private terminal solutions for complete discretion' }
+  - { icon: '✈️', text: 'Exclusive luxury transit lounge with private bathroom and catering*' }
+  - { icon: '🔐', text: 'Private terminal solutions for complete discretion*' }
   - { icon: '🚗', text: 'Luxury vehicle matched to your needs' }
   - { icon: '🛂', text: 'Assistance with immigration forms and customs' }
   - { icon: '🏥', text: 'Close Personal Protection Team (PPT) available' }
   - { icon: '🔍', text: 'Advance reconnaissance for safety-conscious guests' }
   - { icon: '📊', text: 'Itinerary risk & response management with 24/7 monitoring options' }
   - { icon: '🌐', text: 'Exclusive translation and interpreter services' }
+tcs_note: '*Airside services (transit lounge, private terminals) are subject to availability at each airport. Terms & conditions apply.'
+faqs:
+  - { question: 'Can someone meet me at the gate when I land in Australia?', answer: 'TBD' }
+  - { question: 'What is the difference between your Exclusive and Executive transfer tiers?', answer: 'TBD' }
+  - { question: 'Do you offer airport transfers for elderly travellers who need extra assistance?', answer: 'TBD' }
+  - { question: 'Can you arrange a private vehicle to meet someone at an international terminal?', answer: 'TBD' }
+  - { question: 'Do you cover all major Australian airports?', answer: 'TBD' }
+  - { question: 'What happens if my flight is delayed?', answer: 'TBD' }
 order: 3
 home_card:
   icon: '✈️'

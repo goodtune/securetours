@@ -59,6 +59,17 @@ def test_nav_dropdown_matches(all_pages, page_key):
     )
 
 
+# Intentional divergences from the prototype, captured as content edits land.
+# These are items the static prototype contains but the built site (post-launch)
+# deliberately does not. Anything else missing is still a real failure.
+FOOTER_INTENTIONAL_REMOVALS: dict[str, list[str]] = {
+    # Client requested the location row collapse "Australia-wide · NSW" to
+    # "Australia Wide" — strict superstring substitution would break the
+    # extraction, so we just whitelist the old item as expected-absent.
+    "Contact": ["Australia-wide · NSW"],
+}
+
+
 @pytest.mark.parametrize("page_key", [m[0] for m in PAGE_MAP])
 def test_footer_columns_match(all_pages, page_key):
     if page_key not in all_pages:
@@ -73,10 +84,14 @@ def test_footer_columns_match(all_pages, page_key):
     for heading in sf.column_headings:
         s_items = sf.column_items.get(heading) or []
         b_items = bf.column_items.get(heading) or []
-        # Static is inconsistent — some pages list the office location ("Australia-wide · NSW")
-        # in the Contact column, others omit it. We standardize on the maximalist version.
-        # Require every static item to appear in built; allow built to have extras.
+        intentional = FOOTER_INTENTIONAL_REMOVALS.get(heading, [])
+        # Static is inconsistent — some pages list the office location in the
+        # Contact column, others omit it. We standardize on the maximalist
+        # version. Require every static item (minus intentional removals) to
+        # appear in built; allow built to have extras.
         for item in s_items:
+            if item in intentional:
+                continue
             assert item in b_items, (
                 f"footer column '{heading}' missing item from static\n"
                 f"  static: {s_items}\n"
@@ -182,7 +197,11 @@ def test_gold_rule_count(all_pages, page_key):
     s, b = all_pages[page_key]
     s_n = X.gold_rules(s)
     b_n = X.gold_rules(b)
-    assert b_n == s_n, f"gold-rule count differs on {page_key}: static={s_n}, built={b_n}"
+    # Built can add new sections (e.g. FAQ blocks on service detail pages)
+    # that introduce additional gold-rules. The original test was a strict
+    # equality gate during the 1:1 port; post-launch we relax to "at least
+    # as many" so adding an FAQ section is not a regression.
+    assert b_n >= s_n, f"gold-rule count regressed on {page_key}: static={s_n}, built={b_n}"
 
 
 # ---------------------------------------------------------------------------

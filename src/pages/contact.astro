@@ -61,13 +61,6 @@ const services = (await getCollection('services'))
               <span>Australia-wide · Based in NSW</span>
             </div>
           </div>
-          <div class="contact-detail__item">
-            <span class="contact-detail__icon" aria-hidden="true">🕐</span>
-            <div class="contact-detail__text">
-              <strong>Response Time</strong><br />
-              Within 1 business day
-            </div>
-          </div>
         </div>
 
         <div style="margin-top:2rem; padding:1.25rem; background:var(--gold-pale); border-left:3px solid var(--gold); border-radius:var(--radius);">
@@ -76,8 +69,8 @@ const services = (await getCollection('services'))
       </div>
 
       <div>
-        <div class="contact-form">
-          <form method="post" action="#" novalidate>
+        <div class="contact-form" id="form-container">
+          <form id="contact-form" method="post" action="#" novalidate>
             <div class="form-row">
               <div class="form-group">
                 <label for="first_name">First Name</label>
@@ -114,11 +107,30 @@ const services = (await getCollection('services'))
             </div>
             <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center;">Send Enquiry</button>
           </form>
+
+          <div id="form-success" hidden>
+            <h3>✓ Enquiry Received</h3>
+            <p>Thanks for your enquiry — we'll be back in touch within 48–72 hours.</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    if (!form || !success) return;
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.hidden = true;
+      success.hidden = false;
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+</script>
 
 <CtaBand
   ariaLabel="Contact CTA"

@@ -8,6 +8,7 @@ import CtaBand from '../../components/CtaBand.astro';
 import PageHero from '../../components/PageHero.astro';
 import ServiceBody from '../../components/ServiceBody.astro';
 import ServiceSiblings from '../../components/ServiceSiblings.astro';
+import Faq from '../../components/Faq.astro';
 
 export async function getStaticPaths() {
   const services = await getCollection('services');
@@ -51,7 +52,17 @@ const pageTitle = `${data.title} — Secure Tours & Travel`;
   lead={data.lead}
   features={data.features}
   clients={data.clients}
+  tcsNote={data.tcs_note}
 />
+
+{data.faqs && data.faqs.length > 0 && (
+  <Faq
+    items={data.faqs}
+    heading="Frequently Asked Questions"
+    intro={`Common questions about ${data.title}. Can't see your question? Get in touch.`}
+    ariaLabel={`${data.title} FAQs`}
+  />
+)}
 
 <ServiceSiblings currentSlug={service.id} />
 
