@@ -1684,3 +1684,16 @@ p:last-child { margin-bottom: 0; }
   text-underline-offset: 2px;
   margin-top: 0.25rem;
 }
+
+/* ── Contact form error message ───────────────────────────────────────── */
+
+#form-error {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(180, 30, 30, 0.06);
+  border: 1px solid rgba(180, 30, 30, 0.25);
+  border-left: 3px solid #b41e1e;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  color: #7a0d0d;
+}

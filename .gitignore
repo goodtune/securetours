@@ -5,6 +5,11 @@ dist/
 # dependencies
 node_modules/
 
+# secrets — Resend API key etc. Never commit. See .env.example for template.
+.env
+.env.local
+.env.*.local
+
 # Marked scratch dir — anything written here is throwaway
 # (screenshots, generated reports, ad-hoc captures from playwright, etc.).
 # README.md is kept so the folder shows up in checkout with its purpose.

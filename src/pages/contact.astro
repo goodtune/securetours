@@ -70,7 +70,7 @@ const services = (await getCollection('services'))
 
       <div>
         <div class="contact-form" id="form-container">
-          <form id="contact-form" method="post" action="#" novalidate>
+          <form id="contact-form" method="post" action="/api/contact" novalidate>
             <div class="form-row">
               <div class="form-group">
                 <label for="first_name">First Name</label>
@@ -105,8 +105,16 @@ const services = (await getCollection('services'))
               <label for="message">Your Message</label>
               <textarea id="message" name="message" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center;">Send Enquiry</button>
+            {/* Honeypot — bots fill this in, humans never see it. The
+                api validates and silently drops anything with a value here. */}
+            <div class="form-group" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+              <label for="website">Website (leave blank)</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <button type="submit" class="btn btn--primary" id="form-submit" style="width:100%; justify-content:center;">Send Enquiry</button>
           </form>
+
+          <div id="form-error" hidden role="alert"></div>
 
           <div id="form-success" hidden>
             <h3>✓ Enquiry Received</h3>
@@ -121,13 +129,38 @@ const services = (await getCollection('services'))
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contact-form');
+    const submit = document.getElementById('form-submit');
     const success = document.getElementById('form-success');
-    if (!form || !success) return;
-    form.addEventListener('submit', (e) => {
+    const error = document.getElementById('form-error');
+    if (!form || !submit || !success || !error) return;
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      form.hidden = true;
-      success.hidden = false;
-      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      error.hidden = true;
+      error.textContent = '';
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        const payload = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          throw new Error(payload.error || 'Something went wrong. Please try again or call us on +61 414 499 778.');
+        }
+        form.hidden = true;
+        success.hidden = false;
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (err) {
+        error.textContent = err.message;
+        error.hidden = false;
+        submit.disabled = false;
+        submit.textContent = 'Send Enquiry';
+      }
     });
   });
 </script>

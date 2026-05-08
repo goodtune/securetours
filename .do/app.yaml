@@ -15,3 +15,41 @@ static_sites:
     environment_slug: node-js
     routes:
       - path: /
+
+services:
+  - name: contact-api
+    github:
+      repo: goodtune/securetours
+      branch: feature/astro
+      deploy_on_push: true
+    source_dir: contact-api
+    build_command: npm ci
+    run_command: npm start
+    environment_slug: node-js
+    instance_size_slug: apps-s-1vcpu-0.5gb
+    instance_count: 1
+    http_port: 3000
+    routes:
+      - path: /api
+    health_check:
+      http_path: /health
+      initial_delay_seconds: 5
+      period_seconds: 30
+      timeout_seconds: 5
+      success_threshold: 1
+      failure_threshold: 3
+    envs:
+      - key: RESEND_API_KEY
+        # Placeholder — replace via the App Platform UI ("Edit" on the
+        # contact-api component → Environment Variables → encrypt the value).
+        # Until replaced, /api/contact returns 503 with a friendly fallback
+        # message pointing the visitor at the phone number.
+        value: re_PLACEHOLDER_REPLACE_IN_DASHBOARD
+        scope: RUN_TIME
+        type: SECRET
+      - key: CONTACT_TO_ADDRESS
+        value: enquiries@securetours.com.au
+        scope: RUN_TIME
+      - key: CONTACT_FROM_ADDRESS
+        value: noreply@securetours.com.au
+        scope: RUN_TIME
