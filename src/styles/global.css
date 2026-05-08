@@ -165,6 +165,20 @@ p:last-child { margin-bottom: 0; }
   color: var(--gold);
 }
 
+/* Outline variant for light backgrounds — navy border + navy text. Use this
+   where .btn--outline (which is white-on-dark) would disappear into the
+   surrounding section. */
+.btn--outline-navy {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+.btn--outline-navy:hover {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+
 .btn--navy {
   background: var(--navy);
   color: var(--white);
