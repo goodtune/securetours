@@ -15,8 +15,10 @@ features:
   - { icon: '🌐', text: 'Multilingual support for international touring companies' }
   - { icon: '📋', text: 'Immigration and customs facilitation for international artists' }
   - { icon: '🚑', text: 'Medical coordination and wellbeing support for touring parties' }
-faqs:
-  - { question: 'Can you manage travel logistics for a touring music act?', answer: 'TBD' }
+# FAQs hidden from the page until the client provides real answers.
+# Remove the `# ` prefix on `faqs:` and each `- ...` line below to surface them again.
+# faqs:
+#   - { question: 'Can you manage travel logistics for a touring music act?', answer: 'TBD' }
 order: 5
 home_card:
   icon: '🎭'

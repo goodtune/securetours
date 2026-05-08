@@ -15,9 +15,11 @@ features:
   - { icon: '👨‍👩‍👧', text: 'Group accompaniment for family visits, student tours and educational programs' }
   - { icon: '📞', text: '24/7 emergency contact and support line' }
   - { icon: '🔒', text: 'Discreet service for clients who value privacy' }
-faqs:
-  - { question: 'Do you provide multilingual concierge support?', answer: 'TBD' }
-  - { question: 'Can I book concierge services for a VIP visiting from overseas?', answer: 'TBD' }
+# FAQs hidden from the page until the client provides real answers.
+# Remove the `# ` prefix on `faqs:` and each `- ...` line below to surface them again.
+# faqs:
+#   - { question: 'Do you provide multilingual concierge support?', answer: 'TBD' }
+#   - { question: 'Can I book concierge services for a VIP visiting from overseas?', answer: 'TBD' }
 order: 6
 home_card:
   icon: '🤝'

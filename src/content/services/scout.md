@@ -24,13 +24,15 @@ clients:
   - 'Families supporting a regional move to the city, or city to regional'
   - 'Adult children helping an elderly parent relocate to or within Australia'
 clients_label: 'Who This Is For'
-faqs:
-  - { question: 'My daughter is moving to Australia to study and I want to know if her suburb is safe — can you help?', answer: 'TBD' }
-  - { question: 'What does a neighbourhood assessment report cover?', answer: 'TBD' }
-  - { question: 'Can you assess an area for an elderly parent who is relocating?', answer: 'TBD' }
-  - { question: 'How long does it take to receive the report?', answer: 'TBD' }
-  - { question: 'Is this service available for domestic moves within Australia, not just international arrivals?', answer: 'TBD' }
-  - { question: 'What if I want more detail on a specific aspect of the area?', answer: 'TBD' }
+# FAQs hidden from the page until the client provides real answers.
+# Remove the `# ` prefix on `faqs:` and each `- ...` line below to surface them again.
+# faqs:
+#   - { question: 'My daughter is moving to Australia to study and I want to know if her suburb is safe — can you help?', answer: 'TBD' }
+#   - { question: 'What does a neighbourhood assessment report cover?', answer: 'TBD' }
+#   - { question: 'Can you assess an area for an elderly parent who is relocating?', answer: 'TBD' }
+#   - { question: 'How long does it take to receive the report?', answer: 'TBD' }
+#   - { question: 'Is this service available for domestic moves within Australia, not just international arrivals?', answer: 'TBD' }
+#   - { question: 'What if I want more detail on a specific aspect of the area?', answer: 'TBD' }
 cta:
   title: 'Tell us about your situation'
   body: 'Every situation is different. Get in touch to tell us about yours and we will put together a scoped assessment that gives you the answers you actually need.'

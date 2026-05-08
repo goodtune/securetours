@@ -247,6 +247,10 @@ HOME_CARD_INTENTIONAL_REMOVALS = {
     # STAGE was rewritten post-launch — the prototype's STAGE blurb described
     # event management; it now describes school travel & group excursions.
     "School Tours And Group Excursions — specialist event management with safety at its core.",
+    # The "New Solution" coming-soon placeholder card was retired once SCOUT
+    # filled the slot. Both the title and the body need to be allowed-absent.
+    "New Solution",
+    "Additional specialist solutions are being finalised. Contact us to discuss your specific requirements.",
 }
 
 
@@ -258,7 +262,10 @@ def test_home_solutions_cards(all_pages):
     # Require every static card title to appear in built; allow extras.
     s_titles = [c.title for c in s_cards]
     b_titles = [c.title for c in b_cards]
-    missing_titles = [t for t in s_titles if t not in b_titles]
+    missing_titles = [
+        t for t in s_titles
+        if t not in b_titles and t not in HOME_CARD_INTENTIONAL_REMOVALS
+    ]
     assert not missing_titles, (
         f"home solutions card titles missing from built\n"
         f"  static: {s_titles}\n"

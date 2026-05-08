@@ -17,13 +17,17 @@ features:
   - { icon: '📊', text: 'Itinerary risk & response management with 24/7 monitoring options' }
   - { icon: '🌐', text: 'Exclusive translation and interpreter services' }
 tcs_note: '*Airside services (transit lounge, private terminals) are subject to availability at each airport. Terms & conditions apply.'
-faqs:
-  - { question: 'Can someone meet me at the gate when I land in Australia?', answer: 'TBD' }
-  - { question: 'What is the difference between your Exclusive and Executive transfer tiers?', answer: 'TBD' }
-  - { question: 'Do you offer airport transfers for elderly travellers who need extra assistance?', answer: 'TBD' }
-  - { question: 'Can you arrange a private vehicle to meet someone at an international terminal?', answer: 'TBD' }
-  - { question: 'Do you cover all major Australian airports?', answer: 'TBD' }
-  - { question: 'What happens if my flight is delayed?', answer: 'TBD' }
+# FAQs hidden from the page until the client provides real answers.
+# Remove the `# ` prefix on `faqs:` and each `- ...` line below to surface
+# them again. Once any answer is no longer "TBD", the JSON-LD schema
+# starts including that Q in structured data automatically.
+# faqs:
+#   - { question: 'Can someone meet me at the gate when I land in Australia?', answer: 'TBD' }
+#   - { question: 'What is the difference between your Exclusive and Executive transfer tiers?', answer: 'TBD' }
+#   - { question: 'Do you offer airport transfers for elderly travellers who need extra assistance?', answer: 'TBD' }
+#   - { question: 'Can you arrange a private vehicle to meet someone at an international terminal?', answer: 'TBD' }
+#   - { question: 'Do you cover all major Australian airports?', answer: 'TBD' }
+#   - { question: 'What happens if my flight is delayed?', answer: 'TBD' }
 order: 3
 home_card:
   icon: '✈️'

@@ -13,12 +13,14 @@ features:
   - { icon: '🇦🇺', text: 'Domestic, inbound and outbound travel covered nationally' }
   - { icon: '📞', text: '24/7 single point of contact for the duration of travel' }
 tcs_note: '*Coverage is across major Australian airports. Specific airside services depend on airport access arrangements. Terms & conditions apply.'
-faqs:
-  - { question: 'Can you help me travel overseas to be with family after a death?', answer: 'TBD' }
-  - { question: 'We need to bring a family member home to Australia — can you manage the travel logistics?', answer: 'TBD' }
-  - { question: 'Do you deal with airlines directly on compassionate travel matters?', answer: 'TBD' }
-  - { question: 'Is your bereavement service available at short notice?', answer: 'TBD' }
-  - { question: 'Do you handle funeral arrangements or just the travel side?', answer: 'TBD' }
+# FAQs hidden from the page until the client provides real answers.
+# Remove the `# ` prefix on `faqs:` and each `- ...` line below to surface them again.
+# faqs:
+#   - { question: 'Can you help me travel overseas to be with family after a death?', answer: 'TBD' }
+#   - { question: 'We need to bring a family member home to Australia — can you manage the travel logistics?', answer: 'TBD' }
+#   - { question: 'Do you deal with airlines directly on compassionate travel matters?', answer: 'TBD' }
+#   - { question: 'Is your bereavement service available at short notice?', answer: 'TBD' }
+#   - { question: 'Do you handle funeral arrangements or just the travel side?', answer: 'TBD' }
 order: 8
 home_card:
   icon: '🕊️'
