@@ -8,6 +8,7 @@ import CtaBand from '../../components/CtaBand.astro';
 import PageHero from '../../components/PageHero.astro';
 import ServiceBody from '../../components/ServiceBody.astro';
 import ServiceSiblings from '../../components/ServiceSiblings.astro';
+import RelatedServices from '../../components/RelatedServices.astro';
 import Faq from '../../components/Faq.astro';
 
 export async function getStaticPaths() {
@@ -52,12 +53,19 @@ const pageTitle = `${data.title} — Secure Tours & Travel`;
 <ServiceBody
   lead={data.lead}
   features={data.features}
+  featuresHeading={data.features_heading}
   clients={data.clients}
   clientsLabel={data.clients_label}
   tcsNote={data.tcs_note}
+  openingQuote={data.opening_quote}
+  bannerStatement={data.banner_statement}
 >
   <Content />
 </ServiceBody>
+
+{data.related_services && data.related_services.length > 0 && (
+  <RelatedServices slugs={data.related_services} />
+)}
 
 {data.faqs && data.faqs.length > 0 && (
   <Faq

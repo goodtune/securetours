@@ -1,0 +1,35 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export interface Props {
+  slugs: string[];
+  heading?: string;
+  intro?: string;
+}
+
+const { slugs, heading = 'You may also be interested in', intro } = Astro.props;
+const all = await getCollection('services');
+const services: CollectionEntry<'services'>[] = slugs
+  .map((slug) => all.find((s) => s.id === slug))
+  .filter((s): s is CollectionEntry<'services'> => Boolean(s));
+---
+{services.length > 0 && (
+  <section class="related-services" aria-label="Related services">
+    <div class="container">
+      <span class="section-label">Related Services</span>
+      <h2>{heading}</h2>
+      <div class="gold-rule"></div>
+      {intro && <p class="section-intro">{intro}</p>}
+      <div class="related-services-grid">
+        {services.map((s) => (
+          <a href={`/services/${s.id}/`} class="related-services-card">
+            <span class="related-services-card__icon" aria-hidden="true">{s.data.home_card.icon}</span>
+            <h3 class="related-services-card__title">{s.data.home_card.title ?? s.data.title}</h3>
+            <p class="related-services-card__text">{s.data.home_card.body}</p>
+            <span class="related-services-card__cta">Learn More →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}

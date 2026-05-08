@@ -1615,3 +1615,72 @@ p:last-child { margin-bottom: 0; }
   left: 0;
   top: 0.35rem;
 }
+
+/* ── Service body extras (opening quote, banner statement) ────────────── */
+
+.service-opening-quote {
+  border-left: 3px solid var(--gold);
+  padding: 0.5rem 0 0.5rem 1.25rem;
+  margin: 0 0 2rem;
+}
+.service-opening-quote p {
+  font-style: italic;
+  font-size: 1.0625rem;
+  color: var(--gray-700);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.service-banner-statement {
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+/* ── Related services callout ─────────────────────────────────────────── */
+
+.related-services {
+  padding: 4rem 0 1rem;
+}
+.related-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+.related-services-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: var(--off-white);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+.related-services-card:hover {
+  border-color: var(--gold);
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+.related-services-card__icon { font-size: 1.6rem; }
+.related-services-card__title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--navy);
+  line-height: 1.4;
+}
+.related-services-card__text {
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  margin: 0;
+}
+.related-services-card__cta {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  margin-top: 0.25rem;
+}

@@ -167,7 +167,10 @@ PAGE_MAP = [
     ("svc_cc", "services/concierge-chaperone.html", "services/concierge-chaperone/index.html"),
     ("svc_bereavement", "services/bereavement-travel-support.html", "services/bereavement-travel-support/index.html"),
     ("svc_solo", "services/solo-traveller-assist.html", "services/solo-traveller-assist/index.html"),
-    ("svc_stage", "services/stage.html", "services/stage/index.html"),
+    # svc_stage intentionally excluded: the page was rewritten post-launch
+    # (event management → school travel & group excursions) so the static
+    # prototype is no longer the canonical reference. Content correctness
+    # is still tested via SERVICE_PAGES['svc_stage'] in test_service_content.
     ("art_carriageworks", "articles/carriageworks.html", "articles/carriageworks/index.html"),
     ("art_vivid", "articles/vivid-sydney.html", "articles/vivid-sydney/index.html"),
     ("art_gary", "articles/gary-oriordan-endorsement.html", "articles/gary-oriordan-endorsement/index.html"),

@@ -9,10 +9,14 @@ const services = defineCollection({
     hero_tag: z.string(),
     hero_sub: z.string(),
     lead: z.string(),
+    opening_quote: z.string().optional(),
+    banner_statement: z.string().optional(),
+    features_heading: z.string().optional(),
     features: z.array(z.object({ icon: z.string(), text: z.string() })),
     clients: z.array(z.string()).optional(),
     clients_label: z.string().optional(),
     tcs_note: z.string().optional(),
+    related_services: z.array(z.string()).optional(),
     faqs: z
       .array(z.object({ question: z.string(), answer: z.string() }))
       .optional(),

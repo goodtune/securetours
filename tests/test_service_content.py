@@ -102,7 +102,16 @@ def test_service_has_whats_included_section(built_pages, key, spec):
     """Each service page should expose a 'What's Included' (or equivalent) section."""
     soup = built_pages[key]
     heading_texts = [text_of(h) for h in soup.find_all(["h2", "h3"])]
-    expected_terms = ("what's included", "what we deliver", "service offerings", "what we offer")
+    # Service pages may use different headings for their "what's included"
+    # equivalent. STAGE uses "Six Reasons Secure Tours is Your Solution …"
+    # which is functionally the same — a section that lists what we offer.
+    expected_terms = (
+        "what's included",
+        "what we deliver",
+        "service offerings",
+        "what we offer",
+        "reasons",
+    )
     found = any(any(term in h.lower() for term in expected_terms) for h in heading_texts)
     assert found, f"{key} missing a 'what's included'-style heading; got {heading_texts}"
 

@@ -66,19 +66,19 @@ SERVICE_PAGES = {
     },
     "svc_stage": {
         "page_path": "services/stage/index.html",
-        "hero_label": "Events · Activations · Operations",
-        "title": "S.T.A.G.E.",
-        "sub": "Specialised event management with safety at its core — from major sporting tournaments to cultural festivals and corporate activations.",
-        "lead": "S.T.A.G.E. — Secure Tours & Travel's dedicated event management stream — embeds licensed, qualified personnel into every layer of event delivery. Whether you're running a one-day celebration or a multi-week international tournament, we scale with you.",
+        # STAGE was rewritten post-launch: S.T.A.G.E. now stands for "School
+        # Travel and Group Excursions" (was: an event-management stream).
+        "hero_label": "Schools · Performance · Athletics",
+        "title": "S.T.A.G.E. — School Travel and Group Excursions",
+        "sub": "Secure Tours and Travel provides chaperone and security services for travelling students participating in educational, performance and athletic events.",
+        "lead": "Travel provides young people with so many positive outcomes that are such an important part of their development.",
         "features": [
-            "Event command & control — dedicated Event Directors, Safety Officers and Operations Teams",
-            "Crowd & traffic planning — site layouts, risk assessments, ingress/egress flow management",
-            "Medical & emergency coverage — onsite medics, emergency planning, responder teams",
-            "VIP & close protection — dignitary, celebrity and athlete protection",
-            "Bump-in/bump-out logistics — secure crew movement, staging and vehicle coordination",
-            "Trained workforce & volunteers — staff recruitment, briefings, rosters and WHS compliance",
-            "Full WHS compliance planning and documentation",
-            "Multilingual event staff and interpreter coordination",
+            "Safety and background checks",
+            "Venue and location vetting",
+            "National and international coverage",
+            "Expertly trained professionals in security and safety",
+            "Flexible supervision to fit your needs",
+            "Your partner for the safety of travelling students",
         ],
     },
     "svc_pass_athlete": {

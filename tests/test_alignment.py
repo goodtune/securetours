@@ -241,6 +241,15 @@ def test_home_featured_solution(all_pages):
     assert bf.text == sf.text
 
 
+# Home solutions cards on the prototype that are intentionally rewritten
+# in the built site (content edits that diverge from the prototype).
+HOME_CARD_INTENTIONAL_REMOVALS = {
+    # STAGE was rewritten post-launch — the prototype's STAGE blurb described
+    # event management; it now describes school travel & group excursions.
+    "School Tours And Group Excursions — specialist event management with safety at its core.",
+}
+
+
 def test_home_solutions_cards(all_pages):
     s, b = all_pages["home"]
     s_cards = X.home_solutions_cards(s)
@@ -258,7 +267,10 @@ def test_home_solutions_cards(all_pages):
     )
     s_texts = [c.text for c in s_cards]
     b_texts = [c.text for c in b_cards]
-    missing_texts = [t for t in s_texts if t not in b_texts]
+    missing_texts = [
+        t for t in s_texts
+        if t not in b_texts and t not in HOME_CARD_INTENTIONAL_REMOVALS
+    ]
     assert not missing_texts, (
         f"home solutions card body text missing from built: {missing_texts}"
     )
@@ -328,7 +340,8 @@ PAGES_WITH_PAGE_HERO = [
     "svc_cc",
     "svc_bereavement",
     "svc_solo",
-    "svc_stage",
+    # svc_stage intentionally excluded — page rewritten post-launch
+    # (see conftest.py PAGE_MAP for the rationale).
     "art_carriageworks",
     "art_vivid",
     "art_gary",
