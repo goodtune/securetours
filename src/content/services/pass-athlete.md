@@ -15,6 +15,10 @@ features:
   - { icon: '🔒', text: 'Media and public access management — controlled exposure protocols' }
   - { icon: '🌐', text: 'Multilingual support for international athlete groups' }
   - { icon: '🚑', text: 'Emergency medical coordination and response planning' }
+faqs:
+  - { question: 'Do you provide security for sports teams travelling in Australia?', answer: 'TBD' }
+  - { question: 'What is included in your athlete travel support package?', answer: 'TBD' }
+  - { question: 'Do you work with individual athletes or only teams?', answer: 'TBD' }
 order: 4
 home_card:
   icon: '🏆'

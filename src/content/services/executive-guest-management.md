@@ -13,6 +13,9 @@ features:
   - { icon: '🏢', text: 'Executive meeting and conference rooms with premium service' }
   - { icon: '🔒', text: 'Discreet, high-confidentiality personnel protocols' }
   - { icon: '📞', text: '24/7 coordination support throughout your engagement' }
+faqs:
+  - { question: 'What does your executive guest management service include?', answer: 'TBD' }
+  - { question: 'Can you manage the full itinerary for an overseas corporate delegation visiting Australia?', answer: 'TBD' }
 order: 2
 home_card:
   icon: '💼'

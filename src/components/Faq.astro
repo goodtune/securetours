@@ -1,0 +1,60 @@
+---
+export interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface Props {
+  items: FaqItem[];
+  heading?: string;
+  intro?: string;
+  ariaLabel?: string;
+  emitJsonLd?: boolean;
+  variant?: 'default' | 'plain';
+}
+
+const {
+  items,
+  heading = 'Frequently Asked Questions',
+  intro,
+  ariaLabel = 'Frequently asked questions',
+  emitJsonLd = true,
+  variant = 'default',
+} = Astro.props;
+
+// Filter TBD answers out of the SEO schema so we don't pollute structured
+// data with placeholder text. The accordion still renders them so editors
+// can see them and the client can fill them in.
+const realItems = items.filter((i) => i.answer.trim() !== '' && i.answer.trim() !== 'TBD');
+
+const jsonLd = emitJsonLd && realItems.length > 0
+  ? JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: realItems.map(({ question, answer }) => ({
+        '@type': 'Question',
+        name: question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: answer,
+        },
+      })),
+    })
+  : null;
+---
+<section class={variant === 'plain' ? 'faq-section faq-section--plain' : 'faq-section'} aria-label={ariaLabel}>
+  <div class="container">
+    {heading && <h2 class="faq-heading">{heading}</h2>}
+    {heading && <div class="gold-rule"></div>}
+    {intro && <p class="section-intro">{intro}</p>}
+    <div class="faq-list">
+      {items.map((item) => (
+        <details class="faq-item">
+          <summary class="faq-question">{item.question}</summary>
+          <div class="faq-answer">{item.answer}</div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+{jsonLd && <script type="application/ld+json" set:html={jsonLd} />}
