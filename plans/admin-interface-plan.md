@@ -10,14 +10,14 @@
 - **Astro 5.18, fully static output** on `main`: 14 page sources + `services/[slug].astro` generating 9 service pages from `src/content/services/*.md` (front-matter validated by the Zod schema in `src/content.config.ts`). **This markdown collection is the editor surface.**
 - **`contact-api/`** (Express + Resend) deployed as a second DO component at `/api`; `/api/health` is live.
 - **Parity harness** (`tests/`, pytest + Playwright) comparing built DOM to `static-prototype/` — the customer-approved design contract. Local-only today; no CI exists.
-- **DO App Platform** (app id `9e902f6a…`, behind Cloudflare) serving `securetours.com.au` / `www`, spec in `.do/app.yaml`.
+- **DO App Platform** (app id `9e902f6a…`, behind Cloudflare) serving `securetours.com.au` / `www`. Deployment is managed in the DO dashboard; the checked-in `.do/app.yaml` is **not** used to deploy.
 
-### Known issues on the baseline (carry onto the admin branch)
+### Known issues on the baseline (fix on the admin branch — decisions confirmed)
 
-1. `.do/app.yaml` still says `branch: feature/astro` on both components and the app is still named `secure-tours-zensical` — update to `main` / a proper name once the dashboard repoint is done, so repo and dashboard agree.
+1. **Delete `.do/app.yaml`** — it isn't used for deployment and is stale on both counts (`branch: feature/astro`, app name `secure-tours-zensical`), so it's misleading. After the dashboard repoint, keep a fresh spec export (`doctl apps spec get`) outside the repo as disaster-recovery reference.
 2. **`robots.txt` is not served** (it sits at repo root, not `public/`) and **there is no `sitemap.xml`** — both 404 in production. Fix: move `robots.txt` into `public/`, add `@astrojs/sitemap`, reference it from robots.txt.
-3. Confirm `RESEND_API_KEY` is a real key in the DO dashboard (`/api/health` returning ok does not prove email sends).
-4. `tmp/` scratch dir is tracked; harmless, tidy sometime.
+3. `RESEND_API_KEY` — confirmed real in production. Staging will not run `contact-api` at all (see §3).
+4. **Untrack `tmp/`** (add to `.gitignore`) as part of this work.
 
 ---
 
@@ -46,7 +46,7 @@ Work happens on a long-lived branch (working name `feature/admin-cms`) deployed 
 Staging specifics to get right:
 
 - **Sveltia `backend.branch`** must point at the staging branch while on staging, and at `main` in production. Drive it from an env var at build time so the same code deploys to both.
-- Staging's `contact-api` (if deployed at all) keeps the placeholder Resend key — the 503 fallback prevents test emails. Cheaper option: staging deploys the static site only.
+- **Staging is static-only** (decided): no `contact-api` component, no running-app cost. Consequence: the contact form on staging has no `/api/contact` endpoint and will show its failure message — acceptable; test the form on production.
 - The OAuth callback points at the auth helper, not the site, so one OAuth App + one `sveltia-cms-auth` serves both domains (list both in its allowed origins).
 - While staging is live, the admin's CMS edits land on the staging branch and arrive in production with the final merge. Avoid parallel content edits on `main` during that window, or merge them across promptly.
 - Keep the branch rebased on `main` regularly.
@@ -59,7 +59,7 @@ Staging specifics to get right:
 
 - [x] Merge `feature/astro` → `main` (`--no-ff`, empty diff verified).
 - [ ] Repoint the DO app components to `main` (dashboard — Gary). Verify a push to `main` triggers a deploy and the site is unchanged.
-- [ ] First commits on the admin branch: fix `.do/app.yaml` (branch → `main`, app name), move `robots.txt` to `public/`, add `@astrojs/sitemap`.
+- [ ] First commits on the admin branch: delete `.do/app.yaml`, move `robots.txt` to `public/`, add `@astrojs/sitemap`, untrack `tmp/`.
 - [ ] Delete `feature/astro` and `feature/zensical` **only after** the repoint is confirmed.
 
 ### Step 1 — CI before the admin gets keys
