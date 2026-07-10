@@ -1,0 +1,67 @@
+---
+export interface Props {
+  showAbn?: boolean;
+  showLocation?: boolean;
+  showLegal?: boolean;
+}
+
+const { showAbn = true, showLocation = true, showLegal = true } = Astro.props;
+---
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/logo-transparent.png" alt="Secure Tours & Travel" />
+        <p>Secure Luxury Travel for discerning individuals & groups.</p>
+        {showAbn && (
+          <p style="margin-top:0.75rem; font-size:0.8rem; color:rgba(255,255,255,0.4);">ABN available on request.</p>
+        )}
+      </div>
+      <div class="footer-col">
+        <h4>Tourism Solutions</h4>
+        <ul role="list">
+          <li><a href="/services/tours-travel-solutions/">Secure Tours &amp; Travel Solutions</a></li>
+          <li><a href="/services/executive-guest-management/">Executive Guest Management</a></li>
+          <li><a href="/services/exclusive-transfer-assistance/">Exclusive Transfer Assistance</a></li>
+          <li><a href="/services/pass-athlete/">P.A.S.S. — Athlete</a></li>
+          <li><a href="/services/pass-artist/">P.A.S.S. — Artist</a></li>
+          <li><a href="/services/concierge-chaperone/">Concierge &amp; Chaperone</a></li>
+          <li><a href="/services/stage/">S.T.A.G.E. — School Travel &amp; Group Excursions</a></li>
+          <li><a href="/services/bereavement-travel-support/">Bereavement Travel Support</a></li>
+          <li><a href="/services/solo-traveller-assist/">Solo Traveller Assist</a></li>
+          <li><a href="/services/scout/">S.C.O.U.T. — Area Assessments</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul role="list">
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/event-solutions/">Event Solutions</a></li>
+          <li><a href="/articles/">Articles, Testimonials &amp; Case Studies</a></li>
+          <li><a href="/resources/">Resources</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul role="list" style="font-style:normal;">
+          <li><a href="tel:+61414499778">+61 414 499 778</a></li>
+          <li><a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a></li>
+          {showLocation && (
+            <li style="color:rgba(255,255,255,0.5); font-size:0.875rem; margin-top:0.5rem;">Australia Wide</li>
+          )}
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Secure Tours & Travel. All rights reserved.</span>
+      {showLegal && (
+        <div>
+          <a href="#">Privacy Policy</a>
+          &nbsp;·&nbsp;
+          <a href="#">Terms of Service</a>
+        </div>
+      )}
+    </div>
+  </div>
+</footer>

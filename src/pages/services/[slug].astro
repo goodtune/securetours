@@ -1,0 +1,90 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import FooterAfs from '../../components/FooterAfs.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import PageHero from '../../components/PageHero.astro';
+import ServiceBody from '../../components/ServiceBody.astro';
+import ServiceSiblings from '../../components/ServiceSiblings.astro';
+import RelatedServices from '../../components/RelatedServices.astro';
+import Faq from '../../components/Faq.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((service) => ({
+    params: { slug: service.id },
+    props: { service },
+  }));
+}
+
+interface Props {
+  service: CollectionEntry<'services'>;
+}
+
+const { service } = Astro.props;
+const { data } = service;
+const { Content } = await render(service);
+
+const canonical = `https://securetours.com.au/services/${service.id}/`;
+const pageTitle = `${data.title} — Secure Tours & Travel`;
+---
+<BaseLayout
+  title={pageTitle}
+  description={data.meta_description}
+  canonical={canonical}
+>
+
+<SiteNav active="services" />
+
+<PageHero
+  ariaLabel="Service hero"
+  crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Tourism Solutions', href: '/services/' },
+    { label: data.title },
+  ]}
+  label={data.hero_tag}
+  title={data.title}
+  sub={data.hero_sub}
+/>
+
+<ServiceBody
+  lead={data.lead}
+  features={data.features}
+  featuresHeading={data.features_heading}
+  clients={data.clients}
+  clientsLabel={data.clients_label}
+  tcsNote={data.tcs_note}
+  openingQuote={data.opening_quote}
+  bannerStatement={data.banner_statement}
+>
+  <Content />
+</ServiceBody>
+
+{data.related_services && data.related_services.length > 0 && (
+  <RelatedServices slugs={data.related_services} />
+)}
+
+{data.faqs && data.faqs.length > 0 && (
+  <Faq
+    items={data.faqs}
+    heading="Frequently Asked Questions"
+    intro={`Common questions about ${data.title}. Can't see your question? Get in touch.`}
+    ariaLabel={`${data.title} FAQs`}
+  />
+)}
+
+<ServiceSiblings currentSlug={service.id} />
+
+<CtaBand
+  title={data.cta?.title}
+  body={data.cta?.body}
+  outline={{ label: 'View All Services', href: '/services/' }}
+/>
+
+<FooterAfs />
+<SiteFooter showAbn={false} showLocation={false} showLegal={false} />
+
+</BaseLayout>

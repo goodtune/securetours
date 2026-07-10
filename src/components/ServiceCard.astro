@@ -1,0 +1,20 @@
+---
+export interface Props {
+  icon: string;
+  title: string;
+  body: string;
+  href?: string;
+  badge?: string;
+  ariaLabel?: string;
+}
+
+const { icon, title, body, href, badge, ariaLabel } = Astro.props;
+const cls = badge ? 'service-card service-card--coming-soon' : 'service-card';
+---
+<article class={cls} aria-label={ariaLabel}>
+  <div class="service-card__icon" aria-hidden="true">{icon}</div>
+  <h3 class="service-card__title">{title}</h3>
+  <p class="service-card__text">{body}</p>
+  {href && <a href={href} class="service-card__link">Learn More</a>}
+  {badge && <span class="service-card__badge">{badge}</span>}
+</article>

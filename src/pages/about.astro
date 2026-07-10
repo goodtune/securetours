@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import FooterAfs from '../components/FooterAfs.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CtaBand from '../components/CtaBand.astro';
+import PageHero from '../components/PageHero.astro';
+import AboutBadge from '../components/AboutBadge.astro';
+
+const clientTypes = [
+  'International tourists & inbound groups',
+  'Corporate executives & delegations',
+  'Elite athletes & sports teams',
+  'Touring musicians & performing artists',
+  'Government & diplomatic visitors',
+  'Families & student groups',
+];
+
+const values = [
+  {
+    title: 'Safety as Standard',
+    body: "Risk management isn't an add-on — it's built into every itinerary we design.",
+  },
+  {
+    title: 'Discreet Professionalism',
+    body: 'We operate behind the scenes so our clients can focus on what matters.',
+  },
+  {
+    title: 'Genuine Care',
+    body: 'Every client — from solo traveller to touring sports team — receives the same level of personal attention.',
+  },
+];
+---
+<BaseLayout
+  title="About Us — Secure Tours & Travel"
+  description="Founded by Matt Harrison, Secure Tours & Travel is the dedicated tourism division of Australian Frontline Solutions — 37 years of security expertise behind every journey."
+  canonical="https://securetours.com.au/about/"
+>
+
+<SiteNav active="about" />
+
+<PageHero
+  ariaLabel="About page hero"
+  crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'About Us' },
+  ]}
+  label="Established 1989 · Australian Frontline Solutions"
+  title="About Secure Tours & Travel"
+  sub="Secure Tours & Travel was founded by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable."
+/>
+
+<section class="section" aria-labelledby="who-heading">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <span class="section-label">About Secure Tours & Travel</span>
+        <h2 id="who-heading">Who We Are</h2>
+        <div class="gold-rule"></div>
+        <p class="service-lead">We are a specialist travel and event services company based in Australia, delivering premium inbound tourism services and secure travel solutions for high-profile individuals, corporate delegations, touring athletes, performing artists and families.</p>
+      </div>
+      <div class="about-visual">
+        <AboutBadge
+          number="37"
+          label="Years of Excellence"
+          footnote="Founded by Matt Harrison. Backed by Australian Frontline Solutions — est. 1989, Security Master Licence holder."
+          borderTop={false}
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" aria-labelledby="values-heading">
+  <div class="container">
+    <span class="section-label">Why Choose Us</span>
+    <h2 id="values-heading">Our Values</h2>
+    <div class="gold-rule"></div>
+    <div class="values-grid">
+      {values.map((v) => (
+        <div class="value-card">
+          <h3>{v.title}</h3>
+          <p>{v.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="clients-heading">
+  <div class="container">
+    <span class="section-label">Clients</span>
+    <h2 id="clients-heading">Who We Serve</h2>
+    <div class="gold-rule"></div>
+    <div class="clients-grid">
+      {clientTypes.map((c) => <div class="client-chip">{c}</div>)}
+    </div>
+  </div>
+</section>
+
+<section class="section section--navy" aria-labelledby="parent-heading">
+  <div class="container">
+    <div class="parent-brand">
+      <div>
+        <span class="section-label">Part of Australian Frontline Solutions</span>
+        <h2 id="parent-heading">Part of Australian Frontline Solutions</h2>
+        <div class="gold-rule"></div>
+        <p class="section-intro">Australian Frontline Solutions (AFS) has been Australia's trusted partner in safety and security services since 1989 — 37 years of operational expertise. Secure Tours & Travel draws on this heritage to deliver outcomes that no standard tour operator can match.</p>
+        <a href="/contact/" class="btn btn--primary" style="margin-top:2rem;">Enquire Now</a>
+      </div>
+      <div>
+        <div class="afs-creds">
+          <div class="afs-cred-item">
+            <div class="afs-cred-item__value">1989</div>
+            <div class="afs-cred-item__label">Established</div>
+          </div>
+          <div class="afs-cred-item">
+            <div class="afs-cred-item__value">37</div>
+            <div class="afs-cred-item__label">Years Trading</div>
+          </div>
+          <div class="afs-cred-item" style="grid-column: span 2;">
+            <div class="afs-cred-item__value" style="font-size:1rem; letter-spacing:0.03em;">Security Master Licence</div>
+            <div class="afs-cred-item__label">Licensed Operator</div>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.06); border-radius: 8px; padding:2rem; border:1px solid rgba(184,149,42,0.25); margin-top:1rem;">
+          <ul class="about-features" style="color:rgba(255,255,255,0.85);">
+            <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);">Multilingual teams — a range of languages</li>
+            <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);">Discreet, professional, reliable</li>
+            <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);">National coverage — global partnerships</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<CtaBand headingId="about-cta-heading" />
+
+<FooterAfs />
+<SiteFooter showAbn={false} showLocation={false} showLegal={false} />
+
+<style is:global>
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+  .value-card {
+    background: var(--off-white);
+    border-left: 4px solid var(--gold);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+  }
+  .value-card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+  .value-card p { font-size: 0.9rem; color: var(--gray-700); margin: 0; }
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .client-chip {
+    background: var(--navy);
+    color: rgba(255,255,255,0.85);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .client-chip::before { content: '✦'; color: var(--gold); flex-shrink: 0; }
+  .parent-brand {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  @media (max-width: 700px) {
+    .parent-brand { grid-template-columns: 1fr; gap: 2rem; }
+  }
+  .afs-creds {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .afs-cred-item {
+    background: rgba(184,149,42,0.08);
+    border: 1px solid rgba(184,149,42,0.2);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    text-align: center;
+  }
+  .afs-cred-item__value {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--gold);
+    font-weight: 700;
+    line-height: 1;
+  }
+  .afs-cred-item__label {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin-top: 0.35rem;
+  }
+  @media (max-width: 480px) { .afs-creds { grid-template-columns: 1fr; } }
+</style>
+
+</BaseLayout>

@@ -1,0 +1,177 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import FooterAfs from '../components/FooterAfs.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CtaBand from '../components/CtaBand.astro';
+import PageHero from '../components/PageHero.astro';
+
+const services = (await getCollection('services'))
+  .filter((s) => !s.data.coming_soon)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+<BaseLayout
+  title="Contact — Secure Tours & Travel"
+  description="Get in touch with Secure Tours & Travel. Enquiries welcome in multiple languages. Australia-wide operations."
+  canonical="https://securetours.com.au/contact/"
+>
+
+<SiteNav active="contact" />
+
+<PageHero
+  ariaLabel="Contact hero"
+  crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Contact' },
+  ]}
+  label=""
+  title="Get in Touch"
+  sub="Our team is ready to assist with enquiries, bookings and custom itinerary planning."
+/>
+
+<section class="section" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-label">Contact</span>
+        <h2 id="contact-heading">Contact Information</h2>
+        <div class="gold-rule"></div>
+        <p>Secure Tours & Travel operates nationally across Australia. Reach us directly — we respond to all enquiries within one business day.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail__item">
+            <span class="contact-detail__icon" aria-hidden="true">📞</span>
+            <div class="contact-detail__text">
+              <strong>Phone</strong><br />
+              <a href="tel:+61414499778">+61 414 499 778</a>
+            </div>
+          </div>
+          <div class="contact-detail__item">
+            <span class="contact-detail__icon" aria-hidden="true">✉️</span>
+            <div class="contact-detail__text">
+              <strong>Email</strong><br />
+              <a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a>
+            </div>
+          </div>
+          <div class="contact-detail__item">
+            <span class="contact-detail__icon" aria-hidden="true">📍</span>
+            <div class="contact-detail__text">
+              <strong>Location</strong><br />
+              <span>Australia-wide · Based in NSW</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem; padding:1.25rem; background:var(--gold-pale); border-left:3px solid var(--gold); border-radius:var(--radius);">
+          <p style="font-size:0.875rem; color:var(--navy); margin:0;">Enquiries welcome in multiple languages — including English, Mandarin, French, Korean, Italian and German</p>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-form" id="form-container">
+          <form id="contact-form" method="post" action="/api/contact" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="first_name">First Name</label>
+                <input type="text" id="first_name" name="first_name" required autocomplete="given-name" />
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last Name</label>
+                <input type="text" id="last_name" name="last_name" required autocomplete="family-name" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="service">Solution of Interest</label>
+              <select id="service" name="service">
+                <option value="">Select a solution…</option>
+                {services.map((s) => (
+                  <option value={s.id}>{s.data.title}</option>
+                ))}
+                <option value="general">General Enquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            {/* Honeypot — bots fill this in, humans never see it. The
+                api validates and silently drops anything with a value here. */}
+            <div class="form-group" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+              <label for="website">Website (leave blank)</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <button type="submit" class="btn btn--primary" id="form-submit" style="width:100%; justify-content:center;">Send Enquiry</button>
+          </form>
+
+          <div id="form-error" hidden role="alert"></div>
+
+          <div id="form-success" hidden>
+            <h3>✓ Enquiry Received</h3>
+            <p>Thanks for your enquiry — we'll be back in touch within 48–72 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const submit = document.getElementById('form-submit');
+    const success = document.getElementById('form-success');
+    const error = document.getElementById('form-error');
+    if (!form || !submit || !success || !error) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      error.hidden = true;
+      error.textContent = '';
+      submit.disabled = true;
+      submit.textContent = 'Sending…';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        const payload = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          throw new Error(payload.error || 'Something went wrong. Please try again or call us on +61 414 499 778.');
+        }
+        form.hidden = true;
+        success.hidden = false;
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (err) {
+        error.textContent = err.message;
+        error.hidden = false;
+        submit.disabled = false;
+        submit.textContent = 'Send Enquiry';
+      }
+    });
+  });
+</script>
+
+<CtaBand
+  ariaLabel="Contact CTA"
+  primary={{ label: 'View All Solutions', href: '/services/' }}
+  outline={{ label: 'About Us', href: '/about/' }}
+/>
+
+<FooterAfs />
+<SiteFooter showAbn={false} showLocation={false} showLegal={false} />
+
+</BaseLayout>

@@ -1,0 +1,55 @@
+---
+import ClientsMentioned from './ClientsMentioned.astro';
+
+export interface Props {
+  lead: string;
+  features: { icon: string; text: string }[];
+  featuresHeading?: string;
+  clients?: string[];
+  clientsLabel?: string;
+  tcsNote?: string;
+  openingQuote?: string;
+  bannerStatement?: string;
+}
+
+const {
+  lead,
+  features,
+  featuresHeading = "What's Included",
+  clients,
+  clientsLabel,
+  tcsNote,
+  openingQuote,
+  bannerStatement,
+} = Astro.props;
+const leadParas = lead.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+---
+<section class="service-body" aria-labelledby="svc-body-heading">
+  <div class="container">
+    <h2 id="svc-body-heading" style="margin-bottom:1.5rem;">Service Overview</h2>
+    {openingQuote && (
+      <blockquote class="service-opening-quote"><p>{openingQuote}</p></blockquote>
+    )}
+    {leadParas.map((p) => <p class="service-lead">{p}</p>)}
+    {bannerStatement && (
+      <div class="pull-quote service-banner-statement"><p>{bannerStatement}</p></div>
+    )}
+    <h3 style="margin-bottom:1rem;">{featuresHeading}</h3>
+    <ul class="feature-list">
+      {features.map((f) => (
+        <li>
+          <span class="icon" aria-hidden="true">{f.icon}</span>
+          <span>{f.text}</span>
+        </li>
+      ))}
+    </ul>
+    {tcsNote && (
+      <p class="service-tcs-note">{tcsNote}</p>
+    )}
+    <div class="service-prose"><slot /></div>
+    {clients && clients.length > 0 && <ClientsMentioned clients={clients} label={clientsLabel} />}
+    <div style="margin-top:3rem;">
+      <a href="/contact/" class="btn btn--primary">Enquire Now</a>
+    </div>
+  </div>
+</section>

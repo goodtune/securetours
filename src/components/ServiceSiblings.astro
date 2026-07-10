@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+
+export interface Props {
+  currentSlug: string;
+}
+
+const { currentSlug } = Astro.props;
+const all = await getCollection('services');
+const siblings = all.sort((a, b) => a.data.order - b.data.order);
+---
+<section class="service-siblings" aria-label="Other services">
+  <div class="container">
+    <span class="section-label">Other Solutions</span>
+    <div class="siblings-grid">
+      {siblings.map((s) => (
+        <a
+          href={`/services/${s.id}/`}
+          class={s.id === currentSlug ? 'sibling-card current' : 'sibling-card'}
+        >
+          {s.data.title}
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

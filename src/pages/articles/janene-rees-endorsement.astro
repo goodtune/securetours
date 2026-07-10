@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import FooterAfs from '../../components/FooterAfs.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import PageHero from '../../components/PageHero.astro';
+---
+<BaseLayout
+  title="Industry Endorsement — Janene Rees, REES INTERNATIONAL | Secure Tours & Travel"
+  description="Industry endorsement of Secure Tours & Travel by Janene Rees, Founder & Director of REES INTERNATIONAL."
+  canonical="https://securetours.com.au/articles/janene-rees-endorsement/"
+>
+
+<SiteNav active="articles" />
+
+<PageHero
+  ariaLabel="Testimonial hero"
+  crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Articles & Testimonials', href: '/articles/' },
+    { label: 'Janene Rees' },
+  ]}
+  label="Industry Endorsement · 2018"
+  title="Janene Rees"
+  sub="Founder & Director of REES INTERNATIONAL — endorsing Secure Tours & Travel and AFS Group for outstanding work practices and industry leadership at the Australian Tourism Exchange and beyond."
+/>
+
+<section class="section" aria-labelledby="testimonial-heading">
+  <div class="container">
+
+    <div class="context-block">
+      <h3>About this endorsement</h3>
+      <p>Janene Rees is the Founder & Director of REES INTERNATIONAL, an international tourism industry firm. Janene has witnessed Secure Tours & Travel and AFS Group operate firsthand at major industry events including the Australian Tourism Exchange (ATE), where the business has showcased its services to international tourism agents. She has also engaged AFS Group for professional Security Risk Assessments on behalf of a major entertainment and sporting facility client.</p>
+    </div>
+
+    <div class="testimonial-body">
+      <h2 id="testimonial-heading" class="sr-only">Endorsement Letter</h2>
+
+      <div class="endorsement-card">
+        <div class="endorsement-card__header">
+          <div class="endorsement-card__avatar">J</div>
+          <div>
+            <div class="endorsement-card__author-name">Janene Rees</div>
+            <div class="endorsement-card__author-title">Founder & Director — REES INTERNATIONAL</div>
+          </div>
+        </div>
+        <div class="endorsement-card__body">
+          <div class="endorsement-card__date">23 August 2018</div>
+          <div class="endorsement-card__letter">
+            <p>To whom it may concern,</p>
+            <p>It gives me great pleasure to endorse Secure Tours and Travel and sister company AFS for its outstanding work practices and I believe them to be one of the best in their field.</p>
+            <p>I have known this company for several years and have witnessed firsthand their professionalism throughout the industry particularly at Major International trade shows such as Australian Tourism Exchange. At this event Secure Tours and Travel showcase their company to International Tourism agents and have always displayed their company excellently.</p>
+            <p>Secure Tours and Travel have also provided one of my clients, which is a very large entertainment/sporting facility with Security Risk Assessments, the work they carried out was of a very high standard and the client was very happy with all work done.</p>
+            <p>I wish Secure Tours and Travel much success in gaining international recognition for all the services that they provide and believe that as they are a very well established business they are very equipped to grow their business into these new emerging International Markets.</p>
+          </div>
+          <div class="endorsement-card__salutation">
+            Janene Rees<br />
+            Founder & Director<br />
+            REES INTERNATIONAL
+          </div>
+        </div>
+      </div>
+
+      <div class="article-nav">
+        <a href="/articles/gary-oriordan-endorsement/">← Gary O'Riordan Endorsement</a>
+        <a href="/articles/">Back to Articles & Testimonials →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<CtaBand
+  ariaLabel="Testimonial CTA"
+  title="Want to Know More?"
+  body="We are happy to provide additional references and discuss our experience with prospective clients in confidence."
+  primary={{ label: 'Get in Touch', href: '/contact/' }}
+  outline={{ label: 'View Resources', href: '/resources/' }}
+/>
+
+<FooterAfs />
+<SiteFooter />
+
+</BaseLayout>

@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../../components/SiteNav.astro';
+import FooterAfs from '../../components/FooterAfs.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import PageHero from '../../components/PageHero.astro';
+
+const indexCards = [
+  {
+    icon: '💼',
+    title: 'Executive Guest Management',
+    body: 'Designed for professional and corporate clients. Executive concierge, schedule management, chauffeur transfers and discreet, high-confidentiality service protocols.',
+    href: '/services/executive-guest-management/',
+  },
+  {
+    icon: '✈️',
+    title: 'Exclusive Transfer Assistance',
+    body: "Australia's leading safety and security transfer service. Two tiers: Exclusive Level for VIP luxury and Executive Level for corporate efficiency. Air and seaport capable.",
+    href: '/services/exclusive-transfer-assistance/',
+  },
+  {
+    icon: '🏆',
+    title: 'P.A.S.S. — Professional Athlete Support Specialist',
+    body: 'Elite travel logistics purpose-built for athletes and sports teams. Nutrition, recovery, equipment transport, venue liaison, close protection and full schedule management.',
+    href: '/services/pass-athlete/',
+  },
+  {
+    icon: '🎭',
+    title: 'P.A.S.S. — Performing Artist Safety Specialist',
+    body: 'Dedicated touring support for musicians, entertainers and performing arts companies. End-to-end logistics, venue liaison, equipment transport, media management and artist protection.',
+    href: '/services/pass-artist/',
+  },
+  {
+    icon: '🤝',
+    title: 'Concierge & Chaperone',
+    body: 'Personal, attentive care for individuals and groups. Airport meet and greet, accompanied transfers, multilingual support, unaccompanied minor chaperoning and 24/7 support.',
+    href: '/services/concierge-chaperone/',
+  },
+  {
+    icon: '🎓',
+    title: 'S.T.A.G.E. — School Travel & Group Excursions',
+    body: 'Chaperone and security services for travelling students — educational excursions, performance tours and athletic competition.',
+    href: '/services/stage/',
+  },
+  {
+    icon: '🕊️',
+    title: 'Bereavement Travel Support',
+    body: 'Compassionate airport logistics and private transfers for families navigating travel during the most difficult of times.',
+    href: '/services/bereavement-travel-support/',
+  },
+  {
+    icon: '🧳',
+    title: 'Solo Traveller Assist',
+    body: 'Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle.',
+    href: '/services/solo-traveller-assist/',
+  },
+  {
+    icon: '🧭',
+    title: 'S.C.O.U.T. — Area Assessments',
+    body: 'On-the-ground area assessments for families relocating someone to Australia, or moving within the country. Real answers before the move.',
+    href: '/services/scout/',
+  },
+];
+---
+<BaseLayout
+  title="Tourism Solutions — Secure Tours & Travel"
+  description="Explore all specialist solutions from Secure Tours & Travel — inbound tourism, VIP transfers, event management, athlete support, and more."
+  canonical="https://securetours.com.au/services/"
+>
+
+<SiteNav active="services" />
+
+<PageHero
+  ariaLabel="Solutions overview hero"
+  crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Tourism Solutions' },
+  ]}
+  label="Our Tourism Solutions"
+  title="Tourism Solutions"
+  sub="Every solution is designed around one principle: your safety, comfort and peace of mind."
+/>
+
+<section class="section" aria-labelledby="svc-heading">
+  <div class="container">
+
+    <div class="solutions-featured">
+      <div class="solutions-featured__body">
+        <span class="solutions-featured__tag">Flagship Solution · Inbound & Domestic Tourism</span>
+        <h2 class="solutions-featured__title">Secure Tours & Travel Solutions</h2>
+        <p class="solutions-featured__text">Comprehensive, safety-led travel packages for inbound and domestic clients. Chaperoned tours, private transfers and secure ground arrangements across Australia and globally. The foundation of everything we do.</p>
+        <a href="/services/tours-travel-solutions/" class="btn btn--primary">Learn More</a>
+      </div>
+      <div class="solutions-featured__cta">
+        <div style="font-size:4rem; opacity:0.2;">🌏</div>
+      </div>
+    </div>
+
+    <div class="services-grid" id="svc-heading">
+      {indexCards.map((c) => {
+        const cls = c.badge ? 'service-card service-card--coming-soon' : 'service-card';
+        return (
+          <article class={cls} aria-label={c.ariaLabel}>
+            <div class="service-card__icon" aria-hidden="true">{c.icon}</div>
+            <h2 class="service-card__title">{c.title}</h2>
+            <p class="service-card__text">{c.body}</p>
+            {c.href && <a href={c.href} class="service-card__link">Learn More</a>}
+            {c.badge && <span class="service-card__badge">{c.badge}</span>}
+          </article>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2>Ready to Travel with Confidence?</h2>
+    <p>Our team is available to tailor a solution for individuals, groups, corporate delegations and touring professionals.</p>
+    <div class="btn-group">
+      <a href="/contact/" class="btn btn--primary">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<FooterAfs />
+<SiteFooter showAbn={false} showLocation={false} showLegal={false} />
+
+</BaseLayout>

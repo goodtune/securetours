@@ -1,0 +1,39 @@
+import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
+
+const services = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/services' }),
+  schema: z.object({
+    title: z.string(),
+    meta_description: z.string(),
+    hero_tag: z.string(),
+    hero_sub: z.string(),
+    lead: z.string(),
+    opening_quote: z.string().optional(),
+    banner_statement: z.string().optional(),
+    features_heading: z.string().optional(),
+    features: z.array(z.object({ icon: z.string(), text: z.string() })),
+    clients: z.array(z.string()).optional(),
+    clients_label: z.string().optional(),
+    tcs_note: z.string().optional(),
+    related_services: z.array(z.string()).optional(),
+    faqs: z
+      .array(z.object({ question: z.string(), answer: z.string() }))
+      .optional(),
+    cta: z
+      .object({
+        title: z.string().optional(),
+        body: z.string().optional(),
+      })
+      .optional(),
+    order: z.number(),
+    coming_soon: z.boolean().default(false),
+    home_card: z.object({
+      icon: z.string(),
+      title: z.string().optional(),
+      body: z.string(),
+    }),
+  }),
+});
+
+export const collections = { services };
