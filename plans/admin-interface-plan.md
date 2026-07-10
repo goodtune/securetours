@@ -58,21 +58,22 @@ Staging specifics to get right:
 ### Step 0 — Cutover hygiene (this week)
 
 - [x] Merge `feature/astro` → `main` (`--no-ff`, empty diff verified).
-- [ ] Repoint the DO app components to `main` (dashboard — Gary). Verify a push to `main` triggers a deploy and the site is unchanged.
-- [ ] First commits on the admin branch: delete `.do/app.yaml`, move `robots.txt` to `public/`, add `@astrojs/sitemap`, untrack `tmp/`.
+- [x] Repoint the DO app components to `main` (dashboard — Gary).
+- [x] First commits on the admin branch (`feature/admin-cms`, PR #6): delete `.do/app.yaml`, move `robots.txt` to `public/`, add `@astrojs/sitemap`, untrack `tmp/`.
 - [ ] Delete `feature/astro` and `feature/zensical` **only after** the repoint is confirmed.
 
 ### Step 1 — CI before the admin gets keys
 
-- [ ] GitHub Actions on PRs + pushes to `main`: `npm ci && npm run build`, then the pytest/Playwright parity harness.
+- [x] GitHub Actions on PRs + pushes to `main`: `npm ci && npm run build`, then the pytest/Playwright parity harness (first run green: 402 passed, 6 skipped, ~90s).
 - [ ] Branch protection on `main` requiring the build check (harness advisory at first if it proves slow on content-only commits).
 
 ### Step 2 — Sveltia CMS integration
 
-- [ ] `public/admin/index.html` (loads Sveltia) + `public/admin/config.yml`.
-- [ ] Model the **services** collection mirroring the Zod schema: strings for `title`, `meta_description`, `hero_tag`, `hero_sub`; text for `lead`; list-of-object for `features` (`icon`, `text`) and `faqs`; objects for `home_card`, `cta`; markdown body. Expose `order`, `coming_soon`, `related_services` with clear labels. Plain-English field labels throughout.
+- [x] `/admin` shell (`src/pages/admin/index.astro`) + build-time generated `/admin/config.yml` (`config.yml.ts`; `CMS_BRANCH` selects the commit branch per environment, `CMS_AUTH_BASE_URL` wires the OAuth helper).
+- [x] Model the **services** collection mirroring the Zod schema: strings for `title`, `meta_description`, `hero_tag`, `hero_sub`; text for `lead`; list-of-object for `features` (`icon`, `text`) and `faqs`; objects for `home_card`, `cta`; markdown body. Expose `order`, `coming_soon`, `related_services` with clear labels. Plain-English field labels throughout.
 - [ ] GitHub OAuth App + `sveltia-cms-auth`; wire `base_url` in `config.yml`.
-- [ ] Stand up the staging DO app on the admin branch; walk the admin through login → edit → save → deploy → rollback once, together.
+- [x] Staging DO app live at https://securetours-staging-6i7a4.ondigitalocean.app (static-only, `CMS_BRANCH=feature/admin-cms` verified).
+- [ ] Walk the admin through login → edit → save → deploy → rollback once, together.
 
 ### Step 3 — Widen the editable surface (schema-first, incremental)
 
