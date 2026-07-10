@@ -27,3 +27,4 @@ __pycache__/
 
 # playwright MCP scratch dump (created by interactive playwright sessions)
 .playwright-mcp/
+.pw-cache/
