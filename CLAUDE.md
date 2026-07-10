@@ -37,7 +37,16 @@ ALIGN_SKIP_BUILD=1 python -m pytest tests/    # skip rebuild if dist/ is current
 ALIGN_USE_RAW_STATIC=1 python -m pytest tests/  # debug only — bypass Playwright pre-render
 ```
 
-The harness builds Astro once per session (autouse fixture) unless `ALIGN_SKIP_BUILD=1` is set.
+The harness builds Astro once per session (autouse fixture) unless `ALIGN_SKIP_BUILD=1` is set. CI (`.github/workflows/ci.yml`) runs the build plus the full harness on every PR and push to `main`.
+
+## Admin CMS (Sveltia)
+
+`/admin` is a Sveltia CMS shell (`src/pages/admin/index.astro`); its config is generated at build time by `src/pages/admin/config.yml.ts` so each deployment targets the right branch:
+
+- `CMS_BRANCH` — branch the CMS commits to. Defaults to `main` (production). A staging deployment must set this to its own deploy branch.
+- `CMS_AUTH_BASE_URL` — URL of the deployed `sveltia-cms-auth` OAuth helper. Until set, editors sign in with a GitHub personal access token.
+
+The CMS edits `src/content/services/*.md` only. Keep `config.yml.ts` field definitions in sync with the Zod schema in `src/content.config.ts` — the schema is the build-time gate that stops a bad CMS edit from deploying. `create`/`delete` are off: new services are developer work (routes, nav, footer). CMS media uploads go to `public/assets/uploads/`, never over the design assets.
 
 ## Architecture conventions
 
