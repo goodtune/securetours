@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import FooterAfs from '../components/FooterAfs.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CtaBand from '../components/CtaBand.astro';
+import PageHero from '../components/PageHero.astro';
+import type { garyEndorsement } from '../lib/articles';
+
+export interface Props {
+  article: typeof garyEndorsement;
+  canonical: string;
+}
+
+const { article, canonical } = Astro.props;
+---
+<BaseLayout title={article.meta.title} description={article.meta.description} canonical={canonical}>
+
+<SiteNav active="articles" />
+
+<PageHero
+  ariaLabel="Testimonial hero"
+  crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Articles & Testimonials', href: '/articles/' },
+    { label: article.crumb },
+  ]}
+  label={article.hero.label}
+  title={article.hero.title}
+  sub={article.hero.sub}
+/>
+
+<section class="section" aria-labelledby="testimonial-heading">
+  <div class="container">
+
+    <div class="context-block">
+      <h3>{article.context.title}</h3>
+      <p>{article.context.body}</p>
+    </div>
+
+    <div class="testimonial-body">
+      <h2 id="testimonial-heading" class="sr-only">Endorsement Letter</h2>
+
+      <div class="endorsement-card">
+        <div class="endorsement-card__header">
+          <div class="endorsement-card__avatar">{article.letter.avatar}</div>
+          <div>
+            <div class="endorsement-card__author-name">{article.letter.author_name}</div>
+            <div class="endorsement-card__author-title">{article.letter.author_title}</div>
+          </div>
+        </div>
+        <div class="endorsement-card__body">
+          <div class="endorsement-card__date">{article.letter.date}</div>
+          <div class="endorsement-card__letter">
+            {article.letter.paragraphs.map((p) => <p>{p}</p>)}
+          </div>
+          <div class="endorsement-card__salutation">
+            {article.letter.salutation_lines.map((line, i) => (
+              <Fragment>{i > 0 && <br />}{line}</Fragment>
+            ))}
+          </div>
+          {article.letter.download && (
+            <div class="endorsement-card__download">
+              <a href={article.letter.download.href} target="_blank" rel="noopener">{article.letter.download.label}</a>
+              <span>{article.letter.download.size}</span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <div class="article-nav">
+        <a href={article.nav.prev.href}>{article.nav.prev.label}</a>
+        <a href={article.nav.next.href}>{article.nav.next.label}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<CtaBand
+  ariaLabel="Testimonial CTA"
+  title={article.cta_band.title}
+  body={article.cta_band.body}
+  primary={article.cta_band.primary}
+  outline={article.cta_band.outline}
+/>
+
+<FooterAfs />
+<SiteFooter />
+
+</BaseLayout>

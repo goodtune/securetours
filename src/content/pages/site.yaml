@@ -1,0 +1,20 @@
+# Site-wide copy: the CTA band and footer that appear on every page.
+# Edited via the CMS (/admin) — validated at build time by src/lib/pages.ts.
+cta_band:
+  title: 'Ready to Travel with Confidence?'
+  body: 'Our team is available to tailor a solution for individuals, groups, corporate delegations and touring professionals.'
+  primary: { label: 'Get in Touch', href: '/contact/' }
+  outline: { label: 'View All Solutions', href: '/services/' }
+
+footer:
+  brand_blurb: 'Secure Luxury Travel for discerning individuals & groups.'
+  abn_note: 'ABN available on request.'
+  phone: '+61 414 499 778'
+  email: 'enquiries@securetours.com.au'
+  location: 'Australia Wide'
+  copyright: '© 2026 Secure Tours & Travel. All rights reserved.'
+
+afs_strip:
+  # May contain <strong> emphasis markup.
+  division: 'A division of <strong>Australian Frontline Solutions</strong>'
+  credentials: 'Security Master Licence Holder · Established 1989'

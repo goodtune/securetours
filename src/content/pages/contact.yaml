@@ -1,0 +1,22 @@
+# Contact page copy. Edited via the CMS (/admin) — validated at build time
+# by the schema in src/lib/pages.ts. Form field labels stay in code.
+meta:
+  title: 'Contact — Secure Tours & Travel'
+  description: 'Get in touch with Secure Tours & Travel. Enquiries welcome in multiple languages. Australia-wide operations.'
+
+hero:
+  title: 'Get in Touch'
+  sub: 'Our team is ready to assist with enquiries, bookings and custom itinerary planning.'
+
+info:
+  label: 'Contact'
+  title: 'Contact Information'
+  intro: 'Secure Tours & Travel operates nationally across Australia. Reach us directly — we respond to all enquiries within one business day.'
+  phone: '+61 414 499 778'
+  email: 'enquiries@securetours.com.au'
+  location: 'Australia-wide · Based in NSW'
+  languages_note: 'Enquiries welcome in multiple languages — including English, Mandarin, French, Korean, Italian and German'
+
+form:
+  success_title: '✓ Enquiry Received'
+  success_body: "Thanks for your enquiry — we'll be back in touch within 48–72 hours."

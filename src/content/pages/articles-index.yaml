@@ -1,0 +1,112 @@
+# Articles hub page copy (testimonial/case-study/article cards, audio
+# section). Edited via the CMS (/admin) — validated by src/lib/pages.ts.
+# Card prose here is deliberately independent of the article pages.
+meta:
+  title: 'Articles, Testimonials & Case Studies — Secure Tours & Travel'
+  description: "Client testimonials, case studies and insights from Secure Tours & Travel — Australia's premier secure luxury travel and event security specialists."
+
+hero:
+  label: 'Insights & Client Stories'
+  title: 'Articles, Testimonials & Case Studies'
+  sub: 'Real-world insights into secure travel, event management and VIP logistics — drawn from over three decades of operational experience with AFS Group.'
+
+library_heading: 'Content Library'
+
+testimonials:
+  label: 'What Our Clients Say'
+  title: 'Testimonials & Endorsements'
+  cards:
+    - avatar: 'G'
+      name: "Gary O'Riordan"
+      title: 'Tourism Industry Consultant & Business Advisor'
+      badge: 'Endorsement'
+      date: '14 August 2018'
+      quote: '"Secure Tours & Travel is a niche tour operator offering travel packages and itineraries, planning, coordination and booking services, as well as delivery of ground arrangements in Australia with an overarching focus on luxury, high end experiences and a clear differentiation on safety and security. This type of service offering is new to the Australian market and has good potential with high end travellers such as VIP groups, conference and event attendees, or leisure travellers who are safety and security focused."'
+      cta_label: 'Read full endorsement →'
+      cta_href: '/articles/gary-oriordan-endorsement/'
+    - avatar: 'J'
+      name: 'Janene Rees'
+      title: 'Founder & Director — REES INTERNATIONAL'
+      badge: 'Endorsement'
+      date: '23 August 2018'
+      quote: '"It gives me great pleasure to endorse Secure Tours and Travel and sister company AFS for its outstanding work practices and I believe them to be one of the best in their field… The work they carried out was of a very high standard and the client was very happy with all work done."'
+      cta_label: 'Read full endorsement →'
+      cta_href: '/articles/janene-rees-endorsement/'
+    - avatar: 'E'
+      name: 'Event Producer'
+      title: 'Major Public Festival — Sydney'
+      badge: 'Venue Feedback'
+      date: 'Available on request'
+      quote: '"The AFS Group team adapted to our event''s requirements each night — their familiarity with the venue and their rapid communication between teams made crowd management seamless across the full season."'
+      cta_label: 'Request reference →'
+      cta_href: '/contact/'
+
+case_studies:
+  label: 'Operational Experience'
+  title: 'Case Studies'
+  view_link: { label: 'View Event Solutions →', href: '/event-solutions/' }
+  cards:
+    - label: 'Case Study · Public Festival Security'
+      title: 'Vivid Sydney — Festival Security & Crowd Management'
+      text: "One of Australia's largest public events, attracting over 3 million visitors across 23 nights. AFS Group provided crowd management, access control and VIP guest services across multiple Sydney precincts."
+      href: '/articles/vivid-sydney/'
+      cta: 'Read case study →'
+    - label: 'Case Study · Venue Security Program'
+      title: 'Carriageworks — Multi-Event Venue Security Program'
+      text: "Carriageworks in Sydney's Eveleigh hosts major arts, cultural and commercial events year-round. AFS Group has delivered ongoing event security across multiple productions — arts, fashion, food markets and corporate functions."
+      href: '/articles/carriageworks/'
+      cta: 'Read case study →'
+    - label: 'Case Study · Corporate Travel'
+      title: 'International Sporting Delegation — Multi-City Ground Transport'
+      text: 'Secure ground transport for a 40-person international sports delegation across Sydney, Melbourne and Brisbane during a major tournament — airports, venues, accommodation and team movements coordinated end-to-end.'
+      cta: 'Coming Soon'
+    - label: 'Case Study · Film & Television'
+      title: 'Major Feature Production — On-Set Security & Talent Protection'
+      text: 'Providing on-set security, talent protection and location access management for a major Australian feature production — covering principal cast, location shoots and media management over an extended production schedule.'
+      cta: 'Coming Soon'
+
+audio:
+  label: 'In Their Words'
+  title: 'Audio Interviews & Features'
+  intro: "Matt Harrison has been interviewed about Secure Tours & Travel and the AFS Group's unique approach to security-led travel. Listen to the interviews below."
+  panel:
+    label: 'Listen'
+    title: 'Matt Harrison — Interviews & Features'
+    body: 'Audio interviews with Secure Tours & Travel founder Matthew Harrison discussing the vision behind the business, the Australian secure travel market, and what makes the AFS Group approach different.'
+    items:
+      - title: 'Matt Harrison — Secure Tours & Travel Overview'
+        meta: 'Interview · Duration: TBC'
+        placeholder: 'Audio file to be uploaded — contact us to request early access.'
+      - title: 'AFS Group — 37 Years of Operational Security'
+        meta: 'Feature Interview · Duration: TBC'
+        placeholder: 'Audio file to be uploaded — contact us to request early access.'
+    note: 'Audio files will be hosted here directly using HTML5 audio — no third-party plugins required. Subscribe for updates when new interviews are published.'
+    cta_label: 'Request Early Access'
+
+articles:
+  label: 'Insights & Opinion'
+  title: 'Articles'
+  intro: 'Operational perspectives from the AFS Group team on security, travel management and event delivery.'
+  cards:
+    - category: 'Feature Profile'
+      title: 'Matthew Harrison — AFS Solutions'
+      text: "From working on the door at a local pub to advising and protecting high-profile clients nationally — the story of how Matthew Harrison built one of Australia's most respected secure travel and event security operations."
+      href: '/articles/matthew-harrison-profile/'
+    - category: 'Article'
+      title: 'Why Security Should Be Embedded in Event Planning — Not Bolted On'
+      text: 'An operational perspective on the difference between event security as an afterthought and security-first event design — and why the former consistently produces worse outcomes for organisers, guests and talent alike.'
+      badge: 'Coming Soon'
+    - category: 'Article'
+      title: 'The Growing Demand for Secure Inbound Tourism in Australia'
+      text: "High-end international travellers are increasingly seeking operators who can guarantee both luxury and safety. How Australia's inbound tourism sector is responding — and what Secure Tours & Travel is doing differently."
+      badge: 'Coming Soon'
+    - category: 'Article'
+      title: 'STAT Accreditation: Raising the Safety Bar for Australian Tourism Operators'
+      text: 'What STAT Accreditation means, why it matters to international tourism wholesalers, and how it is changing the way Australian operators communicate their safety and security standards to the global market.'
+      badge: 'Coming Soon'
+
+cta_band:
+  title: 'Have a Story to Share?'
+  body: 'If you are a past client willing to provide a testimonial or case study contribution, we would love to hear from you. We handle all content with confidentiality in mind.'
+  primary: { label: 'Get in Touch', href: '/contact/' }
+  outline: { label: 'View Event Solutions', href: '/event-solutions/' }

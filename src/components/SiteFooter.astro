@@ -1,4 +1,6 @@
 ---
+import { site, telHref } from '../lib/pages';
+
 export interface Props {
   showAbn?: boolean;
   showLocation?: boolean;
@@ -12,9 +14,9 @@ const { showAbn = true, showLocation = true, showLegal = true } = Astro.props;
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="/assets/logo-transparent.png" alt="Secure Tours & Travel" />
-        <p>Secure Luxury Travel for discerning individuals & groups.</p>
+        <p>{site.footer.brand_blurb}</p>
         {showAbn && (
-          <p style="margin-top:0.75rem; font-size:0.8rem; color:rgba(255,255,255,0.4);">ABN available on request.</p>
+          <p style="margin-top:0.75rem; font-size:0.8rem; color:rgba(255,255,255,0.4);">{site.footer.abn_note}</p>
         )}
       </div>
       <div class="footer-col">
@@ -45,16 +47,16 @@ const { showAbn = true, showLocation = true, showLegal = true } = Astro.props;
       <div class="footer-col">
         <h4>Contact</h4>
         <ul role="list" style="font-style:normal;">
-          <li><a href="tel:+61414499778">+61 414 499 778</a></li>
-          <li><a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a></li>
+          <li><a href={telHref(site.footer.phone)}>{site.footer.phone}</a></li>
+          <li><a href={`mailto:${site.footer.email}`}>{site.footer.email}</a></li>
           {showLocation && (
-            <li style="color:rgba(255,255,255,0.5); font-size:0.875rem; margin-top:0.5rem;">Australia Wide</li>
+            <li style="color:rgba(255,255,255,0.5); font-size:0.875rem; margin-top:0.5rem;">{site.footer.location}</li>
           )}
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Secure Tours & Travel. All rights reserved.</span>
+      <span>{site.footer.copyright}</span>
       {showLegal && (
         <div>
           <a href="#">Privacy Policy</a>

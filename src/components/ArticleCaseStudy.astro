@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import FooterAfs from '../components/FooterAfs.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CtaBand from '../components/CtaBand.astro';
+import PageHero from '../components/PageHero.astro';
+import type { vividSydney } from '../lib/articles';
+
+export interface Props {
+  article: typeof vividSydney;
+  canonical: string;
+}
+
+const { article, canonical } = Astro.props;
+---
+<BaseLayout title={article.meta.title} description={article.meta.description} canonical={canonical}>
+
+<SiteNav active="articles" />
+
+<PageHero
+  ariaLabel="Case study hero"
+  crumbs={[
+    { label: 'Home', href: '/' },
+    { label: 'Articles & Case Studies', href: '/articles/' },
+    { label: article.crumb },
+  ]}
+  label={article.hero.label}
+  title={article.hero.title}
+  sub={article.hero.sub}
+/>
+
+<section class="section" aria-labelledby="case-study-heading">
+  <div class="container">
+
+    <div class="case-study-meta">
+      {article.meta_items.map((item) => (
+        <div class="meta-item">
+          <div class="meta-item__label">{item.label}</div>
+          <div class="meta-item__value">{item.value}</div>
+        </div>
+      ))}
+    </div>
+
+    <div class="case-study-body">
+      <h2 id="case-study-heading">{article.background.title}</h2>
+      {article.background.paragraphs.map((p) => <p>{p}</p>)}
+
+      {article.event_types && (
+        <Fragment>
+          <h2>{article.event_types.title}</h2>
+          <div class="event-types-grid">
+            {article.event_types.items.map((item) => (
+              <div class="event-type-item">
+                <div class="event-type-item__icon">{item.icon}</div>
+                <div class="event-type-item__label">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </Fragment>
+      )}
+
+      <h2>{article.challenge.title}</h2>
+      {article.challenge.paragraphs.map((p) => <p>{p}</p>)}
+      <ul>
+        {article.challenge.bullets.map((b) => <li>{b}</li>)}
+      </ul>
+
+      <h2>{article.approach.title}</h2>
+      {article.approach.paragraphs.map((p) => <p>{p}</p>)}
+
+      <h2>{article.services.title}</h2>
+      <ul>
+        {article.services.items.map((item) => <li>{item}</li>)}
+      </ul>
+
+      <h2>{article.outcomes.title}</h2>
+      <div class="outcomes-grid">
+        {article.outcomes.stats.map((stat) => (
+          <div class="outcome-item">
+            <div class="outcome-item__num">{stat.num}</div>
+            <div class="outcome-item__label">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+      {article.outcomes.paragraphs.map((p) => <p>{p}</p>)}
+
+      <div class="confidentiality-note" set:html={article.confidentiality} />
+
+      <div class="article-nav">
+        <a href={article.nav.prev.href}>{article.nav.prev.label}</a>
+        <a href={article.nav.next.href}>{article.nav.next.label}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<CtaBand
+  ariaLabel="Case study CTA"
+  title={article.cta_band.title}
+  body={article.cta_band.body}
+  primary={article.cta_band.primary}
+  outline={article.cta_band.outline}
+/>
+
+<FooterAfs />
+<SiteFooter />
+
+</BaseLayout>

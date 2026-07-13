@@ -1,0 +1,65 @@
+# Tourism Solutions (services index) page copy. Edited via the CMS (/admin)
+# — validated at build time by the schema in src/lib/pages.ts.
+# The card prose here is deliberately different from the home-page cards
+# and the service detail pages (a third, page-specific copy).
+meta:
+  title: 'Tourism Solutions — Secure Tours & Travel'
+  description: 'Explore all specialist solutions from Secure Tours & Travel — inbound tourism, VIP transfers, event management, athlete support, and more.'
+
+hero:
+  label: 'Our Tourism Solutions'
+  title: 'Tourism Solutions'
+  sub: 'Every solution is designed around one principle: your safety, comfort and peace of mind.'
+
+featured:
+  tag: 'Flagship Solution · Inbound & Domestic Tourism'
+  title: 'Secure Tours & Travel Solutions'
+  text: 'Comprehensive, safety-led travel packages for inbound and domestic clients. Chaperoned tours, private transfers and secure ground arrangements across Australia and globally. The foundation of everything we do.'
+  cta_label: 'Learn More'
+  href: '/services/tours-travel-solutions/'
+  icon: '🌏'
+
+cards:
+  - icon: '💼'
+    title: 'Executive Guest Management'
+    body: 'Designed for professional and corporate clients. Executive concierge, schedule management, chauffeur transfers and discreet, high-confidentiality service protocols.'
+    href: '/services/executive-guest-management/'
+  - icon: '✈️'
+    title: 'Exclusive Transfer Assistance'
+    body: "Australia's leading safety and security transfer service. Two tiers: Exclusive Level for VIP luxury and Executive Level for corporate efficiency. Air and seaport capable."
+    href: '/services/exclusive-transfer-assistance/'
+  - icon: '🏆'
+    title: 'P.A.S.S. — Professional Athlete Support Specialist'
+    body: 'Elite travel logistics purpose-built for athletes and sports teams. Nutrition, recovery, equipment transport, venue liaison, close protection and full schedule management.'
+    href: '/services/pass-athlete/'
+  - icon: '🎭'
+    title: 'P.A.S.S. — Performing Artist Safety Specialist'
+    body: 'Dedicated touring support for musicians, entertainers and performing arts companies. End-to-end logistics, venue liaison, equipment transport, media management and artist protection.'
+    href: '/services/pass-artist/'
+  - icon: '🤝'
+    title: 'Concierge & Chaperone'
+    body: 'Personal, attentive care for individuals and groups. Airport meet and greet, accompanied transfers, multilingual support, unaccompanied minor chaperoning and 24/7 support.'
+    href: '/services/concierge-chaperone/'
+  - icon: '🎓'
+    title: 'S.T.A.G.E. — School Travel & Group Excursions'
+    body: 'Chaperone and security services for travelling students — educational excursions, performance tours and athletic competition.'
+    href: '/services/stage/'
+  - icon: '🕊️'
+    title: 'Bereavement Travel Support'
+    body: 'Compassionate airport logistics and private transfers for families navigating travel during the most difficult of times.'
+    href: '/services/bereavement-travel-support/'
+  - icon: '🧳'
+    title: 'Solo Traveller Assist'
+    body: 'Professional, vetted escorts for solo travellers — from the departure gate to a waiting private vehicle.'
+    href: '/services/solo-traveller-assist/'
+  - icon: '🧭'
+    title: 'S.C.O.U.T. — Area Assessments'
+    body: 'On-the-ground area assessments for families relocating someone to Australia, or moving within the country. Real answers before the move.'
+    href: '/services/scout/'
+
+card_link_label: 'Learn More'
+
+cta_band:
+  title: 'Ready to Travel with Confidence?'
+  body: 'Our team is available to tailor a solution for individuals, groups, corporate delegations and touring professionals.'
+  button: { label: 'Get in Touch', href: '/contact/' }

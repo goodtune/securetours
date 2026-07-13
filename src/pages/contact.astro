@@ -6,14 +6,15 @@ import FooterAfs from '../components/FooterAfs.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import CtaBand from '../components/CtaBand.astro';
 import PageHero from '../components/PageHero.astro';
+import { contact, telHref } from '../lib/pages';
 
 const services = (await getCollection('services'))
   .filter((s) => !s.data.coming_soon)
   .sort((a, b) => a.data.order - b.data.order);
 ---
 <BaseLayout
-  title="Contact — Secure Tours & Travel"
-  description="Get in touch with Secure Tours & Travel. Enquiries welcome in multiple languages. Australia-wide operations."
+  title={contact.meta.title}
+  description={contact.meta.description}
   canonical="https://securetours.com.au/contact/"
 >
 
@@ -26,45 +27,45 @@ const services = (await getCollection('services'))
     { label: 'Contact' },
   ]}
   label=""
-  title="Get in Touch"
-  sub="Our team is ready to assist with enquiries, bookings and custom itinerary planning."
+  title={contact.hero.title}
+  sub={contact.hero.sub}
 />
 
 <section class="section" aria-labelledby="contact-heading">
   <div class="container">
     <div class="contact-grid">
       <div class="contact-info">
-        <span class="section-label">Contact</span>
-        <h2 id="contact-heading">Contact Information</h2>
+        <span class="section-label">{contact.info.label}</span>
+        <h2 id="contact-heading">{contact.info.title}</h2>
         <div class="gold-rule"></div>
-        <p>Secure Tours & Travel operates nationally across Australia. Reach us directly — we respond to all enquiries within one business day.</p>
+        <p>{contact.info.intro}</p>
 
         <div class="contact-detail">
           <div class="contact-detail__item">
             <span class="contact-detail__icon" aria-hidden="true">📞</span>
             <div class="contact-detail__text">
               <strong>Phone</strong><br />
-              <a href="tel:+61414499778">+61 414 499 778</a>
+              <a href={telHref(contact.info.phone)}>{contact.info.phone}</a>
             </div>
           </div>
           <div class="contact-detail__item">
             <span class="contact-detail__icon" aria-hidden="true">✉️</span>
             <div class="contact-detail__text">
               <strong>Email</strong><br />
-              <a href="mailto:enquiries@securetours.com.au">enquiries@securetours.com.au</a>
+              <a href={`mailto:${contact.info.email}`}>{contact.info.email}</a>
             </div>
           </div>
           <div class="contact-detail__item">
             <span class="contact-detail__icon" aria-hidden="true">📍</span>
             <div class="contact-detail__text">
               <strong>Location</strong><br />
-              <span>Australia-wide · Based in NSW</span>
+              <span>{contact.info.location}</span>
             </div>
           </div>
         </div>
 
         <div style="margin-top:2rem; padding:1.25rem; background:var(--gold-pale); border-left:3px solid var(--gold); border-radius:var(--radius);">
-          <p style="font-size:0.875rem; color:var(--navy); margin:0;">Enquiries welcome in multiple languages — including English, Mandarin, French, Korean, Italian and German</p>
+          <p style="font-size:0.875rem; color:var(--navy); margin:0;">{contact.info.languages_note}</p>
         </div>
       </div>
 
@@ -117,8 +118,8 @@ const services = (await getCollection('services'))
           <div id="form-error" hidden role="alert"></div>
 
           <div id="form-success" hidden>
-            <h3>✓ Enquiry Received</h3>
-            <p>Thanks for your enquiry — we'll be back in touch within 48–72 hours.</p>
+            <h3>{contact.form.success_title}</h3>
+            <p>{contact.form.success_body}</p>
           </div>
         </div>
       </div>

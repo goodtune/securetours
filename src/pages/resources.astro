@@ -5,10 +5,11 @@ import FooterAfs from '../components/FooterAfs.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import CtaBand from '../components/CtaBand.astro';
 import PageHero from '../components/PageHero.astro';
+import { resources as page } from '../lib/pages';
 ---
 <BaseLayout
-  title="Resources & Downloads — Secure Tours & Travel"
-  description="Download brochures, service guides and informational resources from Secure Tours & Travel."
+  title={page.meta.title}
+  description={page.meta.description}
   canonical="https://securetours.com.au/resources/"
 >
 
@@ -20,108 +21,57 @@ import PageHero from '../components/PageHero.astro';
     { label: 'Home', href: '/' },
     { label: 'Resources' },
   ]}
-  label="Brochures & Guides"
-  title="Resources & Downloads"
-  sub="Service brochures, programme guides and informational materials. Available in English and Mandarin."
+  label={page.hero.label}
+  title={page.hero.title}
+  sub={page.hero.sub}
 />
 
 <section class="section" aria-labelledby="resources-heading">
   <div class="container">
-    <h2 id="resources-heading" class="sr-only">Download Library</h2>
+    <h2 id="resources-heading" class="sr-only">{page.library_heading}</h2>
 
-    <div class="downloads-category">
-      <h3>🌏 Tourism Solutions</h3>
-      <div class="downloads-grid">
-        <a class="download-card download-card--live" href="/assets/downloads/secure-tours-brochure.pdf" target="_blank" rel="noopener" aria-label="Download Secure Tours & Travel Service Brochure (PDF)">
-          <div class="download-card__icon">📄</div>
-          <div class="download-card__body">
-            <div class="download-card__name">Secure Tours &amp; Travel — Service Brochure</div>
-            <div class="download-card__meta">Brochure · English · PDF</div>
-          </div>
-          <div class="download-card__badge download-card__badge--live">Download</div>
-        </a>
-        <a class="download-card download-card--live" href="/assets/downloads/secure-tours-brochure-2024.pdf" target="_blank" rel="noopener" aria-label="Download Secure Tours & Travel Comprehensive Guide 2024 (PDF)">
-          <div class="download-card__icon">📄</div>
-          <div class="download-card__body">
-            <div class="download-card__name">Secure Tours &amp; Travel — 2024 Guide</div>
-            <div class="download-card__meta">Comprehensive Guide · English · PDF</div>
-          </div>
-          <div class="download-card__badge download-card__badge--live">Download</div>
-        </a>
-        <a class="download-card download-card--live" href="/assets/downloads/secure-tours-services-mandarin.pdf" target="_blank" rel="noopener" aria-label="Download Secure Tours & Travel Services Guide in Mandarin (PDF)">
-          <div class="download-card__icon">📄</div>
-          <div class="download-card__body">
-            <div class="download-card__name">Secure Tours &amp; Travel — 服务指南</div>
-            <div class="download-card__meta">Services Guide · 中文 (Mandarin) · PDF</div>
-          </div>
-          <div class="download-card__badge download-card__badge--live">下载</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="downloads-category">
-      <h3>💎 Exclusive Transfer Assistance</h3>
-      <div class="downloads-grid">
-        <a class="download-card download-card--live" href="/assets/downloads/exclusive-transfer-assistance.pdf" target="_blank" rel="noopener" aria-label="Download Exclusive Transfer Assistance Service Guide (PDF)">
-          <div class="download-card__icon">📄</div>
-          <div class="download-card__body">
-            <div class="download-card__name">Exclusive Transfer Assistance — Service Guide</div>
-            <div class="download-card__meta">Diamond · Sapphire · Ruby Tiers · English · PDF</div>
-          </div>
-          <div class="download-card__badge download-card__badge--live">Download</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="downloads-category">
-      <h3>🏅 STAT Accreditation</h3>
-      <p style="font-size:0.9rem; color:var(--gray-700); margin-bottom:1.25rem;">STAT (Security, Tourism &amp; Accreditation Tool) is AFS Group's independent risk assessment certification for the tourism and hospitality industry — combining security risk assessment with work health and safety evaluation.</p>
-      <div class="downloads-grid">
-        <a class="download-card download-card--live" href="/assets/downloads/stat-accreditation-mandarin.pdf" target="_blank" rel="noopener" aria-label="Download STAT Accreditation Guide in Mandarin (PDF)">
-          <div class="download-card__icon">📄</div>
-          <div class="download-card__body">
-            <div class="download-card__name">STAT认证 — 认证指南</div>
-            <div class="download-card__meta">STAT Accreditation · 中文 (Mandarin) · PDF</div>
-          </div>
-          <div class="download-card__badge download-card__badge--live">下载</div>
-        </a>
-      </div>
-    </div>
-
-    <div class="downloads-category">
-      <h3>📋 Endorsements &amp; References</h3>
-      <div class="downloads-grid">
-        <a class="download-card download-card--live" href="/assets/downloads/endorsement-gary-oriordan-2018.pdf" target="_blank" rel="noopener" aria-label="Download Industry Endorsement Letter from Gary O'Riordan 2018 (PDF)">
-          <div class="download-card__icon">📄</div>
-          <div class="download-card__body">
-            <div class="download-card__name">Industry Endorsement — Gary O'Riordan</div>
-            <div class="download-card__meta">Tourism Consultant · Letter · 2018 · PDF</div>
-          </div>
-          <div class="download-card__badge download-card__badge--live">Download</div>
-        </a>
-        <div class="download-card">
-          <div class="download-card__icon">📄</div>
-          <div class="download-card__body">
-            <div class="download-card__name">Client References — On Request</div>
-            <div class="download-card__meta">Available confidentially · Contact us</div>
-          </div>
-          <div class="download-card__badge">On Request</div>
+    {page.categories.map((cat) => (
+      <div class="downloads-category">
+        <h3>{cat.heading}</h3>
+        {cat.note && (
+          <p style="font-size:0.9rem; color:var(--gray-700); margin-bottom:1.25rem;">{cat.note}</p>
+        )}
+        <div class="downloads-grid">
+          {cat.cards.map((card) =>
+            card.href ? (
+              <a class="download-card download-card--live" href={card.href} target="_blank" rel="noopener" aria-label={card.aria_label}>
+                <div class="download-card__icon">📄</div>
+                <div class="download-card__body">
+                  <div class="download-card__name">{card.name}</div>
+                  <div class="download-card__meta">{card.meta}</div>
+                </div>
+                <div class="download-card__badge download-card__badge--live">{card.badge}</div>
+              </a>
+            ) : (
+              <div class="download-card">
+                <div class="download-card__icon">📄</div>
+                <div class="download-card__body">
+                  <div class="download-card__name">{card.name}</div>
+                  <div class="download-card__meta">{card.meta}</div>
+                </div>
+                <div class="download-card__badge">{card.badge}</div>
+              </div>
+            ),
+          )}
         </div>
+        {cat.footnote && <p class="coming-soon-note" set:html={cat.footnote} />}
       </div>
-      <p class="coming-soon-note">
-        <a href="/contact/" style="color:var(--navy); font-weight:600; text-decoration:underline;">Contact us</a> if you need materials in a specific language.
-      </p>
-    </div>
+    ))}
 
   </div>
 </section>
 
 <CtaBand
   ariaLabel="Resources CTA"
-  title="Need Materials Now?"
-  body="Contact our team directly — we can provide tailored information packs for your specific enquiry, in your preferred language."
-  primary={{ label: 'Get in Touch', href: '/contact/' }}
-  outline={{ label: 'View Tourism Solutions', href: '/services/' }}
+  title={page.cta_band.title}
+  body={page.cta_band.body}
+  primary={page.cta_band.primary}
+  outline={page.cta_band.outline}
 />
 
 <FooterAfs />

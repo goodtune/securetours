@@ -1,4 +1,6 @@
 ---
+import { site } from '../lib/pages';
+
 export interface Props {
   title?: string;
   body?: string;
@@ -9,10 +11,10 @@ export interface Props {
 }
 
 const {
-  title = 'Ready to Travel with Confidence?',
-  body = 'Our team is available to tailor a solution for individuals, groups, corporate delegations and touring professionals.',
-  primary = { label: 'Get in Touch', href: '/contact/' },
-  outline = { label: 'View All Solutions', href: '/services/' },
+  title = site.cta_band.title,
+  body = site.cta_band.body,
+  primary = site.cta_band.primary,
+  outline = site.cta_band.outline,
   headingId,
   ariaLabel,
 } = Astro.props;

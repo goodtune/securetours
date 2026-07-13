@@ -1,18 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { notFound as page } from '../lib/pages';
 ---
 <BaseLayout
-  title="Page Not Found — Secure Tours & Travel"
-  description="The page you're looking for doesn't exist or may have moved."
+  title={page.meta.title}
+  description={page.meta.description}
 >
   <div class="error-page">
     <div class="error-content">
       <div class="error-code">404</div>
-      <h1>Page Not Found</h1>
-      <p>The page you're looking for doesn't exist or may have moved. Return to our home page to continue.</p>
+      <h1>{page.title}</h1>
+      <p>{page.body}</p>
       <div class="error-actions">
-        <a href="/" class="btn btn--primary">Back to Home</a>
-        <a href="/contact/" class="btn btn--outline">Contact Us</a>
+        <a href={page.primary.href} class="btn btn--primary">{page.primary.label}</a>
+        <a href={page.outline.href} class="btn btn--outline">{page.outline.label}</a>
       </div>
     </div>
   </div>

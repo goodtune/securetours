@@ -10,11 +10,9 @@ node_modules/
 .env.local
 .env.*.local
 
-# Marked scratch dir — anything written here is throwaway
+# Scratch dir — anything written here is throwaway
 # (screenshots, generated reports, ad-hoc captures from playwright, etc.).
-# README.md is kept so the folder shows up in checkout with its purpose.
-tmp/*
-!tmp/README.md
+tmp/
 
 # python venv (for the test harness)
 .venv/
@@ -29,3 +27,4 @@ __pycache__/
 
 # playwright MCP scratch dump (created by interactive playwright sessions)
 .playwright-mcp/
+.pw-cache/
