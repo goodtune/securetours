@@ -19,10 +19,11 @@ The earlier Zensical attempt on `feature/zensical` was abandoned because we coul
   Together these three directories are **the editor surface** the non-technical client manages via Sveltia CMS at `/admin`. Pages render exclusively from this content — don't hardcode copy in `.astro` files.
 - `src/styles/global.css` — verbatim port of `static-prototype/css/style.css`. The only intentional change is the hero background URL (absolute `/assets/`). Don't bypass tokens — use `var(--navy)`, `var(--gold)`, etc.
 - `src/layouts/BaseLayout.astro` — `<head>` + `<body>` shell shared by every page.
-- `tests/` — pytest harness:
+- `tests/` — pytest harness with **two sources of truth**: STRUCTURE (element presence, counts, nav/footer link sets) is pinned to `static-prototype/`; TEXT is compared against `src/content/` via `content_data.py`, so legitimate CMS copy edits stay green while templates that hardcode or invent copy fail.
   - `conftest.py` — Playwright session fixture pre-renders every `static-prototype/*.html` with Chromium, captures the post-JS DOM, and serves it as the "static" side of the comparison.
-  - `test_alignment.py`, `test_body_alignment.py` — DOM equivalence tests (page hero, h2 outline, footer columns, meta description, etc.)
-  - `test_service_content.py` — asserts every canonical service feature/lead/title from `translations_data.py` ends up in the built HTML (i.e. our pages are equal-or-better than the static for non-JS clients).
+  - `content_data.py` — loads the pages/articles YAML and services front matter; exposes expected h1/title/description/hero text per page key.
+  - `test_alignment.py`, `test_body_alignment.py` — structure vs prototype, text vs content files.
+  - `test_service_content.py` — asserts every service's front-matter content (hero, lead, features, clients) is baked into the built HTML (equal-or-better than the JS-driven static for non-JS clients).
 - `public/assets/` — copied from `static-prototype/assets/`; logo, hero image, downloads, favicon.
 
 ## Running locally
@@ -73,6 +74,4 @@ The CMS edits three surfaces: the `services` markdown collection, the `pages` YA
 
 The static prototype is **JS-driven** for several pages — service detail and articles index sections have empty placeholder elements that get filled at runtime from `static-prototype/js/translations.js` (`SERVICE_TRANSLATIONS.en`, `TRANSLATIONS.en`). The harness handles this by pre-rendering with Chromium so the comparison is post-JS DOM vs. built DOM.
 
-When extracting content from the static for a new collection or page, the canonical source is **`static-prototype/js/translations.js`**, not the raw HTML (which often has empty `<span id="...">` placeholders).
-
-`tests/translations_data.py` (`SERVICE_PAGES`) is the harness's hand-curated copy of the canonical service-detail content — keep it consistent with the markdown collection.
+When extracting content from the static for a new collection or page, the canonical source is **`static-prototype/js/translations.js`**, not the raw HTML (which often has empty `<span id="...">` placeholders). For anything already extracted, the canonical source is `src/content/` — the prototype is design reference only.

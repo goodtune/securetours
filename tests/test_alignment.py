@@ -1,9 +1,17 @@
 """Static-vs-built HTML alignment tests.
 
-These compare normalized region extracts from each page in `../securetours/`
-to the same page in `./site/`. They focus on equivalence, not equality:
-class names differ between the two builds and that's fine — the tests assert
-that the page exposes the same logical content in each region.
+Two kinds of assertion live here, with different sources of truth:
+
+- STRUCTURE (element presence, counts, nav/footer link sets, ordering)
+  is compared against the customer-approved prototype in
+  `../static-prototype/` — the frozen design contract.
+- TEXT is compared against the content files in `src/content/` (via
+  `content_data`), because that is what the CMS edits. A legitimate copy
+  edit changes the content file and the built page together, so these
+  tests stay green; a template that hardcodes or invents copy fails.
+
+Code-owned strings (nav labels, footer link/column labels) have no
+content file, so they remain pinned to the prototype.
 """
 from __future__ import annotations
 
@@ -11,22 +19,14 @@ from pathlib import Path
 
 import pytest
 
-from conftest import PAGE_MAP
+from conftest import PAGE_MAP, normalize_text
+import content_data as C
 import extract as X
 
 
 # Static 404.html is genuinely bare — no nav, no footer, no description.
 # We ship a properly chrome'd 404; nothing to compare for that page.
 BARE_PAGES = {"notfound"}
-
-
-# ---------------------------------------------------------------------------
-# Build the parametrise list once, lazily, to skip pages that aren't yet
-# present in either tree.
-# ---------------------------------------------------------------------------
-
-def _ids(pairs):
-    return [p[0] for p in pairs]
 
 
 # ---------------------------------------------------------------------------
@@ -67,15 +67,10 @@ def test_nav_dropdown_matches(all_pages, page_key):
     )
 
 
-# Intentional divergences from the prototype, captured as content edits land.
-# These are items the static prototype contains but the built site (post-launch)
-# deliberately does not. Anything else missing is still a real failure.
-FOOTER_INTENTIONAL_REMOVALS: dict[str, list[str]] = {
-    # Client requested the location row collapse "Australia-wide · NSW" to
-    # "Australia Wide" — strict superstring substitution would break the
-    # extraction, so we just whitelist the old item as expected-absent.
-    "Contact": ["Australia-wide · NSW"],
-}
+# Footer columns whose link labels live in SiteFooter.astro (code-owned) —
+# these stay pinned to the prototype. The Contact column is content-owned
+# (site.yaml) and is asserted against content below.
+CODE_OWNED_FOOTER_COLUMNS = {"Tourism Solutions", "Company"}
 
 
 @pytest.mark.parametrize("page_key", [m[0] for m in PAGE_MAP])
@@ -89,17 +84,12 @@ def test_footer_columns_match(all_pages, page_key):
     assert bf.column_headings == sf.column_headings, (
         f"footer column headings differ\n  static: {sf.column_headings}\n  built : {bf.column_headings}"
     )
-    for heading in sf.column_headings:
+    for heading in CODE_OWNED_FOOTER_COLUMNS & set(sf.column_headings):
         s_items = sf.column_items.get(heading) or []
         b_items = bf.column_items.get(heading) or []
-        intentional = FOOTER_INTENTIONAL_REMOVALS.get(heading, [])
-        # Static is inconsistent — some pages list the office location in the
-        # Contact column, others omit it. We standardize on the maximalist
-        # version. Require every static item (minus intentional removals) to
-        # appear in built; allow built to have extras.
+        # Require every static item to appear in built; allow extras
+        # (new services get added to the footer post-launch).
         for item in s_items:
-            if item in intentional:
-                continue
             assert item in b_items, (
                 f"footer column '{heading}' missing item from static\n"
                 f"  static: {s_items}\n"
@@ -109,15 +99,33 @@ def test_footer_columns_match(all_pages, page_key):
 
 
 @pytest.mark.parametrize("page_key", [m[0] for m in PAGE_MAP])
+def test_footer_contact_details(all_pages, page_key):
+    """Footer contact details come from site.yaml (CMS-edited)."""
+    if page_key not in all_pages:
+        pytest.skip("page missing in one tree")
+    if page_key in BARE_PAGES:
+        pytest.skip("static 404 has no footer")
+    _, b = all_pages[page_key]
+    bf = X.footer(b)
+    items = bf.column_items.get("Contact") or []
+    footer = C.SITE["footer"]
+    for value in (footer["phone"], footer["email"]):
+        assert normalize_text(value) in items, (
+            f"footer Contact column missing {value!r} from site.yaml\n  built: {items}"
+        )
+
+
+@pytest.mark.parametrize("page_key", [m[0] for m in PAGE_MAP])
 def test_footer_afs_strip(all_pages, page_key):
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
     if page_key in BARE_PAGES:
         pytest.skip("static 404 has no footer")
-    s, b = all_pages[page_key]
-    sf, bf = X.footer(s), X.footer(b)
-    assert bf.afs_division == sf.afs_division
-    assert bf.afs_credentials == sf.afs_credentials
+    _, b = all_pages[page_key]
+    bf = X.footer(b)
+    strip = C.SITE["afs_strip"]
+    assert bf.afs_division == C.strip_html(strip["division"])
+    assert bf.afs_credentials == C.strip_html(strip["credentials"])
 
 
 @pytest.mark.parametrize("page_key", [m[0] for m in PAGE_MAP])
@@ -126,9 +134,13 @@ def test_footer_bottom_text(all_pages, page_key):
         pytest.skip("page missing in one tree")
     if page_key in BARE_PAGES:
         pytest.skip("static 404 has no footer")
-    s, b = all_pages[page_key]
-    sf, bf = X.footer(s), X.footer(b)
-    assert bf.bottom_text == sf.bottom_text
+    _, b = all_pages[page_key]
+    bf = X.footer(b)
+    copyright_line = normalize_text(C.SITE["footer"]["copyright"])
+    assert copyright_line in bf.bottom_text, (
+        f"footer bottom text missing copyright from site.yaml\n"
+        f"  expected: {copyright_line!r}\n  built: {bf.bottom_text!r}"
+    )
 
 
 @pytest.mark.parametrize("page_key", [m[0] for m in PAGE_MAP])
@@ -146,21 +158,23 @@ def test_single_h1(all_pages, page_key):
 def test_h1_text(all_pages, page_key):
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
-    s, b = all_pages[page_key]
-    assert X.h1s(b) == X.h1s(s)
+    _, b = all_pages[page_key]
+    assert X.h1s(b) == [C.expected_h1(page_key)], (
+        f"h1 differs from content file on {page_key}"
+    )
 
 
 @pytest.mark.parametrize("page_key", [m[0] for m in PAGE_MAP])
-def test_meta_description_present(all_pages, page_key):
+def test_meta_description(all_pages, page_key):
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
-    if page_key in BARE_PAGES:
-        pytest.skip("static 404 has no description")
-    s, b = all_pages[page_key]
-    sh, bh = X.header(s), X.header(b)
+    _, b = all_pages[page_key]
+    bh = X.header(b)
+    _, expected = C.expected_header(page_key)
     assert bh.description, f"built page {page_key} missing description"
-    assert bh.description == sh.description, (
-        f"description mismatch on {page_key}\n  static: {sh.description!r}\n  built : {bh.description!r}"
+    assert bh.description == expected, (
+        f"description differs from content file on {page_key}\n"
+        f"  content: {expected!r}\n  built  : {bh.description!r}"
     )
 
 
@@ -179,22 +193,34 @@ def test_canonical_present(all_pages, page_key):
 def test_title_text(all_pages, page_key):
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
-    s, b = all_pages[page_key]
-    sh, bh = X.header(s), X.header(b)
-    assert bh.title == sh.title, (
-        f"<title> mismatch on {page_key}\n  static: {sh.title!r}\n  built : {bh.title!r}"
+    _, b = all_pages[page_key]
+    bh = X.header(b)
+    expected, _ = C.expected_header(page_key)
+    assert bh.title == expected, (
+        f"<title> differs from content file on {page_key}\n"
+        f"  content: {expected!r}\n  built  : {bh.title!r}"
     )
 
 
 @pytest.mark.parametrize("page_key", [m[0] for m in PAGE_MAP])
 def test_section_labels_match(all_pages, page_key):
+    """Structure: at least as many section labels as the prototype.
+    Text: every label must come from the page's content files (or be a
+    code-owned label unchanged from the prototype)."""
     if page_key not in all_pages:
         pytest.skip("page missing in one tree")
     s, b = all_pages[page_key]
     s_labels = X.section_labels(s)
     b_labels = X.section_labels(b)
-    assert b_labels == s_labels, (
-        f"section labels differ on {page_key}\n  static: {s_labels}\n  built : {b_labels}"
+    assert len(b_labels) >= len(s_labels), (
+        f"section label count regressed on {page_key}\n"
+        f"  static: {s_labels}\n  built : {b_labels}"
+    )
+    allowed = C.content_strings(page_key) | set(s_labels)
+    unknown = [l for l in b_labels if l not in allowed]
+    assert not unknown, (
+        f"section labels on {page_key} not sourced from content files "
+        f"(or prototype): {unknown}"
     )
 
 
@@ -213,123 +239,100 @@ def test_gold_rule_count(all_pages, page_key):
 
 
 # ---------------------------------------------------------------------------
-# Home page
+# Home page — text vs src/content/pages/home.yaml (+ services collection)
 # ---------------------------------------------------------------------------
 
 def test_home_hero(all_pages):
     s, b = all_pages["home"]
     sh, bh = X.home_hero(s), X.home_hero(b)
-    assert bh.tag_label == sh.tag_label
-    assert bh.h1 == sh.h1
-    assert bh.sub == sh.sub
-    assert bh.cta_labels == sh.cta_labels
+    hero = C.PAGES["home"]["hero"]
+    assert bh.tag_label == normalize_text(hero["tag"])
+    assert bh.h1 == C.strip_html(hero["title"])
+    assert bh.sub == normalize_text(hero["sub"])
+    assert bh.cta_labels == [hero["cta_primary"]["label"], hero["cta_secondary"]["label"]]
     assert bh.has_tagline_image == sh.has_tagline_image
 
 
 def test_home_stats_bar(all_pages):
-    s, b = all_pages["home"]
-    s_stats = X.stats_bar(s)
+    _, b = all_pages["home"]
     b_stats = X.stats_bar(b)
-    assert b_stats == s_stats
+    expected = [
+        (normalize_text(s["number"]), normalize_text(s["label"]))
+        for s in C.PAGES["home"]["stats"]
+    ]
+    assert b_stats == expected
 
 
 def test_home_featured_solution(all_pages):
-    s, b = all_pages["home"]
-    sf, bf = X.featured_solution(s), X.featured_solution(b)
-    assert sf is not None and bf is not None
-    assert bf.title == sf.title
-    assert bf.text == sf.text
-
-
-# Home solutions cards on the prototype that are intentionally rewritten
-# in the built site (content edits that diverge from the prototype).
-HOME_CARD_INTENTIONAL_REMOVALS = {
-    # STAGE was rewritten post-launch — the prototype's STAGE blurb described
-    # event management; it now describes school travel & group excursions.
-    "School Tours And Group Excursions — specialist event management with safety at its core.",
-    # The "New Solution" coming-soon placeholder card was retired once SCOUT
-    # filled the slot. Both the title and the body need to be allowed-absent.
-    "New Solution",
-    "Additional specialist solutions are being finalised. Contact us to discuss your specific requirements.",
-}
+    _, b = all_pages["home"]
+    bf = X.featured_solution(b)
+    assert bf is not None
+    tours = C.SERVICES["svc_tours"]
+    assert bf.title == C.strip_html(tours["title"])
+    assert bf.text == normalize_text(tours["home_card"]["body"])
 
 
 def test_home_solutions_cards(all_pages):
-    s, b = all_pages["home"]
-    s_cards = X.home_solutions_cards(s)
+    """Every non-flagship service's home card (from the services
+    collection) must appear in the home grid, and nothing else."""
+    _, b = all_pages["home"]
     b_cards = X.home_solutions_cards(b)
-    # Built can add new service cards (e.g. SCOUT) to the home grid.
-    # Require every static card title to appear in built; allow extras.
-    s_titles = [c.title for c in s_cards]
-    b_titles = [c.title for c in b_cards]
-    missing_titles = [
-        t for t in s_titles
-        if t not in b_titles and t not in HOME_CARD_INTENTIONAL_REMOVALS
-    ]
-    assert not missing_titles, (
-        f"home solutions card titles missing from built\n"
-        f"  static: {s_titles}\n"
-        f"  built : {b_titles}\n"
-        f"  missing: {missing_titles}"
+    expected = {}
+    for key, svc in C.SERVICES.items():
+        if key == "svc_tours":
+            continue  # flagship — rendered as the featured panel
+        card = svc["home_card"]
+        title = C.strip_html(card.get("title") or svc["title"])
+        expected[title] = normalize_text(card["body"])
+    b_map = {c.title: c.text for c in b_cards}
+    assert set(b_map) == set(expected), (
+        f"home solutions cards differ from services collection\n"
+        f"  content: {sorted(expected)}\n  built : {sorted(b_map)}"
     )
-    s_texts = [c.text for c in s_cards]
-    b_texts = [c.text for c in b_cards]
-    missing_texts = [
-        t for t in s_texts
-        if t not in b_texts and t not in HOME_CARD_INTENTIONAL_REMOVALS
-    ]
-    assert not missing_texts, (
-        f"home solutions card body text missing from built: {missing_texts}"
-    )
+    for title, body in expected.items():
+        assert b_map[title] == body, f"home card body differs for {title!r}"
 
 
 def test_home_about_strip(all_pages):
-    s, b = all_pages["home"]
-    sa, ba = X.home_about_strip(s), X.home_about_strip(b)
-    assert ba.label == sa.label
-    assert ba.title == sa.title
-    assert ba.features == sa.features
-    assert ba.badge_number == sa.badge_number
-    assert ba.badge_label == sa.badge_label
-    assert ba.cta_text == sa.cta_text
+    _, b = all_pages["home"]
+    ba = X.home_about_strip(b)
+    about = C.PAGES["home"]["about"]
+    assert ba.label == normalize_text(about["label"])
+    assert ba.title == normalize_text(about["title"])
+    assert ba.features == [normalize_text(f) for f in about["features"]]
+    assert ba.badge_number == normalize_text(about["badge"]["number"])
+    assert ba.badge_label == normalize_text(about["badge"]["label"])
+    assert ba.cta_text == normalize_text(about["cta_label"])
 
 
-def test_home_about_strip_body_includes_static(all_pages):
-    """Built body paragraph must include all of static's body text.
-
-    Static HTML has only the first sentence (rest is JS-injected from
-    `about_text` translation). Built bakes the canonical full text.
-    Verify built is a superset.
-    """
-    s, b = all_pages["home"]
-    sa, ba = X.home_about_strip(s), X.home_about_strip(b)
-    assert sa.body, "static has no about-strip body text"
-    assert sa.body in ba.body, (
-        f"built about-strip body missing static text\n"
-        f"  static: {sa.body!r}\n"
-        f"  built : {ba.body!r}"
-    )
+def test_home_about_strip_body(all_pages):
+    _, b = all_pages["home"]
+    ba = X.home_about_strip(b)
+    assert ba.body == normalize_text(C.PAGES["home"]["about"]["text"])
 
 
 def test_home_why_grid(all_pages):
-    s, b = all_pages["home"]
-    s_items = X.why_grid(s)
+    _, b = all_pages["home"]
     b_items = X.why_grid(b)
-    s_pairs = [(i.title, i.text) for i in s_items]
     b_pairs = [(i.title, i.text) for i in b_items]
-    assert b_pairs == s_pairs
+    expected = [
+        (normalize_text(i["title"]), normalize_text(i["text"]))
+        for i in C.PAGES["home"]["why"]["items"]
+    ]
+    assert b_pairs == expected
 
 
 def test_home_cta_band(all_pages):
-    s, b = all_pages["home"]
-    sc, bc = X.cta_band(s), X.cta_band(b)
-    assert bc.title == sc.title
-    assert bc.text == sc.text
-    assert bc.cta_labels == sc.cta_labels
+    _, b = all_pages["home"]
+    bc = X.cta_band(b)
+    cta = C.SITE["cta_band"]
+    assert bc.title == normalize_text(cta["title"])
+    assert bc.text == normalize_text(cta["body"])
+    assert bc.cta_labels == [cta["primary"]["label"], cta["outline"]["label"]]
 
 
 # ---------------------------------------------------------------------------
-# Inner-page hero block — every page that has one in static
+# Inner-page hero block — text vs the page's content file
 # ---------------------------------------------------------------------------
 
 PAGES_WITH_PAGE_HERO = [
@@ -345,10 +348,10 @@ PAGES_WITH_PAGE_HERO = [
     "svc_pass_athlete",
     "svc_pass_artist",
     "svc_cc",
+    "svc_stage",
     "svc_bereavement",
     "svc_solo",
-    # svc_stage intentionally excluded — page rewritten post-launch
-    # (see conftest.py PAGE_MAP for the rationale).
+    "svc_scout",
     "art_carriageworks",
     "art_vivid",
     "art_gary",
@@ -357,34 +360,51 @@ PAGES_WITH_PAGE_HERO = [
 ]
 
 
+@pytest.fixture(scope="session")
+def hero_pages(all_pages, built_root):
+    """all_pages plus built-only soups for pages outside PAGE_MAP
+    (svc_stage was rewritten post-launch; svc_scout is post-launch)."""
+    from bs4 import BeautifulSoup
+
+    pages = {k: b for k, (_, b) in all_pages.items()}
+    for key in ("svc_stage", "svc_scout"):
+        path = built_root / C.service_page_path(key)
+        if path.exists():
+            pages[key] = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
+    return pages
+
+
 @pytest.mark.parametrize("page_key", PAGES_WITH_PAGE_HERO)
-def test_page_hero_label(all_pages, page_key):
-    if page_key not in all_pages:
-        pytest.skip("page missing in one tree")
-    s, b = all_pages[page_key]
-    sp, bp = X.page_hero(s), X.page_hero(b)
-    assert bp.label == sp.label, (
-        f"page-hero label differs on {page_key}\n  static: {sp.label!r}\n  built : {bp.label!r}"
+def test_page_hero_label(hero_pages, page_key):
+    if page_key not in hero_pages:
+        pytest.skip("page missing")
+    bp = X.page_hero(hero_pages[page_key])
+    label, _, _ = C.expected_page_hero(page_key)
+    assert bp.label == label, (
+        f"page-hero label differs from content on {page_key}\n"
+        f"  content: {label!r}\n  built  : {bp.label!r}"
     )
 
 
 @pytest.mark.parametrize("page_key", PAGES_WITH_PAGE_HERO)
-def test_page_hero_title(all_pages, page_key):
-    if page_key not in all_pages:
-        pytest.skip("page missing in one tree")
-    s, b = all_pages[page_key]
-    sp, bp = X.page_hero(s), X.page_hero(b)
-    assert bp.title == sp.title, (
-        f"page-hero title differs on {page_key}\n  static: {sp.title!r}\n  built : {bp.title!r}"
+def test_page_hero_title(hero_pages, page_key):
+    if page_key not in hero_pages:
+        pytest.skip("page missing")
+    bp = X.page_hero(hero_pages[page_key])
+    _, title, _ = C.expected_page_hero(page_key)
+    assert bp.title == title, (
+        f"page-hero title differs from content on {page_key}\n"
+        f"  content: {title!r}\n  built  : {bp.title!r}"
     )
 
 
 @pytest.mark.parametrize("page_key", PAGES_WITH_PAGE_HERO)
-def test_page_hero_sub(all_pages, page_key):
-    if page_key not in all_pages:
-        pytest.skip("page missing in one tree")
-    s, b = all_pages[page_key]
-    sp, bp = X.page_hero(s), X.page_hero(b)
-    assert bp.sub == sp.sub, (
-        f"page-hero sub differs on {page_key}\n  static: {sp.sub!r}\n  built : {bp.sub!r}"
+def test_page_hero_sub(hero_pages, page_key):
+    if page_key not in hero_pages:
+        pytest.skip("page missing")
+    bp = X.page_hero(hero_pages[page_key])
+    _, _, sub = C.expected_page_hero(page_key)
+    assert bp.sub == sub, (
+        f"page-hero sub differs from content on {page_key}\n"
+        f"  content: {sub!r}\n  built  : {bp.sub!r}"
     )

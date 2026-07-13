@@ -2,3 +2,4 @@ pytest
 beautifulsoup4
 lxml
 playwright
+pyyaml
