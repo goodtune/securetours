@@ -6,34 +6,11 @@ import SiteFooter from '../components/SiteFooter.astro';
 import CtaBand from '../components/CtaBand.astro';
 import PageHero from '../components/PageHero.astro';
 import AboutBadge from '../components/AboutBadge.astro';
-
-const clientTypes = [
-  'International tourists & inbound groups',
-  'Corporate executives & delegations',
-  'Elite athletes & sports teams',
-  'Touring musicians & performing artists',
-  'Government & diplomatic visitors',
-  'Families & student groups',
-];
-
-const values = [
-  {
-    title: 'Safety as Standard',
-    body: "Risk management isn't an add-on — it's built into every itinerary we design.",
-  },
-  {
-    title: 'Discreet Professionalism',
-    body: 'We operate behind the scenes so our clients can focus on what matters.',
-  },
-  {
-    title: 'Genuine Care',
-    body: 'Every client — from solo traveller to touring sports team — receives the same level of personal attention.',
-  },
-];
+import { about } from '../lib/pages';
 ---
 <BaseLayout
-  title="About Us — Secure Tours & Travel"
-  description="Founded by Matt Harrison, Secure Tours & Travel is the dedicated tourism division of Australian Frontline Solutions — 37 years of security expertise behind every journey."
+  title={about.meta.title}
+  description={about.meta.description}
   canonical="https://securetours.com.au/about/"
 >
 
@@ -45,25 +22,25 @@ const values = [
     { label: 'Home', href: '/' },
     { label: 'About Us' },
   ]}
-  label="Established 1989 · Australian Frontline Solutions"
-  title="About Secure Tours & Travel"
-  sub="Secure Tours & Travel was founded by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable."
+  label={about.hero.label}
+  title={about.hero.title}
+  sub={about.hero.sub}
 />
 
 <section class="section" aria-labelledby="who-heading">
   <div class="container">
     <div class="about-grid">
       <div>
-        <span class="section-label">About Secure Tours & Travel</span>
-        <h2 id="who-heading">Who We Are</h2>
+        <span class="section-label">{about.who.label}</span>
+        <h2 id="who-heading">{about.who.title}</h2>
         <div class="gold-rule"></div>
-        <p class="service-lead">We are a specialist travel and event services company based in Australia, delivering premium inbound tourism services and secure travel solutions for high-profile individuals, corporate delegations, touring athletes, performing artists and families.</p>
+        <p class="service-lead">{about.who.lead}</p>
       </div>
       <div class="about-visual">
         <AboutBadge
-          number="37"
-          label="Years of Excellence"
-          footnote="Founded by Matt Harrison. Backed by Australian Frontline Solutions — est. 1989, Security Master Licence holder."
+          number={about.who.badge.number}
+          label={about.who.badge.label}
+          footnote={about.who.badge.footnote}
           borderTop={false}
         />
       </div>
@@ -73,11 +50,11 @@ const values = [
 
 <section class="section section--alt" aria-labelledby="values-heading">
   <div class="container">
-    <span class="section-label">Why Choose Us</span>
-    <h2 id="values-heading">Our Values</h2>
+    <span class="section-label">{about.values.label}</span>
+    <h2 id="values-heading">{about.values.title}</h2>
     <div class="gold-rule"></div>
     <div class="values-grid">
-      {values.map((v) => (
+      {about.values.items.map((v) => (
         <div class="value-card">
           <h3>{v.title}</h3>
           <p>{v.body}</p>
@@ -89,11 +66,11 @@ const values = [
 
 <section class="section" aria-labelledby="clients-heading">
   <div class="container">
-    <span class="section-label">Clients</span>
-    <h2 id="clients-heading">Who We Serve</h2>
+    <span class="section-label">{about.clients.label}</span>
+    <h2 id="clients-heading">{about.clients.title}</h2>
     <div class="gold-rule"></div>
     <div class="clients-grid">
-      {clientTypes.map((c) => <div class="client-chip">{c}</div>)}
+      {about.clients.items.map((c) => <div class="client-chip">{c}</div>)}
     </div>
   </div>
 </section>
@@ -102,32 +79,30 @@ const values = [
   <div class="container">
     <div class="parent-brand">
       <div>
-        <span class="section-label">Part of Australian Frontline Solutions</span>
-        <h2 id="parent-heading">Part of Australian Frontline Solutions</h2>
+        <span class="section-label">{about.parent.label}</span>
+        <h2 id="parent-heading">{about.parent.title}</h2>
         <div class="gold-rule"></div>
-        <p class="section-intro">Australian Frontline Solutions (AFS) has been Australia's trusted partner in safety and security services since 1989 — 37 years of operational expertise. Secure Tours & Travel draws on this heritage to deliver outcomes that no standard tour operator can match.</p>
-        <a href="/contact/" class="btn btn--primary" style="margin-top:2rem;">Enquire Now</a>
+        <p class="section-intro">{about.parent.intro}</p>
+        <a href="/contact/" class="btn btn--primary" style="margin-top:2rem;">{about.parent.cta_label}</a>
       </div>
       <div>
         <div class="afs-creds">
-          <div class="afs-cred-item">
-            <div class="afs-cred-item__value">1989</div>
-            <div class="afs-cred-item__label">Established</div>
-          </div>
-          <div class="afs-cred-item">
-            <div class="afs-cred-item__value">37</div>
-            <div class="afs-cred-item__label">Years Trading</div>
-          </div>
+          {about.parent.creds.map((c) => (
+            <div class="afs-cred-item">
+              <div class="afs-cred-item__value">{c.value}</div>
+              <div class="afs-cred-item__label">{c.label}</div>
+            </div>
+          ))}
           <div class="afs-cred-item" style="grid-column: span 2;">
-            <div class="afs-cred-item__value" style="font-size:1rem; letter-spacing:0.03em;">Security Master Licence</div>
-            <div class="afs-cred-item__label">Licensed Operator</div>
+            <div class="afs-cred-item__value" style="font-size:1rem; letter-spacing:0.03em;">{about.parent.creds_wide.value}</div>
+            <div class="afs-cred-item__label">{about.parent.creds_wide.label}</div>
           </div>
         </div>
         <div style="background:rgba(255,255,255,0.06); border-radius: 8px; padding:2rem; border:1px solid rgba(184,149,42,0.25); margin-top:1rem;">
           <ul class="about-features" style="color:rgba(255,255,255,0.85);">
-            <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);">Multilingual teams — a range of languages</li>
-            <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);">Discreet, professional, reliable</li>
-            <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);">National coverage — global partnerships</li>
+            {about.parent.features.map((f) => (
+              <li style="border-color:rgba(255,255,255,0.1); color:rgba(255,255,255,0.85);">{f}</li>
+            ))}
           </ul>
         </div>
       </div>

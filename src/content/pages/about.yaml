@@ -1,0 +1,55 @@
+# About page copy. Edited via the CMS (/admin) — validated at build time
+# by the schema in src/lib/pages.ts.
+meta:
+  title: 'About Us — Secure Tours & Travel'
+  description: 'Founded by Matt Harrison, Secure Tours & Travel is the dedicated tourism division of Australian Frontline Solutions — 37 years of security expertise behind every journey.'
+
+hero:
+  label: 'Established 1989 · Australian Frontline Solutions'
+  title: 'About Secure Tours & Travel'
+  sub: 'Secure Tours & Travel was founded by Matt Harrison with a singular mission: to deliver a travel experience where safety and luxury are inseparable.'
+
+who:
+  label: 'About Secure Tours & Travel'
+  title: 'Who We Are'
+  lead: 'We are a specialist travel and event services company based in Australia, delivering premium inbound tourism services and secure travel solutions for high-profile individuals, corporate delegations, touring athletes, performing artists and families.'
+  badge:
+    number: '37'
+    label: 'Years of Excellence'
+    footnote: 'Founded by Matt Harrison. Backed by Australian Frontline Solutions — est. 1989, Security Master Licence holder.'
+
+values:
+  label: 'Why Choose Us'
+  title: 'Our Values'
+  items:
+    - title: 'Safety as Standard'
+      body: "Risk management isn't an add-on — it's built into every itinerary we design."
+    - title: 'Discreet Professionalism'
+      body: 'We operate behind the scenes so our clients can focus on what matters.'
+    - title: 'Genuine Care'
+      body: 'Every client — from solo traveller to touring sports team — receives the same level of personal attention.'
+
+clients:
+  label: 'Clients'
+  title: 'Who We Serve'
+  items:
+    - 'International tourists & inbound groups'
+    - 'Corporate executives & delegations'
+    - 'Elite athletes & sports teams'
+    - 'Touring musicians & performing artists'
+    - 'Government & diplomatic visitors'
+    - 'Families & student groups'
+
+parent:
+  label: 'Part of Australian Frontline Solutions'
+  title: 'Part of Australian Frontline Solutions'
+  intro: "Australian Frontline Solutions (AFS) has been Australia's trusted partner in safety and security services since 1989 — 37 years of operational expertise. Secure Tours & Travel draws on this heritage to deliver outcomes that no standard tour operator can match."
+  cta_label: 'Enquire Now'
+  creds:
+    - { value: '1989', label: 'Established' }
+    - { value: '37', label: 'Years Trading' }
+  creds_wide: { value: 'Security Master Licence', label: 'Licensed Operator' }
+  features:
+    - 'Multilingual teams — a range of languages'
+    - 'Discreet, professional, reliable'
+    - 'National coverage — global partnerships'

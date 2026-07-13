@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import yaml from '@rollup/plugin-yaml';
 
 // https://astro.build/config
 export default defineConfig({
@@ -16,4 +17,9 @@ export default defineConfig({
       filter: (page) => !page.includes('/admin/'),
     }),
   ],
+  vite: {
+    // Page copy lives in src/content/pages/*.yaml (CMS-edited);
+    // this lets pages import it as plain objects.
+    plugins: [yaml()],
+  },
 });

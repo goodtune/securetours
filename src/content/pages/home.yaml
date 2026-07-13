@@ -1,0 +1,60 @@
+# Home page copy. Edited via the CMS (/admin) — validated at build time
+# by the schema in src/lib/pages.ts.
+meta:
+  title: 'Secure Tours & Travel — Secure Luxury Travel for Discerning Individuals & Groups'
+  description: "Australia's premier secure travel and VIP concierge specialists. Combining elite security expertise with luxury service across inbound tourism, executive transfers, athlete support, and event management."
+
+hero:
+  tag: "Australia's Premium Secure Travel Specialists"
+  # May contain <em> emphasis markup.
+  title: 'Secure Luxury Travel for <em>Discerning Individuals</em> & Groups'
+  sub: 'Combining elite security expertise with premium concierge service — we protect your journey, from first arrival to final departure.'
+  cta_primary: { label: 'Explore Our Solutions', href: '/services/' }
+  cta_secondary: { label: 'Enquire Now', href: '/contact/' }
+
+stats:
+  - { number: '37 Years', label: 'Industry Experience' }
+  - { number: 'Est. 1989', label: 'Australian Frontline Solutions' }
+  - { number: 'National', label: 'Footprint (NSW · QLD · VIC)' }
+  - { number: '24/7', label: 'Support Available' }
+
+solutions:
+  label: 'Our Solutions'
+  title: 'Specialist Solutions'
+  intro: 'Every solution is designed around one principle: your safety, comfort and peace of mind. From private transfers to full event logistics, we cover every detail.'
+  featured_tag: 'Flagship Solution · Inbound & Domestic'
+  featured_cta_label: 'Learn More'
+
+about:
+  label: 'About Secure Tours & Travel'
+  title: 'Built on Trust. Backed by Experience.'
+  text: "Secure Tours & Travel is the dedicated tourism and event services division of Australian Frontline Solutions (AFS) — one of Australia's most trusted names in safety leadership, protective operations and event management."
+  features:
+    - 'Security Master Licence holder'
+    - 'Multilingual teams — a range of languages'
+    - 'Discreet, professional, reliable'
+    - 'National coverage — global partnerships'
+    - 'Sibling brand to Athlete Pathways Australia'
+  cta_label: 'Our Story'
+  badge:
+    number: '37'
+    label: 'Years of Excellence'
+    footnote: 'Australian Frontline Solutions — established 1989.'
+    footnote_tag: 'Security Master Licence Holder'
+
+why:
+  label: 'Why Choose Us'
+  title: 'What Sets Us Apart'
+  items:
+    - icon: '🛡️'
+      title: 'Security-First'
+      text: 'Every journey is underpinned by licensed risk assessment, advance reconnaissance and close protection protocols.'
+    - icon: '👑'
+      title: 'White-Glove Service'
+      text: 'From airport arrivals to VIP event access — our concierge teams ensure seamless, stress-free experiences.'
+    - icon: '🌐'
+      title: 'Multilingual'
+      text: 'We speak your language. Our chaperones and documentation are available across a range of languages including English, Mandarin, French, Korean, Italian and German.'
+    - icon: '📞'
+      title: '24/7 Support'
+      text: 'Round-the-clock support for international clients across all time zones.'

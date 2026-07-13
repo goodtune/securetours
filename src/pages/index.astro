@@ -8,6 +8,7 @@ import CtaBand from '../components/CtaBand.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import SolutionsFeatured from '../components/SolutionsFeatured.astro';
 import AboutBadge from '../components/AboutBadge.astro';
+import { home } from '../lib/pages';
 
 const services = await getCollection('services');
 const tours = await getEntry('services', 'tours-travel-solutions');
@@ -19,8 +20,8 @@ const gridServices = services
 if (!tours) throw new Error('Featured service "tours-travel-solutions" missing from collection');
 ---
 <BaseLayout
-  title="Secure Tours & Travel — Secure Luxury Travel for Discerning Individuals & Groups"
-  description="Australia's premier secure travel and VIP concierge specialists. Combining elite security expertise with luxury service across inbound tourism, executive transfers, athlete support, and event management."
+  title={home.meta.title}
+  description={home.meta.description}
   canonical="https://securetours.com.au/"
 >
 
@@ -29,12 +30,12 @@ if (!tours) throw new Error('Featured service "tours-travel-solutions" missing f
 <section class="hero" id="home" aria-label="Hero">
   <div class="container">
     <div class="hero-content">
-      <span class="hero-tag">Australia's Premium Secure Travel Specialists</span>
-      <h1>Secure Luxury Travel for <em>Discerning Individuals</em> & Groups</h1>
-      <p class="hero-sub">Combining elite security expertise with premium concierge service — we protect your journey, from first arrival to final departure.</p>
+      <span class="hero-tag">{home.hero.tag}</span>
+      <h1 set:html={home.hero.title} />
+      <p class="hero-sub">{home.hero.sub}</p>
       <div class="hero-actions">
-        <a href="/services/" class="btn btn--primary">Explore Our Solutions</a>
-        <a href="/contact/" class="btn btn--outline">Enquire Now</a>
+        <a href={home.hero.cta_primary.href} class="btn btn--primary">{home.hero.cta_primary.label}</a>
+        <a href={home.hero.cta_secondary.href} class="btn btn--outline">{home.hero.cta_secondary.label}</a>
       </div>
       <img src="/assets/tagline.gif" alt="Secure Luxury Travel for discerning individuals & groups" class="hero-tagline-img" loading="lazy" />
     </div>
@@ -44,38 +45,28 @@ if (!tours) throw new Error('Featured service "tours-travel-solutions" missing f
 <div class="stats-bar" aria-label="Key facts">
   <div class="container">
     <div class="stats-inner">
-      <div class="stat-item">
-        <div class="stat-item__number">37 Years</div>
-        <div class="stat-item__label">Industry Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-item__number">Est. 1989</div>
-        <div class="stat-item__label">Australian Frontline Solutions</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-item__number">National</div>
-        <div class="stat-item__label">Footprint (NSW · QLD · VIC)</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-item__number">24/7</div>
-        <div class="stat-item__label">Support Available</div>
-      </div>
+      {home.stats.map((stat) => (
+        <div class="stat-item">
+          <div class="stat-item__number">{stat.number}</div>
+          <div class="stat-item__label">{stat.label}</div>
+        </div>
+      ))}
     </div>
   </div>
 </div>
 
 <section class="section section--alt" id="services" aria-labelledby="services-heading">
   <div class="container">
-    <span class="section-label">Our Solutions</span>
-    <h2 class="section-title" id="services-heading">Specialist Solutions</h2>
+    <span class="section-label">{home.solutions.label}</span>
+    <h2 class="section-title" id="services-heading">{home.solutions.title}</h2>
     <div class="gold-rule"></div>
-    <p class="section-intro">Every solution is designed around one principle: your safety, comfort and peace of mind. From private transfers to full event logistics, we cover every detail.</p>
+    <p class="section-intro">{home.solutions.intro}</p>
 
     <SolutionsFeatured
-      tag="Flagship Solution · Inbound & Domestic"
+      tag={home.solutions.featured_tag}
       title={tours.data.title}
       body={tours.data.home_card.body}
-      cta={{ label: 'Learn More', href: '/services/tours-travel-solutions/' }}
+      cta={{ label: home.solutions.featured_cta_label, href: '/services/tours-travel-solutions/' }}
       icon={tours.data.home_card.icon}
     />
 
@@ -98,25 +89,21 @@ if (!tours) throw new Error('Featured service "tours-travel-solutions" missing f
   <div class="container">
     <div class="about-grid">
       <div class="about-text">
-        <span class="section-label">About Secure Tours & Travel</span>
-        <h2 id="about-heading">Built on Trust. Backed by Experience.</h2>
+        <span class="section-label">{home.about.label}</span>
+        <h2 id="about-heading">{home.about.title}</h2>
         <div class="gold-rule"></div>
-        <p>Secure Tours & Travel is the dedicated tourism and event services division of Australian Frontline Solutions (AFS) — one of Australia's most trusted names in safety leadership, protective operations and event management.</p>
+        <p>{home.about.text}</p>
         <ul class="about-features">
-          <li>Security Master Licence holder</li>
-          <li>Multilingual teams — a range of languages</li>
-          <li>Discreet, professional, reliable</li>
-          <li>National coverage — global partnerships</li>
-          <li>Sibling brand to Athlete Pathways Australia</li>
+          {home.about.features.map((feature) => <li>{feature}</li>)}
         </ul>
-        <a href="/about/" class="btn btn--navy" style="margin-top:2rem;">Our Story</a>
+        <a href="/about/" class="btn btn--navy" style="margin-top:2rem;">{home.about.cta_label}</a>
       </div>
       <div class="about-visual">
         <AboutBadge
-          number="37"
-          label="Years of Excellence"
-          footnote="Australian Frontline Solutions — established 1989."
-          footnoteTag="Security Master Licence Holder"
+          number={home.about.badge.number}
+          label={home.about.badge.label}
+          footnote={home.about.badge.footnote}
+          footnoteTag={home.about.badge.footnote_tag}
         />
       </div>
     </div>
@@ -125,30 +112,17 @@ if (!tours) throw new Error('Featured service "tours-travel-solutions" missing f
 
 <section class="section section--alt" aria-labelledby="why-heading">
   <div class="container text-center">
-    <span class="section-label">Why Choose Us</span>
-    <h2 id="why-heading">What Sets Us Apart</h2>
+    <span class="section-label">{home.why.label}</span>
+    <h2 id="why-heading">{home.why.title}</h2>
     <div class="gold-rule"></div>
     <div class="why-grid">
-      <div class="why-item">
-        <span class="why-item__icon" aria-hidden="true">🛡️</span>
-        <h3>Security-First</h3>
-        <p>Every journey is underpinned by licensed risk assessment, advance reconnaissance and close protection protocols.</p>
-      </div>
-      <div class="why-item">
-        <span class="why-item__icon" aria-hidden="true">👑</span>
-        <h3>White-Glove Service</h3>
-        <p>From airport arrivals to VIP event access — our concierge teams ensure seamless, stress-free experiences.</p>
-      </div>
-      <div class="why-item">
-        <span class="why-item__icon" aria-hidden="true">🌐</span>
-        <h3>Multilingual</h3>
-        <p>We speak your language. Our chaperones and documentation are available across a range of languages including English, Mandarin, French, Korean, Italian and German.</p>
-      </div>
-      <div class="why-item">
-        <span class="why-item__icon" aria-hidden="true">📞</span>
-        <h3>24/7 Support</h3>
-        <p>Round-the-clock support for international clients across all time zones.</p>
-      </div>
+      {home.why.items.map((item) => (
+        <div class="why-item">
+          <span class="why-item__icon" aria-hidden="true">{item.icon}</span>
+          <h3>{item.title}</h3>
+          <p>{item.text}</p>
+        </div>
+      ))}
     </div>
   </div>
 </section>
