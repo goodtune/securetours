@@ -14,6 +14,12 @@
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
   </head>
   <body>
-    <script is:inline src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+    <!--
+      Pinned deliberately: unpinned `latest` shipped same-day startup
+      regressions (sveltia-cms#821 — v0.170.6/0.170.7 hang at the loading
+      screen; 0.170.5 is known good). To upgrade, bump the version here,
+      check the Sveltia release notes/issues, and test /admin on staging.
+    -->
+    <script is:inline src="https://unpkg.com/@sveltia/cms@0.170.5/dist/sveltia-cms.js"></script>
   </body>
 </html>
