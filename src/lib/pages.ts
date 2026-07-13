@@ -17,6 +17,7 @@ import resourcesRaw from '../content/pages/resources.yaml';
 import faqRaw from '../content/pages/faq.yaml';
 import notFoundRaw from '../content/pages/not-found.yaml';
 import servicesIndexRaw from '../content/pages/services-index.yaml';
+import articlesIndexRaw from '../content/pages/articles-index.yaml';
 import siteRaw from '../content/pages/site.yaml';
 
 const link = z.object({ label: z.string(), href: z.string() });
@@ -250,6 +251,74 @@ const servicesIndexSchema = z.object({
 });
 
 export const servicesIndex = parsePage(servicesIndexSchema, servicesIndexRaw, 'services-index.yaml');
+
+const articlesIndexSchema = z.object({
+  meta,
+  hero: z.object({ label: z.string(), title: z.string(), sub: z.string() }),
+  library_heading: z.string(),
+  testimonials: z.object({
+    label: z.string(),
+    title: z.string(),
+    cards: z.array(
+      z.object({
+        avatar: z.string(),
+        name: z.string(),
+        title: z.string(),
+        badge: z.string(),
+        date: z.string(),
+        quote: z.string(),
+        cta_label: z.string(),
+        cta_href: z.string(),
+      }),
+    ),
+  }),
+  case_studies: z.object({
+    label: z.string(),
+    title: z.string(),
+    view_link: link,
+    cards: z.array(
+      z.object({
+        label: z.string(),
+        title: z.string(),
+        text: z.string(),
+        href: z.string().optional(),
+        cta: z.string(),
+      }),
+    ),
+  }),
+  audio: z.object({
+    label: z.string(),
+    title: z.string(),
+    intro: z.string(),
+    panel: z.object({
+      label: z.string(),
+      title: z.string(),
+      body: z.string(),
+      items: z.array(
+        z.object({ title: z.string(), meta: z.string(), placeholder: z.string() }),
+      ),
+      note: z.string(),
+      cta_label: z.string(),
+    }),
+  }),
+  articles: z.object({
+    label: z.string(),
+    title: z.string(),
+    intro: z.string(),
+    cards: z.array(
+      z.object({
+        category: z.string(),
+        title: z.string(),
+        text: z.string(),
+        href: z.string().optional(),
+        badge: z.string().optional(),
+      }),
+    ),
+  }),
+  cta_band: ctaBand,
+});
+
+export const articlesIndex = parsePage(articlesIndexSchema, articlesIndexRaw, 'articles-index.yaml');
 
 const siteSchema = z.object({
   cta_band: z.object({ title: z.string(), body: z.string(), primary: link, outline: link }),

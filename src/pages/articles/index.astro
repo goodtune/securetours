@@ -5,10 +5,11 @@ import FooterAfs from '../../components/FooterAfs.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
 import CtaBand from '../../components/CtaBand.astro';
 import PageHero from '../../components/PageHero.astro';
+import { articlesIndex as page } from '../../lib/pages';
 ---
 <BaseLayout
-  title="Articles, Testimonials & Case Studies — Secure Tours & Travel"
-  description="Client testimonials, case studies and insights from Secure Tours & Travel — Australia's premier secure luxury travel and event security specialists."
+  title={page.meta.title}
+  description={page.meta.description}
   canonical="https://securetours.com.au/articles/"
 >
 
@@ -20,210 +21,141 @@ import PageHero from '../../components/PageHero.astro';
     { label: 'Home', href: '/' },
     { label: 'Articles, Testimonials & Case Studies' },
   ]}
-  label="Insights & Client Stories"
-  title="Articles, Testimonials & Case Studies"
-  sub="Real-world insights into secure travel, event management and VIP logistics — drawn from over three decades of operational experience with AFS Group."
+  label={page.hero.label}
+  title={page.hero.title}
+  sub={page.hero.sub}
 />
 
 <section class="section" aria-labelledby="content-heading">
   <div class="container">
-    <h2 id="content-heading" class="sr-only">Content Library</h2>
+    <h2 id="content-heading" class="sr-only">{page.library_heading}</h2>
 
     <div style="margin-bottom: 4rem;">
       <div class="section-heading-row">
         <div>
-          <span class="section-label">What Our Clients Say</span>
-          <h2 style="margin-top:0.25rem;">Testimonials & Endorsements</h2>
+          <span class="section-label">{page.testimonials.label}</span>
+          <h2 style="margin-top:0.25rem;">{page.testimonials.title}</h2>
           <div class="gold-rule"></div>
         </div>
       </div>
 
       <div class="content-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-card__header">
-            <div class="testimonial-card__avatar">G</div>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__name">Gary O'Riordan</div>
-              <div class="testimonial-card__title">Tourism Industry Consultant & Business Advisor</div>
+        {page.testimonials.cards.map((card) => (
+          <div class="testimonial-card">
+            <div class="testimonial-card__header">
+              <div class="testimonial-card__avatar">{card.avatar}</div>
+              <div class="testimonial-card__author">
+                <div class="testimonial-card__name">{card.name}</div>
+                <div class="testimonial-card__title">{card.title}</div>
+              </div>
+              <div class="testimonial-card__badge">{card.badge}</div>
             </div>
-            <div class="testimonial-card__badge">Endorsement</div>
-          </div>
-          <div class="testimonial-card__body">
-            <div class="testimonial-card__date">14 August 2018</div>
-            <div class="testimonial-card__quote">"Secure Tours & Travel is a niche tour operator offering travel packages and itineraries, planning, coordination and booking services, as well as delivery of ground arrangements in Australia with an overarching focus on luxury, high end experiences and a clear differentiation on safety and security. This type of service offering is new to the Australian market and has good potential with high end travellers such as VIP groups, conference and event attendees, or leisure travellers who are safety and security focused."</div>
-            <a class="testimonial-card__cta" href="/articles/gary-oriordan-endorsement/">Read full endorsement →</a>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-card__header">
-            <div class="testimonial-card__avatar">J</div>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__name">Janene Rees</div>
-              <div class="testimonial-card__title">Founder & Director — REES INTERNATIONAL</div>
+            <div class="testimonial-card__body">
+              <div class="testimonial-card__date">{card.date}</div>
+              <div class="testimonial-card__quote">{card.quote}</div>
+              <a class="testimonial-card__cta" href={card.cta_href}>{card.cta_label}</a>
             </div>
-            <div class="testimonial-card__badge">Endorsement</div>
           </div>
-          <div class="testimonial-card__body">
-            <div class="testimonial-card__date">23 August 2018</div>
-            <div class="testimonial-card__quote">"It gives me great pleasure to endorse Secure Tours and Travel and sister company AFS for its outstanding work practices and I believe them to be one of the best in their field… The work they carried out was of a very high standard and the client was very happy with all work done."</div>
-            <a class="testimonial-card__cta" href="/articles/janene-rees-endorsement/">Read full endorsement →</a>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-card__header">
-            <div class="testimonial-card__avatar">E</div>
-            <div class="testimonial-card__author">
-              <div class="testimonial-card__name">Event Producer</div>
-              <div class="testimonial-card__title">Major Public Festival — Sydney</div>
-            </div>
-            <div class="testimonial-card__badge">Venue Feedback</div>
-          </div>
-          <div class="testimonial-card__body">
-            <div class="testimonial-card__date">Available on request</div>
-            <div class="testimonial-card__quote">"The AFS Group team adapted to our event's requirements each night — their familiarity with the venue and their rapid communication between teams made crowd management seamless across the full season."</div>
-            <a class="testimonial-card__cta" href="/contact/">Request reference →</a>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
 
     <div style="margin-bottom: 4rem;">
       <div class="section-heading-row">
         <div>
-          <span class="section-label">Operational Experience</span>
-          <h2 style="margin-top:0.25rem;">Case Studies</h2>
+          <span class="section-label">{page.case_studies.label}</span>
+          <h2 style="margin-top:0.25rem;">{page.case_studies.title}</h2>
           <div class="gold-rule"></div>
         </div>
-        <a href="/event-solutions/">View Event Solutions →</a>
+        <a href={page.case_studies.view_link.href}>{page.case_studies.view_link.label}</a>
       </div>
 
       <div class="content-grid">
-        <a class="case-study-card" href="/articles/vivid-sydney/">
-          <div class="case-study-card__header">
-            <div class="case-study-card__label">Case Study · Public Festival Security</div>
-            <div class="case-study-card__title">Vivid Sydney — Festival Security & Crowd Management</div>
-          </div>
-          <div class="case-study-card__body">
-            <p class="case-study-card__text">One of Australia's largest public events, attracting over 3 million visitors across 23 nights. AFS Group provided crowd management, access control and VIP guest services across multiple Sydney precincts.</p>
-            <span class="case-study-card__cta">Read case study →</span>
-          </div>
-        </a>
-
-        <a class="case-study-card" href="/articles/carriageworks/">
-          <div class="case-study-card__header">
-            <div class="case-study-card__label">Case Study · Venue Security Program</div>
-            <div class="case-study-card__title">Carriageworks — Multi-Event Venue Security Program</div>
-          </div>
-          <div class="case-study-card__body">
-            <p class="case-study-card__text">Carriageworks in Sydney's Eveleigh hosts major arts, cultural and commercial events year-round. AFS Group has delivered ongoing event security across multiple productions — arts, fashion, food markets and corporate functions.</p>
-            <span class="case-study-card__cta">Read case study →</span>
-          </div>
-        </a>
-
-        <div class="case-study-card" style="cursor:default;">
-          <div class="case-study-card__header">
-            <div class="case-study-card__label">Case Study · Corporate Travel</div>
-            <div class="case-study-card__title">International Sporting Delegation — Multi-City Ground Transport</div>
-          </div>
-          <div class="case-study-card__body">
-            <p class="case-study-card__text">Secure ground transport for a 40-person international sports delegation across Sydney, Melbourne and Brisbane during a major tournament — airports, venues, accommodation and team movements coordinated end-to-end.</p>
-            <span class="case-study-card__cta" style="color:var(--gold);">Coming Soon</span>
-          </div>
-        </div>
-
-        <div class="case-study-card" style="cursor:default;">
-          <div class="case-study-card__header">
-            <div class="case-study-card__label">Case Study · Film & Television</div>
-            <div class="case-study-card__title">Major Feature Production — On-Set Security & Talent Protection</div>
-          </div>
-          <div class="case-study-card__body">
-            <p class="case-study-card__text">Providing on-set security, talent protection and location access management for a major Australian feature production — covering principal cast, location shoots and media management over an extended production schedule.</p>
-            <span class="case-study-card__cta" style="color:var(--gold);">Coming Soon</span>
-          </div>
-        </div>
+        {page.case_studies.cards.map((card) =>
+          card.href ? (
+            <a class="case-study-card" href={card.href}>
+              <div class="case-study-card__header">
+                <div class="case-study-card__label">{card.label}</div>
+                <div class="case-study-card__title">{card.title}</div>
+              </div>
+              <div class="case-study-card__body">
+                <p class="case-study-card__text">{card.text}</p>
+                <span class="case-study-card__cta">{card.cta}</span>
+              </div>
+            </a>
+          ) : (
+            <div class="case-study-card" style="cursor:default;">
+              <div class="case-study-card__header">
+                <div class="case-study-card__label">{card.label}</div>
+                <div class="case-study-card__title">{card.title}</div>
+              </div>
+              <div class="case-study-card__body">
+                <p class="case-study-card__text">{card.text}</p>
+                <span class="case-study-card__cta" style="color:var(--gold);">{card.cta}</span>
+              </div>
+            </div>
+          ),
+        )}
       </div>
     </div>
 
     <div style="margin-bottom: 4rem;">
-      <span class="section-label">In Their Words</span>
-      <h2 style="margin-top:0.25rem; margin-bottom:0.5rem;">Audio Interviews & Features</h2>
+      <span class="section-label">{page.audio.label}</span>
+      <h2 style="margin-top:0.25rem; margin-bottom:0.5rem;">{page.audio.title}</h2>
       <div class="gold-rule"></div>
-      <p class="section-intro" style="margin-top:1rem;">Matt Harrison has been interviewed about Secure Tours & Travel and the AFS Group's unique approach to security-led travel. Listen to the interviews below.</p>
+      <p class="section-intro" style="margin-top:1rem;">{page.audio.intro}</p>
 
       <div class="audio-section">
-        <span class="section-label">Listen</span>
-        <h3>Matt Harrison — Interviews & Features</h3>
-        <p>Audio interviews with Secure Tours & Travel founder Matthew Harrison discussing the vision behind the business, the Australian secure travel market, and what makes the AFS Group approach different.</p>
+        <span class="section-label">{page.audio.panel.label}</span>
+        <h3>{page.audio.panel.title}</h3>
+        <p>{page.audio.panel.body}</p>
 
         <div class="audio-player-list">
-          <div class="audio-player-item">
-            <div class="audio-player-item__title">Matt Harrison — Secure Tours & Travel Overview</div>
-            <div class="audio-player-item__meta">Interview · Duration: TBC</div>
-            <div class="audio-player-item__placeholder">Audio file to be uploaded — contact us to request early access.</div>
-          </div>
-          <div class="audio-player-item">
-            <div class="audio-player-item__title">AFS Group — 37 Years of Operational Security</div>
-            <div class="audio-player-item__meta">Feature Interview · Duration: TBC</div>
-            <div class="audio-player-item__placeholder">Audio file to be uploaded — contact us to request early access.</div>
-          </div>
+          {page.audio.panel.items.map((item) => (
+            <div class="audio-player-item">
+              <div class="audio-player-item__title">{item.title}</div>
+              <div class="audio-player-item__meta">{item.meta}</div>
+              <div class="audio-player-item__placeholder">{item.placeholder}</div>
+            </div>
+          ))}
         </div>
 
-        <p style="margin-top:1.5rem; font-size:0.825rem; color:rgba(255,255,255,0.5);">Audio files will be hosted here directly using HTML5 audio — no third-party plugins required. Subscribe for updates when new interviews are published.</p>
-        <a href="/contact/" class="btn btn--outline" style="margin-top:1rem; border-color:var(--gold); color:var(--gold);">Request Early Access</a>
+        <p style="margin-top:1.5rem; font-size:0.825rem; color:rgba(255,255,255,0.5);">{page.audio.panel.note}</p>
+        <a href="/contact/" class="btn btn--outline" style="margin-top:1rem; border-color:var(--gold); color:var(--gold);">{page.audio.panel.cta_label}</a>
       </div>
     </div>
 
     <div>
-      <span class="section-label">Insights & Opinion</span>
-      <h2 style="margin-top:0.25rem; margin-bottom:0.5rem;">Articles</h2>
+      <span class="section-label">{page.articles.label}</span>
+      <h2 style="margin-top:0.25rem; margin-bottom:0.5rem;">{page.articles.title}</h2>
       <div class="gold-rule"></div>
-      <p class="section-intro" style="margin-top:1rem;">Operational perspectives from the AFS Group team on security, travel management and event delivery.</p>
+      <p class="section-intro" style="margin-top:1rem;">{page.articles.intro}</p>
 
       <div class="content-grid" style="margin-top:2rem;">
-        <a class="article-card" href="/articles/matthew-harrison-profile/" style="text-decoration:none; color:inherit;">
-          <div class="article-card__header">
-            <div class="article-card__category">Feature Profile</div>
-            <div class="article-card__title">Matthew Harrison — AFS Solutions</div>
-          </div>
-          <div class="article-card__body">
-            <p class="article-card__text">From working on the door at a local pub to advising and protecting high-profile clients nationally — the story of how Matthew Harrison built one of Australia's most respected secure travel and event security operations.</p>
-          </div>
-        </a>
-
-        <div class="article-card">
-          <div class="article-card__header">
-            <div class="article-card__category">Article</div>
-            <div class="article-card__title">Why Security Should Be Embedded in Event Planning — Not Bolted On</div>
-            <span class="article-card__badge">Coming Soon</span>
-          </div>
-          <div class="article-card__body">
-            <p class="article-card__text">An operational perspective on the difference between event security as an afterthought and security-first event design — and why the former consistently produces worse outcomes for organisers, guests and talent alike.</p>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="article-card__header">
-            <div class="article-card__category">Article</div>
-            <div class="article-card__title">The Growing Demand for Secure Inbound Tourism in Australia</div>
-            <span class="article-card__badge">Coming Soon</span>
-          </div>
-          <div class="article-card__body">
-            <p class="article-card__text">High-end international travellers are increasingly seeking operators who can guarantee both luxury and safety. How Australia's inbound tourism sector is responding — and what Secure Tours & Travel is doing differently.</p>
-          </div>
-        </div>
-
-        <div class="article-card">
-          <div class="article-card__header">
-            <div class="article-card__category">Article</div>
-            <div class="article-card__title">STAT Accreditation: Raising the Safety Bar for Australian Tourism Operators</div>
-            <span class="article-card__badge">Coming Soon</span>
-          </div>
-          <div class="article-card__body">
-            <p class="article-card__text">What STAT Accreditation means, why it matters to international tourism wholesalers, and how it is changing the way Australian operators communicate their safety and security standards to the global market.</p>
-          </div>
-        </div>
+        {page.articles.cards.map((card) =>
+          card.href ? (
+            <a class="article-card" href={card.href} style="text-decoration:none; color:inherit;">
+              <div class="article-card__header">
+                <div class="article-card__category">{card.category}</div>
+                <div class="article-card__title">{card.title}</div>
+              </div>
+              <div class="article-card__body">
+                <p class="article-card__text">{card.text}</p>
+              </div>
+            </a>
+          ) : (
+            <div class="article-card">
+              <div class="article-card__header">
+                <div class="article-card__category">{card.category}</div>
+                <div class="article-card__title">{card.title}</div>
+                {card.badge && <span class="article-card__badge">{card.badge}</span>}
+              </div>
+              <div class="article-card__body">
+                <p class="article-card__text">{card.text}</p>
+              </div>
+            </div>
+          ),
+        )}
       </div>
     </div>
 
@@ -232,10 +164,10 @@ import PageHero from '../../components/PageHero.astro';
 
 <CtaBand
   ariaLabel="Articles CTA"
-  title="Have a Story to Share?"
-  body="If you are a past client willing to provide a testimonial or case study contribution, we would love to hear from you. We handle all content with confidentiality in mind."
-  primary={{ label: 'Get in Touch', href: '/contact/' }}
-  outline={{ label: 'View Event Solutions', href: '/event-solutions/' }}
+  title={page.cta_band.title}
+  body={page.cta_band.body}
+  primary={page.cta_band.primary}
+  outline={page.cta_band.outline}
 />
 
 <FooterAfs />
