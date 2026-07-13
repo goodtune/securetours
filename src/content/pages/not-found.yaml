@@ -1,0 +1,10 @@
+# 404 page copy. Edited via the CMS (/admin) — validated at build time by
+# the schema in src/lib/pages.ts.
+meta:
+  title: 'Page Not Found — Secure Tours & Travel'
+  description: "The page you're looking for doesn't exist or may have moved."
+
+title: 'Page Not Found'
+body: "The page you're looking for doesn't exist or may have moved. Return to our home page to continue."
+primary: { label: 'Back to Home', href: '/' }
+outline: { label: 'Contact Us', href: '/contact/' }

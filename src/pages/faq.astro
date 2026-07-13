@@ -6,21 +6,11 @@ import SiteFooter from '../components/SiteFooter.astro';
 import CtaBand from '../components/CtaBand.astro';
 import PageHero from '../components/PageHero.astro';
 import Faq from '../components/Faq.astro';
-
-const generalFaqs = [
-  { question: 'What is Secure Tours and Travel and who is it for?', answer: 'TBD' },
-  { question: 'Is Secure Tours and Travel a licensed security company?', answer: 'TBD' },
-  { question: 'Are your staff trained in security or are they just drivers and escorts?', answer: 'TBD' },
-  { question: 'Do you operate outside of New South Wales?', answer: 'TBD' },
-  { question: 'Can you arrange services at short notice?', answer: 'TBD' },
-  { question: 'How do I get a quote?', answer: 'TBD' },
-  { question: 'Do you work with international clients who are not yet in Australia?', answer: 'TBD' },
-  { question: 'What languages do your team members speak?', answer: 'TBD' },
-];
+import { faq as page } from '../lib/pages';
 ---
 <BaseLayout
-  title="Frequently Asked Questions — Secure Tours & Travel"
-  description="Answers to the most common questions about Secure Tours & Travel — licensing, staff training, coverage, languages and how to enquire."
+  title={page.meta.title}
+  description={page.meta.description}
   canonical="https://securetours.com.au/faq/"
 >
 
@@ -32,14 +22,14 @@ const generalFaqs = [
     { label: 'Home', href: '/' },
     { label: 'Frequently Asked Questions' },
   ]}
-  label="Trust · Booking · Coverage"
-  title="Frequently Asked Questions"
-  sub="Common questions about Secure Tours & Travel — who we are, how we operate, and how to engage us. Service-specific questions live on each solution's page."
+  label={page.hero.label}
+  title={page.hero.title}
+  sub={page.hero.sub}
 />
 
 <section class="section">
   <Faq
-    items={generalFaqs}
+    items={page.faqs}
     heading=""
     ariaLabel="General FAQs"
     variant="plain"
@@ -47,10 +37,10 @@ const generalFaqs = [
 </section>
 
 <CtaBand
-  title="Still have questions?"
-  body="Our team is happy to discuss your specific requirements — corporate, family, sports, performing arts, or compassionate travel."
-  primary={{ label: 'Get in Touch', href: '/contact/' }}
-  outline={{ label: 'View All Solutions', href: '/services/' }}
+  title={page.cta_band.title}
+  body={page.cta_band.body}
+  primary={page.cta_band.primary}
+  outline={page.cta_band.outline}
 />
 
 <FooterAfs />

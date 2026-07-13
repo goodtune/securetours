@@ -12,6 +12,11 @@ import { z } from 'astro/zod';
 import homeRaw from '../content/pages/home.yaml';
 import aboutRaw from '../content/pages/about.yaml';
 import contactRaw from '../content/pages/contact.yaml';
+import eventSolutionsRaw from '../content/pages/event-solutions.yaml';
+import resourcesRaw from '../content/pages/resources.yaml';
+import faqRaw from '../content/pages/faq.yaml';
+import notFoundRaw from '../content/pages/not-found.yaml';
+import servicesIndexRaw from '../content/pages/services-index.yaml';
 import siteRaw from '../content/pages/site.yaml';
 
 const link = z.object({ label: z.string(), href: z.string() });
@@ -112,6 +117,139 @@ const contactSchema = z.object({
 });
 
 export const contact = parsePage(contactSchema, contactRaw, 'contact.yaml');
+
+const iconTitleBody = z.object({ icon: z.string(), title: z.string(), body: z.string() });
+const titleBody = z.object({ title: z.string(), body: z.string() });
+
+const eventSolutionsSchema = z.object({
+  meta,
+  hero: z.object({ label: z.string(), title: z.string(), sub: z.string() }),
+  lead: z.object({
+    label: z.string(),
+    title: z.string(),
+    lead: z.string(),
+    paragraphs: z.array(z.string()),
+    cta_label: z.string(),
+    credentials: z.object({ title: z.string(), items: z.array(z.string()) }),
+  }),
+  offerings: z.object({
+    label: z.string(),
+    title: z.string(),
+    intro: z.string(),
+    events: z.array(iconTitleBody),
+  }),
+  film_tv: z.object({
+    label: z.string(),
+    title: z.string(),
+    intro: z.string(),
+    panel: z.object({
+      label: z.string(),
+      title: z.string(),
+      paragraphs: z.array(z.string()),
+      capabilities: z.array(titleBody),
+      cta_label: z.string(),
+    }),
+  }),
+  portfolio: z.object({
+    label: z.string(),
+    title: z.string(),
+    intro: z.string(),
+    items: z.array(z.string()),
+  }),
+  differentiators: z.object({
+    label: z.string(),
+    title: z.string(),
+    items: z.array(iconTitleBody),
+  }),
+  case_studies: z.object({
+    label: z.string(),
+    title: z.string(),
+    intro: z.string(),
+    cards: z.array(
+      z.object({
+        label: z.string(),
+        title: z.string(),
+        text: z.string(),
+        href: z.string().optional(),
+        cta: z.string(),
+      }),
+    ),
+    all_link_label: z.string(),
+  }),
+  cta_band: z.object({ title: z.string(), body: z.string(), primary: link, outline: link }),
+});
+
+export const eventSolutions = parsePage(
+  eventSolutionsSchema,
+  eventSolutionsRaw,
+  'event-solutions.yaml',
+);
+
+const ctaBand = z.object({ title: z.string(), body: z.string(), primary: link, outline: link });
+
+const resourcesSchema = z.object({
+  meta,
+  hero: z.object({ label: z.string(), title: z.string(), sub: z.string() }),
+  library_heading: z.string(),
+  categories: z.array(
+    z.object({
+      heading: z.string(),
+      note: z.string().optional(),
+      cards: z.array(
+        z.object({
+          name: z.string(),
+          meta: z.string(),
+          badge: z.string(),
+          href: z.string().optional(),
+          aria_label: z.string().optional(),
+        }),
+      ),
+      footnote: z.string().optional(),
+    }),
+  ),
+  cta_band: ctaBand,
+});
+
+export const resources = parsePage(resourcesSchema, resourcesRaw, 'resources.yaml');
+
+const faqSchema = z.object({
+  meta,
+  hero: z.object({ label: z.string(), title: z.string(), sub: z.string() }),
+  faqs: z.array(z.object({ question: z.string(), answer: z.string() })),
+  cta_band: ctaBand,
+});
+
+export const faq = parsePage(faqSchema, faqRaw, 'faq.yaml');
+
+const notFoundSchema = z.object({
+  meta,
+  title: z.string(),
+  body: z.string(),
+  primary: link,
+  outline: link,
+});
+
+export const notFound = parsePage(notFoundSchema, notFoundRaw, 'not-found.yaml');
+
+const servicesIndexSchema = z.object({
+  meta,
+  hero: z.object({ label: z.string(), title: z.string(), sub: z.string() }),
+  featured: z.object({
+    tag: z.string(),
+    title: z.string(),
+    text: z.string(),
+    cta_label: z.string(),
+    href: z.string(),
+    icon: z.string(),
+  }),
+  cards: z.array(
+    z.object({ icon: z.string(), title: z.string(), body: z.string(), href: z.string() }),
+  ),
+  card_link_label: z.string(),
+  cta_band: z.object({ title: z.string(), body: z.string(), button: link }),
+});
+
+export const servicesIndex = parsePage(servicesIndexSchema, servicesIndexRaw, 'services-index.yaml');
 
 const siteSchema = z.object({
   cta_band: z.object({ title: z.string(), body: z.string(), primary: link, outline: link }),
