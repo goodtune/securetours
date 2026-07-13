@@ -1,79 +1,82 @@
-# Case study article: Vivid Sydney. Edited via the CMS (/admin) —
-# validated by the case-study schema in src/lib/articles.ts.
 meta:
-  title: 'Vivid Sydney — Festival Security & Crowd Management | Secure Tours & Travel'
+  title: Vivid Sydney — Festival Security & Crowd Management | Secure Tours & Travel
   description: "Case study: AFS Group delivered crowd management, access control and VIP guest services across Vivid Sydney precincts — one of Australia's largest public events."
-
-crumb: 'Vivid Sydney'
-
+crumb: Vivid Sydney
 hero:
-  label: 'Case Study · Public Festival Security'
-  title: 'Vivid Sydney'
-  sub: "Festival security, crowd management and VIP guest services across Sydney's largest annual public event — attracting over three million visitors across 23 nights."
-
+  label: Case Study · Public Festival Security
+  title: Vivid Sydney
+  sub: Festival security, crowd management and VIP guest services across Sydney's largest annual public event — attracting over three million visitors across 23 nights.
 meta_items:
-  - { label: 'Event', value: 'Vivid Sydney' }
-  - { label: 'Type', value: 'Public Festival — Lights, Music & Ideas' }
-  - { label: 'Location', value: 'Sydney Harbour & CBD Precincts, NSW' }
-  - { label: 'Duration', value: '23 nights (annual)' }
-  - { label: 'Services Provided', value: 'Crowd Management · Access Control · VIP Services' }
-
+  - label: Event
+    value: Vivid Sydney
+  - label: Type
+    value: Public Festival — Lights, Music & Ideas
+  - label: Location
+    value: Sydney Harbour & CBD Precincts
+  - label: Duration
+    value: 23 nights (annual)
+  - label: Services Provided
+    value: Crowd Management · Access Control · VIP Services
 background:
-  title: 'Background'
+  title: Background
   paragraphs:
-    - "Vivid Sydney is one of Australia's largest public events — a festival of light, music and ideas that transforms Sydney's CBD, harbour foreshore and iconic landmarks across 23 nights each winter. The event draws over three million visitors from across Australia and internationally, making crowd safety, access management and VIP guest coordination a significant operational undertaking."
-    - 'AFS Group was engaged to provide security and crowd management support across multiple Vivid Sydney precincts, working alongside event organisers, NSW Police and local authorities to ensure a safe and enjoyable experience for all attendees.'
-
+    - Vivid Sydney is one of Australia's largest public events — a festival of light, music and ideas that transforms Sydney's CBD, harbour foreshore and iconic landmarks across 23 nights each winter. The event draws over three million visitors from across Australia and internationally, making crowd safety, access management and VIP guest coordination a significant operational undertaking.
+    - AFS Group was engaged to provide security and crowd management support across multiple Vivid Sydney precincts, working alongside event organisers, NSW Police and local authorities to ensure a safe and enjoyable experience for all attendees.
 challenge:
-  title: 'The Challenge'
+  title: The Challenge
   paragraphs:
     - 'Vivid Sydney presents a unique security challenge: an open-access public festival with multiple simultaneous light installations, concert venues and public spaces spread across a large urban area. Key challenges included:'
   bullets:
-    - 'Managing crowd flow and density at popular light installations along the Circular Quay foreshore'
-    - 'Coordinating access control across multiple venue types — from ticketed concerts to free public installations'
-    - 'Providing VIP guest management for corporate event holders and invited dignitaries attending Vivid events'
-    - 'Maintaining a security presence that was effective without being intrusive in an open, family-friendly festival environment'
-    - 'Rapid incident response across dispersed precincts with real-time communication between teams'
-    - 'Catering to large numbers of international visitors with multilingual communication support'
-
+    - Managing crowd flow and density at popular light installations along the Circular Quay foreshore
+    - Coordinating access control across multiple venue types — from ticketed concerts to free public installations
+    - Providing VIP guest management for corporate event holders and invited dignitaries attending Vivid events
+    - Maintaining a security presence that was effective without being intrusive in an open, family-friendly festival environment
+    - Rapid incident response across dispersed precincts with real-time communication between teams
+    - Catering to large numbers of international visitors with multilingual communication support
 approach:
-  title: 'Our Approach'
+  title: Our Approach
   paragraphs:
-    - 'AFS Group deployed licensed crowd controllers and close protection personnel across the key Vivid Sydney precincts, with a dedicated command and communication structure enabling real-time coordination across teams.'
-    - 'A detailed event risk assessment was completed prior to the festival opening, identifying crowd density thresholds, access point priorities, emergency egress requirements and contingency protocols. This assessment informed staffing allocation and team placement for each night of the festival.'
-    - 'For corporate and VIP clients attending Vivid Sydney events, dedicated chaperone and concierge teams provided door-to-door guest management — from arrival at Sydney hotels through to venue access and return transport.'
-
+    - AFS Group deployed licensed crowd controllers and close protection personnel across the key Vivid Sydney precincts, with a dedicated command and communication structure enabling real-time coordination across teams.
+    - A detailed event risk assessment was completed prior to the festival opening, identifying crowd density thresholds, access point priorities, emergency egress requirements and contingency protocols. This assessment informed staffing allocation and team placement for each night of the festival.
+    - For corporate and VIP clients attending Vivid Sydney events, dedicated chaperone and concierge teams provided door-to-door guest management — from arrival at Sydney hotels through to venue access and return transport.
 services:
-  title: 'Services Delivered'
+  title: Services Delivered
   items:
-    - 'Licensed crowd controller deployment across Circular Quay, The Rocks and Walsh Bay precincts'
-    - 'Access control and queue management at high-attendance light installations'
-    - 'VIP and corporate guest management for Vivid Sydney event holders'
-    - 'Close personal protection for invited dignitaries and high-profile attendees'
-    - 'Real-time incident monitoring and rapid response coordination'
-    - 'Multilingual support for international visitors and delegations'
-    - 'Secure transport coordination for VIP arrivals and departures'
-    - 'Liaison with NSW Police and event management teams'
-
+    - Licensed crowd controller deployment across Circular Quay, The Rocks and Walsh Bay precincts
+    - Access control and queue management at high-attendance light installations
+    - VIP and corporate guest management for Vivid Sydney event holders
+    - Close personal protection for invited dignitaries and high-profile attendees
+    - Real-time incident monitoring and rapid response coordination
+    - Multilingual support for international visitors and delegations
+    - Secure transport coordination for VIP arrivals and departures
+    - Liaison with NSW Police and event management teams
 outcomes:
-  title: 'Outcomes'
+  title: Outcomes
   stats:
-    - { num: '23', label: 'Nights of Operation' }
-    - { num: '3M+', label: 'Event Visitors (annual)' }
-    - { num: 'Multi', label: 'Precincts Covered' }
-    - { num: 'Zero', label: 'Major Security Incidents' }
+    - num: '23'
+      label: Nights of Operation
+    - num: 3M+
+      label: Event Visitors (annual)
+    - num: Multi
+      label: Precincts Covered
+    - num: Zero
+      label: Major Security Incidents
   paragraphs:
-    - 'AFS Group delivered the engagement without major security incidents across all operational nights. The VIP concierge program received strong feedback from corporate clients, with several event holders retaining AFS Group for subsequent Vivid Sydney engagements.'
-
-# May contain a link — rendered as HTML.
-confidentiality: '<strong>Confidentiality:</strong> Client and venue partner identities are protected in this case study. Full references are available to qualified enquirers on request. <a href="/contact/" style="color:var(--navy); font-weight:600; text-decoration:underline;">Contact us</a> to request a reference.'
-
+    - AFS Group delivered the engagement without major security incidents across all operational nights. The VIP concierge program received strong feedback from corporate clients, with several event holders retaining AFS Group for subsequent Vivid Sydney engagements.
+confidentiality: <strong>Confidentiality:</strong> Client and venue partner identities are protected in this case study. Full references are available to qualified enquirers on request. <a href="/contact/" style="color:var(--navy); font-weight:600; text-decoration:underline;">Contact us</a> to request a reference.
 nav:
-  prev: { label: '← Back to Articles & Case Studies', href: '/articles/' }
-  next: { label: 'Carriageworks Case Study →', href: '/articles/carriageworks/' }
-
+  prev:
+    label: ← Back to Articles & Case Studies
+    href: /articles/
+  next:
+    label: Carriageworks Case Study →
+    href: /articles/carriageworks/
 cta_band:
-  title: 'Planning a Major Event?'
-  body: 'Our team can provide a confidential consultation and tailored proposal for events of any scale — from intimate functions to major public festivals.'
-  primary: { label: 'Request a Consultation', href: '/contact/' }
-  outline: { label: 'View Event Solutions', href: '/event-solutions/' }
+  title: Planning a Major Event?
+  body: Our team can provide a confidential consultation and tailored proposal for events of any scale — from intimate functions to major public festivals.
+  primary:
+    label: Request a Consultation
+    href: /contact/
+  outline:
+    label: View Event Solutions
+    href: /event-solutions/
