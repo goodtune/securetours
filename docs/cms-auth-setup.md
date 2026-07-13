@@ -61,6 +61,8 @@ CMS_AUTH_BASE_URL = https://sveltia-cms-auth.<your-subdomain>.workers.dev
 
 (the Worker URL with no trailing path). Scope: Build Time (or "Build and Run" — run scope is simply unused). Saving triggers a redeploy; if not, hit **Actions → Force Rebuild and Deploy**.
 
+> **⚠️ No `/callback` here.** `/callback` goes only in the GitHub OAuth App's callback-URL field (step 2). `CMS_AUTH_BASE_URL` is the Worker root — Sveltia appends its own `/auth` path, so a `/callback` suffix breaks sign-in with a 404. (`config.yml.ts` strips a trailing `/callback` or `/` defensively, but set the value correctly anyway.)
+
 ## 5. Verify
 
 1. `curl https://securetours-staging-6i7a4.ondigitalocean.app/admin/config.yml` — the `backend` block should now include `"base_url": "https://sveltia-cms-auth...workers.dev"`. (`config.yml.ts` is wired to include it only when the env var is set, so its presence confirms the var reached the build.)

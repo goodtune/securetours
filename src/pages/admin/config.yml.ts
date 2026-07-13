@@ -13,7 +13,13 @@ import type { APIRoute } from 'astro';
 //                       editors can sign in with a GitHub personal access
 //                       token from the CMS login screen.
 const branch = import.meta.env.CMS_BRANCH || 'main';
-const authBase = import.meta.env.CMS_AUTH_BASE_URL;
+// base_url must be the Worker root: Sveltia appends /auth itself. Strip a
+// pasted /callback suffix (that path belongs only in the GitHub OAuth App
+// settings) and trailing slashes, both of which 404 the sign-in flow.
+const authBase = (import.meta.env.CMS_AUTH_BASE_URL || '')
+  .replace(/\/+$/, '')
+  .replace(/\/callback$/, '')
+  .replace(/\/+$/, '');
 
 const config = {
   backend: {
