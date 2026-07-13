@@ -13,7 +13,10 @@ The earlier Zensical attempt on `feature/zensical` was abandoned because we coul
 - `static-prototype/` — the customer-approved HTML/CSS/JS prototype, kept in-tree as the harness reference. **Do not modify this directory** unless the customer signs off on a design change.
 - `src/pages/` — Astro routes. `[slug].astro` files are dynamic routes generated from collections.
 - `src/components/` — reusable `.astro` components. Pure, prop-driven; no inline data.
-- `src/content/services/` — markdown front-matter files for the 9 service detail pages, validated by `src/content.config.ts`. **This is the editor surface** the non-technical client will manage via Sveltia CMS (planned).
+- `src/content/services/` — markdown front-matter files for the 9 service detail pages, validated by `src/content.config.ts`.
+- `src/content/pages/` — YAML copy for every other page plus site-wide footer/CTA copy, validated by Zod schemas in `src/lib/pages.ts`.
+- `src/content/articles/` — YAML copy for the 5 article pages (endorsement/case-study/profile shapes), validated by `src/lib/articles.ts`.
+  Together these three directories are **the editor surface** the non-technical client manages via Sveltia CMS at `/admin`. Pages render exclusively from this content — don't hardcode copy in `.astro` files.
 - `src/styles/global.css` — verbatim port of `static-prototype/css/style.css`. The only intentional change is the hero background URL (absolute `/assets/`). Don't bypass tokens — use `var(--navy)`, `var(--gold)`, etc.
 - `src/layouts/BaseLayout.astro` — `<head>` + `<body>` shell shared by every page.
 - `tests/` — pytest harness:
@@ -46,7 +49,7 @@ The harness builds Astro once per session (autouse fixture) unless `ALIGN_SKIP_B
 - `CMS_BRANCH` — branch the CMS commits to. Defaults to `main` (production). A staging deployment must set this to its own deploy branch.
 - `CMS_AUTH_BASE_URL` — URL of the deployed `sveltia-cms-auth` OAuth helper. Until set, editors sign in with a GitHub personal access token.
 
-The CMS edits `src/content/services/*.md` only. Keep `config.yml.ts` field definitions in sync with the Zod schema in `src/content.config.ts` — the schema is the build-time gate that stops a bad CMS edit from deploying. `create`/`delete` are off: new services are developer work (routes, nav, footer). CMS media uploads go to `public/assets/uploads/`, never over the design assets.
+The CMS edits three surfaces: the `services` markdown collection, the `pages` YAML files (`src/content/pages/`), and the `articles` YAML files (`src/content/articles/`). Keep `config.yml.ts` field definitions in sync with the Zod schemas (`src/content.config.ts`, `src/lib/pages.ts`, `src/lib/articles.ts`) — the schemas are the build-time gate that stops a bad CMS edit from deploying. `create`/`delete` are off everywhere: new services/articles/pages are developer work (routes, nav, footer, index cards). CMS media uploads go to `public/assets/uploads/`, never over the design assets.
 
 ## Architecture conventions
 
